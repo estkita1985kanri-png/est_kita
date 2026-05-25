@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エスト北塚口管理組合｜公式サイト</title>
+<meta name="description" content="兵庫県伊丹市「エスト北塚口」管理組合の公式サイト。1985年竣工。2026年6月、住民主体の自主管理へ。自主管理 × 透明性 × コミュニティ。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="エスト北塚口管理組合｜公式サイト">
+<meta property="og:description" content="1985年竣工。2026年6月、住民主体の自主管理へ。自主管理 × 透明性 × コミュニティ。">
+<meta property="og:image" content="assets/exterior.jpg">
+<meta property="og:locale" content="ja_JP">
+<style>
+  :root{
+    --brick:#b5532e;        /* れんが（アクセント） */
+    --brick-deep:#8f3f20;
+    --brick-soft:#caa18c;
+    --roof:#2f7d5b;         /* 緑の屋根 */
+    --roof-deep:#235f44;
+    --ink:#262320;
+    --muted:#857b71;
+    --cream:#faf7f3;        /* 基調（ほぼ白・温かみ） */
+    --tint:#f4ece4;         /* うっすらレンガ色の面 */
+    --line:#ece3d8;
+    --shadow:0 10px 40px rgba(60,40,25,.08);
+    --shadow-sm:0 4px 18px rgba(60,40,25,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI",-apple-system,"Segoe UI","Meiryo",sans-serif;
+    color:var(--ink); background:var(--cream); line-height:1.85;
+    -webkit-font-smoothing:antialiased; letter-spacing:.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  .micro{
+    font-size:11.5px; letter-spacing:.28em; color:var(--brick);
+    font-weight:700; text-transform:uppercase; display:inline-block;
+  }
+
+  /* ===== ナビ（ヒーロー上は透明 → スクロールで白） ===== */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:60;
+    transition:background .3s, box-shadow .3s, padding .3s;
+    padding:18px 0;
+  }
+  header.solid{background:rgba(255,255,255,.92); backdrop-filter:blur(10px); box-shadow:0 1px 0 var(--line); padding:12px 0;}
+  .navbar{max-width:1080px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;}
+  .logo{font-size:17px; font-weight:800; letter-spacing:.02em; line-height:1.25;}
+  .logo .accent{color:var(--brick);}
+  .logo .sub{display:block; font-size:10px; color:var(--muted); font-weight:600; letter-spacing:.16em;}
+  nav{display:flex; flex-wrap:wrap; align-items:center;}
+  nav a{font-size:13.5px; margin-left:22px; color:var(--ink); font-weight:600; opacity:.82; transition:opacity .2s, color .2s;}
+  nav a:hover{opacity:1; color:var(--brick);}
+  .nav-cta{margin-left:22px; background:var(--roof); color:#fff !important; padding:9px 18px; border-radius:999px; font-size:13px; opacity:1 !important; white-space:nowrap; flex:0 0 auto;}
+  .nav-cta:hover{background:var(--roof-deep);}
+
+  /* ===== ヒーロー（実物写真・高透過の明るいスクリム） ===== */
+  .hero{
+    position:relative; min-height:92vh; display:flex; align-items:center;
+    overflow:hidden; background:var(--cream);
+  }
+  .hero::before{ /* 実物写真（エントランス）。専有部はモザイク済みのため写真を約70%見せる */
+    content:""; position:absolute; inset:-12px; z-index:0;
+    background:
+      linear-gradient(100deg, rgba(250,247,243,.84) 0%, rgba(250,247,243,.64) 30%, rgba(250,247,243,.34) 62%, rgba(250,247,243,.16) 100%),
+      url("assets/entrance.jpg") center 28%/cover no-repeat;
+    transform:scale(1.03);
+  }
+  .hero::after{ /* 緑の屋根を想起させる細い天面ライン */
+    content:""; position:absolute; top:0; left:0; right:0; height:5px; z-index:3;
+    background:linear-gradient(90deg,var(--roof),var(--roof-deep));
+  }
+  .hero-inner{max-width:1080px; margin:0 auto; padding:120px 24px 80px; width:100%; position:relative; z-index:2;}
+  .hero .micro{margin-bottom:20px;}
+  .hero h1{
+    font-size:clamp(30px,5.4vw,56px); font-weight:800; line-height:1.32;
+    letter-spacing:.02em; margin-bottom:22px; color:var(--ink);
+    max-width:18em; text-shadow:0 1px 14px rgba(250,247,243,.7);
+  }
+  .hero h1 .hl{color:var(--brick-deep);}
+  .hero .copy{font-size:clamp(15px,1.7vw,18px); color:#3f3a33; max-width:30em; margin-bottom:34px; line-height:2; text-shadow:0 1px 10px rgba(250,247,243,.85),0 0 2px rgba(250,247,243,.9);}
+  .tags{display:flex; gap:10px; flex-wrap:wrap;}
+  .tag{
+    background:rgba(255,255,255,.82); border:1px solid var(--line);
+    color:var(--ink); border-radius:999px; padding:9px 20px; font-size:13px; font-weight:700;
+    box-shadow:var(--shadow-sm); backdrop-filter:blur(3px);
+  }
+  .tag .d{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--brick); margin-right:7px; vertical-align:middle;}
+  .tag:nth-child(2) .d{background:var(--roof);}
+  .tag:nth-child(3) .d{background:var(--brick-soft);}
+  .scroll-cue{position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:2; font-size:11px; letter-spacing:.2em; color:var(--muted); animation:bob 2s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,7px);}}
+
+  /* ===== セクション共通 ===== */
+  section{padding:96px 0; scroll-margin-top:72px;}
+  section.tinted{background:var(--tint);}
+  .head{text-align:center; max-width:640px; margin:0 auto 56px;}
+  .head h2{font-size:clamp(24px,3vw,32px); font-weight:800; letter-spacing:.03em; margin:12px 0 14px; line-height:1.4;}
+  .head p{color:var(--muted); font-size:15px; line-height:1.9;}
+
+  /* 3つの柱 */
+  .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .card{
+    background:#fff; border:1px solid var(--line); border-radius:18px;
+    padding:38px 30px; box-shadow:var(--shadow-sm); transition:transform .25s, box-shadow .25s;
+  }
+  .card:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
+  .card .ic{
+    width:56px; height:56px; border-radius:16px; display:flex; align-items:center; justify-content:center;
+    font-size:25px; background:var(--tint); border:1px solid var(--line); margin-bottom:20px;
+  }
+  .card h3{font-size:18px; font-weight:800; margin-bottom:10px;}
+  .card h3 .en{display:block; font-size:11px; letter-spacing:.2em; color:var(--brick); font-weight:700; margin-bottom:5px;}
+  .card p{font-size:14px; color:#5d564e; line-height:1.95;}
+
+  /* 体制 */
+  .lead-txt{max-width:760px; margin:0 auto 40px; text-align:center; font-size:15.5px; color:#534c44; line-height:2.05;}
+  .roles{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .role{background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px 16px; text-align:center; box-shadow:var(--shadow-sm);}
+  .role .t{font-weight:800; color:var(--ink); font-size:15px;}
+  .role .d{font-size:12.5px; color:var(--muted); margin-top:8px; line-height:1.7;}
+  .role .bar{width:30px; height:3px; border-radius:3px; background:var(--roof); margin:0 auto 14px;}
+  .note-c{text-align:center; font-size:12.5px; color:var(--muted); margin-top:24px;}
+
+  /* ===== 写真ショーケース帯（実物・緑の重ね） ===== */
+  .showcase{
+    position:relative; padding:120px 0; text-align:center; color:#fff;
+    background:
+      linear-gradient(rgba(35,95,68,.62), rgba(143,63,32,.55)),
+      url("assets/exterior.jpg?v=3") center 40%/cover fixed no-repeat;
+  }
+  .showcase h2{font-size:clamp(22px,3vw,30px); font-weight:800; line-height:1.6; text-shadow:0 2px 16px rgba(0,0,0,.35); letter-spacing:.04em;}
+  .showcase p{margin-top:16px; font-size:14.5px; opacity:.95; text-shadow:0 1px 10px rgba(0,0,0,.4);}
+
+  /* 沿革 */
+  .timeline{max-width:680px; margin:0 auto; position:relative; padding-left:34px;}
+  .timeline::before{content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--roof),var(--brick-soft));}
+  .tl{position:relative; margin-bottom:34px;}
+  .tl::before{content:""; position:absolute; left:-34px; top:4px; width:14px; height:14px; border-radius:50%; background:#fff; border:3px solid var(--brick);}
+  .tl .yr{font-weight:800; color:var(--roof-deep); font-size:15px;}
+  .tl .ev{font-size:14.5px; color:#5d564e; margin-top:2px;}
+  .tl.now{background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px 24px; box-shadow:var(--shadow-sm); margin-left:-6px;}
+  .tl.now::before{left:-30px; top:24px; width:16px; height:16px; background:var(--roof); border-color:#fff;}
+  .tl.now .yr{color:var(--brick-deep); font-size:19px;}
+  .tl.now .ev{color:var(--ink);}
+
+  /* 会計 */
+  .finance{display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;}
+  .ph{
+    background:#fff; border:1.5px dashed var(--roof); border-radius:18px;
+    padding:48px 28px; text-align:center; box-shadow:var(--shadow-sm);
+  }
+  .ph .ic{font-size:38px; margin-bottom:14px;}
+  .ph p{color:var(--muted); font-size:14px; line-height:1.9;}
+  .ftext h3{color:var(--brick-deep); font-size:19px; font-weight:800; margin-bottom:14px;}
+  .ftext p{font-size:14.5px; color:#534c44; margin-bottom:14px; line-height:2;}
+  .ftext .small{font-size:12.5px; color:var(--muted);}
+
+  /* 暮らし */
+  .living{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .feature{display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; margin-top:64px;}
+  .feature .photo{position:relative; border-radius:20px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:3/2; background:url("assets/park.jpg") center/cover no-repeat;}
+  .feature .photo .cap{position:absolute; left:0; right:0; bottom:0; padding:26px 16px 12px; color:#fff; font-size:11.5px; text-align:center; background:linear-gradient(transparent, rgba(0,0,0,.45)); letter-spacing:.05em;}
+  .feature .ftxt h3{font-size:22px; font-weight:800; margin:12px 0 16px; line-height:1.5;}
+  .feature .ftxt p{font-size:14.5px; color:#534c44; line-height:2.05;}
+  /* 緑の装飾バンド（新緑） */
+  .greenband{position:relative; padding:120px 0; text-align:center; color:#fff;
+    background:linear-gradient(rgba(20,60,42,.30),rgba(20,60,42,.46)), url("assets/green.jpg") center 50%/cover fixed no-repeat;}
+  .greenband .micro{color:#bfe6cf;}
+  .greenband h2{font-size:clamp(22px,3vw,30px); font-weight:800; line-height:1.6; margin-top:10px; text-shadow:0 2px 16px rgba(0,0,0,.4); letter-spacing:.05em;}
+
+  /* 公園ギャラリー（横スクロール＋ライトボックス） */
+  .park-block{margin-top:60px;}
+  .gallery-strip{display:flex; gap:14px; overflow-x:auto; padding:6px 2px 14px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
+  .gallery-strip::-webkit-scrollbar{height:8px;}
+  .gallery-strip::-webkit-scrollbar-track{background:var(--tint); border-radius:4px;}
+  .gallery-strip::-webkit-scrollbar-thumb{background:var(--brick-soft); border-radius:4px;}
+  .gallery-strip .gi{flex:0 0 auto; width:248px; height:166px; border-radius:14px; overflow:hidden; cursor:pointer;
+    box-shadow:var(--shadow-sm); scroll-snap-align:start; border:1px solid var(--line); position:relative;}
+  .gallery-strip .gi img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s;}
+  .gallery-strip .gi:hover img{transform:scale(1.07);}
+  .gallery-strip .gi::after{content:"🔍"; position:absolute; right:8px; bottom:6px; font-size:13px; background:rgba(0,0,0,.4); color:#fff; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .25s;}
+  .gallery-strip .gi:hover::after{opacity:1;}
+  .gallery-hint{text-align:center; font-size:12px; color:var(--muted); margin-top:2px;}
+  /* ライトボックス */
+  .lb{position:fixed; inset:0; z-index:200; background:rgba(18,16,14,.93); display:none; align-items:center; justify-content:center;}
+  .lb.open{display:flex;}
+  .lb img{max-width:92vw; max-height:82vh; border-radius:8px; box-shadow:0 12px 60px rgba(0,0,0,.6);}
+  .lb .x{position:absolute; top:16px; right:22px; color:#fff; font-size:34px; line-height:1; cursor:pointer; opacity:.85;}
+  .lb .x:hover{opacity:1;}
+  .lb .nav{position:absolute; top:50%; transform:translateY(-50%); color:#fff; font-size:46px; cursor:pointer; padding:8px 18px; user-select:none; opacity:.8;}
+  .lb .nav:hover{opacity:1;}
+  .lb .prev{left:6px;} .lb .next{right:6px;}
+  .lb .cap{position:absolute; bottom:18px; left:0; right:0; text-align:center; color:#eee; font-size:13px; letter-spacing:.04em;}
+
+  /* CTA（組合員・問い合わせ） */
+  .cta-card{
+    background:#fff; border:1px solid var(--line); border-radius:22px; box-shadow:var(--shadow);
+    max-width:760px; margin:0 auto; padding:48px 36px; text-align:center;
+  }
+  .cta-card h3{font-size:20px; font-weight:800; color:var(--ink); margin-bottom:12px;}
+  .cta-card p{font-size:14px; color:#5d564e; line-height:1.95; margin-bottom:24px;}
+  .btns{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{display:inline-block; padding:13px 30px; border-radius:999px; font-weight:700; font-size:14px; transition:.2s;}
+  .btn.green{background:var(--roof); color:#fff;} .btn.green:hover{background:var(--roof-deep);}
+  .btn.brick{background:var(--brick); color:#fff;} .btn.brick:hover{background:var(--brick-deep);}
+  .pill-info{display:inline-block; background:var(--tint); border:1px solid var(--line); border-radius:999px; padding:11px 26px; color:var(--roof-deep); font-weight:700; font-size:14px;}
+
+  /* セキュリティ帯 */
+  .secure{background:var(--tint); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center; padding:30px 24px; font-size:13.5px; color:#534c44; line-height:1.9;}
+  .secure strong{color:var(--roof-deep);}
+
+  footer{background:var(--ink); color:#d9cfc4; text-align:center; padding:46px 24px;}
+  footer .f-logo{font-size:16px; font-weight:800; color:#fff; letter-spacing:.04em;}
+  footer .f-meta{font-size:12.5px; opacity:.7; margin-top:10px;}
+  footer .note{font-size:11.5px; opacity:.55; margin-top:18px; max-width:620px; margin-left:auto; margin-right:auto; line-height:1.8;}
+
+  /* 公開前ドラフト帯（★公開時はこの1要素を削除） */
+  .draft{position:fixed; bottom:0; left:0; right:0; z-index:70; background:rgba(38,35,32,.92); color:#f1e7da; font-size:11.5px; text-align:center; padding:8px 16px; backdrop-filter:blur(4px);}
+  .draft strong{color:#fff;}
+
+  /* 入場アニメーション */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none;} .scroll-cue{animation:none;}}
+
+  @media(max-width:860px){
+    .pillars,.living{grid-template-columns:1fr;}
+    .roles{grid-template-columns:repeat(2,1fr);}
+    .finance,.feature{grid-template-columns:1fr;}
+    .feature{gap:24px; margin-top:44px;}
+    nav a:not(.nav-cta){display:none;}
+    .showcase{background-attachment:scroll;}
+    .hero{min-height:84vh;}
+  }
+  @media(max-width:560px){
+    .logo{font-size:15px;}
+    .logo .sub{font-size:9px; letter-spacing:.1em;}
+    .nav-cta{display:none;}
+    .hero-inner{padding-top:140px;}
+    section{padding:68px 0;}
+    .showcase{padding:84px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="navbar">
+    <div class="logo">エスト<span class="accent">北塚口</span>管理組合
+      <span class="sub">EST KITATSUKAGUCHI ・ SINCE 1985</span>
+    </div>
+    <nav>
+      <a href="#about">組合について</a>
+      <a href="#history">沿革</a>
+      <a href="#finance">会計</a>
+      <a href="#living">暮らし</a>
+      <a href="#members" class="nav-cta">組合員の方へ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== ヒーロー ===== -->
+<div class="hero" id="top">
+  <div class="hero-inner reveal">
+    <span class="micro">Since 1985 ・ 自主管理元年 2026</span>
+    <h1>住む人が、自分たちで<br><span class="hl">守る</span>マンション。</h1>
+    <p class="copy">兵庫県伊丹市・れんが壁の住まい。1985年の竣工から重ねた歴史を礎に、2026年6月、住民主体の自主管理へ。</p>
+    <div class="tags">
+      <span class="tag"><span class="d"></span>自主管理</span>
+      <span class="tag"><span class="d"></span>会計の透明性</span>
+      <span class="tag"><span class="d"></span>温かいコミュニティ</span>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</div>
+
+<!-- ===== 組合について ===== -->
+<section id="about">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">Our Values</span>
+      <h2>わたしたちの3つの柱</h2>
+      <p>管理会社任せにしない。無駄を省き、安心を守る。住民の手で、資産と暮らしを育てます。</p>
+    </div>
+    <div class="pillars">
+      <div class="card reveal">
+        <div class="ic">🏠</div>
+        <h3><span class="en">Self-management</span>自主管理</h3>
+        <p>2026年6月、分離発注による自主管理へ移行。各専門業者と直接契約し、住民の手で資産を守ります。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">📊</div>
+        <h3><span class="en">Transparency</span>会計の透明性</h3>
+        <p>お金の流れを見える化。無駄なコストを省き、修繕積立金を将来へ着実に積み上げます。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">🤝</div>
+        <h3><span class="en">Community</span>コミュニティ</h3>
+        <p>公式LINEや掲示で、住民どうしの距離が近い暮らし。緊急時の連絡体制も整えています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 自主管理・体制 ===== -->
+<section class="tinted" id="org">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">Management</span>
+      <h2>自主管理という選択</h2>
+      <p>専門家・各業者と直接つながり、安心とコスト最適化を両立します。</p>
+    </div>
+    <p class="lead-txt reveal">
+      管理会社へまとめて委託する従来方式から、清掃・設備点検・植栽などを各専門業者へ<strong>分離発注</strong>する自主管理へ。
+      仲介マージンを省いて費用を最適化しつつ、緊急対応や会計は顧問の専門家と連携して安心を確保します。
+    </p>
+    <div class="roles">
+      <div class="role reveal"><div class="bar"></div><div class="t">理事長</div><div class="d">組合運営の統括</div></div>
+      <div class="role reveal"><div class="bar"></div><div class="t">副理事長・理事</div><div class="d">運営の補佐・分担</div></div>
+      <div class="role reveal"><div class="bar"></div><div class="t">会計</div><div class="d">顧問税理士と連携</div></div>
+      <div class="role reveal"><div class="bar"></div><div class="t">各専門業者</div><div class="d">清掃・設備・植栽 等</div></div>
+    </div>
+    <p class="note-c reveal">※ 体制は役職単位で掲載しています。個人名・連絡先は公開していません。</p>
+  </div>
+</section>
+
+<!-- ===== 写真ショーケース ===== -->
+<div class="showcase">
+  <div class="wrap reveal">
+    <h2>れんが壁に、ツツジの季節。<br>1985年から続く住まいを、住民の手で。</h2>
+    <p>兵庫県伊丹市・エスト北塚口</p>
+  </div>
+</div>
+
+<!-- ===== 沿革 ===== -->
+<section id="history">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">History</span>
+      <h2>沿革</h2>
+      <p>竣工から、自主管理元年まで。</p>
+    </div>
+    <div class="timeline">
+      <div class="tl reveal"><div class="yr">1985年</div><div class="ev">エスト北塚口 竣工</div></div>
+      <div class="tl reveal"><div class="yr">2025年</div><div class="ev">管理のあり方を見直し</div></div>
+      <div class="tl now reveal">
+        <div class="yr">2026年6月1日</div>
+        <div class="ev"><strong>自主管理へ移行（自主管理元年）。</strong>分離発注により各専門業者と直接契約し、コストを最適化。</div>
+      </div>
+    </div>
+    <p class="note-c reveal" style="margin-top:30px;">※ 1985〜2025年の主要トピック（大規模修繕等）は順次追記してまいります。</p>
+  </div>
+</section>
+
+<!-- ===== 会計の透明性 ===== -->
+<section class="tinted" id="finance">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">Transparency</span>
+      <h2>会計の透明性</h2>
+      <p>※ 公開ページには集計値のみを掲載します。戸別の金額や個人情報は載せません。</p>
+    </div>
+    <div class="finance">
+      <div class="ph reveal">
+        <div class="ic">📈</div>
+        <p>管理費・修繕積立金の<strong>総額・構成比・推移グラフ</strong>を準備中です。<br>（理事会承認後に掲載します）</p>
+      </div>
+      <div class="ftext reveal">
+        <h3>自主管理＝お金の流れが見える</h3>
+        <p>自主管理への移行により管理委託費を見直し、削減できた分を建物の維持・修繕へ回します。</p>
+        <p>収支は組合員の皆さまへ定期的にご報告し、修繕積立金を将来の大規模修繕へ着実に積み上げます。</p>
+        <p class="small">詳細な会計資料（収支報告・予算）は、組合員限定ページでご覧いただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== シンプルな維持費 ===== -->
+<section id="simple">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">Simple &amp; Smart</span>
+      <h2>持たないから、ムダがない。</h2>
+      <p>高額な設備をあえて持たない造り。だから、点検・維持費がシンプルで分かりやすい。</p>
+    </div>
+    <div class="pillars">
+      <div class="card reveal">
+        <div class="ic">🛗</div>
+        <h3>エレベーターレス</h3>
+        <p>4階建て・エレベーターのない設計。昇降機の保守点検や、将来の更新（数百万円規模）といった負担がそもそもありません。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">🅿️</div>
+        <h3>機械式駐車場なし</h3>
+        <p>近年「維持・更新コストが重い」と問題になりがちな機械式駐車場を持ちません。その分の積立負担が不要です。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">🧰</div>
+        <h3>過剰な設備に頼らない</h3>
+        <p>大型の共用設備に頼らないぶん、設備更新コストを抑制。修繕積立金を、本当に必要な建物本体の維持へ集中できます。</p>
+      </div>
+    </div>
+    <p class="lead-txt reveal" style="margin-top:36px;">
+      余分を持たないシンプルな造りが、<strong>毎月の点検・維持費の軽さ</strong>につながります。車が必要なときは、徒歩2〜3分のカーシェアでカバー。
+      ムダを省いて、住まいの価値を守ることに集中する ―― それが、エスト北塚口の選択です。
+    </p>
+  </div>
+</section>
+
+<!-- ===== 暮らし ===== -->
+<section id="living">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">Living</span>
+      <h2>暮らし・周辺環境</h2>
+      <p>兵庫県伊丹市。学校・買い物・移動手段がそろう、暮らしやすい住宅地です。</p>
+    </div>
+    <div class="living">
+      <div class="card reveal"><div class="ic">🏫</div><h3>教育環境</h3><p>小学校まで徒歩2〜3分、中学校も徒歩10分圏内。お子さまのいるご家庭にも安心の距離です。</p></div>
+      <div class="card reveal"><div class="ic">🛒</div><h3>毎日の買い物</h3><p>エントランスのすぐ前（万代第2駐車場前）にスーパー「万代」。徒歩約1分で日々の買い物が完結します。</p></div>
+      <div class="card reveal"><div class="ic">🚗</div><h3>カーシェア</h3><p>徒歩2〜3分圏内にタイムズカーシェアの複数ステーション。車を持たなくても、必要なときだけ使える環境です。</p></div>
+    </div>
+
+    <!-- 笹原公園 ギャラリー（横スクロール＋クリックで拡大） -->
+    <div class="park-block reveal">
+      <div class="head" style="margin-bottom:24px;">
+        <span class="micro">Neighborhood Park</span>
+        <h2 style="font-size:clamp(20px,2.6vw,26px);">歩いて行ける、緑の公園「笹原公園」</h2>
+        <p>平日・週末を問わず家族連れや子どもたちでにぎわう、徒歩圏の憩いの場。四季折々の表情をどうぞ。</p>
+      </div>
+      <!-- ▼ 写真を追加：assets に park3.jpg… を置き、下に同じ形式で1行足すだけ（data-cap=説明文） -->
+      <div class="gallery-strip">
+        <div class="gi"><img src="assets/park.jpg" data-cap="笹原公園 ― 緑の小径" alt="笹原公園 緑の小径"></div>
+        <div class="gi"><img src="assets/park2.jpg" data-cap="笹原公園 ― 木洩れ日の新緑" alt="笹原公園 新緑"></div>
+      </div>
+      <div class="gallery-hint">← 横にスクロール／画像をタップで拡大 →</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 緑の装飾バンド（新緑） ===== -->
+<div class="greenband">
+  <div class="wrap reveal">
+    <span class="micro">Greenery</span>
+    <h2>木々の緑と、青い空。<br>四季を感じる住まい。</h2>
+  </div>
+</div>
+
+<!-- ===== 組合員の方へ ===== -->
+<section class="tinted" id="members">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">For Members</span>
+      <h2>組合員の方へ</h2>
+      <p>議事録・名簿・詳細な会計資料は、組合員限定でご案内しています。</p>
+    </div>
+    <div class="cta-card reveal">
+      <h3>組合員専用のご案内</h3>
+      <p>個人情報を含むため一般公開はしていません。<br>公式LINE、または組合員限定の共有フォルダからご覧いただけます。</p>
+      <div class="btns">
+        <!-- ▼ 公開時に実URLへ差し替えてください -->
+        <a class="btn green" href="#" rel="noopener">公式LINEで見る</a>
+        <a class="btn brick" href="#" rel="noopener">共有フォルダへ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ ===== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">Contact</span>
+      <h2>お問い合わせ</h2>
+      <p>マンションや組合運営に関するお問い合わせ窓口です。</p>
+    </div>
+    <div class="cta-card reveal">
+      <p>ご購入・ご入居をご検討の方、近隣の皆さまからのお問い合わせは、管理組合宛にて承ります。</p>
+      <!-- ▼ 公開時に管理組合の汎用連絡手段へ差し替え（個人の連絡先は載せない） -->
+      <span class="pill-info">お問い合わせ窓口：準備中</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== セキュリティ説明 ===== -->
+<div class="secure">
+  このサイトは<strong>個人情報の入力欄も決済機能も持たない「ご案内のためのサイト」</strong>です。通信は常に暗号化（🔒）され、住民の個人情報は一切掲載していません。
+</div>
+
+<footer>
+  <div class="f-logo">エスト北塚口管理組合</div>
+  <div class="f-meta">兵庫県伊丹市　／　SINCE 1985 ・ 自主管理元年 2026</div>
+  <div class="note">本サイトは個人情報（氏名・部屋番号・連絡先・戸別会計額・特定可能な写真）を一切掲載していません。掲載内容は管理組合が必要に応じて更新します。</div>
+</footer>
+
+<!-- ★公開前ドラフト帯：理事会承認後・正式公開時にこの <div> を削除してください -->
+<div class="draft">⚠ <strong>公開前のドラフト</strong>です（2026年7月理事会で承認予定）。会計グラフ等は準備中。個人情報は一切掲載していません。</div>
+
+<!-- ライトボックス（ギャラリー拡大表示） -->
+<div class="lb" id="lb">
+  <span class="x" id="lbx">×</span>
+  <span class="nav prev" id="lbprev">‹</span>
+  <img id="lbimg" src="" alt="">
+  <span class="nav next" id="lbnext">›</span>
+  <div class="cap" id="lbcap"></div>
+</div>
+
+<script>
+  // スクロールでナビを白背景化
+  var hdr=document.getElementById('hdr');
+  function onScroll(){ hdr.classList.toggle('solid', window.scrollY>40); }
+  window.addEventListener('scroll', onScroll); onScroll();
+
+  // 入場アニメーション
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // 公園ギャラリー ライトボックス（サムネイルから自動構築。画像追加は .gi を足すだけ）
+  (function(){
+    var strip=document.querySelector('.gallery-strip');
+    if(!strip) return;
+    var thumbs=[].slice.call(strip.querySelectorAll('.gi'));
+    var data=thumbs.map(function(t){ var im=t.querySelector('img'); return {src:im.getAttribute('src'), cap:im.getAttribute('data-cap')||''}; });
+    var lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg'), lbcap=document.getElementById('lbcap');
+    var i=0;
+    function show(){ lbimg.src=data[i].src; lbcap.textContent=data[i].cap; }
+    function open(idx){ i=idx; show(); lb.classList.add('open'); }
+    function close(){ lb.classList.remove('open'); }
+    function step(d){ i=(i+d+data.length)%data.length; show(); }
+    thumbs.forEach(function(t,idx){ t.addEventListener('click', function(){ open(idx); }); });
+    lb.addEventListener('click', function(e){ if(e.target===lb || e.target===lbcap) close(); });
+    document.getElementById('lbx').addEventListener('click', close);
+    document.getElementById('lbprev').addEventListener('click', function(e){ e.stopPropagation(); step(-1); });
+    document.getElementById('lbnext').addEventListener('click', function(e){ e.stopPropagation(); step(1); });
+    document.addEventListener('keydown', function(e){ if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); else if(e.key==='ArrowLeft') step(-1); else if(e.key==='ArrowRight') step(1); });
+  })();
+</script>
+</body>
+</html>
