@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://estkita1985kanri-png.github.io/est_kita/sitemap.xml
