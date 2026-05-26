@@ -173,6 +173,20 @@
   .greenband .micro{color:#bfe6cf;}
   .greenband h2{font-size:clamp(22px,3vw,30px); font-weight:800; line-height:1.6; margin-top:10px; text-shadow:0 2px 16px rgba(0,0,0,.4); letter-spacing:.05em;}
 
+  /* 不動産業者・購入検討者向け（重要事項調査の主要事項） */
+  .info-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+  .info-block{background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px 22px; box-shadow:var(--shadow-sm);}
+  .info-block h3{font-size:15.5px; color:var(--brick-deep); font-weight:800; margin-bottom:14px; border-bottom:1px solid var(--line); padding-bottom:8px;}
+  .info-block dl{font-size:13.5px;}
+  .info-block dl > div{padding:6px 0; border-bottom:1px dashed var(--line); display:flex; gap:12px; align-items:baseline;}
+  .info-block dl > div:last-child{border-bottom:none;}
+  .info-block dt{flex:0 0 8.5em; font-weight:700; color:#5d564e; font-size:12.5px; line-height:1.6;}
+  .info-block dd{color:var(--ink); flex:1 1 auto; font-size:13px; line-height:1.7;}
+  .info-note{margin-top:14px; font-size:12px; color:var(--muted); line-height:1.75;}
+  .realtor-faq{text-align:center; margin-top:32px; font-size:13px; color:var(--muted); line-height:1.95;}
+  .req-list{max-width:520px; margin:18px auto 0; text-align:left; font-size:13.5px; line-height:2.1;}
+  .req-list strong{display:inline-block; min-width:6em; color:var(--brick-deep);}
+
   /* 公園ギャラリー（横スクロール＋ライトボックス） */
   .park-block{margin-top:60px;}
   .gallery-strip{display:flex; gap:14px; overflow-x:auto; padding:6px 2px 14px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
@@ -229,7 +243,7 @@
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none;} .scroll-cue{animation:none;}}
 
   @media(max-width:860px){
-    .pillars,.living{grid-template-columns:1fr;}
+    .pillars,.living,.info-grid{grid-template-columns:1fr;}
     .roles{grid-template-columns:repeat(2,1fr);}
     .finance,.feature{grid-template-columns:1fr;}
     .feature{gap:24px; margin-top:44px;}
@@ -259,6 +273,7 @@
       <a href="#history">沿革</a>
       <a href="#finance">会計</a>
       <a href="#living">暮らし</a>
+      <a href="#realtor">業者の方</a>
       <a href="#members" class="nav-cta">組合員の方へ</a>
     </nav>
   </div>
@@ -441,6 +456,158 @@
       </div>
       <div class="gallery-hint">← 横にスクロール／画像をタップで拡大 →</div>
     </div>
+  </div>
+</section>
+
+<!-- ===== 不動産業者・購入検討者の方へ ===== -->
+<section class="tinted" id="realtor">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">For Real Estate Agents</span>
+      <h2>不動産業者・購入検討者の方へ</h2>
+      <p>本マンションの管理に関する主要事項を整理しています。戸別データを含む重要事項調査報告書は、ページ下部の窓口より個別にご請求ください。</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-block reveal">
+        <h3>マンション概要</h3>
+        <dl>
+          <div><dt>名称</dt><dd>エスト北塚口</dd></div>
+          <div><dt>所在地</dt><dd>兵庫県伊丹市野間一丁目7番20号</dd></div>
+          <div><dt>竣工</dt><dd>1985年11月</dd></div>
+          <div><dt>総戸数</dt><dd>19戸</dd></div>
+          <div><dt>階建</dt><dd>4階建て</dd></div>
+        </dl>
+      </div>
+
+      <div class="info-block reveal">
+        <h3>管理組合・運営</h3>
+        <dl>
+          <div><dt>管理組合</dt><dd>エスト北塚口管理組合（区分所有者全員で組織）</dd></div>
+          <div><dt>役員数</dt><dd>理事2名・監事1名</dd></div>
+          <div><dt>役員の選任</dt><dd>輪番制（免除規定なし）</dd></div>
+          <div><dt>通常総会</dt><dd>2月開催</dd></div>
+          <div><dt>決算月</dt><dd>11月</dd></div>
+          <div><dt>理事会</dt><dd>年4回程度</dd></div>
+          <div><dt>管理規約改正</dt><dd>2025年2月</dd></div>
+          <div><dt>使用細則</dt><dd>有</dd></div>
+          <div><dt>管理計画認定</dt><dd>未申請</dd></div>
+        </dl>
+      </div>
+
+      <div class="info-block reveal">
+        <h3>管理形態</h3>
+        <dl>
+          <div><dt>管理方式</dt><dd>自主管理（2026年6月1日〜）</dd></div>
+          <div><dt>委託形態</dt><dd>分離発注（清掃・設備点検・植栽 等を専門業者へ直接委託）</dd></div>
+          <div><dt>会計顧問</dt><dd>顧問税理士と連携</dd></div>
+        </dl>
+        <p class="info-note">※2026年5月末までは日本ハウズイング株式会社（国土交通大臣（1）第034770号）へ一部委託。2026年6月1日より自主管理に移行。</p>
+      </div>
+
+      <div class="info-block reveal">
+        <h3>共用部分・付属施設</h3>
+        <dl>
+          <div><dt>エレベーター</dt><dd>無</dd></div>
+          <div><dt>駐車場</dt><dd>無</dd></div>
+          <div><dt>機械式駐車場</dt><dd>無</dd></div>
+          <div><dt>オートロック</dt><dd>無</dd></div>
+          <div><dt>バイク置場</dt><dd>無</dd></div>
+          <div><dt>自転車置場</dt><dd>有（空きあり・無料）</dd></div>
+          <div><dt>トランクルーム</dt><dd>有（空きあり・月額1,000円）</dd></div>
+          <div><dt>共聴設備</dt><dd>地デジ・BS・CS対応</dd></div>
+          <div><dt>インターネット</dt><dd>NTT光・NURO光</dd></div>
+          <div><dt>共用部分の点検</dt><dd>法定点検等を実施</dd></div>
+        </dl>
+      </div>
+
+      <div class="info-block reveal">
+        <h3>専有部分の使用規制</h3>
+        <dl>
+          <div><dt>用途</dt><dd>住宅専用（事務所使用不可）</dd></div>
+          <div><dt>住宅宿泊事業</dt><dd>不可（民泊不可）</dd></div>
+          <div><dt>ペット飼育</dt><dd>制限有（他の居住者に迷惑等を及ぼす動物の飼育は禁止）</dd></div>
+          <div><dt>楽器等の使用</dt><dd>制限有</dd></div>
+          <div><dt>内装工事</dt><dd>事前届出必要</dd></div>
+          <div><dt>一括受電</dt><dd>無</dd></div>
+        </dl>
+      </div>
+
+      <div class="info-block reveal">
+        <h3>修繕・点検</h3>
+        <dl>
+          <div><dt>長期修繕計画</dt><dd>有</dd></div>
+          <div><dt>修繕履歴</dt><dd>有</dd></div>
+          <div><dt>大規模修繕予定</dt><dd>無</dd></div>
+          <div><dt>借入・一時負担金</dt><dd>予定無</dd></div>
+          <div><dt>アスベスト調査記録</dt><dd>無</dd></div>
+          <div><dt>耐震診断</dt><dd>未実施</dd></div>
+          <div><dt>建替え決議等</dt><dd>無</dd></div>
+        </dl>
+      </div>
+
+      <div class="info-block reveal">
+        <h3>建物関係書類の保存状況</h3>
+        <dl>
+          <div><dt>確認申請書・確認済証（新築時）</dt><dd>無</dd></div>
+          <div><dt>検査済証</dt><dd>無</dd></div>
+          <div><dt>建設住宅性能評価書</dt><dd>無</dd></div>
+          <div><dt>定期検査報告書（昇降機等）</dt><dd>該当設備なし</dd></div>
+          <div><dt>新耐震基準等の適合書類</dt><dd>無</dd></div>
+        </dl>
+        <p class="info-note">※1985年（昭和60年）竣工のため、当時の関連書類は一部保存されておりません。</p>
+      </div>
+
+      <div class="info-block reveal">
+        <h3>会計・財務（集計値）</h3>
+        <dl>
+          <div><dt>管理費等の滞納</dt><dd>無（0円）</dd></div>
+          <div><dt>借入金残高</dt><dd>0円</dd></div>
+          <div><dt>管理費等の変更予定</dt><dd>なし</dd></div>
+          <div><dt>修繕積立金の規約定め</dt><dd>有</dd></div>
+          <div><dt>減免措置</dt><dd>無</dd></div>
+        </dl>
+        <p class="info-note">※戸別の管理費・修繕積立金額、売主住戸の滞納有無、最新の収支詳細は<strong>個別請求</strong>にてご案内します。</p>
+      </div>
+
+      <div class="info-block reveal">
+        <h3>損害保険</h3>
+        <dl>
+          <div><dt>加入保険</dt><dd>火災保険／施設賠償責任保険／個人賠償責任保険</dd></div>
+        </dl>
+      </div>
+
+      <div class="info-block reveal" style="background:var(--cream);">
+        <h3>個別請求にて提供（戸別・個人情報を含むため非公開）</h3>
+        <dl>
+          <div><dt>重要事項調査報告書</dt><dd>戸別の最新版</dd></div>
+          <div><dt>管理規約フル</dt><dd>別表（戸別面積等）を含む完全版</dd></div>
+          <div><dt>使用細則等</dt><dd>最新版</dd></div>
+          <div><dt>総会議事録</dt><dd>直近1〜2年分</dd></div>
+          <div><dt>長期修繕計画書</dt><dd>詳細版</dd></div>
+          <div><dt>修繕履歴の詳細</dt><dd>工事ごとの記録</dd></div>
+          <div><dt>収支報告・予算書</dt><dd>直近期の確定版</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 個別請求の案内 -->
+    <div class="cta-card reveal" style="margin-top:48px;">
+      <h3>重要事項調査報告書のご請求</h3>
+      <p>戸別データ・規約フル版・議事録 等は、下記の窓口より個別にご請求ください。</p>
+      <div class="req-list">
+        <p><strong>料金</strong>：準備中（書類ごと／パッケージ）</p>
+        <p><strong>納期目安</strong>：準備中（申込から〇営業日）</p>
+        <p><strong>申込方法</strong>：管理組合宛にメール（フォーム準備中）</p>
+        <p><strong>振込先</strong>：請求書にてご案内</p>
+      </div>
+      <span class="pill-info" style="margin-top:14px;">お問い合わせ窓口：準備中</span>
+    </div>
+
+    <p class="realtor-faq reveal">
+      ご不明な点・追加で必要な書類等がございましたら、管理組合までお問い合わせください。<br>
+      公開ページに掲載していない事項（戸別データ・規約の別表・議事録 等）は、個別請求にて対応いたします。
+    </p>
   </div>
 </section>
 
