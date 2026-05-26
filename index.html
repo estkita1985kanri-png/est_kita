@@ -73,25 +73,27 @@
   .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
   /* モバイルオーバーレイ */
   .mobile-nav{
-    display:none; position:fixed; inset:0; z-index:65;
-    background:rgba(250,247,243,.97); backdrop-filter:blur(12px);
-    flex-direction:column; align-items:stretch; justify-content:center;
-    padding:80px 32px 48px;
+    display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:65;
+    background:rgba(250,247,243,.98);
+    overflow-y:auto; padding:100px 32px 60px;
   }
-  .mobile-nav.open{display:flex;}
+  .mobile-nav.open{display:block;}
   .mobile-nav a{
-    font-size:20px; font-weight:800; color:var(--ink); padding:20px 0;
-    text-align:center; border-bottom:1px solid var(--line);
-    letter-spacing:.04em; transition:color .2s;
+    display:block !important;
+    font-size:20px !important; font-weight:800 !important;
+    color:#262320 !important; padding:20px 0 !important;
+    text-align:center !important; margin-left:0 !important;
+    opacity:1 !important; letter-spacing:.04em;
+    border-bottom:1px solid #ece3d8;
   }
-  .mobile-nav a:first-child{border-top:1px solid var(--line);}
-  .mobile-nav a:hover,.mobile-nav a:active{color:var(--brick);}
-  .mobile-nav a{display:block !important;}
+  .mobile-nav a:first-child{border-top:1px solid #ece3d8;}
+  .mobile-nav a:active{color:#b5532e !important;}
   .mobile-nav .m-cta{
-    margin-top:32px; background:var(--roof); color:#fff !important;
-    border-radius:999px; padding:16px 0; border:none; font-size:16px; font-weight:800;
+    display:block !important; margin-top:32px;
+    background:#2f7d5b !important; color:#fff !important;
+    border-radius:999px; padding:16px 0 !important;
+    font-size:16px !important; font-weight:800 !important; text-align:center !important;
   }
-  .mobile-nav .m-cta:hover{background:var(--roof-deep);}
 
   /* ===== ヒーロー（実物写真・高透過の明るいスクリム） ===== */
   .hero{
@@ -739,13 +741,11 @@
     hamburger.classList.remove('open');
     mobileNav.classList.remove('open');
     hamburger.setAttribute('aria-expanded','false');
-    document.body.style.overflow='';
   }
   hamburger.addEventListener('click',function(){
     var isOpen=hamburger.classList.toggle('open');
     mobileNav.classList.toggle('open',isOpen);
     hamburger.setAttribute('aria-expanded',String(isOpen));
-    document.body.style.overflow=isOpen?'hidden':'';
   });
   mobileNav.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click',closeMenu);
