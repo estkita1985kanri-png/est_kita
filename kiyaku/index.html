@@ -108,13 +108,12 @@
 <body>
 <header>
   <h1>エスト北塚口管理組合 管理規約</h1>
-  <div class="sub">タブで「最新規約」「改正箇所のみ」「原本」を切替できます</div>
+  <div class="sub">タブで「新規約」「旧規約」を切替できます</div>
 </header>
 
 <div class="tabs">
-  <button class="tab active" data-tab="latest">📋 最新規約（2026/4/5改正）</button>
-  <button class="tab" data-tab="amend">📜 改正箇所のみ</button>
-  <button class="tab" data-tab="original">📄 原本PDF（2022/10/27）</button>
+  <button class="tab active" data-tab="latest">📋 新規約（2026/4/5改正）</button>
+  <button class="tab" data-tab="original">📄 旧規約（2022/10/27 制定時）</button>
 </div>
 
 <div class="content" id="content">
@@ -135,10 +134,8 @@
     });
     if (tabName === 'original') {
       contentEl.innerHTML =
-        '<div class="pdf-note">原本PDF（約900KB）<a href="original.pdf" download="エスト北塚口管理組合_管理規約_原本.pdf">📥 ダウンロード</a> ／ <a href="original.pdf" target="_blank">👁 別タブで開く</a></div>' +
+        '<div class="pdf-note">旧規約PDF（約900KB）<a href="original.pdf" download="エスト北塚口管理組合_旧規約_2022-10-27.pdf">📥 ダウンロード</a> ／ <a href="original.pdf" target="_blank">👁 別タブで開く</a></div>' +
         '<iframe class="frame" src="original.pdf"></iframe>';
-    } else if (tabName === 'amend') {
-      contentEl.innerHTML = '<iframe class="frame" src="amend.html"></iframe>';
     } else {
       contentEl.innerHTML = '<iframe class="frame" src="latest.html"></iframe>';
     }
