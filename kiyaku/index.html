@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>エスト北塚口管理組合 管理規約</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Yu Gothic UI", "Yu Gothic", "Meiryo", sans-serif;
+    background: #f7f4ee;
+    color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(135deg, #a0522d 0%, #7d3f20 100%);
+    color: #fff;
+    padding: 16px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+  }
+  header h1 {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+  }
+  header .sub {
+    font-size: 11px;
+    opacity: 0.9;
+    margin-top: 2px;
+  }
+  .tabs {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 12px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .tab {
+    flex-shrink: 0;
+    padding: 10px 16px;
+    background: #fefbf5;
+    border: 1px solid #d8c8b0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13.5px;
+    color: #5a3a20;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .tab:hover { background: #f5e6d8; }
+  .tab.active {
+    background: #a0522d;
+    color: #fff;
+    border-color: #a0522d;
+    font-weight: bold;
+  }
+  .tab.active:hover { background: #a0522d; }
+  .content {
+    flex: 1;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    flex: 1;
+    display: block;
+  }
+  .pdf-note {
+    background: #fefbf5;
+    border-bottom: 1px solid #e8d6c0;
+    padding: 12px 18px;
+    font-size: 12.5px;
+    color: #5a3a20;
+    text-align: center;
+  }
+  .pdf-note a {
+    color: #a0522d;
+    font-weight: bold;
+    margin: 0 8px;
+  }
+  footer {
+    background: #2a2a2a;
+    color: #aaa;
+    text-align: center;
+    padding: 12px;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  @media print {
+    header, .tabs, footer, .pdf-note { display: none; }
+    .content, body { display: block; height: auto; }
+    .frame { height: auto; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>エスト北塚口管理組合 管理規約</h1>
+  <div class="sub">タブで「最新規約」「改正箇所のみ」「原本」を切替できます</div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" data-tab="latest">📋 最新規約（2026/4/5改正）</button>
+  <button class="tab" data-tab="amend">📜 改正箇所のみ</button>
+  <button class="tab" data-tab="original">📄 原本PDF（2022/10/27）</button>
+</div>
+
+<div class="content" id="content">
+  <iframe class="frame" id="frame" src="latest.html"></iframe>
+</div>
+
+<footer>
+  エスト北塚口管理組合 ／ 最新改正：2026年4月5日（第41期臨時総会可決）
+</footer>
+
+<script>
+  var tabs = document.querySelectorAll('.tab');
+  var contentEl = document.getElementById('content');
+
+  function showTab(tabName) {
+    tabs.forEach(function(t) {
+      t.classList.toggle('active', t.dataset.tab === tabName);
+    });
+    if (tabName === 'original') {
+      contentEl.innerHTML =
+        '<div class="pdf-note">原本PDF（約900KB）<a href="original.pdf" download="エスト北塚口管理組合_管理規約_原本.pdf">📥 ダウンロード</a> ／ <a href="original.pdf" target="_blank">👁 別タブで開く</a></div>' +
+        '<iframe class="frame" src="original.pdf"></iframe>';
+    } else if (tabName === 'amend') {
+      contentEl.innerHTML = '<iframe class="frame" src="amend.html"></iframe>';
+    } else {
+      contentEl.innerHTML = '<iframe class="frame" src="latest.html"></iframe>';
+    }
+  }
+
+  tabs.forEach(function(t) {
+    t.addEventListener('click', function() { showTab(t.dataset.tab); });
+  });
+</script>
+</body>
+</html>

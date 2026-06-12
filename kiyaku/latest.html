@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エスト北塚口管理組合 管理規約（2026年4月5日改正版）</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "游明朝", "Yu Mincho", "ヒラギノ明朝 ProN", "MS 明朝", serif;
+  font-size: 10.5pt;
+  line-height: 1.85;
+  color: #000;
+  background: #fff;
+}
+.page { max-width: 800px; margin: 0 auto; padding: 20px 40px 40px; }
+
+/* 表紙 */
+.cover {
+  text-align: center;
+  padding: 60px 0 50px;
+  border-bottom: 3px double #000;
+  margin-bottom: 30px;
+}
+.cover .label { font-size: 11pt; margin-bottom: 6px; }
+.cover h1 { font-size: 22pt; font-weight: bold; letter-spacing: 4px; margin-bottom: 10px; }
+.cover .sub { font-size: 10pt; color: #333; }
+.cover .rev { margin-top: 16px; font-size: 9.5pt; color: #555; border: 1px solid #ccc; display: inline-block; padding: 4px 16px; }
+
+/* 章見出し */
+.chapter-title {
+  font-size: 13pt; font-weight: bold;
+  border-bottom: 2px solid #000;
+  margin: 28px 0 8px;
+  padding-bottom: 3px;
+  letter-spacing: 1px;
+}
+.section-title {
+  font-size: 11pt; font-weight: bold;
+  margin: 20px 0 6px;
+  border-left: 4px solid #000;
+  padding-left: 8px;
+}
+
+/* 条文 */
+.article { margin-bottom: 16px; }
+.article-head { font-weight: bold; letter-spacing: 0.08em; line-height: 2.0; }
+.article-body { margin-left: 1em; }
+.item { margin-left: 2em; text-indent: -1em; margin-bottom: 3px; }
+
+/* 改正マーク */
+.amended {
+  background: #fffbe6;
+  border-left: 3px solid #f5a623;
+  padding-left: 6px;
+  margin-left: -6px;
+}
+.new-article {
+  background: #f0f8ff;
+  border-left: 3px solid #2196F3;
+  padding-left: 6px;
+  margin-left: -6px;
+}
+/* 白黒印刷でも識別できるよう条見出しに記号を自動付与 */
+.amended .article-head::before {
+  content: "【改正】";
+  font-size: 8pt;
+  font-weight: bold;
+  color: #b86000;
+  margin-right: 4px;
+  letter-spacing: 0;
+}
+.new-article .article-head::before {
+  content: "【新設】";
+  font-size: 8pt;
+  font-weight: bold;
+  color: #0066bb;
+  margin-right: 4px;
+  letter-spacing: 0;
+}
+.amendment-note {
+  font-size: 8.5pt; color: #888;
+  font-style: italic; margin-left: 1em;
+}
+/* 改正番号バッジ */
+.amend-num {
+  display: inline-block;
+  background: #f5a623;
+  color: #fff;
+  font-size: 8pt;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  line-height: 1.2;
+  padding: 1px 8px 1px 5px;
+  border-radius: 0 3px 3px 0;
+  margin: 0 6px 4px -6px;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.new-article .amend-num { background: #2196F3; }
+/* 印刷時も記号色を維持 */
+@media print {
+  .amended .article-head::before { color: #000; }
+  .new-article .article-head::before { color: #000; }
+}
+
+/* 別表 */
+.bettable { margin: 16px 0; }
+.bettable h3 { font-size: 11pt; font-weight: bold; margin-bottom: 6px; }
+table.reg-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 9.5pt;
+}
+table.reg-table th, table.reg-table td {
+  border: 1px solid #666;
+  padding: 5px 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+table.reg-table th { background: #333; color: #fff; font-weight: bold; }
+table.reg-table tr:nth-child(even) td { background: #f9f9f9; }
+
+/* 附則 */
+.appendix { margin-top: 30px; border-top: 2px solid #000; padding-top: 16px; }
+
+/* 区切り */
+.separator { border: none; border-top: 1px dashed #ccc; margin: 20px 0; }
+
+/* 印刷 */
+@media print {
+  .amended, .new-article { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { padding: 10mm 15mm; }
+  .chapter-title { page-break-before: auto; }
+  #toc { break-after: avoid; }
+  .toc-ql a { border: 1px solid #999 !important; color: #000 !important; background: #fff !important; }
+}
+
+/* 目次 */
+#toc {
+  border: 1px solid #bbb;
+  padding: 14px 18px 10px;
+  background: #f8f8f8;
+  margin-bottom: 22px;
+  font-size: 9.5pt;
+}
+.toc-head {
+  font-size: 12pt; font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 4px;
+  letter-spacing: 3px;
+}
+.toc-block { margin-bottom: 10px; }
+.toc-block-title { font-weight: bold; font-size: 9pt; margin-bottom: 6px; color: #333; }
+.toc-ql { display: flex; flex-wrap: wrap; gap: 4px 8px; }
+.toc-ql a {
+  font-size: 8.5pt; text-decoration: none;
+  padding: 2px 8px; border-radius: 3px;
+}
+.tl-a { background: #fffbe6; border: 1px solid #f5a623; color: #7a4800; }
+.tl-n { background: #f0f8ff; border: 1px solid #2196F3; color: #004e8c; }
+.toc-tbl { border-collapse: collapse; width: 100%; font-size: 9pt; }
+.toc-tbl td { padding: 2px 6px; }
+.toc-tbl a { text-decoration: none; color: #000; }
+.toc-tbl a:hover { text-decoration: underline; color: #0066cc; }
+.toc-rng { color: #888; font-size: 8.5pt; text-align: right; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- 表紙 -->
+<div class="cover">
+  <div class="label">エスト北塚口管理組合</div>
+  <h1>管　理　規　約</h1>
+  <div class="sub">（使用細則・トランクルーム使用契約書含む）</div>
+  <div class="rev">
+    2022年10月27日 制定（第66条）<br>
+    2026年4月5日 第41期臨時総会にて17項目改正
+  </div>
+</div>
+
+<!-- 凡例 -->
+<div style="font-size:8.5pt; color:#555; margin-bottom:20px; border:1px solid #bbb; padding:10px 14px; background:#fafafa; line-height:1.9;">
+  <strong style="font-size:9pt;">【2026年4月5日 第41期臨時総会 改正箇所の見方】</strong><br>
+  <span style="font-weight:bold;">【改正】</span>と表示 ／ <span style="background:#fffbe6; border-left:3px solid #f5a623; padding:0 5px;">オレンジ背景（カラー）</span>　＝　2026年4月5日に改正された条文<br>
+  <span style="font-weight:bold;">【新設】</span>と表示 ／ <span style="background:#f0f8ff; border-left:3px solid #2196F3; padding:0 5px;">青背景（カラー）</span>　＝　2026年4月5日に新設された条文<br>
+  <span style="color:#888; font-style:italic;">※ 白黒印刷の場合は【改正】【新設】の表示でご確認ください。カラー表示の場合は背景色でも識別できます。</span>
+</div>
+
+<!-- ======== 管理規約 ======== -->
+<div class="chapter-title">管　理　規　約</div>
+
+<div class="chapter-title">第１章　総則</div>
+
+<div style="font-size:8.5pt; color:#555; margin-bottom:14px; border:1px solid #f5a623; padding:10px 14px; background:#fffbe6; line-height:1.9;">
+  <span class="amend-num">1</span><strong style="font-size:9pt; color:#b86000;">【改正#1】物件名称の統一（エスト野間 → エスト北塚口）</strong><br>
+  本マンションの名称は、2026年4月5日開催の第41期臨時総会（改正#1）の決議により、旧称「エスト野間」から「<strong>エスト北塚口</strong>」に改称されました。<br>
+  これに伴い、管理規約・使用細則・附則・別表を含む全条文中の「エスト野間」という表記はすべて「エスト北塚口」に改められています。第２条以降では「エスト北塚口」の名称で統一して記載しています。
+</div>
+
+<div class="article">
+<div class="article-head">（目的）<br>第１条</div>
+<div class="article-body">この規約は、エスト北塚口の管理又は使用に関する事項等について定めることにより、区分所有者の共同の利益を増進し、良好な住環境を確保することを目的とする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（定義）<br>第２条</div>
+<div class="article-body">この規約において、次に掲げる用語の意義は、それぞれ当該各号に定めるところによる。
+<div class="item">一　区分所有権　建物の区分所有等に関する法律（以下「区分所有法」という。）第２条第１項の区分所有権をいう。</div>
+<div class="item">二　区分所有者　区分所有法第２条第２項の区分所有者をいう。</div>
+<div class="item">三　占有者　区分所有法第６条第３項の占有者をいう。</div>
+<div class="item">四　専有部分　区分所有法第２条第３項の専有部分をいう。</div>
+<div class="item">五　共用部分　区分所有法第２条第４項の共用部分をいう。</div>
+<div class="item">六　敷地　区分所有法第２条第５項の建物の敷地をいう。</div>
+<div class="item">七　共用部分等　共用部分及び付属施設をいう。</div>
+<div class="item">八　専用使用権　敷地及び共用部分等の一部について、特定の区分所有者が排他的に使用できる権利をいう。</div>
+<div class="item">九　専用使用部分　専用使用権の対象となっている敷地及び共用部分等の部分をいう。</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（規約の遵守義務）<br>第３条</div>
+<div class="article-body">区分所有者は、円滑な共同生活を維持するため、この規約及び使用細則を誠実に遵守しなければならない。<br>
+２　区分所有者は、同居する者に対してこの規約及び使用細則に定める事項を遵守させなければならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（対象物件の範囲）<br>第４条</div>
+<div class="article-body">この規約の対象となる物件の範囲は、別表第１に記載された敷地、建物及び付属施設（以下「対象物件」という。）とする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（規約の効力）<br>第５条</div>
+<div class="article-body">この規約は、区分所有者の包括承継人及び特定承継人に対しても、その効力を有する。<br>
+２　占有者は、対象物件の使用方法につき、区分所有者がこの規約に基づいて負う義務と同一の義務を負う。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（管理組合）<br>第６条</div>
+<div class="article-body">区分所有者は、第１条に定める目的を達成するため、区分所有者全員をもってエスト北塚口管理組合（以下「管理組合」という。）を構成する。<br>
+２　管理組合は、事務所をエスト北塚口に置く。<br>
+３　管理組合の業務、組織等については、第６章に定めるところによる。</div>
+</div>
+
+<div class="chapter-title">第２章　専有部分等の範囲</div>
+
+<div class="article">
+<div class="article-head">（専有部分の範囲）<br>第７条</div>
+<div class="article-body">対象物件のうち区分所有権の対象となる専有部分は、住戸番号を付した住戸（以下「住戸部分」という。）とする。<br>
+２　前項の専有部分を他から区分する構造物の帰属については、次のとおりとする。
+<div class="item">一　天井、床及び壁は、躯体部分を除く部分を専有部分とする。</div>
+<div class="item">二　玄関扉は、錠及び内部塗装部分を専有部分とする。</div>
+<div class="item">三　窓枠及び窓ガラスは、専有部分に含まれないものとする。</div>
+３　第１項又は前項の専有部分の専用に供される設備のうち共用部分内にある部分以外のものは、専有部分とする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（共用部分の範囲）<br>第８条</div>
+<div class="article-body">対象物件のうち共用部分の範囲は、別表第２に掲げるとおりとする。</div>
+</div>
+
+<div class="chapter-title">第３章　敷地及び共用部分等の共有</div>
+
+<div class="article">
+<div class="article-head">（共有）<br>第９条</div>
+<div class="article-body">対象物件のうち敷地及び共用部分等は、区分所有者の共有とする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（共有持分）<br>第１０条</div>
+<div class="article-body">各区分所有者の共有持分は、その所有する専有部分の床面積の割合による。<br>
+２　前項の床面積の計算は、壁心計算（界壁の中心線で囲まれた部分の面積を算出する方法をいう。）によるものとする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（分割請求及び単独処分の禁止）<br>第１１条</div>
+<div class="article-body">区分所有者は、敷地又は共用部分等の分割を請求することはできない。</div>
+</div>
+
+<div class="chapter-title">第４章　用法</div>
+
+<div class="article">
+<div class="article-head">（専有部分の用途）<br>第１２条</div>
+<div class="article-body">区分所有者は、その専有部分を住宅として使用するものとし、他の用途に供してはならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（敷地及び共用部分等の用法）<br>第１３条</div>
+<div class="article-body">区分所有者は、敷地及び共用部分等をそれぞれの通常の用途に従って使用しなければならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（バルコニー等の専用使用権）<br>第１４条</div>
+<div class="article-body">区分所有者は、別表第３に掲げるバルコニー、専用庭、玄関扉、窓枠、窓ガラス（以下この条、第２０条及び別表第３において「バルコニー等」という。）について、同表に掲げるとおり、専用使用権を有することを承認する。<br>
+２　区分所有者から専有部分の貸与を受けた者は、その区分所有者が専用使用権を有しているバルコニー等を使用することができる。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（トランクルームの専用使用権）<br>第１５条</div>
+<span class="amendment-note">（改正#11：特定の部屋への固定割当てを廃止、現運用に合わせた改正）</span>
+<div class="article-body">管理組合は、別添の図に示すトランクルームについて、組合員に対しトランクルーム使用契約を締結することにより専用使用権を設定することができる。<br>
+２　トランクルームについて専用使用権を有している者は、別に定めるところにより、管理組合に専用使用料を納入しなければならない。<br>
+３　トランクルームの専用使用権は、区分所有権に付随しない。区分所有者が住戸部分を他の区分所有者又は第三者に譲渡したときは、その区分所有者のトランクルーム専用使用権は消滅する。<br>
+４　前項にかかわらず、当該譲渡の相手方が同居人であるときは、管理組合の承認を得て引き続きトランクルームを専用使用することができる。<br>
+５　区分所有者がその所有する住戸部分を第三者に貸与する場合において、当該貸与の期間が３年未満であるときは、当該トランクルームの専用使用権は消滅しない。ただし、管理組合は、当該期間中、他の区分所有者に当該トランクルームを使用させることができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（敷地及び共用部分等の第三者の使用）<br>第１６条</div>
+<div class="article-body">区分所有者は、次に掲げる敷地及び共用部分等の一部を、それぞれ当該各号に掲げる者が使用することを承認する。
+<div class="item">一　機械室その他対象物件の管理の執行上必要な施設　……　管理業務を受託し、又は請負った者</div>
+<div class="item">二　電気・水道・ガス　……　当該事業者</div>
+２　前項に掲げるもののほか、区分所有者は、管理組合が総会の決議を経て、敷地及び共用部分等（専用使用部分を除く。）の一部について、第三者に使用させることを承認する。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（使用細則）<br>第１７条</div>
+<div class="article-body">対象物件の使用については、別に使用細則を定めるものとする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（専有部分の貸与）<br>第１８条</div>
+<div class="article-body">区分所有者は、その専有部分を第三者に貸与する場合は、この規約及び使用細則に定める事項をその第三者に遵守させなければならない。<br>
+２　前項の場合において、区分所有者は、その貸与に係る契約にこの規約及び使用細則に定める事項を遵守する旨の条項を定めるとともに、契約の相手方にこの規約及び使用細則に定める事項を遵守する旨の誓約書を管理組合に提出させなければならない。</div>
+</div>
+
+<div class="chapter-title">第５章　管理</div>
+<div class="section-title">第１節　総則</div>
+
+<div class="article">
+<div class="article-head">（区分所有者の責務）<br>第１９条</div>
+<div class="article-body">区分所有者は、対象物件について、その価値及び機能の維持増進を図るため、常に適正な管理を行うよう努めなければならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（敷地及び共用部分等の管理に関する責任と負担）<br>第２０条</div>
+<div class="article-body">敷地及び共用部分等の管理については、管理組合がその責任と負担においてこれを行うものとする。ただし、バルコニー等の管理のうち、通常の使用に伴うものについては、専用使用権を有する者がその責任と負担においてこれを行わなければならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（必要箇所への立入り）<br>第２１条</div>
+<div class="article-body">前条により管理を行う者は、管理を行うために必要な範囲内において、他の者が管理する専有部分又は専用使用部分への立入りを請求することができる。<br>
+２　前項により立入りを請求された者は、正当な理由がなければこれを拒否してはならない。<br>
+３　前項の場合において、正当な理由なく立入りを拒否した者は、その結果生じた損害を賠償しなければならない。<br>
+４　立入りをした者は、速やかに立入りをした箇所を原状に復さなければならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（損害保険）<br>第２２条</div>
+<div class="article-body">区分所有者は、管理組合が区分所有者を代理して、次の業務を行うことを承認する。
+<div class="item">一　対象物件に対する火災保険等の損害保険契約の締結</div>
+<div class="item">二　前号の損害保険契約に係る保険証券の保管ならびに保険金の請求及び受領</div>
+２　管理組合は前項第二号により受領した保険金を事故により損害を生じた共用部分等の修復に充当するものとする。<br>
+３　区分所有者は、自己の所有する専有部分について、火災保険契約を締結するものとする。</div>
+</div>
+
+<div class="section-title">第２節　費用の負担</div>
+
+<div class="article amended">
+<div class="article-head">（管理費等）<br>第２３条</div>
+<span class="amendment-note">（改正#9：管理費の計算方法を面積割から戸数均等割に変更）</span>
+<div class="article-body">区分所有者は、敷地及び共用部分等の管理に要する経費に充てるため、次の費用（以下「管理費等」という。）を管理組合に納入しなければならない。
+<div class="item">一　管理費</div>
+<div class="item">二　修繕積立金</div>
+<div class="item">三　積立一時金</div>
+２　管理費の額については、各区分所有者の負担を均等とし、別表第４に定める額とする。修繕積立金及び積立一時金の額については、各区分所有者の共有持分（専有面積の割合）に応じて算出するものとする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（承継人に対する債権の行使）<br>第２４条</div>
+<div class="article-body">管理組合が管理費等について有する債権は、区分所有者の包括承継人及び特定承継人に対しても行うことができる。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（管理費）<br>第２５条</div>
+<span class="amendment-note">（改正#17：小修繕の理事会決裁規定を追加）</span>
+<div class="article-body">管理費は、次の各号に掲げる通常の管理に要する経費に充当する。
+<div class="item">一　共用設備の保守維持費及び運転費</div>
+<div class="item">二　備品費、通信費その他の事務費</div>
+<div class="item">三　共用部分等に係る損害保険料</div>
+<div class="item">四　経常的な補修費</div>
+<div class="item">五　管理委託費</div>
+<div class="item">六　組合の経費</div>
+<div class="item">七　その他敷地及び共用部分等の通常の管理に要する費用</div>
+２　前項第四号の経常的な補修費のうち、１件の工事費が金４０万円以下かつ当該会計年度における累計が金６５万円以内の小修繕については、総会の決議を経ることなく理事会の決裁により執行することができる。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（修繕積立金・積立一時金）<br>第２６条</div>
+<span class="amendment-note">（改正#10：長期修繕計画書の作成費用等を充当対象に追加）</span>
+<div class="article-body">修繕積立金・積立一時金は、次の各号に掲げる特別の管理に要する経費に充当する場合に限って取り崩すことができる。
+<div class="item">一　一定年数の経過ごとに計画的に行う修繕</div>
+<div class="item">二　不測の事故その他特別の事由により必要となる修繕</div>
+<div class="item">三　敷地及び共用部分等の変更又は処分</div>
+<div class="item">四　長期修繕計画書の作成又は変更に要する費用及びその他マンション管理に関する調査・診断費用</div>
+<div class="item">五　その他敷地及び共用部分等の管理に関し、区分所有者全体の利益のために特別に必要となる管理</div>
+２　管理組合は、前項各号の経費に充てるため借入れをしたときは、修繕積立金・積立一時金をもってその償還に充てることができる。<br>
+３　修繕積立金・積立一時金については、管理費とは区分して経理しなければならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（使用料）<br>第２７条</div>
+<div class="article-body">専用使用料その他敷地及び共用部分等に係る使用料は、管理費に充当する。</div>
+</div>
+
+<div class="chapter-title">第６章　管理組合</div>
+<div class="section-title">第１節　組合員</div>
+
+<div class="article">
+<div class="article-head">（組合員の資格）<br>第２８条</div>
+<div class="article-body">組合員の資格は、区分所有者となったときに取得し、区分所有者でなくなったときに喪失する。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（届出義務）<br>第２９条</div>
+<span class="amendment-note">（改正#12：緊急連絡先の届け出義務を追加）</span>
+<div class="article-body">新たに組合員の資格を取得し又は喪失した者は、直ちにその旨を書面により管理組合に届け出なければならない。<br>
+２　組合員は、緊急時に管理組合が連絡できるよう、電話番号その他の緊急連絡先を管理組合に届け出なければならない。<br>
+３　前項の届出内容に変更が生じたときは、速やかに管理組合に届け出なければならない。</div>
+</div>
+
+<div class="article new-article">
+<div class="article-head">（連絡先情報の届出）<br>第２９条の２</div>
+<span class="amendment-note">（新設 改正#13：組合運営のデジタル化のため）</span>
+<div class="article-body">区分所有者および居住者は、総会資料等の円滑な配信のため、メールアドレス等の連絡先情報を管理組合に届け出るものとする。<br>
+２　理事長は、これらの情報を総会資料の配信、緊急時の連絡、その他管理組合の運営に必要な情報伝達に限定して利用するものとし、個人情報保護に関する法令を遵守しなければならない。</div>
+</div>
+
+<div class="section-title">第２節　管理組合の業務</div>
+
+<div class="article">
+<div class="article-head">（業務）<br>第３０条</div>
+<div class="article-body">管理組合は、次の各号に掲げる業務を行う。
+<div class="item">一　管理組合が管理する敷地及び共用部分等（以下本条及び第４５条において「組合管理部分」という。）の保安、保全、保守、清掃、消毒及び塵芥処理</div>
+<div class="item">二　組合管理部分の修繕</div>
+<div class="item">三　共用部分等に係る火災保険その他の損害保険に関する業務</div>
+<div class="item">四　区分所有者が管理する専用使用部分について管理組合が行うことが適当であると認められる管理行為</div>
+<div class="item">五　敷地及び共用部分等の変更、処分及び運営</div>
+<div class="item">六　修繕積立金の運用</div>
+<div class="item">七　官公署、町内会等との渉外業務</div>
+<div class="item">八　風紀、秩序及び安全の維持に関する業務</div>
+<div class="item">九　防災に関する業務</div>
+<div class="item">十　広報及び連絡業務</div>
+<div class="item">十一　その他組合員の共同の利益を増進し、良好な住環境を確保するために必要な業務</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（組合業務の再委託）<br>第３１条</div>
+<div class="article-body">管理組合は、前条に定める業務の全部又は一部を、第三者に委託し、又は請け負わせて執行することができる。</div>
+</div>
+
+<div class="section-title">第３節　役員</div>
+
+<div class="article amended">
+<div class="article-head">（役員）<br>第３２条</div>
+<span class="amendment-note">（改正#2：居住者以外のオーナー・外部専門家も役員就任可能に）</span>
+<div class="article-body">管理組合に次の役員を置く。
+<div class="item">一　理事長　１名</div>
+<div class="item">二　副理事長　１名</div>
+<div class="item">三　会計担当理事　１名</div>
+<div class="item">四　理事（理事長、副理事長、会計担当理事を含む。以下同じ。）若干名</div>
+<div class="item">五　監事　１名</div>
+２　理事及び監事は、組合員のうちから、総会で選任する。ただし、組合員以外の専門家（税理士、マンション管理士等）を、総会の決議により役員（会計理事、監事等）として選任することができる。<br>
+３　理事長、副理事長及び会計担当理事は、理事の互選により選任する。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（役員の任期）<br>第３３条</div>
+<span class="amendment-note">（改正#4：任期を１年から２年に変更）</span>
+<div class="article-body">役員の任期は２年とする。ただし、再任を妨げない。<br>
+２　役員は、２年ごとにその半数が改選されるよう選任するものとする。<br>
+３　ただし、理事及び監事が相互に合意し、総会の承認を得た場合は、１年で退任することができる。<br>
+４　補欠の役員の任期は、前任者の残任期間とする。<br>
+５　任期の満了又は辞任によって退任する役員は、後任の役員が就任するまでの間引き続きその職務を行う。<br>
+６　組合員である役員が組合員でなくなった場合においては、その役員はその地位を失う。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（役員の誠実義務等）<br>第３４条</div>
+<div class="article-body">役員は、法令、規約及び使用細則並びに総会及び理事会の決議に従い、組合員のため、誠実にその職務を遂行するものとする。<br>
+２　役員は、別に定めるところにより、役員としての活動に応ずる必要経費の支払と報酬を受けることができる。</div>
+</div>
+
+<div class="article new-article">
+<div class="article-head">（反社会的勢力の排除）<br>第３４条の２</div>
+<span class="amendment-note">（新設 改正#3：反社会的勢力の排除条項）</span>
+<div class="article-body">区分所有者及び役員は、暴力団員等の反社会的勢力であってはならない。これに違反した場合、理事長は理事会の決議を経て、行為の差し止めや契約の解除等の必要な措置を講じることができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（理事長）<br>第３５条</div>
+<div class="article-body">理事長は、管理組合を代表し、その業務を統括するほか、次の各号に掲げる業務を遂行する。
+<div class="item">一　規約、使用細則又は総会若しくは理事会の決議により、理事長の職務として定められた事項</div>
+<div class="item">二　理事会の承認を得て、職員を採用し、又は解雇すること。</div>
+２　理事長は、区分所有法に定める管理者とする。<br>
+３　理事長は、定期総会において、組合員に対し、前会計年度における管理組合の業務の執行に関する報告をしなければならない。<br>
+４　理事長は、理事会の承認を受けて、他の理事に、その職務の一部を委任することができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（副理事長）<br>第３６条</div>
+<div class="article-body">副理事長は、理事長を補佐し、理事長に事故があるときは、その職務を代理し、理事長が欠けたときはその職務を行う。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（理事）<br>第３７条</div>
+<div class="article-body">理事は、理事会を構成し、理事会の定めるところに従い、管理組合の業務を担当する。<br>
+２　会計担当理事は、管理費等の収納、保管、運用、支出等の会計業務を行う。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（監事）<br>第３８条</div>
+<span class="amendment-note">（改正#5：理事会出席義務・不正報告義務・招集請求権を新設。議案書では第4・5項と記載されたが1項に統合）</span>
+<div class="article-body">監事は、管理組合の業務の執行及び財産の状況を監査し、その結果を総会に報告しなければならない。<br>
+２　監事は、理事会に出席しなければならず、必要があると認めるときは、意見を述べなければならない。<br>
+３　監事は、理事が不正の行為をし、若しくは当該行為をするおそれがあると認めるときは、遅滞なく、その旨を理事会に報告しなければならない。<br>
+４　監事は、理事会の招集を請求することができ、請求後４週間以内に召集がない場合は、監事自身で理事会を招集することができる。</div>
+</div>
+
+<div class="section-title">第４節　総会</div>
+
+<div class="article amended">
+<div class="article-head">（総会）<br>第３９条</div>
+<span class="amendment-note">（改正#6：定期総会の開催時期を変更）</span>
+<div class="article-body">管理組合の総会は、総組合員で組織する。<br>
+２　総会は、定期総会及び臨時総会とし、区分所有法に定める集会とする。<br>
+３　理事長は、定期総会を、毎年１回新会計年度終了後４ヶ月以内に招集しなければならない。<br>
+４　理事長は、必要と認める場合においては、理事会の決議を経て、何時でも臨時総会を招集することができる。<br>
+５　総会の議長は、理事長が指名する。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（招集手続）<br>第４０条</div>
+<div class="article-body">総会を招集するには、少なくとも会議を開く日の２週間前までに、会議の日時、場所及び目的を示して組合員に通知しなければならない。<br>
+２　前項の通知は、管理組合に対し組合員が届出をした宛先に発するものとする。ただし、その届出のない組合員に対しては、対象物件内の住戸部分の所在地宛に発するものとする。<br>
+３　第１項の通知は、対象物件内に居住する組合員及び前項の届出がない組合員に対して、その内容を所定の掲示場所に掲示することをもって、これに代えることができる。<br>
+４　第１項の通知をする場合において、会議の目的が第４４条第３項第一号から第三号に掲げる事項の決議又は、同条第４項の建替え決議であるときには、その議案の要領をも通知しなければならない。<br>
+５　第４２条第２項の場合には、第１項の通知を発した後遅滞なく、その通知の内容を、所定の掲示場所に掲示しなければならない。<br>
+６　第１項にかかわらず、緊急を要する場合においては、理事長は、理事会の承認を得て、５日間を下回らない範囲において、第１項の期間を短縮することができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（組合員の総会招集権）<br>第４１条</div>
+<div class="article-body">組合員が組合員総数の５分の１以上及び第４３条第１項に定める議決権総数の５分の１以上にあたる組合員の同意を得て、会議の目的を示して総会の招集を請求した場合において、理事長は、２週間以内にその請求のあった日から４週間以内の日を会日とする臨時総会の招集の通知を発しなければならない。<br>
+２　理事長が前項の通知を発しない場合には、前項の請求をした組合員は、臨時総会を招集することができる。<br>
+３　前２項により招集された臨時総会においては、第３９条第５項にかかわらず、議長は、総会に出席した組合員（書面又は代理人によって議決権を行使する者を含む。）の議決権の過半数をもって、組合員のなかから選任する。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（出席資格）<br>第４２条</div>
+<div class="article-body">組合員のほか、理事会が必要と認めた者は、総会に出席することができる。<br>
+２　区分所有者の承諾を得て専有部分を占有する者は、会議の目的につき、対象物件の使用方法に関し、利害関係を有する場合には、あらかじめ、理事長に通知し、総会に出席して意見を述べることができる。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（議決権）<br>第４３条</div>
+<span class="amendment-note">（改正#7・#8：WEB会議参加者を出席とみなす規定を追加。議案書では改正#8を第44条第10項新設と記載したが、議決権条文である本条第7項に統合）</span>
+<div class="article-body">組合員は、その所有する住戸１戸につき各１個の議決権を有する。<br>
+２　住戸１戸につき２以上の組合員が存在する場合のこれらの者の議決権の行使については、あわせて一の組合員とみなす。<br>
+３　前項により一の組合員とみなされる者は、議決権を行使する者１名を選任し、その者の氏名をあらかじめ総会開会までに理事長に届け出なければならない。<br>
+４　組合員は、書面、代理人又は電磁的方法によって議決権を行使することができる。<br>
+５　組合員が代理人により議決権を行使しようとする場合において、その代理人は、組合員と同居する者、他の組合員若しくはその組合員と同居する者又はその組合員の住戸を借り受けた者でなければならない。<br>
+６　代理人は、代理権を証する書面を理事長に提出しなければならない。<br>
+７　理事長は、通信機器を用いた方法（ZOOM その他のビデオ会議システムの使用を含む。以下「WEB会議」という。）により総会に参加した組合員を、出席組合員とみなすことができる。</div>
+</div>
+
+<div class="article new-article">
+<div class="article-head">（所在不明組合員の議決権除外）<br>第４３条の２</div>
+<span class="amendment-note">（新設 改正#7：所在不明者の議決権分母除外規定）</span>
+<div class="article-body">招集通知の不達が連続して２回以上（または期間として１年以上）認められ、かつ理事会が相当の調査を尽くしても所在が判明しない場合には、その者を所在不明者として、議決権の分母から除外することができる。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（総会の会議及び議事）<br>第４４条</div>
+<span class="amendment-note">（改正#7：特別決議要件を改正区分所有法に対応して変更。第3項第二号にバリアフリー化・耐震改修は普通決議で可能とするただし書を追加）</span>
+<div class="article-body">総会の会議は、前条第１項に定める議決権総数の半数以上を有する組合員が出席しなければならない。<br>
+２　総会の議事は、出席組合員の議決権の過半数で決し、可否同数の場合においては、議長の決するところによる。<br>
+３　次の各号に掲げる事項に関する総会の議事は、前項にかかわらず、出席組合員の議決権の４分の３以上で決する。
+<div class="item">一　規約の変更</div>
+<div class="item">二　敷地及び共用部分等の変更（改良を目的とし、かつ、著しく多額の費用を要しないものを除く。）又は処分。ただし、バリアフリー化・耐震改修等の社会的要請に基づくものについては、第２項の規定（普通決議）による。</div>
+<div class="item">三　建物の価格の２分の１を超える部分が滅失した場合の滅失した共用部分の復旧</div>
+<div class="item">四　義務違反者に対する専有部分の使用禁止、区分所有権の競売及び占有に係る専有部分の引渡しに関する訴訟の提起</div>
+<div class="item">五　その他総会において本項の方法により決議することとした事項</div>
+４　区分所有法第６２条第１項の建替え決議は、第２項にかかわらず、組合員総数の５分の４以上及び議決権総数の５分の４以上で行う。<br>
+５　前項の場合において、書面又は代理人によって議決権を行使する者は、出席組合員とみなす。<br>
+６　第３項第一号において、規約の変更が一部の組合員の権利に特別の影響を及ぼすべきときは、その承諾を得なければならない。この場合において、その組合員は正当な理由がなければこれを拒否してはならない。<br>
+７　第３項第二号において、敷地及び共用部分等の変更又は処分が、専有部分又は専用使用部分の使用に特別の影響を及ぼすときは、その専有部分を所有する組合員又はその専用使用部分の専用使用を認められている組合員の承諾を得なければならない。この場合において、その組合員は正当な理由がなければこれを拒否してはならない。<br>
+８　第３項第四号の決議を行うには、あらかじめ当該組合員又は占有者に対し、弁明する機会を与えなければならない。<br>
+９　総会においては、第４０条第１項によりあらかじめ通知した事項についてのみ、決議することができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（議決事項）<br>第４５条</div>
+<div class="article-body">次の各号に掲げる事項については、総会の決議を経なければならない。
+<div class="item">一　収支決算及び事業報告</div>
+<div class="item">二　収支予算及び事業計画</div>
+<div class="item">三　管理費等及び専用使用料の額並びに賦課徴収方法</div>
+<div class="item">四　規約の変更及び使用細則の制定又は変更</div>
+<div class="item">五　第２６条第１項に定める特別の管理の実施並びにそれに充てるための資金の借入れ及び修繕積立金の取崩し</div>
+<div class="item">六　第４４条第３項第四号の訴えの提起</div>
+<div class="item">七　建物の一部が滅失した場合の滅失した共用部分の復旧</div>
+<div class="item">八　区分所有法第６２条第１項の場合の建替え</div>
+<div class="item">九　役員の選任及び解任並びに役員の活動費の額及び支払方法</div>
+<div class="item">十　組合管理部分に関する管理業務委託契約の締結</div>
+<div class="item">十一　その他管理組合の業務に関する重要事項</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（総会の決議に代る書面による合意）<br>第４６条</div>
+<div class="article-body">規約により総会において決議すべきものとされた事項について組合員全員の書面による合意があるときは、総会の決議があったものとみなす。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（議事録の作成、保管）<br>第４７条</div>
+<div class="article-body">総会の議事については、議長は、議事録を作成しなければならない。<br>
+２　議事録には、議事の経過の要領及びその結果を記載し、議長及び議長の指名する２名の総会に出席した理事がこれに署名押印しなければならない。<br>
+３　理事長は、議事録及び前条の書面を保管し、組合員又は利害関係人の書面による請求があったときは、これらを閲覧させなければならない。この場合において、閲覧につき、相当の日時、場所等を指定することができる。<br>
+４　理事長は、所定の掲示場所に議事録及び前条の書面の保管場所を掲示しなければならない。</div>
+</div>
+
+<div class="section-title">第５節　理事会</div>
+
+<div class="article">
+<div class="article-head">（理事会）<br>第４８条</div>
+<div class="article-body">理事会は、理事をもって構成する。<br>
+２　理事会の議長は、理事長が務める。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（招集）<br>第４９条</div>
+<span class="amendment-note">（改正#8：WEB会議による理事会開催を明記）</span>
+<div class="article-body">理事会は、理事長が招集する。<br>
+２　理事が４分の１以上の理事の同意を得て理事会の招集を請求した場合においては、理事長は速やかに理事会を招集しなければならない。<br>
+３　理事会の招集手続については、第４０条の規定を準用する。ただし、理事会において別段の定めをすることができる。<br>
+４　理事長は、WEB会議（ZOOM その他の通信機器を用いた方法）により理事会を開催し、又は当該方法による参加を認めることができる。この場合において、WEB会議により参加した理事は、出席理事とみなす。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（理事会の会議及び議事）<br>第５０条</div>
+<span class="amendment-note">（改正#16：LINE・メール等による事前意思表示を出席とみなす規定を追加）</span>
+<div class="article-body">理事会の会議は、理事の半数以上が出席しなければ開くことができず、その議は出席理事の過半数で決する。<br>
+２　理事長は、理事会の議決事項について、３日以上前に全理事にメール、LINE等の文字として記録される連絡手段により通知し、当該理事が前日までに書面（メール、LINEなどの記録可能な方法）により賛否を表示した場合は、当該理事会に出席したものとみなす。<br>
+３　前項の通知期限までに書面による意思表示がない理事は、当該議案に賛成したものとみなし、定足数の計算に含める。<br>
+４　第１項の定足数は、第２項及び前項による書面での出席とみなされた理事を含めて計算する。<br>
+５　議事録については、第４７条（第４項を除く。）の規定を準用する。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（議決事項）<br>第５１条</div>
+<span class="amendment-note">（改正#17：小修繕の理事会決裁を議決事項に追加）</span>
+<div class="article-body">理事会は、この規約に別に定めるもののほか、次の各号に掲げる事項を決議する。
+<div class="item">一　収支決算案、事業報告案、収支予算案及び事業計画案</div>
+<div class="item">二　規約の変更及び使用細則の制定又は変更に関する案</div>
+<div class="item">三　その他の総会提出議案</div>
+<div class="item">四　第６１条に定める勧告又は指示等</div>
+<div class="item">五　総会から付託された事項</div>
+<div class="item">六　第２５条第２項に定める小修繕（１件４０万円以下かつ当該会計年度の累計６５万円以内）の実施決裁</div>
+</div>
+</div>
+
+<div class="chapter-title">第７章　会計</div>
+
+<div class="article">
+<div class="article-head">（会計年度）<br>第５２条</div>
+<div class="article-body">管理組合の会計年度は、毎年１２月１日から翌年１１月末日までとする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（管理組合の収入及び支出）<br>第５３条</div>
+<div class="article-body">管理組合の会計における収入は、第２３条に定める管理費等及び第２７条に定める使用料等によるものとし、その支出は第２５条及び第２６条に定めるところにより諸費用に充当する。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（収支予算の作成及び変更）<br>第５４条</div>
+<div class="article-body">理事長は、毎会計年度の収支予算案を定期総会に提出し、その承認を得なければならない。<br>
+２　収支予算を変更しようとするときは、理事長は、その案を臨時総会に提出し、その承認を得なければならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（会計報告）<br>第５５条</div>
+<div class="article-body">理事長は、毎会計年度の収支決算案を監事の会計監査を経て、定期総会に報告し、その承認を得なければならない。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（管理費等の徴収）<br>第５６条</div>
+<span class="amendment-note">（改正#14：遅延損害金の利率を年利15%から5%に引き下げ）</span>
+<div class="article-body">管理組合は、第２３条に定める管理費等及び第２７条に定める使用料について、組合員が各自開設する預金口座から自動振替の方法により指定の口座に受け入れることとし、前月の２７日（当日が金融機関の休業日の場合は翌営業日）に翌月分を一括して徴収する。ただし、臨時に要する費用として特別に徴収する場合においては別に定めるところによる。<br>
+２　組合員が前項の期日までに納付すべき金額を納付しない場合において、管理組合は、その未払金額について年利５％の遅延損害金を加算して、その組合員に対して請求する。<br>
+３　前項の遅延損害金は、第２５条に定める費用に充当する。<br>
+４　組合員は、納付した管理費等及び専用使用料について、その返還請求又は分割請求をすることができない。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（管理費等の過不足）<br>第５７条</div>
+<span class="amendment-note">（改正#15：余剰金の修繕積立金への繰り入れ規定を追加）</span>
+<div class="article-body">収支決算の結果、管理費に余剰を生じた場合、その余剰は翌年度における管理費に充当する。ただし、翌年度の収支予算の半年分相当額を超える余剰が生じたときは、その超過分を修繕積立金に繰り入れるものとする。なお、総会において別途処分案が決議されたときは、その決議に従う。<br>
+２　管理費等に不足を生じた場合にあっては、管理組合は組合員に対して第２３条第２項に定める管理費等の負担割合に応じて、そのつど必要な金額の負担を求めることができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（預金口座の開設）<br>第５８条</div>
+<div class="article-body">管理組合は、会計業務を遂行するため、管理組合の預金口座を開設するものとする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（借入れ）<br>第５９条</div>
+<div class="article-body">管理組合は、第２６条第１項に定める業務を行うため必要な範囲内において、借入れをすることができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（帳票類の作成、保管）<br>第６０条</div>
+<div class="article-body">理事長は、会計帳簿、什器備品台帳、組合員名簿及びその他の帳票類を作成して保管し、組合員又は利害関係人の理由を付した書面による請求があったときは、これらを閲覧させなければならない。この場合において、閲覧につき、相当の日時、場所等を指定することができる。</div>
+</div>
+
+<div class="chapter-title">第８章　雑則</div>
+
+<div class="article amended">
+<div class="article-head">（理事長の勧告及び指示等）<br>第６１条</div>
+<span class="amendment-note">（改正#12：緊急連絡先不届けを義務違反として明記）</span>
+<div class="article-body">区分所有者若しくはその同居人又は専有部分の貸与を受けた者若しくはその同居人（以下「区分所有者等」という。）が、法令、規約又は使用細則に違反したとき、又は対象物件内における共同生活秩序を乱す行為を行ったときは、理事長は、理事会の決議を経てその区分所有者等に対し、その是正等のため必要な勧告又は指示若しくは警告を行うことができる。<br>
+２　区分所有者は、その同居人又はその所有する専有部分の貸与を受けた者若しくはその同居人が前項の行為を行った場合には、その是正等のため必要な措置を講じなければならない。<br>
+３　区分所有者が、この規約若しくは使用細則に違反したとき又は区分所有者若しくは区分所有者以外の第三者が敷地及び共用部分等において不法行為を行ったときには、理事長は、理事会の決議を経て、その差止め又は排除のための必要な措置をとることができる。<br>
+４　第２９条第２項に定める緊急連絡先を正当な理由なく届け出ない区分所有者に対しても、理事長は、前項に準じて是正を求めることができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（訴訟等）<br>第６２条</div>
+<div class="article-body">区分所有者又は占有者が建物の保存に有害な行為その他建物の管理又は使用に関し区分所有者の共同の利益に反する行為をした場合又はその行為をするおそれがある場合には、理事長は、前条によるほか区分所有法第５７条から第６０条までの規定に基づき必要な措置をとることができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（合意管轄裁判所）<br>第６３条</div>
+<div class="article-body">この規約に関する管理組合と組合員間の訴訟については、対象物件所在地を管轄する神戸地方裁判所をもって、第一審管轄裁判所とする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（市及び近隣住民との協定の遵守）<br>第６４条</div>
+<div class="article-body">区分所有者は、管理組合が伊丹市又は近隣住民と締結した協定について、これを誠実に遵守しなければならない。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（規約外事項）<br>第６５条</div>
+<div class="article-body">規約及び使用細則に定めのない事項については、区分所有法その他の法令の定めるところによる。<br>
+２　規約、使用細則又は法令のいずれにも定めのない事項については総会の決議により定める。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（規約原本）<br>第６６条</div>
+<div class="article-body">本規約１通と本規約承認の総会議事録１通とを編綴したものを規約原本とする。<br>
+２　規約原本は理事長が保管し、区分所有者又は利害関係人の書面による請求があったときは、規約原本の閲覧をさせなければならない。<br>
+３　規約が規約原本の内容から総会決議により変更されているときは、理事長は、１通の書面に、現に有効な規約の内容と、その内容が規約原本及び規約変更を決議した総会の議事録の内容と相違ないことを記載し、署名押印した上で、この書面を保管する。<br>
+４　区分所有者又は利害関係人の書面による請求があったときは、理事長は、規約原本、規約変更を決議した総会の議事録及び現に有効な規約の内容を記載した書面（以下「規約原本等」という。）の閲覧をさせなければならない。<br>
+５　第２項及び前項の場合において、理事長は、閲覧につき、相当の日時、場所等を指定することができる。<br>
+６　理事長は、所定の掲示場所に、規約原本等の保管場所を掲示しなければならない。</div>
+</div>
+
+<!-- 附則 -->
+<div class="appendix">
+<div style="font-size:13pt; font-weight:bold; margin-bottom:12px;">附　則</div>
+
+<div class="article">
+<div class="article-head">（規約の発効）<br>第１条</div>
+<div class="article-body">この規約は、本マンション建物竣工後、最初に引渡しがあった日から効力が発する。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（管理組合の成立）<br>第２条</div>
+<div class="article-body">管理組合は、前条に定める規約発効の日に設立したものとする。</div>
+</div>
+
+<div class="article amended">
+<div class="article-head">（管理費等）<br>第３条</div>
+<span class="amendment-note">（改正#9：管理費を戸数均等割に変更、別表第４を改定）</span>
+<div class="article-body">各区分所有者の負担する管理費は、第２３条第２項に規定する方法により算出された別表第４の額とする。修繕積立金及び積立一時金は、第２３条第２項に規定する共有持分割合による別表第４の額とする。<br>
+２　第１５条第２項に定める専用使用料は、別表第５の額とする。<br>
+３　本マンションの建物竣工後、販売未了又は販売済であるが引渡し未了の専有部分がある場合、引渡済の区分所有者の負担する管理費及び共用部分からの収益では、通常必要とされる程度の管理を行うのに費用が不足する場合には、売主がその不足分を補充するものとする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（経過措置）<br>第４条</div>
+<div class="article-body">本規約に基づく管理組合の役員が選任されるまでの間は、各区分所有者は、管理に関する業務を管理業者に委託し、管理業者が区分所有法に定める管理者となり、その業務を執行することができる。<br>
+２　管理組合の役員である理事及び監事は、初代に限り、売主又は管理会社がこのマンションの区分所有者の中から、指名選出することができる。<br>
+３　この規約の効力が発生する日以前に、売主が伊丹市及び近隣住民と締結した協定は、この規約の効力が発生する日において管理組合と締結したものとみなす。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（役員選任までの損害保険契約）<br>第５条</div>
+<div class="article-body">区分所有者は第２２条第１項の規定にかかわらず、管理会社が区分所有者を代表して、本規約に基づく管理組合の役員が選任されるまでの間、初年度における同条第１項及び第２項の業務を行うことを承認する。</div>
+</div>
+</div><!-- /appendix -->
+
+<!-- 別表 -->
+<hr class="separator">
+<div class="bettable">
+<h3>別表第１　対象物件の表示</h3>
+<table class="reg-table">
+<tr><th>区分</th><th>内容</th></tr>
+<tr><td>物件名</td><td style="text-align:left;">エスト北塚口</td></tr>
+<tr><td>所在地</td><td style="text-align:left;">兵庫県伊丹市野間一丁目７番２０号</td></tr>
+<tr><td>敷地面積</td><td style="text-align:left;">６０３㎡（登記簿面積）土地区画整理事業施行済</td></tr>
+<tr><td>権利関係</td><td style="text-align:left;">専有面積割合による所有者の共有</td></tr>
+<tr><td>建物構造</td><td style="text-align:left;">鉄筋コンクリート造　地上５階建　共同住宅</td></tr>
+<tr><td>床延面積</td><td style="text-align:left;">１，１６８．２４㎡</td></tr>
+<tr><td>建築面積</td><td style="text-align:left;">３５８．１５㎡</td></tr>
+<tr><td>付属施設</td><td style="text-align:left;">自転車置場、塵芥集積所、プレイロット、防火水槽、受水槽、フェンス及び植込等建物に付属する施設</td></tr>
+</table>
+</div>
+
+<div class="bettable">
+<h3>別表第２　共用部分の範囲</h3>
+<p style="margin-bottom:6px;">１　エントランスホール、開放廊下、外部階段、バルコニー等専有部分に属さない「建物の部分」</p>
+<p>２　電気設備、給排水衛生設備、ガス設備、避雷針設備、集合郵便受箱、配線配管、テレビ共同視聴アンテナ等専有部分に属さない「建物の付属物」</p>
+</div>
+
+<div class="bettable">
+<h3>別表第３　バルコニー等の専用使用権</h3>
+<table class="reg-table">
+<tr><th>専用使用部分</th><th>バルコニー（専用庭）</th><th>玄関扉・窓枠・窓ガラス</th></tr>
+<tr><td>位置</td><td>各住戸に接するバルコニー（専用庭）</td><td>各住戸に付属する玄関扉、窓枠、窓ガラス</td></tr>
+<tr><td>専用使用権者</td><td>各住戸の区分所有者</td><td>各住戸の区分所有者</td></tr>
+</table>
+</div>
+
+<div class="bettable amended">
+<h3>別表第４　附則第３条による管理費・修繕積立金・積立一時金の額</h3>
+<span class="amendment-note">（改正#9：管理費を戸数均等割 8,500円/戸に変更）</span>
+<table class="reg-table" style="margin-top:6px;">
+<tr>
+  <th>タイプ</th>
+  <th>戸数</th>
+  <th>専有面積（㎡）</th>
+  <th>管理費（円）</th>
+  <th>修繕積立金（円）</th>
+  <th>積立一時金（円）</th>
+</tr>
+<tr>
+  <td>A・B・B'・B''・B'''・C</td>
+  <td>14</td>
+  <td>55.08</td>
+  <td>8,500</td>
+  <td>7,711</td>
+  <td>77,000</td>
+</tr>
+<tr>
+  <td>D・D1</td>
+  <td>2</td>
+  <td>53.46</td>
+  <td>8,500</td>
+  <td>7,484</td>
+  <td>74,000</td>
+</tr>
+<tr>
+  <td>E</td>
+  <td>1</td>
+  <td>70.47</td>
+  <td>8,500</td>
+  <td>9,866</td>
+  <td>98,000</td>
+</tr>
+<tr>
+  <td>F・F'</td>
+  <td>2</td>
+  <td>90.65</td>
+  <td>8,500</td>
+  <td>12,691</td>
+  <td>126,000</td>
+</tr>
+<tr style="font-weight:bold; background:#eee;">
+  <td>合計</td>
+  <td>19</td>
+  <td>—</td>
+  <td>161,500</td>
+  <td>—</td>
+  <td>—</td>
+</tr>
+</table>
+<p style="font-size:8.5pt; color:#555; margin-top:4px;">
+※修繕積立金は140円/㎡で計算。積立一時金は旧額を踏襲（要確認）。<br>
+※修繕積立金の増額（170円/㎡）が検討中のため、改定時は本表を更新すること。
+</p>
+</div>
+
+<div class="bettable">
+<h3>別表第５　附則第３条第２項による使用料（月額）</h3>
+<table class="reg-table">
+<tr><th>専用使用部分</th><th>専用使用料</th><th>備考</th></tr>
+<tr><td>トランクルーム</td><td>500円</td><td>１個当り</td></tr>
+</table>
+</div>
+
+<!-- ======== 使用細則 ======== -->
+<hr class="separator">
+<div class="chapter-title">使　用　細　則</div>
+
+<p style="margin-bottom:14px;">エスト北塚口区分所有者は、居住者の共同の利益を守り、快適な共同生活を維持するため、エスト北塚口管理規約第１７条（以下「規約」という。）に基づき、次の通りエスト北塚口使用細則（以下「本使用細則」という。）を定める。</p>
+
+<div class="article">
+<div class="article-head">（管理者の事前承諾を要する事項）<br>第１条</div>
+<div class="article-body">居住者は、次の行為をするときは、事前に管理者に届出て、その承諾を得なければならない。
+<div class="item">（１）他の居住者に迷惑を及ぼすおそれのある専有部分の営繕工事</div>
+<div class="item">（２）電気、ガス、給排水設備の新設、増設及び変更</div>
+<div class="item">（３）ピアノ等の重量物搬出入、据付、移転</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（塵芥処理）<br>第２条</div>
+<div class="article-body">居住者は、塵芥の処理について次の事項を遵守しなければならない。
+<div class="item">（１）各専有部分よりの燃やせるゴミ（紙屑・台所の生ゴミ等）は、各居住者自身で所定の紙袋に入れ、指定日に、指定の場所へ持参すること。</div>
+<div class="item">（２）各専有部分よりの燃やせないゴミ（プラスチック・ガラス・陶器類等）は、ビニール袋に入れ、指定日に、指定の場所へ持参すること。</div>
+<div class="item">（３）各専有部分よりの資源ゴミ（新聞・ダンボール・金属類・ガラスビン類等）は、まとめて指定日に、指定の場所へ持参すること。</div>
+<div class="item">（４）各専有部分よりの大型ゴミ、有害ゴミ（家具類・家電品・蛍光管等）はできるだけ小さく整理して、指定日に、指定の場所へ持参すること。</div>
+<div class="item">（５）ゴミ置場は、常に清潔に保ち悪臭の発生しないように注意し、近隣居住者に迷惑をかけないようにすること。</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（専有部分及び専用使用部分の使用）<br>第３条</div>
+<div class="article-body">居住者は、エスト北塚口の専有部分及び専用使用部分等の使用にあたり、次の行為をしてはならない。
+<div class="item">（１）規約に定められた用途以外の用に供すること。</div>
+<div class="item">（２）共用部分に影響を与える変更をすること。</div>
+<div class="item">（３）建物外部よりの外観を変更すること。</div>
+<div class="item">（４）他の居住者に迷惑又は危害を及ぼすおそれのある動物を飼育すること。</div>
+<div class="item">（５）専有部分を楽器の教室として使用すること。</div>
+<div class="item">（６）楽器等を夜間長時間演奏すること。</div>
+<div class="item">（７）テレビ、ラジオ、ステレオ、各種楽器等の音量を著しくあげること。</div>
+<div class="item">（８）騒音・振動又は電波等により他の居住者及び近隣居住者に迷惑をかけること。</div>
+<div class="item">（９）構造体を損傷するおそれのある重量物、危険物、多量の引火又は発火のおそれのある物品もしくは不潔・悪臭のある物品を持込むこと。</div>
+<div class="item">（１０）住戸の専用使用部分の戸口、窓もしくはバルコニー又は共用部分に広告に類する看板、掲示板、標識等の取付、貼付、記入をすること。</div>
+<div class="item">（１１）バルコニー等の材質、外観を変更すること。</div>
+<div class="item">（１２）バルコニーにサンルーム、物置、池等これに類する構造物を構築又は設置すること。</div>
+<div class="item">（１３）バルコニー又は窓から物を投げ棄てること。</div>
+<div class="item">（１４）バルコニーに突風、強風の際、落下、飛散等他に害を及ぼすおそれのあるものを放置すること。</div>
+<div class="item">（１５）その他、公序良俗に反する行為及び他の居住者に迷惑、危害を及ぼす行為をすること。</div>
+<div class="item">（１６）玄関のタイル部分は防水処理をしていないので、しっかりしぼった雑巾等でふき、絶対に水洗い等をしないこと。</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（共用部分の使用）<br>第４条</div>
+<div class="article-body">居住者は、エスト北塚口の共用部分の使用にあたり、次の行為をしてはならない。
+<div class="item">（１）受水槽置場、変電設備置場、機械室その他立入禁止場所等危険な場所に立入ること。</div>
+<div class="item">（２）屋上に立入り、使用すること。</div>
+<div class="item">（３）屋上に望遠鏡、無線アンテナ、投光器等を設置すること。</div>
+<div class="item">（４）共用部分に物品を設置すること。</div>
+<div class="item">（５）階段等火災発生など緊急時の避難通路となる場所へ私物を置くこと。</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（共用部分の清掃）<br>第５条</div>
+<div class="article-body">居住者は、通常生活の場として使用する共用部分等を清潔に保つように留意すること。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（災害防止）<br>第６条</div>
+<div class="article-body">居住者は、防犯・防災設備及びその操作方法を熟知するとともに、万一、火災、盗難等の発生した場合には、直ちに所轄官庁に通報すること。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（管理者への届出事項）<br>第７条</div>
+<div class="article-body">居住者は、次の行為をする場合は事前に所定の書面にて管理者に届出をしなければならない。
+<div class="item">（１）家族以外の第三者に専有部分を使用させるとき。</div>
+<div class="item">（２）長期不在</div>
+<div class="item">（３）引越、移転、売却</div>
+</div>
+</div>
+
+<!-- ======== トランクルーム使用契約書 ======== -->
+<hr class="separator">
+<div class="chapter-title">トランクルーム使用契約書（書式）</div>
+
+<p style="margin-bottom:12px;">エスト北塚口（以下当マンションという。）トランクルーム使用者（以下甲という。）とエスト北塚口管理組合（以下乙という。）は、エスト北塚口管理規約（以下規約という。）に基づき、当マンションのトランクルームの使用について次の通り契約する。</p>
+
+<div class="article">
+<div class="article-head">（目的）<br>第１条</div>
+<div class="article-body">乙は倉庫を甲のトランクルームとして甲に専用使用させるものとする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（使用料）<br>第２条</div>
+<div class="article-body">トランクルームの専用使用料は、月額５００円とする。<br>
+２　甲は本契約と同時に使用料当月分を、以後毎月末日迄に翌月分をそれぞれ乙に、所定の方法にて支払うものとする。ただし、１ヶ月未満の使用料は日割計算による。<br>
+３　トランクルーム施設の改善、物価水準の変動又は管理費等の改定等の理由により第１項の使用料が不相当となったときは、乙は規約に定める総会の決議を経た後これを相当な額まで改定することができる。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（使用期間）<br>第３条</div>
+<div class="article-body">このトランクルームの使用期間は、　　年　月　日から　　年　月　日迄とし、期間満了の１ヶ月前迄に甲又は乙のいずれかの書面による申し出のない限り、本契約は同一条件にて更に１ヶ年延長されるものとし、以後も同様とする。</div>
+</div>
+
+<div class="article">
+<div class="article-head">（禁止事項）<br>第４条</div>
+<div class="article-body">甲は次の行為をしてはならない。
+<div class="item">（１）トランクルームの専用使用権を他の区分所有者又は第三者に譲渡又は貸与すること。</div>
+<div class="item">（２）トランクルームをトランクルーム以外の用途に供すること。</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（契約の解除）<br>第５条</div>
+<div class="article-body">甲が次の各号の一に該当したときは、乙は何等の催告なしに直ちに本契約を解除できるものとし、かつ甲はトランクルームを明渡さなければならない。
+<div class="item">（１）使用料の支払を１ヶ月以上怠ったとき。</div>
+<div class="item">（２）規約、及び本契約条項に一つでも違反した場合。</div>
+</div>
+</div>
+
+<div class="article">
+<div class="article-head">（定めなき事項）<br>第６条</div>
+<div class="article-body">規約・本契約に定めのない事項については甲・乙誠意をもって協議し決定する。</div>
+</div>
+
+<p style="margin-top:16px;">上記契約の成立を証するため本書２通を作成し、甲・乙記名捺印の上、各１通を保有する。</p>
+
+<div style="margin-top:24px; font-size:10pt;">
+<p>　　年　月　日</p>
+<br>
+<p>エスト北塚口区分所有者</p>
+<p>甲　　室番号　　　号室</p>
+<p>氏名　　　　　　　　　　　　　　　　　　　　　　　　印</p>
+<br>
+<p>エスト北塚口管理組合</p>
+<p>乙　理事長　　　　　　　　　　　　　　　　　　　　印</p>
+</div>
+
+<!-- フッター -->
+<div style="margin-top:40px; border-top:1px solid #ccc; padding-top:10px; font-size:8.5pt; color:#666; text-align:right;">
+  エスト北塚口管理組合　管理規約（2026年4月5日改正版）<br>
+  原始規約：2022年10月27日制定（第66条）　／　本改正：第41期臨時総会（2026年4月5日）可決 17項目
+</div>
+
+</div><!-- /page -->
+<script>
+(function() {
+  function toH(s) {
+    return s.replace(/[０-９]/g, function(c) {
+      return String.fromCharCode(c.charCodeAt(0) - 0xFF10 + 48);
+    });
+  }
+
+  // ── 1. 改正番号バッジ ──
+  document.querySelectorAll('.amendment-note').forEach(function(note) {
+    var m = note.textContent.match(/改正#([\d・#]+)/);
+    if (!m) return;
+    var badge = document.createElement('span');
+    badge.className = 'amend-num';
+    badge.textContent = m[1].replace(/#/g, '');
+    note.parentElement.prepend(badge);
+  });
+
+  // ── 2. アンカーID付与 ──
+  // 章タイトル
+  document.querySelectorAll('.chapter-title').forEach(function(el) {
+    var t = toH(el.textContent.replace(/\s+/g, ''));
+    if (t === '管理規約') el.id = 'kanri-top';
+    else if (t === '使用細則') el.id = 'saisoku-top';
+    else { var m = t.match(/第(\d)章/); if (m) el.id = 'ch' + m[1]; }
+  });
+
+  // 附則・別表
+  var appEl = document.querySelector('.appendix');
+  if (appEl) appEl.id = 'appendix';
+  document.querySelectorAll('.bettable').forEach(function(bt) {
+    var h3 = bt.querySelector('h3');
+    if (!h3) return;
+    var m = toH(h3.textContent).match(/別表第(\d)/);
+    if (m) bt.id = 'bettable' + m[1];
+  });
+
+  // 各条文
+  document.querySelectorAll('.article').forEach(function(art) {
+    var head = art.querySelector('.article-head');
+    if (!head) return;
+    var t = toH(head.textContent);
+    var pfx = art.closest('.appendix') ? 'app-art' : 'art';
+    var m = t.match(/第(\d+)条の(\d)/);
+    if (m) { art.id = pfx + m[1] + '-' + m[2]; return; }
+    m = t.match(/第(\d+)条/);
+    if (m) art.id = pfx + m[1];
+  });
+
+  // 改正#1ボックス（静的バッジ"1"の親要素）
+  document.querySelectorAll('.amend-num').forEach(function(b) {
+    if (b.textContent.trim() === '1') b.parentElement.id = 'amend1';
+  });
+
+  // ── 3. 目次生成 ──
+  var toc = document.createElement('div');
+  toc.id = 'toc';
+  toc.innerHTML = (function() {
+    var h = '<div class="toc-head">目　次</div>';
+
+    // クイックリンク（改正・新設条文）
+    h += '<div class="toc-block"><div class="toc-block-title">● 改正・新設条文クイックリンク</div><div class="toc-ql">';
+    [
+      ['#amend1',    '①\u00a0物件名称改称',           'tl-a'],
+      ['#art32',     '②\u00a0第32条\u00a0役員',       'tl-a'],
+      ['#art34-2',   '③\u00a0第34条の2\u00a0反社排除','tl-n'],
+      ['#art33',     '④\u00a0第33条\u00a0役員任期',   'tl-a'],
+      ['#art38',     '⑤\u00a0第38条\u00a0監事',       'tl-a'],
+      ['#art39',     '⑥\u00a0第39条\u00a0総会',       'tl-a'],
+      ['#art43',     '⑦⑧\u00a0第43条\u00a0議決権',   'tl-a'],
+      ['#art43-2',   '⑦\u00a0第43条の2\u00a0所在不明者','tl-n'],
+      ['#art44',     '⑦\u00a0第44条\u00a0総会議事',   'tl-a'],
+      ['#art49',     '⑧\u00a0第49条\u00a0理事会招集', 'tl-a'],
+      ['#art23',     '⑨\u00a0第23条\u00a0管理費等',   'tl-a'],
+      ['#app-art3',  '⑨\u00a0附則第3条',              'tl-a'],
+      ['#bettable4', '⑨\u00a0別表第4',                'tl-a'],
+      ['#art26',     '⑩\u00a0第26条\u00a0修繕積立金', 'tl-a'],
+      ['#art15',     '⑪\u00a0第15条\u00a0トランクルーム','tl-a'],
+      ['#art29',     '⑫\u00a0第29条\u00a0届出義務',   'tl-a'],
+      ['#art61',     '⑫\u00a0第61条\u00a0理事長指示', 'tl-a'],
+      ['#art29-2',   '⑬\u00a0第29条の2\u00a0連絡先',  'tl-n'],
+      ['#art56',     '⑭\u00a0第56条\u00a0管理費徴収', 'tl-a'],
+      ['#art57',     '⑮\u00a0第57条\u00a0管理費過不足','tl-a'],
+      ['#art50',     '⑯\u00a0第50条\u00a0理事会議事', 'tl-a'],
+      ['#art25',     '⑰\u00a0第25条\u00a0管理費用途', 'tl-a'],
+      ['#art51',     '⑰\u00a0第51条\u00a0理事会議決', 'tl-a'],
+    ].forEach(function(it) {
+      h += '<a href="' + it[0] + '" class="' + it[2] + '">' + it[1] + '</a>';
+    });
+    h += '</div></div>';
+
+    // 全文目次
+    h += '<div class="toc-block"><div class="toc-block-title">● 全文目次</div><table class="toc-tbl">';
+    [
+      ['kanri-top',   '管　理　規　約',                   ''],
+      ['ch1',         '\u3000第１章\u3000総則',            '第1〜6条'],
+      ['ch2',         '\u3000第２章\u3000専有部分等の範囲','第7〜8条'],
+      ['ch3',         '\u3000第３章\u3000敷地及び共用部分等の共有','第9〜11条'],
+      ['ch4',         '\u3000第４章\u3000用法',            '第12〜18条'],
+      ['ch5',         '\u3000第５章\u3000管理',            '第19〜27条'],
+      ['ch6',         '\u3000第６章\u3000管理組合',        '第28〜51条'],
+      ['ch7',         '\u3000第７章\u3000会計',            '第52〜60条'],
+      ['ch8',         '\u3000第８章\u3000雑則',            '第61〜66条'],
+      ['appendix',    '附\u3000則',                        '附則第1〜5条'],
+      ['bettable1',   '別表（第1〜第5）',                  ''],
+      ['saisoku-top', '使　用　細　則',                    ''],
+    ].forEach(function(r) {
+      h += '<tr><td><a href="#' + r[0] + '">' + r[1] + '</a></td><td class="toc-rng">' + r[2] + '</td></tr>';
+    });
+    h += '</table></div>';
+    return h;
+  })();
+
+  var firstChap = document.querySelector('.chapter-title');
+  if (firstChap) firstChap.before(toc);
+})();
+</script>
+</body>
+</html>
