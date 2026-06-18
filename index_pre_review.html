@@ -320,10 +320,10 @@
   .park-head p{font-size:15px;color:rgba(255,255,255,.88);line-height:1.9;max-width:500px;margin-bottom:36px;}
   .park-snaps{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start;}
   .snap{width:210px;background:#fff;padding:8px 8px 34px;border-radius:2px;box-shadow:0 8px 40px rgba(0,0,0,.42);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;position:relative;}
-  .snap:nth-child(1){transform:rotate(-3deg);}
-  .snap:nth-child(2){transform:rotate(2deg) translateY(10px);}
-  .snap:nth-child(3){transform:rotate(-1.5deg) translateY(5px);}
-  .snap:nth-child(4){transform:rotate(2.5deg) translateY(14px);}
+  .snap:nth-child(4n+1){transform:rotate(-3deg);}
+  .snap:nth-child(4n+2){transform:rotate(2deg) translateY(10px);}
+  .snap:nth-child(4n+3){transform:rotate(-1.5deg) translateY(5px);}
+  .snap:nth-child(4n+4){transform:rotate(2.5deg) translateY(14px);}
   .snap:hover{transform:rotate(0deg) translateY(-6px) scale(1.03) !important;box-shadow:0 22px 64px rgba(0,0,0,.52);z-index:2;}
   .snap img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;}
   .snap-cap{position:absolute;bottom:0;left:0;right:0;padding:7px 6px;text-align:center;font-size:10px;color:#534c44;letter-spacing:.05em;}
@@ -763,6 +763,13 @@
           <div class="park-snaps" id="parkSnaps">
             <div class="snap gi"><img src="assets/park.jpg" data-cap="笹原公園 ― 緑の小径" alt="笹原公園 緑の小径"><span class="snap-cap">緑の小径</span></div>
             <div class="snap gi"><img src="assets/park2.jpg" data-cap="笹原公園 ― 木洩れ日の新緑" alt="笹原公園 新緑"><span class="snap-cap">木洩れ日の新緑</span></div>
+            <div class="snap gi"><img src="assets/park3.jpg" data-cap="笹原公園 ― 新緑のプロムナード" alt="笹原公園 新緑のプロムナード"><span class="snap-cap">新緑のプロムナード</span></div>
+            <div class="snap gi"><img src="assets/park4.jpg" data-cap="笹原公園 ― 石畳の小径" alt="笹原公園 石畳の小径"><span class="snap-cap">石畳の小径</span></div>
+            <div class="snap gi"><img src="assets/park5.jpg" data-cap="笹原公園 ― 秋のもみじ" alt="笹原公園 秋のもみじ"><span class="snap-cap">秋のもみじ</span></div>
+            <div class="snap gi"><img src="assets/park6.jpg" data-cap="笹原公園 ― 芝生と東屋" alt="笹原公園 芝生と東屋"><span class="snap-cap">芝生と東屋</span></div>
+            <div class="snap gi"><img src="assets/park7.jpg" data-cap="笹原公園 ― 季節の花壇" alt="笹原公園 季節の花壇"><span class="snap-cap">季節の花壇</span></div>
+            <div class="snap gi"><img src="assets/park8.jpg" data-cap="笹原公園 ― 子どもの遊び場" alt="笹原公園 子どもの遊び場"><span class="snap-cap">子どもの遊び場</span></div>
+            <div class="snap gi"><img src="assets/park9.jpg" data-cap="笹原公園 ― 木立の小径" alt="笹原公園 木立の小径"><span class="snap-cap">木立の小径</span></div>
           </div>
         </div>
       </div>
