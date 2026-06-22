@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>満足度アンケート 結果報告（掲示板用）｜エスト北塚口管理組合</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "游ゴシック Medium", "Yu Gothic Medium", "メイリオ", "Meiryo", sans-serif;
+    font-size: 13pt;
+    line-height: 1.7;
+    color: #111;
+    background: #fff;
+    width: 210mm;
+    padding: 12mm 14mm 10mm;
+    margin: 0 auto;
+  }
+
+  /* ===== ヘッダー ===== */
+  .header {
+    border-top: 4px solid #111;
+    border-bottom: 4px solid #111;
+    padding: 12px 0 10px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .header .label {
+    font-size: 11pt;
+    letter-spacing: 0.2em;
+    color: #444;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+  .header h1 {
+    font-size: 26pt;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+  }
+  .header .sub {
+    font-size: 12pt;
+    color: #333;
+    margin-top: 6px;
+  }
+
+  /* ===== サマリー ===== */
+  .summary {
+    border: 2.5px solid #111;
+    padding: 14px 20px;
+    margin-bottom: 14px;
+    text-align: center;
+    background: #fff;
+  }
+  .summary .summary-headline {
+    font-size: 16pt;
+    font-weight: bold;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .summary .summary-headline em {
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+  }
+  .summary .summary-lead {
+    font-size: 12pt;
+    line-height: 1.75;
+    text-align: left;
+    color: #222;
+  }
+
+  /* ===== メトリクス ===== */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .metric-card {
+    border: 2px solid #111;
+    padding: 12px;
+    text-align: center;
+  }
+  .metric-card .mlabel {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  .metric-card .mvalue {
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 1.1;
+    color: #111;
+  }
+  .metric-card .munit {
+    font-size: 14pt;
+    color: #333;
+    font-weight: normal;
+    margin-left: 2px;
+  }
+  .metric-card .msub {
+    font-size: 10pt;
+    color: #444;
+    margin-top: 3px;
+  }
+
+  /* ===== 主な発見 ===== */
+  h2 {
+    font-size: 15pt;
+    font-weight: bold;
+    color: #111;
+    border-left: 7px solid #111;
+    padding-left: 10px;
+    margin: 14px 0 10px;
+    letter-spacing: 0.03em;
+  }
+  .findings {
+    margin-bottom: 12px;
+  }
+  .finding-item {
+    border: 1.5px solid #444;
+    padding: 10px 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .finding-item .fnum {
+    font-size: 22pt;
+    font-weight: bold;
+    color: #111;
+    text-align: center;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 30px;
+  }
+  .finding-item .ftext {
+    font-size: 11.5pt;
+    line-height: 1.5;
+  }
+  .finding-item .ftext .ftitle {
+    font-weight: bold;
+    color: #111;
+    display: inline;
+  }
+  .finding-item .ftext .ftitle::after {
+    content: " — ";
+  }
+  .finding-item .ftext .fdesc {
+    font-size: 11pt;
+    color: #333;
+    display: inline;
+  }
+
+  /* ===== Q1 vs Q9 ===== */
+  .contrast {
+    border: 2px solid #111;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+  }
+  .contrast h3 {
+    font-size: 13pt;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .contrast-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 90px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .contrast-label {
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+  .contrast-label strong { font-size: 11.5pt; }
+  .contrast-label .sub { font-size: 9.5pt; color: #555; display: block; }
+  .contrast-bar {
+    height: 22px;
+    background: #fff;
+    border: 1.5px solid #111;
+    position: relative;
+  }
+  .contrast-bar .bar-fill {
+    height: 100%;
+    background: #222;
+  }
+  .contrast-bar .bar-fill.light { background: repeating-linear-gradient(45deg, #444 0, #444 3px, #777 3px, #777 6px); }
+  /* 4段階の目盛り */
+  .contrast-bar .tick {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #999;
+  }
+  .contrast-bar .tick.t1 { left: 25%; }
+  .contrast-bar .tick.t2 { left: 50%; }
+  .contrast-bar .tick.t3 { left: 75%; }
+  .contrast-scale {
+    display: grid;
+    grid-template-columns: 130px 1fr 90px;
+    gap: 10px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-size: 8.5pt;
+    color: #555;
+  }
+  .contrast-scale .scale-marks {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .contrast-scale .scale-marks span { text-align: center; }
+  .contrast-avg {
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: right;
+  }
+  .contrast-avg .avg-max {
+    font-size: 10pt;
+    color: #555;
+    font-weight: normal;
+  }
+
+  /* ===== 結論 ===== */
+  .conclusion {
+    border: 3px double #111;
+    padding: 14px 20px;
+    margin-bottom: 14px;
+    background: #fff;
+  }
+  .conclusion .clabel {
+    font-size: 11pt;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    margin-bottom: 6px;
+    color: #444;
+  }
+  .conclusion .ctext {
+    font-size: 12.5pt;
+    line-height: 1.75;
+  }
+  .conclusion .ctext strong {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    color: #111 !important;
+  }
+
+  /* ===== 詳細案内 ===== */
+  .more-info {
+    border-top: 2px solid #111;
+    padding-top: 10px;
+    margin-top: 14px;
+    font-size: 11.5pt;
+    text-align: center;
+    line-height: 1.8;
+  }
+  .more-info strong { font-size: 13pt; }
+  .more-info .badge {
+    display: inline-block;
+    border: 2px solid #111;
+    padding: 2px 10px;
+    margin: 0 4px;
+    font-weight: bold;
+  }
+
+  /* ===== フッター ===== */
+  .footer {
+    text-align: center;
+    font-size: 10pt;
+    color: #555;
+    margin-top: 10px;
+    border-top: 1px solid #888;
+    padding-top: 6px;
+  }
+
+  @media print {
+    body { padding: 10mm 12mm 8mm; }
+    @page { size: A4; margin: 0; }
+
+    /* 改ページ制御：セクションが分断されないように */
+    .header, .summary, .metrics, .findings, .contrast, .conclusion, .more-info, .footer {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .finding-item {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    /* 対比グラフは結論と一緒に2ページ目へ */
+    .contrast {
+      page-break-before: always;
+      break-before: page;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="label">エスト北塚口管理組合　第41期 理事会</div>
+  <h1>満足度アンケート 結果報告</h1>
+  <div class="sub">自主管理移行直前のベースライン調査　／　2026年6月</div>
+</div>
+
+<div class="summary">
+  <div class="summary-headline">
+    管理会社サービスへの評価は厳しく、<br>特に <em>「会計の透明性」「対応の速さ」</em> で「わからない」が突出。
+  </div>
+  <div class="summary-lead">
+    12件の回答からは、管理会社（日本ハウズイング株式会社）の業務全般に対する不満が確認されました。中でも <strong>Q6「会計のわかりやすさ」は「満足」回答ゼロ</strong>、過半数が「わからない」と回答しており、組合員が払い続けてきた管理費・修繕積立金の使途について <strong>説明責任が果たされていなかった構造</strong> が浮き彫りとなりました。
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="metric-card">
+    <div class="mlabel">回収率</div>
+    <div class="mvalue">63.2<span class="munit">%</span></div>
+    <div class="msub">同種調査の上位水準</div>
+  </div>
+  <div class="metric-card">
+    <div class="mlabel">有効回答数</div>
+    <div class="mvalue">12<span class="munit">件</span></div>
+    <div class="msub">18戸中<br><span style="font-size:9pt;color:#666;">（売却中1戸除く）</span></div>
+  </div>
+  <div class="metric-card">
+    <div class="mlabel">調査期間</div>
+    <div class="mvalue">10<span class="munit">日</span></div>
+    <div class="msub">2026年6月4日〜14日</div>
+  </div>
+</div>
+
+<h2>■ 4つの主な発見</h2>
+<div class="findings">
+  <div class="finding-item">
+    <div class="fnum">①</div>
+    <div class="ftext">
+      <div class="ftitle">管理会社サービスへの構造的不満</div>
+      <div class="fdesc">Q1 総合満足度の平均は <strong>2.13 / 4点</strong>。「不満系」が「満足系」を上回る結果に。</div>
+    </div>
+  </div>
+  <div class="finding-item">
+    <div class="fnum">②</div>
+    <div class="ftext">
+      <div class="ftitle">会計透明性は「満足」がゼロ</div>
+      <div class="fdesc">Q6 で「満足」「やや満足」と答えた人は <strong>12件中ゼロ</strong>。過半数が「わからない」と回答。</div>
+    </div>
+  </div>
+  <div class="finding-item">
+    <div class="fnum">③</div>
+    <div class="ftext">
+      <div class="ftitle">「わからない」が約半数を占める設問群</div>
+      <div class="fdesc">Q4・Q5・Q6 で「わからない」が <strong>約50〜67%</strong>。組合員が評価する材料すら持たない状況。</div>
+    </div>
+  </div>
+  <div class="finding-item">
+    <div class="fnum">④</div>
+    <div class="ftext">
+      <div class="ftitle">日常サービス（清掃・設備）は中位評価</div>
+      <div class="fdesc">Q2 清掃の平均は <strong>2.92 / 4点</strong>。「見える仕事」は機能、「見えない仕事」は機能不全という二極構造。</div>
+    </div>
+  </div>
+</div>
+
+<div class="contrast">
+  <h3>管理会社 vs 組合運営：評価の対比（最大評価 4.0 点満点）</h3>
+  <div class="contrast-row">
+    <div class="contrast-label"><strong>Q1 管理会社</strong><span class="sub">総合満足度</span></div>
+    <div class="contrast-bar">
+      <div class="bar-fill light" style="width:53%;"></div>
+      <div class="tick t1"></div><div class="tick t2"></div><div class="tick t3"></div>
+    </div>
+    <div class="contrast-avg">2.13<span class="avg-max"> /4.0</span></div>
+  </div>
+  <div class="contrast-row">
+    <div class="contrast-label"><strong>Q9 組合運営</strong><span class="sub">理事会の機能</span></div>
+    <div class="contrast-bar">
+      <div class="bar-fill" style="width:88%;"></div>
+      <div class="tick t1"></div><div class="tick t2"></div><div class="tick t3"></div>
+    </div>
+    <div class="contrast-avg">3.50<span class="avg-max"> /4.0</span></div>
+  </div>
+  <div class="contrast-scale">
+    <div></div>
+    <div class="scale-marks"><span>0</span><span>1（不満）</span><span>2（やや不満）</span><span>3（やや満足）</span><span>4（満足）</span></div>
+    <div></div>
+  </div>
+  <div style="font-size:9.5pt;color:#555;margin-top:8px;text-align:center;line-height:1.5;">
+    ※ Q9については、自分たちが選んだ理事を評価する設問のため一定の忖度（相手を思いやる気遣い）が含まれる点は留意。それでも不満ゼロの分布は、組合運営への一定の信頼の表れと評価できる。
+  </div>
+</div>
+
+<div class="conclusion">
+  <div class="clabel">結論 ── 今後の方針</div>
+  <div class="ctext">
+    自主管理移行後は、(1) 会計や意思決定の <strong>透明性をさらに高めること</strong> に加え、<br>
+    (2)「理事を担っていない組合員でも、自分たちの参加でマンションの価値を維持している」と <strong>実感していただける仕組みづくり</strong> を進めます。<br><br>
+    具体的な施策として、<strong>公式LINE での月次会計透明化配信</strong> と、<strong>本掲示板での月次簡易版掲示</strong> を開始予定です。<br>
+    スマホやパソコンの所有・非所有にかかわらず、すべての組合員が均一に情報にアクセスできる環境を整えます。<br><br>
+    本調査は <strong>「年次定点観測」の第1回</strong>。基本的には総会前後の時期に同じようなアンケートを毎年実施し、皆さまと一緒に立ち位置を見直してまいります。
+  </div>
+</div>
+
+<div class="more-info">
+  <strong>詳しい分析結果（自由記述・統計考察・指標 等）はこちら</strong><br>
+  <span class="badge">📱 公式LINE</span> 配信済み（約10戸登録済）<br>
+  <span class="badge">📁 401号室ポスト</span> にメモをいただければ紙の冊子をお渡しします
+</div>
+
+<div class="footer">
+  エスト北塚口管理組合　第41期 理事会　／　集計：エスト北塚口管理組合　／　報告日：2026年6月21日<br>
+  本調査は完全匿名で集計しており、個人を特定する形での公開は一切行いません。
+</div>
+
+</body>
+</html>
