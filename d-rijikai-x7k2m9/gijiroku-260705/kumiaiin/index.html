@@ -42,6 +42,10 @@
   .footer { margin-top:36px; border-top:1px solid #e2e8ee; padding-top:16px; font-size:14px; color:#5a6b7a; }
   .footer a { color:#1f6feb; }
   .contact { background:#f4f7fa; border-radius:10px; padding:14px 18px; margin-top:14px; font-size:15px; }
+
+  .scroll-hint { display:flex; align-items:center; justify-content:center; gap:6px; font-size:13px; color:#5a6b7a; margin:2px 0 6px; }
+  .scroll-hint .arrow { display:inline-block; animation:swipe 1.3s ease-in-out infinite; }
+  @keyframes swipe { 0%,100%{transform:translateX(0);opacity:.5;} 50%{transform:translateX(8px);opacity:1;} }
   @media (max-width:560px){ body{font-size:16px;} .wrap{padding:26px 18px;} .head h1{font-size:22px;} }
   @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;} h2.sec{break-after:avoid;} table,.digest,.callout{break-inside:avoid;} }
 </style>
@@ -157,6 +161,7 @@
   <!-- 4. 年間定期点検スケジュール -->
   <h2 class="sec">4. 年間定期点検スケジュール（2026年）</h2>
   <p>建物を安全に保つため、定期的な点検・メンテナンスを実施しています。以下が2026年の予定です。</p>
+  <div class="scroll-hint">横にスワイプできます<span class="arrow">👉</span></div>
   <div style="overflow-x:auto;">
   <table class="fin" style="font-size:16px;table-layout:fixed;width:780px;">
     <tr style="height:48px;"><th style="text-align:center;width:28%;font-weight:700;font-size:16px;padding:8px 6px;">点検項目</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">12<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">1<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">2<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">3<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">4<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">5<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">6<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">7<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">8<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">9<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">10<br>月</th><th style="text-align:center;width:6%;font-weight:700;font-size:16px;padding:8px 4px;">11<br>月</th></tr>
