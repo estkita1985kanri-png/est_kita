@@ -1,44 +1,93 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="UTF-8">
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>エスト北塚口管理組合｜第41期 第1回 理事会 議事録（掲示用）（保護）</title>
+<title>エスト北塚口管理組合　第41期 第1回 理事会 議事録（掲示用）</title>
 <style>
-  body{font-family:"Yu Gothic UI","Meiryo",sans-serif;background:#f0f3f8;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center;}
-  .lock{background:#fff;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.15);padding:34px 30px;max-width:360px;width:90%;text-align:center;}
-  .lock h1{font-size:17px;color:#1a3a6e;margin:0 0 6px;}
-  .lock p{font-size:12px;color:#666;margin:0 0 18px;line-height:1.6;}
-  .lock input{width:100%;padding:12px;font-size:15px;border:2px solid #cbd5e1;border-radius:8px;box-sizing:border-box;margin-bottom:12px;}
-  .lock input:focus{outline:none;border-color:#2c5aa0;}
-  .lock button{width:100%;padding:12px;font-size:15px;font-weight:bold;color:#fff;background:#2c5aa0;border:none;border-radius:8px;cursor:pointer;}
-  .lock button:hover{background:#1a3a6e;}
-  .err{color:#dc2626;font-size:12px;margin-top:10px;min-height:16px;}
-  .lock .ico{font-size:40px;margin-bottom:8px;}
-</style></head>
+  @page { size: A4 portrait; margin: 14mm 16mm; }
+  * { box-sizing:border-box; }
+  body { font-family:"Meiryo","Hiragino Kaku Gothic ProN",sans-serif; margin:0; padding:0; background:#fff; color:#111; line-height:1.5; font-size:13.5px; }
+  .wrap { max-width:178mm; margin:0 auto; }
+
+  .head { text-align:center; border-bottom:2.5px solid #111; padding-bottom:6px; margin-bottom:8px; }
+  .head .org { font-size:12.5px; color:#333; letter-spacing:.04em; }
+  .head h1 { font-size:22px; margin:5px 0 4px; letter-spacing:.02em; }
+  .head .for { display:inline-block; border:1.5px solid #111; font-size:12.5px; font-weight:700; padding:1px 14px; border-radius:11px; }
+  .head .date { color:#333; font-size:13px; margin-top:4px; }
+
+  .privacy { border:1.2px solid #999; border-radius:5px; padding:5px 12px; margin:6px 0 8px; font-size:11.5px; color:#333; }
+
+  .lead { font-size:13px; margin:4px 0 7px; }
+
+  h2.sec { font-size:15.5px; margin:9px 0 5px; padding:3px 0 3px 8px; border-left:5px solid #111; border-bottom:1.5px solid #111; }
+
+  h3 { font-size:13.5px; margin:7px 0 2px; font-weight:700; }
+  h3 .tag { font-size:11px; font-weight:700; border:1.2px solid #111; border-radius:8px; padding:0 8px; margin-left:5px; }
+  p { margin:2px 0 5px; }
+
+  table.fin { width:100%; border-collapse:collapse; margin:4px 0 6px; font-size:13px; }
+  table.fin th, table.fin td { border:1.2px solid #111; padding:4px 8px; }
+  table.fin th { background:#e8e8e8; text-align:center; }
+  table.fin td.num { text-align:right; font-variant-numeric:tabular-nums; font-weight:700; }
+  table.fin caption { text-align:left; font-size:11px; color:#333; padding:1px 0 2px; caption-side:top; }
+
+  .note { font-size:11.5px; color:#333; margin:2px 0 0; }
+
+  .footer { margin-top:8px; border-top:1.2px solid #999; padding-top:5px; font-size:10.5px; color:#333; }
+</style>
+</head>
 <body>
-<div class="lock" id="lock">
-  <div class="ico">🔒</div>
-  <h1>第41期 第1回 理事会 議事録（掲示用）</h1>
-  <p>エスト北塚口管理組合（理事限定）<br>2026年7月5日開催<br>パスワードを入力してください。</p>
-  <input type="password" id="pw" placeholder="パスワード" autocomplete="off" autofocus>
-  <button id="btn">表示する</button>
-  <div class="err" id="err"></div>
+<div class="wrap">
+
+  <div class="head">
+    <div class="org">エスト北塚口管理組合（自主管理）</div>
+    <h1>第41期 第1回 理事会　議事録</h1>
+    <span class="for">掲示板掲示用</span>
+    <div class="date">2026年（令和8年）7月5日（日）オンライン開催</div>
+  </div>
+
+  <div class="privacy">本書面は掲示板掲示のため、個人名・お部屋番号等の個人情報は記載しておりません。会計の数値は暫定値です。</div>
+
+  <p class="lead">7月5日に第41期の第1回理事会を開催しましたので、話し合った内容をご報告します。</p>
+
+  <h2 class="sec">1. 会計のご報告（5月末時点）</h2>
+  <table class="fin">
+    <caption>単位：円／「今期の収支」は2025年12月〜2026年5月末の累計、「残高」は前期からの繰越を含む</caption>
+    <tr><th>会計</th><th>今期の収支（12〜5月）</th><th>5月末 残高（繰越含む）</th><th>期末（11月末）見込み</th></tr>
+    <tr><td>管理費会計</td><td class="num">▲200,683</td><td class="num">110,608</td><td class="num">約 303,000</td></tr>
+    <tr><td>修繕積立金会計</td><td class="num">＋951,096</td><td class="num">14,253,977</td><td class="num">約 15,203,000</td></tr>
+  </table>
+  <p class="note">管理費会計のマイナスは12月に1年分の火災保険料をまとめて計上したためで、年末には約30万円のプラスで着地する見込みです。修繕積立金は毎月順調に積み立てています。</p>
+
+  <h2 class="sec">2. 話し合った主なテーマ</h2>
+
+  <h3>個人賠償責任保険への加入のお願い<span class="tag">今後ご案内</span></h3>
+  <p>当マンションは高経年のため、<b>事故が1件発生するだけでも組合の火災保険の加入・更新に大きく影響</b>してしまいます。そこで、各戸の設備（給排水管など）が原因で階下等に損害を与えてしまった場合の賠償については、組合の火災保険から切り離し、各ご家庭の個人賠償責任保険でのご対応をお願いする方向で検討中です。マンションの水漏れ等の賠償額は高額になることもあるため、補償額は<b>1億円程度</b>あれば安心です。個人賠償責任保険は、火災保険や自転車保険などに<b>すでに付帯されていることが多い</b>保険で、未加入の場合でも自転車保険であれば<b>月500円以下</b>で加入できるものもあります。今後、<b>2階以上にお住まいの方</b>を対象に、加入状況を確認させていただきます。</p>
+
+  <h3>南側ツツジの伐採と維持<span class="tag">決定</span></h3>
+  <p>洗濯物に干渉する部分のみ伐採し、道路側・エントランス周辺は景観として残し隔年剪定で維持します。次回総会でお諮りのうえ実施します。</p>
+
+  <h3>駐輪場の自転車管理<span class="tag">導入予定</span></h3>
+  <p>放置自転車の見分け・利用状況把握のため、スマホでの簡単な登録制を導入予定です。スマートフォンをお使いでない方は理事が代行登録しますのでご安心ください。</p>
+
+  <h3>「秘書」「美化委員」の新設<span class="tag">検討中</span></h3>
+  <p>理事長への業務集中を避け、関心のある方が参画しやすいよう、事務補佐「秘書」と清掃見守り「美化委員」の新設を検討中です。ご関心のある方はお声がけください。</p>
+
+  <h3>修繕積立金の運用（物価上昇への備え）<span class="tag">検討中</span></h3>
+  <p>当面使わない資金の一部を、元本が守られる安全な債券（住宅金融支援機構「すまい・る債」）で運用する検討を始めます。方針が固まり次第ご報告します。</p>
+
+  <h3>長期修繕計画の見直し<span class="tag">着手</span></h3>
+  <p>策定から時間が経ち物価も上昇しているため、長期修繕計画の作り直しに着手します。</p>
+
+  <h2 class="sec">3. 次回の理事会</h2>
+  <p>2026年9月　平日20時以降を予定しております。</p>
+
+  <div class="footer">
+    エスト北塚口管理組合　理事会　／　2026年7月5日開催・作成　／　会計の数値は暫定値です（確定により微修正の可能性があります）。
+  </div>
+
 </div>
-<script>
-  var SALT="J3F9VGOqCwUHVK+dOkpXSg==", IV="BTnCw13Vw3kqLHR2", CT="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", ITER=200000;
-  function b2u(s){return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0);});}
-  async function unlock(){
-    var pw=document.getElementById('pw').value;
-    var err=document.getElementById('err'); err.textContent='復号中…';
-    try{
-      var bk=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
-      var key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b2u(SALT),iterations:ITER,hash:'SHA-256'},bk,{name:'AES-GCM',length:256},false,['decrypt']);
-      var pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b2u(IV)},key,b2u(CT));
-      var html=new TextDecoder().decode(pt);
-      document.open();document.write(html);document.close();
-    }catch(e){ err.textContent='パスワードが違います。'; }
-  }
-  document.getElementById('btn').addEventListener('click',unlock);
-  document.getElementById('pw').addEventListener('keydown',function(e){if(e.key==='Enter')unlock();});
-</script>
-</body></html>
+</body>
+</html>
