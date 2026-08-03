@@ -57,6 +57,13 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
 .cmp-cell.old .v{color:var(--sub);text-decoration:line-through;}
 .cmp-cell.new .v{color:var(--green);}
 .cmp-cell .sub{display:block;font-size:10.5px;color:var(--sub);margin-top:2px;}
+.cmp-breakdown{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 12px;}
+.cmp-breakdown .bd-cap{font-size:11px;color:var(--sub);margin-bottom:3px;}
+.cmp-breakdown .bd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;padding:4px 0;border-top:1px dashed var(--line);}
+.cmp-breakdown .bd:first-of-type{border-top:none;}
+.cmp-breakdown .bd b{font-variant-numeric:tabular-nums;white-space:nowrap;}
+.cmp-breakdown .bd.tot{border-top:1.5px solid var(--line);margin-top:2px;font-weight:800;}
+.cmp-breakdown .bd.tot b{color:var(--green);}
 .cmp-arrow{display:flex;align-items:center;color:var(--brick);font-size:20px;font-weight:800;}
 .cmp-note{font-size:12.5px;color:var(--ink);margin:10px 0 0;}
 .memo{background:#eef6f1;border-left:4px solid var(--green);border-radius:8px;padding:12px 15px;margin-top:20px;}
@@ -122,8 +129,9 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
         <div class="cmp-row">
           <div class="cmp-cell old"><span class="lbl">管理会社時代の委託費</span><span class="v">137,280 円/月</span></div>
           <div class="cmp-arrow">→</div>
-          <div class="cmp-cell new"><span class="lbl">自主管理（分離発注）</span><span class="v">93,901 円/月</span><span class="sub">会計・税務 27,500円 ＋ 日常清掃 40,700円 ＋ 管理費の収納代行（ジャックス） 5,626円 ＋ 設備点検（月割り）20,075円</span></div>
+          <div class="cmp-cell new"><span class="lbl">自主管理（分離発注）</span><span class="v">93,901 円/月</span></div>
         </div>
+        <div class="cmp-breakdown"><div class="bd-cap">自主管理の内訳（税込）</div><div class="bd"><span>会計・税務</span><b>27,500 円</b></div><div class="bd"><span>日常清掃</span><b>40,700 円</b></div><div class="bd"><span>管理費の収納代行（ジャックス）</span><b>5,626 円</b></div><div class="bd"><span>設備点検（月割り概算）</span><b>20,075 円</b></div><div class="bd tot"><span>自主管理 合計</span><b>93,901 円</b></div></div>
         <p class="cmp-note">同じ管理業務を業者ごとに直接契約した結果、月あたり <b>約 43,379 円</b>（年 約 520,548 円）を圧縮。浮いた分は将来の修繕にそなえます。</p>
       </div>
 
