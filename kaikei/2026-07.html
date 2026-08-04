@@ -53,6 +53,34 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
 .grp td{background:#f3efe9;font-weight:700;font-size:13.5px;border-top:2px solid var(--line);}
 .grp.vr td{color:var(--brick);}
 .tiny{font-size:11px;color:var(--sub);margin:6px 2px 0;line-height:1.55;}
+.sched-lead{font-size:12px;color:var(--sub);margin:2px 0 6px;}
+.sched-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:9px;}
+.sched{border-collapse:collapse;min-width:660px;width:100%;font-size:11.5px;}
+.sched th,.sched td{border:1px solid var(--line);padding:5px 3px;text-align:center;white-space:nowrap;line-height:1.3;}
+.sched thead th{background:#f3efe9;font-weight:700;}
+.sched th.item,.sched td.item{position:sticky;left:0;z-index:1;text-align:left;background:#fff;min-width:118px;white-space:normal;font-weight:700;}
+.sched td.item .freq{display:block;font-size:10px;color:var(--sub);font-weight:400;}
+.sched td.done{background:#e6f4ec;}
+.sched td.plan{background:#f2eee7;}
+.sched td .dt{font-size:10px;color:var(--sub);}
+.fin-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:2px 0;}
+.fin2{border:none;border-radius:0;background:transparent;min-width:430px;font-size:13px;}
+.fin2 th,.fin2 td{border-bottom:1px solid var(--line);padding:7px 10px;}
+.fin2 thead th{background:#f3efe9;font-weight:700;font-size:11.5px;text-align:right;color:var(--sub);}
+.fin2 thead th:first-child{text-align:left;}
+.fin2 td.lbl{text-align:left;}
+.fin2 td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700;}
+.fin2 tr.tot td{border-top:1.5px solid var(--line);font-weight:800;}
+.fin2 tr.misyu td{background:#e6f4ec;}
+.ftag{display:inline-block;font-size:10px;border-radius:9px;padding:0 6px;margin-left:6px;vertical-align:middle;font-weight:700;}
+.ftag.kind-fix{background:#dbeafe;color:#1e40af;}
+.ftag.kind-est{background:#f0ece5;color:var(--sub);}
+.misyu-note{display:block;font-size:11px;color:var(--sub);font-weight:400;margin-top:2px;}
+.bigpay{list-style:none;padding:0;margin:2px 0;}
+.bigpay li{display:flex;align-items:baseline;gap:9px;padding:8px 11px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;font-size:13px;background:var(--card);}
+.bigpay .bm{font-weight:700;color:var(--brick);white-space:nowrap;}
+.bigpay .bbiz{color:var(--sub);font-size:11.5px;margin-left:auto;white-space:nowrap;}
+.bigpay b{font-variant-numeric:tabular-nums;white-space:nowrap;}
 .compare{background:#fbf7f2;border:1px solid #ecd9c8;border-radius:12px;padding:14px 16px;margin-top:10px;}
 .compare h3{margin:0 0 10px;font-size:14px;color:var(--brick);}
 .cmp-row{display:flex;align-items:stretch;gap:10px;}
@@ -93,7 +121,7 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
 <body><div class="sheet">
   <div class="head">
     <div class="org">エスト北塚口管理組合</div>
-    <h1>2026年7月 会計月報<span class="flag">発生ベース速報</span></h1>
+    <h1>2026年7月 会計月報<span class="flag">概算速報（支払ベース）</span></h1>
     <div class="ki">第41期（2026年11月期）・自主管理元年</div>
   </div>
   <div class="mnav no-print"><label class="mnav-sel">📅 月報を選ぶ<select onchange="if(this.value)location.href=this.value"><option value="2026-07.html" selected>2026年7月</option><option value="2026-06.html">2026年6月</option></select></label><a class="mnav-print" href="2026-07_print.html" target="_blank" rel="noopener">🖨 掲示用A4（モノクロ）</a></div>
@@ -103,32 +131,36 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
     
       <div class="card mng">
         <h2>管理費会計</h2>
-        <div class="kv"><span class="k">収入（発生ベース）</span><span class="v">193,400 円</span></div>
+        <div class="kv"><span class="k">収入（支払ベース）</span><span class="v">193,400 円</span></div>
         <div class="sub-inc"><div><span>管理費</span><span>180,400 円</span></div><div><span>トランクルーム使用料</span><span>13,000 円</span></div></div>
-        <div class="kv"><span class="k">支出（発生ベース）</span><span class="v">114,607 円</span></div>
-        <div class="kv net"><span class="k">7月の収支</span><span class="v"><span class="pos">+78,793 円</span></span></div>
+        <div class="kv"><span class="k">支出（支払ベース）</span><span class="v">118,303 円</span></div>
+        <div class="kv net"><span class="k">7月の収支</span><span class="v"><span class="pos">+75,097 円</span></span></div>
       </div>
     
       <div class="card rsv">
         <h2>修繕積立金会計</h2>
-        <div class="kv"><span class="k">収入（発生ベース）</span><span class="v">158,140 円</span></div>
+        <div class="kv"><span class="k">収入（支払ベース）</span><span class="v">158,140 円</span></div>
         
-        <div class="kv"><span class="k">支出（発生ベース）</span><span class="v">0 円</span></div>
+        <div class="kv"><span class="k">支出（支払ベース）</span><span class="v">0 円</span></div>
         <div class="kv net"><span class="k">7月の収支</span><span class="v"><span class="pos">+158,140 円</span></span></div>
       </div>
   </div>
+
+  <h3 class="sec">会計の残高（財政状態）</h3><div class="fin-wrap"><table class="fin2"><thead><tr><th>区分</th><th class="n">管理費会計</th><th class="n">修繕積立金会計</th></tr></thead><tbody><tr><td class="lbl">直近確定 残高（5月末・理事会議事録）<span class="ftag kind-fix">確定</span></td><td class="n">110,608 円</td><td class="n">14,253,977 円</td></tr><tr><td class="lbl">7月末 残高（概算・速報）<span class="ftag kind-est">概算</span></td><td class="n">187,000 円</td><td class="n">14,570,000 円</td></tr><tr><td class="lbl">期末（11月末）見込<span class="ftag kind-est">見込</span></td><td class="n">272,000 円</td><td class="n">15,204,000 円</td></tr><tr class="misyu"><td class="lbl">未収金（管理費等の滞納）</td><td class="n" colspan="2"><b>0 円</b>（0戸）<span class="misyu-note">管理費等の滞納。7月末の2回目請求で全戸の口座振替が成功しました。</span></td></tr></tbody></table></div><p class="tiny">残高は概算・速報です。確定値は3か月ごとの理事会議事録でご報告します。</p>
+<h3 class="sec">予算対比（第41期・総会承認）</h3><div class="fin-wrap"><table class="fin2"><thead><tr><th>年間予算</th><th class="n">管理費会計</th><th class="n">修繕積立金会計</th></tr></thead><tbody><tr><td class="lbl">収入</td><td class="n">2,187,600 円</td><td class="n">1,900,680 円</td></tr><tr><td class="lbl">支出</td><td class="n">2,207,199 円</td><td class="n">0 円</td></tr><tr class="tot"><td class="lbl">収支</td><td class="n">▲19,599 円</td><td class="n">+1,900,680 円</td></tr></tbody></table></div><p class="tiny">管理費会計は12月に1年分の火災保険料を一括計上するため通年ではわずかにマイナス予算ですが、前期からの繰越があり残高はプラスを維持します。修繕積立金は毎月約15.8万円を計画どおり積み立てています。</p>
+<h3 class="sec">今期の大型支出（10万円超・第41期（2025年12月〜））</h3><ul class="bigpay"><li><span class="bm">12月</span><span class="bnm">損害保険料（マンション総合保険・年払い）</span><span class="bbiz">損保ジャパン</span><b>316,584 円</b></li></ul>
 
   <h3 class="sec">7月、何にいくら使ったか（大きなお金）</h3>
   <table>
     <thead><tr><th class="c">日</th><th>内容</th><th>業者</th><th class="c">会計</th><th class="n">金額</th></tr></thead>
     <tbody>
-      <tr class="grp fx"><td colspan="4">固定費（毎月決まって発生）</td><td class="n">83,807 円</td></tr>
-      <tr><td class='c'>—</td><td>会計・組合サポート</td><td class='biz'>小林税理士</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>27,500 円</td></tr><tr><td class='c'>—</td><td>日常清掃</td><td class='biz'>ダイキチ</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>40,700 円</td></tr><tr><td class='c'>—</td><td>管理費の収納代行（口座確認手数料含む）</td><td class='biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>5,802 円</td></tr><tr><td class='c'>—</td><td>共用部の電気（6月分）</td><td class='biz'>大阪ガス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>8,805 円</td></tr><tr><td class='c'>—</td><td>共用部の水道（隔月請求を月割り概算） <span class="approx">概算</span></td><td class='biz'>伊丹市上下水道局</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>1,000 円</td></tr>
-      <tr class="grp vr"><td colspan="4">変動費（その月だけの大きな支出）</td><td class="n">30,800 円</td></tr>
-      <tr><td class='c'>15</td><td>給水設備点検（年3回）</td><td class='biz'>IMU設備</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>8,800 円</td></tr><tr><td class='c'>10</td><td>臨時総会（4/5開催）運営支援</td><td class='biz'>小林税理士</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>22,000 円</td></tr>
+      <tr class="grp fx"><td colspan="4">固定費（毎月決まって発生）</td><td class="n">83,631 円</td></tr>
+      <tr><td class='c'>—</td><td>会計・組合サポート</td><td class='biz'>小林税理士</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>27,500 円</td></tr><tr><td class='c'>—</td><td>日常清掃</td><td class='biz'>ダイキチ</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>40,700 円</td></tr><tr><td class='c'>—</td><td>管理費の収納代行</td><td class='biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>5,626 円</td></tr><tr><td class='c'>—</td><td>共用部の電気（6月分）</td><td class='biz'>大阪ガス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>8,805 円</td></tr><tr><td class='c'>—</td><td>共用部の水道（隔月請求を月割り概算） <span class="approx">概算</span></td><td class='biz'>伊丹市上下水道局</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>1,000 円</td></tr>
+      <tr class="grp vr"><td colspan="4">変動費（その月だけの大きな支出）</td><td class="n">34,672 円</td></tr>
+      <tr><td class='c'>15</td><td>給水設備点検（年3回）</td><td class='biz'>IMU設備</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>8,800 円</td></tr><tr><td class='c'>10</td><td>臨時総会（4/5開催）運営支援</td><td class='biz'>小林税理士</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>22,000 円</td></tr><tr><td class='c'>10</td><td>口座振替の初期登録費用（自主管理移行・22件／一度きり）</td><td class='biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>3,872 円</td></tr>
     </tbody>
   </table>
-  <p class="tiny">※「大きなお金」に絞って掲載しています（数百〜千円台の少額な立替・消耗品は割愛）。金額は税込・発生ベース。固定費は毎月ほぼ同額、変動費はその月だけの支出です。</p>
+  <p class="tiny">※「大きなお金」に絞って掲載しています（数百〜千円台の少額な立替・消耗品は割愛）。金額は税込・支払ベース（支払った月で計上）。固定費は毎月ほぼ同額、変動費はその月だけの支出です。</p>
   
       <div class="compare">
         <h3>自主管理でここが変わりました</h3>
@@ -142,10 +174,11 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
       </div>
 
   <div class="memo"><span class="badge">会計ひとくちメモ</span><p>管理費と修繕積立金は“別のお財布”です。修繕積立金は普段は使わず、十数年後の大規模修繕にそなえて積み立てている共有財産。毎月きちんと貯まっているかが、健全な管理のいちばんの基本です。</p></div>
-  <div class="yotei"><b>来月の予定</b>　7/15に給水設備点検（年3回・4ヶ月に1度）を実施しました。来月以降：消防設備点検を予定しています。</div>
+  <div class="yotei"><b>来月の予定</b>　8月：臨時総会を開催予定です。定期点検は9月に消防用設備点検（法定・年2回）、11月に給水設備点検を予定しています（詳細は下の年間点検スケジュール）。</div>
+  <h3 class="sec">年間の点検スケジュール（2026年）</h3><p class="sched-lead">建物を安全に保つため、定期点検を計画的に実施しています。（🟢 実施済／● 予定）</p><div class="sched-wrap"><table class="sched"><thead><tr><th class="item">点検項目</th><th>12月</th><th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th><th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月</th></tr></thead><tbody><tr><td class="item">共用部分等外壁点検<span class="freq">年1回</span></td><td></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">5/11</span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="item">消防用設備点検<span class="freq">年2回・法定</span></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">3/23</span></td><td></td><td></td><td></td><td></td><td></td><td class="plan">●<br><span class="dt">9月</span></td><td></td><td></td></tr><tr><td class="item">給水設備点検<span class="freq">年3回</span></td><td></td><td></td><td class="done">🟢<br><span class="dt">2/26</span></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">7/15</span></td><td></td><td></td><td></td><td class="plan">●<br><span class="dt">11月</span></td></tr><tr><td class="item">貯水槽清掃<span class="freq">年1回</span></td><td></td><td class="done">🟢<br><span class="dt">1/15</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="item">雑排水管清掃<span class="freq">年1回</span></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">3/8</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
 
   <div class="foot">
-    ※ 本報告は<b>発生ベースの速報値</b>です（税理士監修・現金主義。支払った月で計上）。<b>確定値は3か月ごとの理事会議事録</b>にて正式にご報告します。<br>
+    ※ 本報告は<b>概算の速報値</b>です（税理士監修・<b>現金主義＝支払った月で計上</b>。理事長が把握する請求書・立替明細ベース）。<b>確定値は3か月ごとの理事会議事録</b>にて正式にご報告します。<br>
     ※ 定期点検・清掃費は年に数回まとまって発生します。実際に払った月に<b>変動費</b>として計上し、上の「自主管理でここが変わりました」の比較では公平のため<b>年額を12で割った月割り概算</b>で表示しています。<br>
     ※ 個人が特定される情報（氏名・部屋番号・戸別の請求額・滞納情報）は一切掲載していません。専有部にかかわる対応は概要のみ記載しています。<br>
     最終更新：2026-08-04　／　エスト北塚口管理組合
