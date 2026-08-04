@@ -10,58 +10,64 @@ html,body{margin:0;padding:0;background:#fff;color:#000;font-family:"Meiryo","Hi
 .pbar button{font-size:13px;padding:8px 18px;border:1.5px solid #000;background:#fff;border-radius:5px;cursor:pointer;}
 /* #sheet = A4 印刷可能領域（210-16 × 297-16mm）。内容はJSで1ページに自動縮小フィット */
 #sheet{position:relative;width:194mm;height:280mm;max-width:100%;margin:0 auto;overflow:hidden;}
-#inner{position:absolute;top:0;left:0;width:194mm;transform-origin:top left;font-size:12px;line-height:1.5;}
-h1{font-size:22px;margin:0;border-bottom:3px solid #000;padding-bottom:5px;letter-spacing:.02em;}
-.meta{font-size:11px;color:#222;margin:5px 0 7px;}
-.finline{border:1.5px solid #000;padding:7px 11px;margin:0 0 6px;font-size:11.5px;line-height:1.55;}
-h2{font-size:14px;margin:14px 0 6px;background:#111;color:#fff;padding:4px 11px;letter-spacing:.04em;}
-.acc{display:flex;gap:10px;}
-.acc .box{flex:1;border:1.5px solid #000;padding:9px 13px;}
-.acc .box .t{font-weight:bold;font-size:13.5px;border-bottom:1px solid #999;margin-bottom:5px;padding-bottom:3px;}
-.acc .box .r{display:flex;justify-content:space-between;font-size:12.5px;padding:1px 0;}
-.acc .box .net{font-size:15px;font-weight:bold;margin-top:5px;border-top:1.5px solid #333;padding-top:4px;}
-table{width:100%;border-collapse:collapse;margin:2px 0;}
-th,td{border:1px solid #666;padding:5px 9px;font-size:11.5px;vertical-align:middle;white-space:nowrap;}
-th{background:#e6e6e6;text-align:center;font-size:11px;}
+/* 内容が少なければ justify-content:space-between で縦全面に広げ、多ければJSで自動縮小 */
+#inner{position:absolute;top:0;left:0;width:194mm;transform-origin:top left;display:flex;flex-direction:column;font-size:13.5px;line-height:1.5;}
+.blk{flex:none;}
+h1{font-size:27px;margin:0;border-bottom:3px solid #000;padding-bottom:6px;letter-spacing:.02em;}
+.meta{font-size:12px;color:#222;margin:6px 0 8px;}
+.finline{border:1.5px solid #000;padding:9px 13px;font-size:13px;line-height:1.6;}
+h2{font-size:17px;margin:0 0 7px;background:#111;color:#fff;padding:5px 12px;letter-spacing:.04em;}
+.acc{display:flex;gap:12px;}
+.acc .box{flex:1;border:1.5px solid #000;padding:12px 16px;}
+.acc .box .t{font-weight:bold;font-size:15.5px;border-bottom:1px solid #999;margin-bottom:6px;padding-bottom:4px;}
+.acc .box .r{display:flex;justify-content:space-between;font-size:14px;padding:2px 0;}
+.acc .box .net{font-size:19px;font-weight:bold;margin-top:6px;border-top:1.5px solid #333;padding-top:5px;}
+table{width:100%;border-collapse:collapse;}
+th,td{border:1px solid #666;padding:9px 12px;font-size:14px;vertical-align:middle;white-space:nowrap;}
+th{background:#e6e6e6;text-align:center;font-size:12.5px;}
 td.c,th.c{text-align:center;}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
-tr.grp td{background:#d5d5d5;font-weight:bold;font-size:12px;}
-.cmp{border:1.5px solid #000;padding:9px 13px;margin-top:12px;font-size:11.5px;line-height:1.6;}
-.memo{border:1.5px dashed #555;padding:8px 13px;margin-top:10px;font-size:11px;line-height:1.55;}
-.foot{font-size:9px;color:#333;margin-top:12px;border-top:1px solid #999;padding-top:6px;line-height:1.5;}
+tr.grp td{background:#d5d5d5;font-weight:bold;font-size:14.5px;}
+.cmp{border:1.5px solid #000;padding:12px 16px;font-size:14px;line-height:1.65;}
+.memo{border:1.5px dashed #555;padding:11px 16px;font-size:13px;line-height:1.6;}
+.foot{font-size:10.5px;color:#333;border-top:1px solid #999;padding-top:7px;line-height:1.55;}
 @media print{.pbar{display:none;}}
 </style></head>
 <body><div class="pbar"><button onclick="window.print()">🖨 印刷する（A4・モノクロ／自動で1枚に収まります）</button></div>
 <div id="sheet"><div id="inner">
-  <h1>2026年6月 会計月報（掲示用）</h1>
-  <div class="meta">エスト北塚口管理組合　第41期（2026年11月期）・自主管理元年　／　概算の速報値（税込・現金主義＝支払った月で計上・税理士監修）</div>
-  <div class="finline"><b>財政状態（概算）</b>　管理費会計 約187,000円 ／ 修繕積立金会計 約14,570,000円（期末見込 約272,000／約15,204,000円）　未収金 0円（0戸）</div>
-
-  <h2>今月の収支</h2>
-  <div class="acc">
-    <div class="box"><div class="t">管理費会計</div>
-      <div class="r"><span>収入</span><b>193,400 円</b></div>
-      <div class="r"><span>支出</span><b>192,826 円</b></div>
-      <div class="net">収支 +574 円</div></div>
-    <div class="box"><div class="t">修繕積立金会計</div>
-      <div class="r"><span>収入</span><b>158,140 円</b></div>
-      <div class="r"><span>支出</span><b>0 円</b></div>
-      <div class="net">収支 +158,140 円</div></div>
+  <div class="blk">
+    <h1>2026年6月 会計月報（掲示用）</h1>
+    <div class="meta">エスト北塚口管理組合　第41期（2026年11月期）・自主管理元年　／　概算の速報値（税込・現金主義＝支払った月で計上・税理士監修）</div>
+    <div class="finline"><b>財政状態（概算）</b>　管理費会計 約187,000円 ／ 修繕積立金会計 約14,570,000円（期末見込 約272,000／約15,204,000円）　未収金 0円（0戸）</div>
   </div>
-
-  <h2>6月、何にいくら使ったか（大きなお金）</h2>
-  <table>
-    <thead><tr><th class="c">日</th><th class="c">内容</th><th class="c">パートナー企業</th><th class="c">会計</th><th class="n">金額</th></tr></thead>
-    <tbody>
-      <tr class="grp"><td colspan="4">固定費（毎月決まって発生）</td><td class="n">74,826 円</td></tr>
-      <tr><td class='c'>—</td><td class='c'>会計・組合サポート</td><td class='c'>小林税理士</td><td class='c'>管理費</td><td class='n'>27,500 円</td></tr><tr><td class='c'>—</td><td class='c'>日常清掃</td><td class='c'>ダイキチ</td><td class='c'>管理費</td><td class='n'>40,700 円</td></tr><tr><td class='c'>—</td><td class='c'>管理費の収納代行</td><td class='c'>ジャックス</td><td class='c'>管理費</td><td class='n'>5,626 円</td></tr><tr><td class='c'>—</td><td class='c'>共用部の水道（隔月請求を月割り概算）（概算）</td><td class='c'>伊丹市上下水道局</td><td class='c'>管理費</td><td class='n'>1,000 円</td></tr>
-      <tr class="grp"><td colspan="4">変動費（その月だけの大きな支出）</td><td class="n">118,000 円</td></tr>
-      <tr><td class='c'>1</td><td class='c'>屋上高架水槽 配線補修</td><td class='c'>IMU設備</td><td class='c'>管理費</td><td class='n'>33,000 円</td></tr><tr><td class='c'>—</td><td class='c'>かしの木の伐採（植栽管理・5/25実施）</td><td class='c'>植栽業者</td><td class='c'>管理費</td><td class='n'>85,000 円</td></tr>
-    </tbody>
-  </table>
-  <div class="cmp"><b>自主管理でここが変わりました</b>　日本ハウズイング管理下 137,280 円/月 → <b>自主管理 93,901 円/月</b>（同じ管理業務を分離発注し、月 約 43,379 円・年 約 520,548 円を圧縮）</div>
-  <div class="memo"><b>ひとくちメモ</b>　「小修繕費」は、日々の暮らしを守るための小さな直しに使うお財布です（管理費会計の中にあります）。大規模修繕のための修繕積立金とは別物です。</div>
-  <div class="foot">確定値は3か月ごとの理事会議事録にて正式報告。定期点検・清掃費は発生した月に変動費として計上（上の比較のみ公平のため年額÷12で表示）。個人が特定される情報（氏名・部屋番号・戸別請求額・滞納情報）は掲載していません。／最終更新 2026-08-04　エスト北塚口管理組合</div>
+  <div class="blk">
+    <h2>今月の収支</h2>
+    <div class="acc">
+      <div class="box"><div class="t">管理費会計</div>
+        <div class="r"><span>収入</span><b>193,400 円</b></div>
+        <div class="r"><span>支出</span><b>192,826 円</b></div>
+        <div class="net">収支 +574 円</div></div>
+      <div class="box"><div class="t">修繕積立金会計</div>
+        <div class="r"><span>収入</span><b>158,140 円</b></div>
+        <div class="r"><span>支出</span><b>0 円</b></div>
+        <div class="net">収支 +158,140 円</div></div>
+    </div>
+  </div>
+  <div class="blk">
+    <h2>6月、何にいくら使ったか（大きなお金）</h2>
+    <table>
+      <thead><tr><th class="c">日</th><th class="c">内容</th><th class="c">パートナー企業</th><th class="c">会計</th><th class="n">金額</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="4">固定費（毎月決まって発生）</td><td class="n">74,826 円</td></tr>
+        <tr><td class='c'>—</td><td class='c'>会計・組合サポート</td><td class='c'>小林税理士</td><td class='c'>管理費</td><td class='n'>27,500 円</td></tr><tr><td class='c'>—</td><td class='c'>日常清掃</td><td class='c'>ダイキチ</td><td class='c'>管理費</td><td class='n'>40,700 円</td></tr><tr><td class='c'>—</td><td class='c'>管理費の収納代行</td><td class='c'>ジャックス</td><td class='c'>管理費</td><td class='n'>5,626 円</td></tr><tr><td class='c'>—</td><td class='c'>共用部の水道（隔月請求を月割り概算）（概算）</td><td class='c'>伊丹市上下水道局</td><td class='c'>管理費</td><td class='n'>1,000 円</td></tr>
+        <tr class="grp"><td colspan="4">変動費（その月だけの大きな支出）</td><td class="n">118,000 円</td></tr>
+        <tr><td class='c'>1</td><td class='c'>屋上高架水槽 配線補修</td><td class='c'>IMU設備</td><td class='c'>管理費</td><td class='n'>33,000 円</td></tr><tr><td class='c'>—</td><td class='c'>かしの木の伐採（植栽管理・5/25実施）</td><td class='c'>植栽業者</td><td class='c'>管理費</td><td class='n'>85,000 円</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="blk"><div class="cmp"><b>自主管理でここが変わりました</b>　日本ハウズイング管理下 137,280 円/月 → <b>自主管理 93,901 円/月</b>（同じ管理業務を分離発注し、月 約 43,379 円・年 約 520,548 円を圧縮）</div></div>
+  <div class="blk"><div class="memo"><b>ひとくちメモ</b>　「小修繕費」は、日々の暮らしを守るための小さな直しに使うお財布です（管理費会計の中にあります）。大規模修繕のための修繕積立金とは別物です。</div></div>
+  <div class="blk"><div class="foot">確定値は3か月ごとの理事会議事録にて正式報告。定期点検・清掃費は発生した月に変動費として計上（上の比較のみ公平のため年額÷12で表示）。個人が特定される情報（氏名・部屋番号・戸別請求額・滞納情報）は掲載していません。／最終更新 2026-08-04　エスト北塚口管理組合</div></div>
 </div></div>
 <script>
 (function(){
@@ -69,8 +75,18 @@ tr.grp td{background:#d5d5d5;font-weight:bold;font-size:12px;}
     var inner=document.getElementById('inner'), sheet=document.getElementById('sheet');
     if(!inner||!sheet) return;
     inner.style.transform='none';
-    var s=Math.min(1, sheet.clientHeight/inner.scrollHeight, sheet.clientWidth/inner.scrollWidth);
-    inner.style.transform='scale('+s+')';
+    inner.style.height='auto';
+    inner.style.justifyContent='flex-start';
+    var availH=sheet.clientHeight, availW=sheet.clientWidth;
+    var h=inner.scrollHeight, w=inner.scrollWidth;
+    if(h<=availH && w<=availW){
+      // 内容が少ない → ページ全面に縦均等配置で広げる
+      inner.style.height=availH+'px';
+      inner.style.justifyContent='space-between';
+    } else {
+      // 内容が多い → 1ページに収まるよう自動縮小
+      inner.style.transform='scale('+Math.min(availH/h, availW/w)+')';
+    }
   }
   window.addEventListener('load',fit);
   window.addEventListener('resize',fit);
