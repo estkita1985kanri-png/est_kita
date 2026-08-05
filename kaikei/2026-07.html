@@ -45,6 +45,13 @@ td.biz{color:var(--sub);white-space:nowrap;}
 td.none{text-align:center;color:var(--sub);padding:14px;}
 .tag{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:10px;font-weight:700;}
 .tag.m{background:#fbe9df;color:var(--brick);} .tag.r{background:#e2f1ea;color:var(--green);}
+td.nm{text-align:left;white-space:normal;min-width:130px;line-height:1.45;}
+.money-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+/* 横スクロールが必要な表にだけJSで出す誘導アイコン */
+.scrollhint{display:none;align-items:center;justify-content:flex-end;margin:3px 1px 2px;}
+.scrollhint b{display:inline-flex;align-items:center;gap:5px;background:#f0ece5;color:var(--sub);border:1px solid var(--line);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700;}
+.scrollhint .ar{animation:swipe 1.2s ease-in-out infinite;}
+@keyframes swipe{0%,100%{transform:translateX(0);}50%{transform:translateX(4px);}}
 .fixed{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 15px;}
 .fixed li{display:flex;justify-content:space-between;list-style:none;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px;}
 .fixed ul{margin:0;padding:0;} .fixed li:last-child{border-bottom:none;}
@@ -77,7 +84,9 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
 .ftag{display:inline-block;font-size:10px;border-radius:9px;padding:0 6px;margin-left:6px;vertical-align:middle;font-weight:700;}
 .ftag.kind-fix{background:#dbeafe;color:#1e40af;}
 .ftag.kind-est{background:#f0ece5;color:var(--sub);}
-.misyu-note{display:block;font-size:11px;color:var(--sub);font-weight:400;margin-top:2px;}
+.misyu-note{display:block;font-size:11px;color:var(--sub);font-weight:400;margin-top:2px;white-space:normal;text-align:left;line-height:1.5;}
+/* 未収金の金額セルは折り返し可（長い注記でも横スクロールを出さない） */
+.fin2 tr.misyu td.n{white-space:normal;}
 .bigpay{list-style:none;padding:0;margin:2px 0;}
 .bigpay li{display:flex;align-items:baseline;gap:9px;padding:8px 11px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;font-size:13px;background:var(--card);}
 .bigpay .bm{font-weight:700;color:var(--brick);white-space:nowrap;}
@@ -117,6 +126,7 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
 .fin2 thead th:first-child,.fin2 td.lbl{min-width:104px;}
 .fin2 td.n{min-width:80px;font-size:12px;}
 .misyu-note{font-size:10.5px;}
+table{font-size:12px;} th,td{padding:6px 6px;} td.nm{min-width:96px;}
 }
 /* ---- A4印刷（掲示板1枚） ---- */
 @media print{
@@ -163,15 +173,17 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
 <h3 class="sec">今期の大型支出（10万円超・第41期（2025年12月〜））</h3><ul class="bigpay"><li><span class="bm">12月</span><span class="bnm">損害保険料（マンション総合保険・年払い）</span><span class="bbiz">損保ジャパン</span><b>316,584 円</b></li></ul>
 
   <h3 class="sec">7月、何にいくら使ったか（大きなお金）</h3>
+  <div class="money-wrap">
   <table>
     <thead><tr><th class="c">発生日</th><th class="c">内容</th><th class="c">パートナー企業</th><th class="c">会計</th><th class="n">金額</th></tr></thead>
     <tbody>
       <tr class="grp fx"><td colspan="4">固定費（毎月決まって発生）</td><td class="n">46,326 円</td></tr>
-      <tr><td class='c'>7/6</td><td class='c'>日常清掃</td><td class='c biz'>ダイキチ</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>40,700 円</td></tr><tr><td class='c'>7/10</td><td class='c'>管理費の収納代行</td><td class='c biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>5,626 円</td></tr>
+      <tr><td class='c'>7/6</td><td class='nm'>日常清掃</td><td class='c biz'>ダイキチ</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>40,700 円</td></tr><tr><td class='c'>7/10</td><td class='nm'>管理費の収納代行</td><td class='c biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>5,626 円</td></tr>
       <tr class="grp vr"><td colspan="4">変動費（その月だけの大きな支出）</td><td class="n">34,672 円</td></tr>
-      <tr><td class='c'>7/15</td><td class='c'>給水設備点検（年3回）</td><td class='c biz'>IMU設備</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>8,800 円</td></tr><tr><td class='c'>4/5</td><td class='c'>臨時総会 運営支援</td><td class='c biz'>小林税理士</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>22,000 円</td></tr><tr><td class='c'>7/10</td><td class='c'>口座振替の初期登録費用（移行・一度きり）</td><td class='c biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>3,872 円</td></tr>
+      <tr><td class='c'>7/15</td><td class='nm'>給水設備点検（年3回）</td><td class='c biz'>IMU設備</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>8,800 円</td></tr><tr><td class='c'>4/5</td><td class='nm'>臨時総会 運営支援</td><td class='c biz'>小林税理士</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>22,000 円</td></tr><tr><td class='c'>7/10</td><td class='nm'>口座振替の初期登録費用（移行・一度きり）</td><td class='c biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>3,872 円</td></tr>
     </tbody>
   </table>
+  </div>
   <p class="tiny">※「大きなお金」に絞って掲載しています（数百〜千円台の少額な立替・消耗品は割愛）。金額は税込・支払ベース（支払った月で計上）。固定費は毎月ほぼ同額、変動費はその月だけの支出です。</p>
   
       <div class="compare">
@@ -195,5 +207,22 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
     ※ 個人が特定される情報（氏名・部屋番号・戸別の請求額・滞納情報）は一切掲載していません。専有部にかかわる対応は概要のみ記載しています。<br>
     最終更新：2026-08-05　／　エスト北塚口管理組合
   </div>
-</div></body>
+</div>
+<script>
+(function(){
+  var wraps = document.querySelectorAll('.fin-wrap,.sched-wrap,.money-wrap');
+  wraps.forEach(function(w){
+    var hint = document.createElement('div');
+    hint.className = 'scrollhint';
+    hint.innerHTML = '<b>横にスクロールできます <span class="ar">👉</span></b>';
+    w.parentNode.insertBefore(hint, w);
+    function upd(){ hint.style.display = (w.scrollWidth > w.clientWidth + 2) ? 'flex' : 'none'; }
+    function fade(){ hint.style.opacity = (w.scrollLeft > 6) ? '0.35' : '1'; }
+    upd(); fade();
+    window.addEventListener('resize', upd);
+    w.addEventListener('scroll', fade, {passive:true});
+  });
+})();
+</script>
+</body>
 </html>
