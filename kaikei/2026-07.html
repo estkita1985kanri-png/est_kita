@@ -64,12 +64,12 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
 .sched td.plan{background:#f2eee7;}
 .sched td .dt{font-size:10px;color:var(--sub);}
 .fin-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:2px 0;}
-.fin2{border:none;border-radius:0;background:transparent;min-width:430px;font-size:13px;}
+.fin2{border:none;border-radius:0;background:transparent;min-width:360px;width:100%;font-size:13px;}
 .fin2 th,.fin2 td{border-bottom:1px solid var(--line);padding:7px 10px;}
 .fin2 thead th{background:#f3efe9;font-weight:700;font-size:11.5px;text-align:right;color:var(--sub);}
-.fin2 thead th:first-child{text-align:left;}
-.fin2 td.lbl{text-align:left;}
-.fin2 td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700;}
+/* ラベル列（区分・項目）は最小幅を確保して、日本語が1文字ずつ縦折れするのを防ぐ */
+.fin2 thead th:first-child,.fin2 td.lbl{text-align:left;min-width:150px;white-space:normal;line-height:1.4;word-break:normal;}
+.fin2 td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700;min-width:92px;}
 .fin2 tr.tot td{border-top:1.5px solid var(--line);font-weight:800;}
 .fin2 tr.misyu td{background:#e6f4ec;}
 .fin2 tr.grp2 td{background:#efe9e1;font-weight:700;font-size:11.5px;}
@@ -108,7 +108,16 @@ td.none{text-align:center;color:var(--sub);padding:14px;}
 .yotei{font-size:13px;color:var(--ink);background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:10px 14px;margin-top:12px;}
 .foot{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--sub);line-height:1.7;}
 .foot b{color:var(--brick);}
-@media(max-width:520px){.cards{grid-template-columns:1fr;} .cmp-row{flex-direction:column;} .cmp-arrow{transform:rotate(90deg);justify-content:center;}}
+@media(max-width:520px){
+.cards{grid-template-columns:1fr;} .cmp-row{flex-direction:column;} .cmp-arrow{transform:rotate(90deg);justify-content:center;}
+/* スマホ：残高・予算対比の表を詰めて読みやすく（横スクロールは最小限のフォールバック） */
+.fin2{min-width:300px;font-size:12px;}
+.fin2 th,.fin2 td{padding:6px 7px;}
+.fin2 thead th,.fin2 tr.grp2 td{font-size:11px;}
+.fin2 thead th:first-child,.fin2 td.lbl{min-width:104px;}
+.fin2 td.n{min-width:80px;font-size:12px;}
+.misyu-note{font-size:10.5px;}
+}
 /* ---- A4印刷（掲示板1枚） ---- */
 @media print{
   @page{size:A4 portrait;margin:11mm;}
