@@ -71,7 +71,7 @@ td.nm{text-align:left;white-space:normal;min-width:130px;line-height:1.45;}
 .sched td.plan{background:#f2eee7;}
 .sched td .dt{font-size:10px;color:var(--sub);}
 .fin-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:2px 0;}
-.fin2{border:none;border-radius:0;background:transparent;min-width:360px;width:100%;font-size:13px;}
+.fin2{border:none;border-radius:0;background:transparent;width:100%;font-size:13px;}
 .fin2 th,.fin2 td{border-bottom:1px solid var(--line);padding:7px 10px;}
 .fin2 thead th{background:#f3efe9;font-weight:700;font-size:11.5px;text-align:right;color:var(--sub);}
 /* ラベル列（区分・項目）は最小幅を確保して、日本語が1文字ずつ縦折れするのを防ぐ */
@@ -119,14 +119,16 @@ td.nm{text-align:left;white-space:normal;min-width:130px;line-height:1.45;}
 .foot b{color:var(--brick);}
 @media(max-width:520px){
 .cards{grid-template-columns:1fr;} .cmp-row{flex-direction:column;} .cmp-arrow{transform:rotate(90deg);justify-content:center;}
-/* スマホ：残高・予算対比の表を詰めて読みやすく（横スクロールは最小限のフォールバック） */
-.fin2{min-width:300px;font-size:12px;}
-.fin2 th,.fin2 td{padding:6px 7px;}
-.fin2 thead th,.fin2 tr.grp2 td{font-size:11px;}
-.fin2 thead th:first-child,.fin2 td.lbl{min-width:104px;}
-.fin2 td.n{min-width:80px;font-size:12px;}
+.sheet{padding:16px 8px 32px;}
+/* スマホ：残高・予算対比・大きなお金は画面内に収める（横スクロールは点検スケジュールのみ） */
+.fin2{font-size:11px;}
+.fin2 th,.fin2 td{padding:4px 3px;}
+.fin2 thead th,.fin2 tr.grp2 td{font-size:10.5px;}
+.fin2 thead th:first-child,.fin2 td.lbl{min-width:76px;}
+.fin2 td.n{min-width:0;font-size:11px;}
 .misyu-note{font-size:10.5px;}
-table{font-size:12px;} th,td{padding:6px 6px;} td.nm{min-width:96px;}
+table{font-size:11px;} th,td{padding:5px 4px;} th.c,td.c{padding-left:2px;padding-right:2px;}
+td.nm{min-width:72px;} td.biz{white-space:normal;}
 }
 /* ---- A4印刷（掲示板1枚） ---- */
 @media print{
@@ -210,7 +212,7 @@ table{font-size:12px;} th,td{padding:6px 6px;} td.nm{min-width:96px;}
 </div>
 <script>
 (function(){
-  var wraps = document.querySelectorAll('.fin-wrap,.sched-wrap,.money-wrap');
+  var wraps = document.querySelectorAll('.sched-wrap');
   wraps.forEach(function(w){
     var hint = document.createElement('div');
     hint.className = 'scrollhint';
