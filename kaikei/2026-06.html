@@ -59,6 +59,7 @@ td.nm{text-align:left;white-space:normal;min-width:130px;line-height:1.45;}
 .approx{display:inline-block;font-size:10px;color:var(--sub);background:#f0ece5;border-radius:9px;padding:0 6px;margin-left:5px;vertical-align:middle;}
 .grp td{background:#f3efe9;font-weight:700;font-size:13.5px;border-top:2px solid var(--line);}
 .grp.vr td{color:var(--brick);}
+.perhh{display:inline-block;font-weight:400;font-size:11px;color:var(--sub);margin-left:9px;}
 .tiny{font-size:11px;color:var(--sub);margin:6px 2px 0;line-height:1.55;}
 .sched-lead{font-size:12px;color:var(--sub);margin:2px 0 6px;}
 .sched-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:9px;}
@@ -120,7 +121,7 @@ td.nm{text-align:left;white-space:normal;min-width:130px;line-height:1.45;}
 @media(max-width:520px){
 .cards{grid-template-columns:1fr;} .cmp-row{flex-direction:column;} .cmp-arrow{transform:rotate(90deg);justify-content:center;}
 .sheet{padding:16px 8px 32px;}
-/* スマホ：残高・予算対比・大きなお金は画面内に収める（横スクロールは点検スケジュールのみ） */
+/* スマホ：残高・予算対比・支出一覧は画面内に収める（横スクロールは点検スケジュールのみ） */
 .fin2{font-size:11px;}
 .fin2 th,.fin2 td{padding:4px 3px;}
 .fin2 thead th,.fin2 tr.grp2 td{font-size:10.5px;}
@@ -174,19 +175,19 @@ td.nm{min-width:72px;} td.biz{white-space:normal;}
 <h3 class="sec">予算対比（第41期・年度累計（12月〜6月末））</h3><div class="fin-wrap"><table class="fin2"><thead><tr><th>項目</th><th class="n">予算</th><th class="n">実績</th><th class="n">差（実績−予算）</th></tr></thead><tbody><tr class="grp2"><td colspan="4">管理費会計</td></tr><tr><td class="lbl">収入</td><td class="n">1,305,100 円</td><td class="n">1,392,528 円</td><td class="n sa">+87,428 円</td></tr><tr><td class="lbl">支出</td><td class="n">1,627,224 円</td><td class="n">1,559,102 円</td><td class="n sa">▲68,122 円</td></tr><tr><td class="lbl">収支</td><td class="n">▲322,124 円</td><td class="n">▲166,574 円</td><td class="n sa">+155,550 円</td></tr><tr class="grp2"><td colspan="4">修繕積立金会計</td></tr><tr><td class="lbl">収入</td><td class="n">1,108,730 円</td><td class="n">1,086,336 円</td><td class="n sa">▲22,394 円</td></tr><tr><td class="lbl">収支</td><td class="n">+1,108,730 円</td><td class="n">+1,086,336 円</td><td class="n sa">▲22,394 円</td></tr></tbody></table></div><p class="tiny">予算・実績とも同一期間（12月〜6月末）で比較。管理費会計は支出を予算の範囲内に抑え、収支は予算（▲32.2万）より改善して実績▲16.7万。収入が予算をやや上回るのは料金改定タイミングによるもの（移行期の未納は7月に全戸回収済み）。修繕積立金は移行期の未納分だけ予算をわずかに下回りますが、順次回収予定です。</p>
 <h3 class="sec">今期の大型支出（10万円超・第41期（2025年12月〜））</h3><ul class="bigpay"><li><span class="bm">12月</span><span class="bnm">損害保険料（マンション総合保険・年払い）</span><span class="bbiz">損保ジャパン</span><b>316,584 円</b></li></ul>
 
-  <h3 class="sec">6月、何にいくら使ったか（大きなお金）</h3>
+  <h3 class="sec">6月、何にいくら使ったか</h3>
   <div class="money-wrap">
   <table>
     <thead><tr><th class="c">発生日</th><th class="c">内容</th><th class="c">パートナー企業</th><th class="c">会計</th><th class="n">金額</th></tr></thead>
     <tbody>
-      <tr class="grp fx"><td colspan="4">固定費（毎月決まって発生）</td><td class="n">18,051 円</td></tr>
+      <tr class="grp fx"><td colspan="4">固定費（毎月決まって発生）<span class="perhh">1戸あたり約 950円</span></td><td class="n">18,051 円</td></tr>
       <tr><td class='c'>6/10</td><td class='nm'>管理費の収納代行</td><td class='c biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>6,616 円</td></tr><tr><td class='c'>—</td><td class='nm'>共用部の電気・ガス</td><td class='c biz'>大阪ガス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>10,253 円</td></tr><tr><td class='c'>—</td><td class='nm'>共用部の水道（隔月）</td><td class='c biz'>伊丹市上下水道局</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>1,182 円</td></tr>
-      <tr class="grp vr"><td colspan="4">変動費（その月だけの大きな支出）</td><td class="n">118,000 円</td></tr>
+      <tr class="grp vr"><td colspan="4">変動費（その月だけの支出）<span class="perhh">1戸あたり約 6,210円</span></td><td class="n">118,000 円</td></tr>
       <tr><td class='c'>6/1</td><td class='nm'>屋上高架水槽 配線補修</td><td class='c biz'>IMU設備</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>33,000 円</td></tr><tr><td class='c'>5/25</td><td class='nm'>かしの木の伐採（植栽管理）</td><td class='c biz'>植栽業者</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>85,000 円</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="tiny">※「大きなお金」に絞って掲載しています（数百〜千円台の少額な立替・消耗品は割愛）。金額は税込・支払ベース（支払った月で計上）。固定費は毎月ほぼ同額、変動費はその月だけの支出です。</p>
+  <p class="tiny">※ 主だった支出を掲載しています（数百〜千円台の少額な立替・消耗品は割愛）。金額は税込・支払ベース（支払った月で計上）。「1戸あたり」は各合計を全19戸で割った概算です。固定費は毎月ほぼ同額、変動費はその月だけの支出です。</p>
   
       <div class="compare">
         <h3>自主管理でここが変わりました</h3>
@@ -207,7 +208,7 @@ td.nm{min-width:72px;} td.biz{white-space:normal;}
     ※ 本報告は<b>概算の速報値</b>です（税理士監修・<b>現金主義＝支払った月で計上</b>。理事長が把握する請求書・立替明細ベース）。<b>確定値は3か月ごとの理事会議事録</b>にて正式にご報告します。<br>
     ※ 定期点検・清掃費は年に数回まとまって発生します。実際に払った月に<b>変動費</b>として計上し、上の「自主管理でここが変わりました」の比較では公平のため<b>年額を12で割った月割り概算</b>で表示しています。<br>
     ※ 個人が特定される情報（氏名・部屋番号・戸別の請求額・滞納情報）は一切掲載していません。専有部にかかわる対応は概要のみ記載しています。<br>
-    最終更新：2026-08-05　／　エスト北塚口管理組合
+    最終更新：2026-08-06　／　エスト北塚口管理組合
   </div>
 </div>
 <script>
