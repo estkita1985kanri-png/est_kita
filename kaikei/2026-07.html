@@ -71,6 +71,11 @@ td.nm{text-align:left;white-space:normal;min-width:130px;line-height:1.45;}
 .sched td.done{background:#e6f4ec;}
 .sched td.plan{background:#f2eee7;}
 .sched td .dt{font-size:10px;color:var(--sub);}
+.plan-list{list-style:none;padding:0;margin:2px 0;}
+.plan-list li{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:9px 12px;border:1px solid var(--line);border-radius:9px;margin-bottom:6px;background:var(--card);font-size:13px;}
+.plan-list .pstat{flex:none;font-size:10.5px;font-weight:700;color:#8a5a00;background:#fdf0d5;border:1px solid #f0d9a8;border-radius:20px;padding:2px 9px;white-space:nowrap;}
+.plan-list .pnm{flex:1;min-width:120px;}
+.plan-list .pacct{flex:none;}
 .fin-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:2px 0;}
 .fin2{border:none;border-radius:0;background:transparent;width:100%;font-size:13px;}
 .fin2 th,.fin2 td{border-bottom:1px solid var(--line);padding:7px 10px;}
@@ -202,13 +207,13 @@ td.nm{min-width:72px;} td.biz{white-space:normal;}
 
   <div class="memo"><span class="badge">会計ひとくちメモ</span><p>管理費と修繕積立金は“別のお財布”です。修繕積立金は普段は使わず、大規模修繕を含む大きな修繕工事（排水管の更新など）にそなえて積み立てている共有財産。毎月きちんと貯まっているかが、健全な管理のいちばんの基本です。</p></div>
   <div class="yotei"><b>来月の予定</b>　来月以降の定期点検は、9/9に消防用設備点検（法定・年2回）、11月に給水設備点検を予定しています（詳細は下の年間点検スケジュール）。</div>
-  <h3 class="sec">年間の点検スケジュール（2026年）</h3><p class="sched-lead">建物を安全に保つため、定期点検を計画的に実施しています。（🟢 実施済／● 予定）</p><div class="sched-wrap"><table class="sched"><thead><tr><th class="item">点検項目</th><th>12月</th><th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th><th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月</th></tr></thead><tbody><tr><td class="item">共用部分等外壁点検<span class="freq">年1回</span></td><td></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">5/11</span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="item">消防用設備点検<span class="freq">年2回・法定</span></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">3/23</span></td><td></td><td></td><td></td><td></td><td></td><td class="plan">●<br><span class="dt">9/9</span></td><td></td><td></td></tr><tr><td class="item">給水設備点検<span class="freq">年3回</span></td><td></td><td></td><td class="done">🟢<br><span class="dt">2/26</span></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">7/15</span></td><td></td><td></td><td></td><td class="plan">●<br><span class="dt">11月</span></td></tr><tr><td class="item">貯水槽清掃<span class="freq">年1回</span></td><td></td><td class="done">🟢<br><span class="dt">1/15</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="item">雑排水管清掃<span class="freq">年1回</span></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">3/8</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+  <h3 class="sec">年間の点検スケジュール（2026年）</h3><p class="sched-lead">建物を安全に保つため、定期点検を計画的に実施しています。（🟢 実施済／● 予定）</p><div class="sched-wrap"><table class="sched"><thead><tr><th class="item">点検項目</th><th>12月</th><th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th><th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月</th></tr></thead><tbody><tr><td class="item">共用部分等外壁点検<span class="freq">年1回</span></td><td></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">5/11</span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="item">消防用設備点検<span class="freq">年2回・法定</span></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">3/23</span></td><td></td><td></td><td></td><td></td><td></td><td class="plan">●<br><span class="dt">9/9</span></td><td></td><td></td></tr><tr><td class="item">給水設備点検<span class="freq">年3回</span></td><td></td><td></td><td class="done">🟢<br><span class="dt">2/26</span></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">7/15</span></td><td></td><td></td><td></td><td class="plan">●<br><span class="dt">11月</span></td></tr><tr><td class="item">貯水槽清掃<span class="freq">年1回</span></td><td></td><td class="done">🟢<br><span class="dt">1/15</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="item">雑排水管清掃<span class="freq">年1回</span></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">3/8</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><h3 class="sec">今後予定している調査・工事（時期未定）</h3><p class="sched-lead">組合員のみなさまの資産を守るため、次の調査・工事を検討しています。現在いずれも見積を取得中で、時期が決まり次第このスケジュールでお知らせします。</p><ul class="plan-list"><li><span class="pstat">見積取得中</span><span class="pnm">給排水管のカメラ検査（内視鏡調査・水漏れの未然防止）</span><span class="pacct tag r">修繕積立金</span></li><li><span class="pstat">見積取得中</span><span class="pnm">長期修繕計画書の作成（更新）</span><span class="pacct tag r">修繕積立金</span></li></ul>
 
   <div class="foot">
     ※ 本報告は<b>概算の速報値</b>です（税理士監修・<b>現金主義＝支払った月で計上</b>。理事長が把握する請求書・立替明細ベース）。<b>確定値は3か月ごとの理事会議事録</b>にて正式にご報告します。<br>
     ※ 定期点検・清掃費は年に数回まとまって発生します。実際に払った月に<b>変動費</b>として計上し、上の「自主管理でここが変わりました」の比較では公平のため<b>年額を12で割った月割り概算</b>で表示しています。<br>
     ※ 個人が特定される情報（氏名・部屋番号・戸別の請求額・滞納情報）は一切掲載していません。専有部にかかわる対応は概要のみ記載しています。<br>
-    最終更新：2026-08-07　／　エスト北塚口管理組合
+    最終更新：2026-08-08　／　エスト北塚口管理組合
   </div>
 </div>
 <script>
