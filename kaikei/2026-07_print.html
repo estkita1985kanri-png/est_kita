@@ -3,13 +3,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026年7月 会計月報（掲示用）｜エスト北塚口管理組合</title>
 <style>
-@page{size:A4 portrait;margin:14mm 8mm 10mm 8mm;}  /* 上を厚めに（プリンタ上端の切れ防止）。左右8mmは#sheet幅194mmに合わせ固定 */
+@page{size:A4 portrait;margin:20mm 8mm 12mm 8mm;}  /* 上を厚めに（プリンタ上端の切れ防止＋ゆとり）。左右8mmは#sheet幅194mmに合わせ固定 */
 *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 html,body{margin:0;padding:0;background:#fff;color:#000;font-family:"Meiryo","Hiragino Kaku Gothic ProN",sans-serif;}
 .pbar{width:194mm;max-width:100%;margin:0 auto 6px;text-align:right;}
 .pbar button{font-size:13px;padding:8px 18px;border:1.5px solid #000;background:#fff;border-radius:5px;cursor:pointer;}
-/* #sheet = A4 印刷可能領域（幅210-16=194mm／高さ297-14-10=273mmに収まる範囲）。内容はJSで1ページに自動縮小フィット */
-#sheet{position:relative;width:194mm;height:268mm;max-width:100%;margin:0 auto;overflow:hidden;}
+/* #sheet = A4 印刷可能領域（幅210-16=194mm／高さ297-20-12=265mmに収まる範囲）。内容はJSで1ページに自動縮小フィット */
+#sheet{position:relative;width:194mm;height:258mm;max-width:100%;margin:0 auto;overflow:hidden;}
 /* 内容が少なければ justify-content:space-between で縦全面に広げ、多ければJSで自動縮小 */
 #inner{position:absolute;top:0;left:0;width:194mm;transform-origin:top left;display:flex;flex-direction:column;font-size:13.5px;line-height:1.5;}
 .blk{flex:none;}
