@@ -3,13 +3,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026年7月 会計月報（掲示用）｜エスト北塚口管理組合</title>
 <style>
-@page{size:A4 portrait;margin:8mm;}
+@page{size:A4 portrait;margin:14mm 8mm 10mm 8mm;}  /* 上を厚めに（プリンタ上端の切れ防止）。左右8mmは#sheet幅194mmに合わせ固定 */
 *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 html,body{margin:0;padding:0;background:#fff;color:#000;font-family:"Meiryo","Hiragino Kaku Gothic ProN",sans-serif;}
 .pbar{width:194mm;max-width:100%;margin:0 auto 6px;text-align:right;}
 .pbar button{font-size:13px;padding:8px 18px;border:1.5px solid #000;background:#fff;border-radius:5px;cursor:pointer;}
-/* #sheet = A4 印刷可能領域（210-16 × 297-16mm）。内容はJSで1ページに自動縮小フィット */
-#sheet{position:relative;width:194mm;height:280mm;max-width:100%;margin:0 auto;overflow:hidden;}
+/* #sheet = A4 印刷可能領域（幅210-16=194mm／高さ297-14-10=273mmに収まる範囲）。内容はJSで1ページに自動縮小フィット */
+#sheet{position:relative;width:194mm;height:268mm;max-width:100%;margin:0 auto;overflow:hidden;}
 /* 内容が少なければ justify-content:space-between で縦全面に広げ、多ければJSで自動縮小 */
 #inner{position:absolute;top:0;left:0;width:194mm;transform-origin:top left;display:flex;flex-direction:column;font-size:13.5px;line-height:1.5;}
 .blk{flex:none;}
@@ -73,7 +73,7 @@ tr.grp td{background:#d5d5d5;font-weight:bold;font-size:14.5px;}
   </div>
   <div class="blk"><div class="cmp"><b>自主管理でここが変わりました</b>　日本ハウズイング管理下 137,280 円/月 → <b>自主管理 93,901 円/月</b>（同じ管理業務を分離発注し、月 約 43,379 円・年 約 520,548 円を圧縮）</div></div>
   <div class="blk"><div class="memo"><b>ひとくちメモ</b>　管理費と修繕積立金は“別のお財布”です。修繕積立金は普段は使わず、大規模修繕を含む大きな修繕工事（排水管の更新など）にそなえて積み立てている共有財産。毎月きちんと貯まっているかが、健全な管理のいちばんの基本です。</div></div>
-  <div class="blk"><div class="foot">確定値は3か月ごとの理事会議事録にて正式報告。定期点検・清掃費は発生した月に変動費として計上（上の比較のみ公平のため年額÷12で表示）。個人が特定される情報（氏名・部屋番号・戸別請求額・滞納情報）は掲載していません。／最終更新 2026-08-08　エスト北塚口管理組合</div></div>
+  <div class="blk"><div class="foot">確定値は3か月ごとの理事会議事録にて正式報告。定期点検・清掃費は発生した月に変動費として計上（上の比較のみ公平のため年額÷12で表示）。個人が特定される情報（氏名・部屋番号・戸別請求額・滞納情報）は掲載していません。／最終更新 2026-08-09　エスト北塚口管理組合</div></div>
 </div></div>
 <script>
 (function(){
