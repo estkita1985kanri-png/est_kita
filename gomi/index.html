@@ -53,8 +53,8 @@ h1 .hl{color:var(--band);}
 .foot{margin-top:auto;font-size:12px;color:var(--sub);line-height:1.6;border-top:1px solid var(--cardline);padding-top:8px;}
 @media print{
   html,body{background:#fff;}
-  .sheet{margin:0;height:275mm;overflow:hidden;}
-  #fit{min-height:0;padding:3mm 5mm;}
+  .sheet{margin:0;height:273mm;overflow:hidden;}
+  #fit{min-height:0;height:273mm;padding:2mm 4mm;}
 }
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -152,11 +152,17 @@ h1 .hl{color:var(--band);}
 (function(){
   function fit(){
     var f=document.getElementById('fit'); if(!f) return; var s=f.parentNode;
-    f.style.transform='none';
+    f.style.transform='none'; f.style.height='auto';
     var avail=s.clientHeight, h=f.scrollHeight;
-    if(h>avail+1) f.style.transform='scale('+(avail/h)+')';
+    if(h>avail-1){
+      var r=(avail-1)/h;
+      f.style.transform='scale('+r+')';
+      f.style.height=(avail/r)+'px';
+    }
   }
-  window.addEventListener('load',fit); window.addEventListener('resize',fit); window.addEventListener('beforeprint',fit);
+  window.addEventListener('load',fit); window.addEventListener('resize',fit);
+  window.addEventListener('beforeprint',fit);
+  if(window.matchMedia) try{window.matchMedia('print').addEventListener('change',fit);}catch(e){}
 })();
 </script>
 </body></html>
