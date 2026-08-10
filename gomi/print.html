@@ -13,15 +13,22 @@ html,body{margin:0;padding:0;background:#e9e9e9;}
   font-family:"Hiragino Maru Gothic ProN","Meiryo",sans-serif;padding:6mm 8mm;display:flex;flex-direction:column;}
 .head{text-align:center;border-bottom:4px solid var(--band);padding-bottom:8px;margin-bottom:12px;}
 .htag{display:inline-block;font-size:15px;font-weight:800;color:var(--paper);background:var(--band);border-radius:20px;padding:3px 16px;}
-h1{font-size:44px;margin:8px 0 6px;letter-spacing:.02em;}
+h1{font-size:40px;margin:6px 0 5px;letter-spacing:.02em;}
 h1 .hl{color:var(--band);}
-.lead{font-size:19px;line-height:1.6;margin:0 6px;}
+.lead{font-size:17px;line-height:1.55;margin:0 6px;}
 .lead b{color:var(--ng);}
-.card{border:2.5px solid var(--cardline);border-radius:14px;padding:12px 16px;margin-bottom:12px;}
-.chead{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
-.cno{flex:none;width:40px;height:40px;border-radius:50%;background:var(--band);color:var(--paper);
-  font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;}
-.chead h2{font-size:24px;margin:0;line-height:1.25;}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 3px;}
+.dtag{font-size:20px;font-weight:800;border:2.5px solid var(--band);border-radius:11px;padding:4px 12px;background:var(--paper);text-align:center;line-height:1.15;}
+.dtag b{display:block;font-size:12px;color:var(--sub);font-weight:800;}
+.dtag.hot{background:var(--accentbg);border-color:var(--accent);color:var(--accent);}
+.dtag.hot b{color:var(--accent);}
+.dnote{font-size:11.5px;color:var(--sub);text-align:center;margin:0 0 8px;}
+.card{border:2.5px solid var(--cardline);border-radius:14px;padding:10px 15px;margin-bottom:9px;}
+.chead{display:flex;align-items:center;gap:12px;margin-bottom:7px;}
+.cno{flex:none;width:38px;height:38px;border-radius:50%;background:var(--band);color:var(--paper);
+  font-size:23px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.chead h2{font-size:22px;margin:0;line-height:1.22;}
+.cday{margin-left:auto;font-size:14.5px;font-weight:800;color:var(--band);white-space:nowrap;}
 .cbody{display:flex;align-items:center;gap:10px;justify-content:center;margin:4px 0 8px;}
 .col{flex:1;border:2px solid var(--cardline);border-radius:12px;padding:8px 6px;text-align:center;position:relative;}
 .col.ng{background:var(--ngbg);border-color:var(--ng);}
@@ -35,7 +42,7 @@ h1 .hl{color:var(--band);}
 .scap{font-size:16px;font-weight:800;line-height:1.3;}
 .col.ng .scap{color:var(--ng);} .col.ok .scap{color:var(--band);}
 .arrow{flex:none;font-size:30px;color:var(--sub);font-weight:900;}
-.cnote{font-size:17px;line-height:1.6;margin:2px 2px 0;}
+.cnote{font-size:15.5px;line-height:1.55;margin:2px 2px 0;}
 .cnote b{color:var(--band);}
 .pt{font-size:18px;font-weight:800;text-align:center;background:var(--accentbg);border:2px dashed var(--accent);
   border-radius:12px;padding:10px 12px;margin-top:2px;}
@@ -84,9 +91,17 @@ h1 .hl{color:var(--band);}
     <p class="lead">資源ごみ・びんの日に、正しく出されていないものが見られます。<b>収集されずに残ると、みなさんが困ります。</b>下の3点にご協力ください。</p>
   </header>
 
+  <div class="days">
+    <span class="dtag"><b>燃やすごみ</b>月・木</span>
+    <span class="dtag hot"><b>びん・ペットボトル</b>木</span>
+    <span class="dtag"><b>燃やさないごみ・プラ</b>水</span>
+    <span class="dtag"><b>資源物（新聞・缶など）</b>金</span>
+  </div>
+  <p class="dnote">※お住まいの野間（伊丹市 F1地区）の収集日です。朝は決められた時間までにお出しください。祝日や最新は「伊丹市 家庭ごみカレンダー」でご確認ください。</p>
+
   
   <section class="card">
-    <div class="chead"><span class="cno">1</span><h2>びん・ペットボトルは「袋から出して」</h2></div>
+    <div class="chead"><span class="cno">1</span><h2>びん・ペットボトルは「袋から出して」</h2><span class="cday">収集：毎週 木曜</span></div>
     <div class="cbody">
       <div class="col ng"><span class="mark">✕</span><span class="scene"><svg class="ic"><use href="#ic-bag"/></svg><span class="scap">ふくろのまま</span></span></div>
       <div class="arrow">➡</div>
@@ -97,7 +112,7 @@ h1 .hl{color:var(--band);}
 
   
   <section class="card">
-    <div class="chead"><span class="cno">2</span><h2>缶は「軽くすすいで」透明・半透明のふくろへ</h2></div>
+    <div class="chead"><span class="cno">2</span><h2>缶は「軽くすすいで」透明・半透明のふくろへ</h2><span class="cday">収集：毎週 金曜（資源物）</span></div>
     <div class="cbody">
       <div class="col ng"><span class="mark">✕</span><span class="scene"><svg class="ic"><use href="#ic-can"/></svg><span class="scap">軽くすすぐ</span></span></div>
       <div class="arrow">➡</div>
@@ -108,7 +123,7 @@ h1 .hl{color:var(--band);}
 
   
   <section class="card">
-    <div class="chead"><span class="cno">3</span><h2>ビニールがさは「資源ごみ」ではありません</h2></div>
+    <div class="chead"><span class="cno">3</span><h2>ビニールがさは「資源ごみ」ではありません</h2><span class="cday">収集：毎週 水曜（燃やさないごみ）</span></div>
     <div class="cbody">
       <div class="col ng"><span class="mark">✕</span><span class="scene"><svg class="ic"><use href="#ic-umbrella"/></svg><span class="scap">資源ごみの日に出す</span></span></div>
       <div class="arrow">➡</div>
