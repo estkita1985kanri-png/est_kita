@@ -38,6 +38,15 @@ h1{font-size:50px;margin:0;letter-spacing:.02em;line-height:1.05;}
 .t-dark .bag{border:2.5px solid #000;border-left:9px solid #000;border-radius:0;}
 
 /* ===== 共通パーツ ===== */
+.timebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:8px 13px;margin-top:11px;}
+.tlab{flex:none;font-size:14px;font-weight:800;padding:2px 11px;border-radius:20px;}
+.tval{font-size:22px;font-weight:800;white-space:nowrap;}
+.tval b{font-size:28px;}
+.tnote{font-size:13px;line-height:1.4;flex:1;min-width:150px;}
+.t-light .timebar{border:3px solid #000;border-radius:12px;}
+.t-light .tlab{background:#000;color:#fff;}
+.t-dark .timebar{border:3px solid #000;border-left:9px solid #000;}
+.t-dark .tlab{background:#000;color:#fff;border-radius:4px;}
 .items{display:flex;flex-wrap:wrap;gap:9px;}
 .item{flex:1 1 47%;display:flex;align-items:center;gap:11px;padding:8px 12px;min-width:0;}
 .ic{width:52px;height:52px;flex:none;color:#000;}
@@ -83,6 +92,8 @@ h1{font-size:50px;margin:0;letter-spacing:.02em;line-height:1.05;}
       <div class="day"><span>収集日</span><b>月・木</b></div>
     </div>
   </header>
+
+  <div class="timebar"><span class="tlab">出す時間</span><span class="tval">収集日の朝 <b>8時30分</b>まで</span><span class="tnote">決められた集積所へ。前日の夜に出すのはやめましょう（カラス・においの原因になります）</span></div>
 
   <h2><span class="mk">〇</span>このごみに入れるもの</h2>
   <div class="items"><div class="item"><svg class="ic"><use href="#ic-food"/></svg><div class="itx"><b>台所ごみ</b><span>残飯、野菜くず、竹串、汚れが落ちないマヨネーズ・ケチャップの容器</span></div></div><div class="item"><svg class="ic"><use href="#ic-clearbag"/></svg><div class="itx"><b>プラスチック製品</b><span>バケツ、洗面器、おもちゃ、歯ブラシ、ストロー、CD、ビデオテープ</span></div></div><div class="item"><svg class="ic"><use href="#ic-cloth"/></svg><div class="itx"><b>布・革・ゴム・木</b><span>ぬいぐるみ、枕、毛布、座布団、革靴、スニーカー、カバン、木のおもちゃ</span></div></div><div class="item"><svg class="ic"><use href="#ic-news"/></svg><div class="itx"><b>その他</b><span>杖、ほうき、すだれ、植木の枝葉、草、乾燥剤、保冷剤、紙おむつ</span></div></div></div>
