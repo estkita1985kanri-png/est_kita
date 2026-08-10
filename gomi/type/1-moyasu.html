@@ -11,7 +11,9 @@ html,body{margin:0;padding:0;background:#e9e9e9;color:#000;font-family:"Hiragino
 @media print{
   html,body{background:#fff;}
   .sheet{width:186mm;height:271mm;margin:0;overflow:hidden;}
-  #fit{min-height:0;height:271mm;padding:2mm 3mm;}
+  /* 高さいっぱいを使い、セクション間の余白を自動で配分（下に空白を残さない） */
+  #fit{min-height:0;height:271mm;padding:3mm 4mm;justify-content:space-between;}
+  .items{margin-bottom:0;}
 }
 
 /* ===== 見出し（テイスト差） ===== */
@@ -61,6 +63,8 @@ h1{font-size:50px;margin:0;letter-spacing:.02em;line-height:1.05;}
 .itx span{font-size:14px;line-height:1.45;display:block;text-align:justify;
   word-break:normal;overflow-wrap:anywhere;line-break:strict;}
 .exnote{font-size:12.5px;line-height:1.5;margin:6px 2px 0;}
+/* space-between時に各ブロックが間延びしすぎないよう、最大の伸びしろを制限 */
+.items,.steps,.donts,.timebar,.bag,.hint{flex:0 0 auto;}
 .steps{list-style:none;margin:0;padding:0;}
 .steps li{display:flex;gap:10px;align-items:flex-start;font-size:17px;line-height:1.4;padding:4px 0;border-bottom:1px dashed #999;}
 .steps li:last-child{border-bottom:none;}
@@ -121,12 +125,18 @@ h1{font-size:50px;margin:0;letter-spacing:.02em;line-height:1.05;}
 (function(){
   function fit(){
     var f=document.getElementById('fit'); if(!f) return; var s=f.parentNode;
-    f.style.transform='none'; f.style.height='auto';
+    // いったん等倍・自動高さで実際の内容量を測る
+    f.style.transform='none'; f.style.height='auto'; f.style.justifyContent='';
     var avail=s.clientHeight, h=f.scrollHeight;
     if(h>avail-1){
-      var r=(avail-1)/h;                       // 1pxの余裕をみて確実に1ページへ
+      // はみ出す時だけ縮小し、枠いっぱいに戻す（内容が下まで自然に広がる）
+      var r=(avail-1)/h;
       f.style.transform='scale('+r+')';
-      f.style.height=(avail/r)+'px';           // 縮小後も枠いっぱいに広がるよう補正
+      f.style.height=(avail/r)+'px';
+    } else {
+      // 収まっている時は縮小しない。高さを枠に合わせ、余白を均等配分
+      f.style.height=avail+'px';
+      f.style.justifyContent='space-between';
     }
   }
   window.addEventListener('load',fit); window.addEventListener('resize',fit);

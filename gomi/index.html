@@ -152,12 +152,15 @@ h1 .hl{color:var(--band);}
 (function(){
   function fit(){
     var f=document.getElementById('fit'); if(!f) return; var s=f.parentNode;
-    f.style.transform='none'; f.style.height='auto';
+    f.style.transform='none'; f.style.height='auto'; f.style.justifyContent='';
     var avail=s.clientHeight, h=f.scrollHeight;
     if(h>avail-1){
       var r=(avail-1)/h;
       f.style.transform='scale('+r+')';
       f.style.height=(avail/r)+'px';
+    } else {
+      f.style.height=avail+'px';
+      f.style.justifyContent='space-between';
     }
   }
   window.addEventListener('load',fit); window.addEventListener('resize',fit);
