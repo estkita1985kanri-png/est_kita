@@ -46,9 +46,13 @@ h1 .hl{color:var(--band);}
 .col.ng{background:var(--ngbg);border-color:var(--ng);}
 .col.ok{background:var(--okbg);border-color:var(--ok);}
 .col.st{background:var(--accentbg);border-color:var(--accent);}
-/* ✕〇①② の丸バッジ。枠上に浮かせるので、下のアイコンに被らない位置に収める（.scene の padding-top と対で調整） */
+/* ✕〇12 の丸バッジ。枠上に浮かせるので、下のアイコンに被らない位置に収める（.scene の padding-top と対で調整）
+   ⚠バッジの中に【丸い文字】（〇・①など）を入れないこと。バッジの輪と重なって
+     二重丸（◎）や蛇の目（◉）に見え、「〇が崩れている」印象になる。
+     正解の〇は【バッジの輪そのもの＝中身は空】で表現する（`card()` の rm を空文字にしてある）。 */
 .mark{position:absolute;top:-17px;left:50%;transform:translateX(-50%);width:32px;height:32px;border-radius:50%;
-  font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center;background:var(--paper);border:3px solid;}
+  font-size:20px;font-weight:900;line-height:1;display:flex;align-items:center;justify-content:center;
+  background:var(--paper);border:4px solid;}
 .col.ng .mark{color:var(--ng);border-color:var(--ng);}
 .col.ok .mark{color:var(--ok);border-color:var(--ok);}
 .col.st .mark{color:var(--accent);border-color:var(--accent);}
@@ -131,7 +135,7 @@ h1 .hl{color:var(--band);}
     <div class="cbody">
       <div class="col ng"><span class="mark">✕</span><span class="scene"><svg class="ic"><use href="#ic-umbrella"/></svg><span class="scap">資源ごみの日に出す</span></span></div>
       <div class="arrow">➡</div>
-      <div class="col ok"><span class="mark">〇</span><span class="scene"><svg class="ic"><use href="#ic-umbrella"/></svg><span class="scap">「燃やさないごみ」の日へ</span></span></div>
+      <div class="col ok"><span class="mark"></span><span class="scene"><svg class="ic"><use href="#ic-umbrella"/></svg><span class="scap">「燃やさないごみ」の日へ</span></span></div>
     </div>
     <p class="cnote">ビニールがさは資源ごみではなく<b>「燃やさないごみ」</b>です。透明・半透明のふくろに入れて燃やさないごみの日に出してください（大きくてふくろに入らない・口を結べない場合は粗大ごみ）。</p>
   </section>
@@ -143,7 +147,7 @@ h1 .hl{color:var(--band);}
     <div class="cbody">
       <div class="col ng"><span class="mark">✕</span><span class="scene"><svg class="ic"><use href="#ic-bag"/></svg><span class="scap">ふくろのまま</span></span></div>
       <div class="arrow">➡</div>
-      <div class="col ok"><span class="mark">〇</span><span class="scene"><svg class="ic"><use href="#ic-crate"/></svg><span class="scap">青いコンテナ／ネットへ</span></span></div>
+      <div class="col ok"><span class="mark"></span><span class="scene"><svg class="ic"><use href="#ic-crate"/></svg><span class="scap">青いコンテナ／ネットへ</span></span></div>
     </div>
     <p class="cnote">中身を空にして<b>軽く水ですすぎ</b>、<b>ふくろから出して</b>「青いコンテナ（びん）」「青いネット（ペットボトル）」に入れてください。<b>ふくろに入れたままだと収集されません。</b>（金属のふた＝燃やさないごみ／プラのふた・ラベル＝プラスチック容器包装）</p>
   </section>
@@ -153,9 +157,9 @@ h1 .hl{color:var(--band);}
   <section class="card">
     <div class="chead"><span class="cno">3</span><h2>缶は「軽くすすいで」透明・半透明のふくろへ</h2><span class="cday">収集：毎週 金曜（資源物）</span></div>
     <div class="cbody">
-      <div class="col st"><span class="mark">①</span><span class="scene"><svg class="ic"><use href="#ic-can"/></svg><span class="scap">まず 軽くすすぐ</span></span></div>
+      <div class="col st"><span class="mark">1</span><span class="scene"><svg class="ic"><use href="#ic-can"/></svg><span class="scap">まず 軽くすすぐ</span></span></div>
       <div class="arrow">➡</div>
-      <div class="col st"><span class="mark">②</span><span class="scene"><svg class="ic"><use href="#ic-clearbag"/></svg><span class="scap">つぎに 透明・半透明のふくろへ</span></span></div>
+      <div class="col st"><span class="mark">2</span><span class="scene"><svg class="ic"><use href="#ic-clearbag"/></svg><span class="scap">つぎに 透明・半透明のふくろへ</span></span></div>
     </div>
     <p class="cnote">アルミ缶・スチール缶は<b>軽くすすいで</b>、<b>無色透明・白色半透明の45リットル以下</b>のふくろに入れ、資源物の日に出してください。</p>
   </section>
