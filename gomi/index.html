@@ -2,59 +2,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ゴミ出しのお願い（カラー）｜エスト北塚口管理組合</title>
 <style>
-@page{size:A4 portrait;margin:12mm 12mm 10mm;}
+/* A4の余白は上下左右とも12mmで対称。印刷可能領域＝186mm×273mm */
+@page{size:A4 portrait;margin:12mm;}
 *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 :root{
   --ink:#1c1c1c; --paper:#fff; --bg:#fff; --sub:#555;
   --accent:#1565c0; --accentbg:#e3f0fb;
   --ng:#c62828; --ngbg:#fdecec; --ok:#2e7d32; --okbg:#e9f5ea; --band:#2f6d3a; --cardline:#cfc8bd;}
 html,body{margin:0;padding:0;background:#e9e9e9;}
-.sheet{width:186mm;margin:0 auto;background:var(--bg);color:var(--ink);
-  font-family:"Hiragino Maru Gothic ProN","Meiryo",sans-serif;overflow:hidden;}
-#fit{min-height:261mm;padding:6mm 8mm;display:flex;flex-direction:column;transform-origin:top left;}
+/* ⚠画面表示と印刷結果を一致させるため、画面でも印刷とまったく同じ紙面サイズで組む */
+.sheet{width:186mm;height:272mm;margin:0 auto;background:var(--bg);color:var(--ink);
+  font-family:"Hiragino Maru Gothic ProN","Meiryo",sans-serif;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;}
+#fit{flex:none;width:186mm;height:272mm;padding:3mm 5mm;display:flex;flex-direction:column;
+  transform-origin:center center;}
 .head{text-align:center;border-bottom:4px solid var(--band);padding-bottom:8px;margin-bottom:12px;}
 .htag{display:inline-block;font-size:15px;font-weight:800;color:var(--paper);background:var(--band);border-radius:20px;padding:3px 16px;}
-h1{font-size:40px;margin:6px 0 5px;letter-spacing:.02em;}
+h1{font-size:35px;margin:4px 0 4px;letter-spacing:.02em;}
 h1 .hl{color:var(--band);}
-.lead{font-size:17px;line-height:1.55;margin:0 6px;}
+.lead{font-size:17px;line-height:1.45;margin:0 6px;}
 .lead b{color:var(--ng);}
-.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 3px;}
-.dtag{font-size:20px;font-weight:800;border:2.5px solid var(--band);border-radius:11px;padding:4px 12px;background:var(--paper);text-align:center;line-height:1.15;}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 3px;}
+.dtag{font-size:20px;font-weight:800;border:2.5px solid var(--band);border-radius:11px;padding:3px 12px;background:var(--paper);text-align:center;line-height:1.15;}
 .dtag b{display:block;font-size:12px;color:var(--sub);font-weight:800;}
 .dtag.hot{background:var(--accentbg);border-color:var(--accent);color:var(--accent);}
 .dtag.hot b{color:var(--accent);}
 .dnote{font-size:11.5px;color:var(--sub);text-align:center;margin:0 0 8px;}
-.card{border:2.5px solid var(--cardline);border-radius:14px;padding:10px 15px;margin-bottom:9px;}
-.chead{display:flex;align-items:center;gap:12px;margin-bottom:7px;}
-.cno{flex:none;width:38px;height:38px;border-radius:50%;background:var(--band);color:var(--paper);
-  font-size:23px;font-weight:800;display:flex;align-items:center;justify-content:center;}
-.chead h2{font-size:22px;margin:0;line-height:1.22;}
+/* ===== 余白の配分 =====
+   見出しと本文が離れないよう「見出し＋中身」をひとかたまり（.sec / .card）にし、
+   余った高さは段と段のあいだ（.sp）だけに均等配分する。
+   .sp-foot は出典欄の直前なので、やや控えめに広がる。 */
+.head,.sec,.card,.pt,.foot{flex:0 0 auto;}
+.sp{flex:1 1 0;min-height:9px;}
+.sp-foot{flex-grow:.7;min-height:10px;}
+.card{border:2.5px solid var(--cardline);border-radius:14px;padding:8px 14px;}
+.chead{display:flex;align-items:center;gap:12px;margin-bottom:15px;}
+.cno{flex:none;width:36px;height:36px;border-radius:50%;background:var(--band);color:var(--paper);
+  font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.chead h2{font-size:20.5px;margin:0;line-height:1.22;}
 .cday{margin-left:auto;font-size:14.5px;font-weight:800;color:var(--band);white-space:nowrap;}
-.cbody{display:flex;align-items:center;gap:10px;justify-content:center;margin:4px 0 8px;}
-.col{flex:1;border:2px solid var(--cardline);border-radius:12px;padding:8px 6px;text-align:center;position:relative;}
+.cbody{display:flex;align-items:center;gap:10px;justify-content:center;margin:7px 0 6px;}
+.col{flex:1;border:2px solid var(--cardline);border-radius:12px;padding:6px 6px;text-align:center;position:relative;}
 .col.ng{background:var(--ngbg);border-color:var(--ng);}
 .col.ok{background:var(--okbg);border-color:var(--ok);}
 .col.st{background:var(--accentbg);border-color:var(--accent);}
-.mark{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:34px;height:34px;border-radius:50%;
-  font-size:24px;font-weight:900;display:flex;align-items:center;justify-content:center;background:var(--paper);border:3px solid;}
+/* ✕〇①② の丸バッジ。枠上に浮かせるので、下のアイコンに被らない位置に収める（.scene の padding-top と対で調整） */
+.mark{position:absolute;top:-17px;left:50%;transform:translateX(-50%);width:32px;height:32px;border-radius:50%;
+  font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center;background:var(--paper);border:3px solid;}
 .col.ng .mark{color:var(--ng);border-color:var(--ng);}
 .col.ok .mark{color:var(--ok);border-color:var(--ok);}
 .col.st .mark{color:var(--accent);border-color:var(--accent);}
-.scene{display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:6px;}
-.ic{width:64px;height:64px;color:var(--ink);}
-.scap{font-size:16px;font-weight:800;line-height:1.3;}
+.scene{display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:10px;}
+.ic{width:52px;height:52px;color:var(--ink);}
+.scap{font-size:15.5px;font-weight:800;line-height:1.25;}
 .col.ng .scap{color:var(--ng);} .col.ok .scap{color:var(--band);} .col.st .scap{color:var(--accent);}
 .arrow{flex:none;font-size:30px;color:var(--sub);font-weight:900;}
-.cnote{font-size:15.5px;line-height:1.55;margin:2px 2px 0;}
+.cnote{font-size:15px;line-height:1.45;margin:2px 2px 0;}
 .cnote b{color:var(--band);}
 .pt{font-size:18px;font-weight:800;text-align:center;background:var(--accentbg);border:2px dashed var(--accent);
-  border-radius:12px;padding:10px 12px;margin-top:2px;}
+  border-radius:12px;padding:8px 12px;}
 .pt b{color:var(--ng);}
-.foot{margin-top:auto;font-size:12px;color:var(--sub);line-height:1.6;border-top:1px solid var(--cardline);padding-top:8px;}
+.foot{font-size:12px;color:var(--sub);line-height:1.45;border-top:1px solid var(--cardline);padding-top:7px;}
+/* ⚠印刷ダイアログの「余白」を なし/最小 にすると @page の余白が無効化され、
+     掲示物が用紙の【左上】に寄って右と下に大きな空白ができる。
+     どの余白設定でも天地・左右とも中央に来るよう、ページ全体で中央寄せする。 */
 @media print{
-  html,body{background:#fff;}
-  .sheet{margin:0;height:273mm;overflow:hidden;}
-  #fit{min-height:0;height:273mm;padding:2mm 4mm;}
+  html,body{background:#fff;height:100%;}
+  body{display:flex;align-items:center;justify-content:center;}
+  .sheet{margin:0;flex:none;}
 }
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -97,14 +112,18 @@ h1 .hl{color:var(--band);}
     <h1>ゴミ出しの<span class="hl">お願い</span></h1>
     <p class="lead">資源ごみ・びんの日に、正しく出されていないものが見られます。<b>収集されずに残ると、みなさんが困ります。</b>下の3点にご協力ください。</p>
   </header>
+  <div class="sp"></div>
 
-  <div class="days">
-    <span class="dtag"><b>燃やすごみ</b>月・木</span>
-    <span class="dtag"><b>燃やさないごみ・プラ</b>水</span>
-    <span class="dtag"><b>びん・ペットボトル</b>木</span>
-    <span class="dtag"><b>資源物（新聞・缶など）</b>金</span>
-  </div>
-  <p class="dnote">※お住まいの野間（伊丹市 F1地区）の収集日です。<b>収集日の朝8時30分まで</b>に、決められた集積所へお出しください。祝日や最新は「伊丹市 家庭ごみカレンダー」でご確認ください。</p>
+  <section class="sec">
+    <div class="days">
+      <span class="dtag"><b>燃やすごみ</b>月・木</span>
+      <span class="dtag"><b>燃やさないごみ・プラ</b>水</span>
+      <span class="dtag"><b>びん・ペットボトル</b>木</span>
+      <span class="dtag"><b>資源物（新聞・缶など）</b>金</span>
+    </div>
+    <p class="dnote">※お住まいの野間（伊丹市 F1地区）の収集日です。<b>収集日の朝8時30分まで</b>に、決められた集積所へお出しください。祝日や最新は「伊丹市 家庭ごみカレンダー」でご確認ください。</p>
+  </section>
+  <div class="sp"></div>
 
   
   <section class="card">
@@ -116,6 +135,7 @@ h1 .hl{color:var(--band);}
     </div>
     <p class="cnote">ビニールがさは資源ごみではなく<b>「燃やさないごみ」</b>です。透明・半透明のふくろに入れて燃やさないごみの日に出してください（大きくてふくろに入らない・口を結べない場合は粗大ごみ）。</p>
   </section>
+  <div class="sp"></div>
 
   
   <section class="card">
@@ -127,6 +147,7 @@ h1 .hl{color:var(--band);}
     </div>
     <p class="cnote">中身を空にして<b>軽く水ですすぎ</b>、<b>ふくろから出して</b>「青いコンテナ（びん）」「青いネット（ペットボトル）」に入れてください。<b>ふくろに入れたままだと収集されません。</b>（金属のふた＝燃やさないごみ／プラのふた・ラベル＝プラスチック容器包装）</p>
   </section>
+  <div class="sp"></div>
 
   
   <section class="card">
@@ -138,8 +159,10 @@ h1 .hl{color:var(--band);}
     </div>
     <p class="cnote">アルミ缶・スチール缶は<b>軽くすすいで</b>、<b>無色透明・白色半透明の45リットル以下</b>のふくろに入れ、資源物の日に出してください。</p>
   </section>
+  <div class="sp"></div>
 
   <div class="pt">まとめ：<b>ふくろに“ちがうもの”を混ぜない。</b>迷ったら伊丹市の「ごみ分別50音早見表」で確認できます。</div>
+  <div class="sp sp-foot"></div>
 
   <footer class="foot">
     出典：伊丹市公式サイト「ごみと資源物の分け方と出し方」（缶・びん・ペットボトル／傘＝燃やさないごみ）
@@ -150,18 +173,30 @@ h1 .hl{color:var(--band);}
 
 <script>
 (function(){
+  var MAXUP=1.06;  // 余白が多くても拡大は6%まで（他の掲示物と文字サイズを揃える）
+  // 紙面いっぱいに「ズーム」して収める。
+  // ⚠縮小率 r をかけるときは高さだけでなく【幅も 1/r に広げる】こと。
+  //   高さしか補正しないと、縮小した枚が紙の左に寄って右側に大きな空白ができる（＝印刷時のバランス崩れ）。
+  //   幅を広げると行の折り返しが変わって高さも変わるため、収束するまで数回くり返す。
   function fit(){
     var f=document.getElementById('fit'); if(!f) return; var s=f.parentNode;
-    f.style.transform='none'; f.style.height='auto'; f.style.justifyContent='';
-    var avail=s.clientHeight, h=f.scrollHeight;
-    if(h>avail-1){
-      var r=(avail-1)/h;
-      f.style.transform='scale('+r+')';
-      f.style.height=(avail/r)+'px';
-    } else {
-      f.style.height=avail+'px';
-      f.style.justifyContent='space-between';
+    var aw=s.clientWidth, ah=s.clientHeight;
+    if(!aw||!ah) return;
+    f.style.transform='none';
+    var r=1;
+    for(var i=0;i<5;i++){
+      f.style.width=(aw/r)+'px';
+      f.style.height='auto';
+      var h=f.scrollHeight; if(!h) break;
+      var nr=(ah-1)/h;            // この幅で組んだときに高さが紙面に収まる倍率
+      if(nr>MAXUP) nr=MAXUP;
+      if(Math.abs(nr-r)<0.002){ r=nr; break; }
+      r=nr;
     }
+    // 仕上げ：拡大後の実寸が紙面と一致するよう、幅・高さとも 1/r で組んでから r 倍する
+    f.style.width=(aw/r)+'px';
+    f.style.height=(ah/r)+'px';
+    f.style.transform=(r>0.999&&r<1.001)?'none':'scale('+r+')';
   }
   window.addEventListener('load',fit); window.addEventListener('resize',fit);
   window.addEventListener('beforeprint',fit);

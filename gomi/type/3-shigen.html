@@ -2,19 +2,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>資源物の出し方｜エスト北塚口管理組合</title>
 <style>
-@page{size:A4 portrait;margin:14mm 12mm 10mm;}
+/* A4の余白は上下左右とも12mmで対称。印刷可能領域＝186mm×273mm */
+@page{size:A4 portrait;margin:12mm;}
 *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 html,body{margin:0;padding:0;background:#e9e9e9;color:#000;font-family:"Hiragino Maru Gothic ProN","Meiryo",sans-serif;}
-.sheet{width:186mm;margin:0 auto;background:#fff;overflow:hidden;}
-#fit{min-height:263mm;padding:7mm 9mm;display:flex;flex-direction:column;transform-origin:top left;}
-/* 印刷時：A4の印刷可能高さ(297-14-10=273mm)に確実に収める。はみ出す分はJSで自動縮小 */
+/* ⚠画面表示と印刷結果を一致させるため、画面でも印刷とまったく同じ紙面サイズで組む
+     （以前は画面と印刷で高さ・余白が違い、画面で整えても印刷でバランスが崩れていた） */
+.sheet{width:186mm;height:272mm;margin:0 auto;background:#fff;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;}
+#fit{flex:none;width:186mm;height:272mm;padding:3mm 5mm;display:flex;flex-direction:column;
+  transform-origin:center center;}
+/* ⚠印刷ダイアログの「余白」を なし/最小 にすると @page の余白が無効化され、
+     掲示物が用紙の【左上】に寄って右と下に大きな空白ができる。
+     どの余白設定でも天地・左右とも中央に来るよう、ページ全体で中央寄せする。
+       ・余白「既定」 → 印刷可能領域 186×273mm に対し 186×272mm でぴったり
+       ・余白「なし」 → 210×297mm の中央に置かれ、四辺に約12mmずつの余白 */
 @media print{
-  html,body{background:#fff;}
-  .sheet{width:186mm;height:271mm;margin:0;overflow:hidden;}
-  /* 高さいっぱいを使い、セクション間の余白を自動で配分（下に空白を残さない） */
-  #fit{min-height:0;height:271mm;padding:3mm 4mm;justify-content:space-between;}
-  .items{margin-bottom:0;}
+  html,body{background:#fff;height:100%;}
+  body{display:flex;align-items:center;justify-content:center;}
+  .sheet{margin:0;flex:none;}
 }
+
+/* ===== 余白の配分 =====
+   見出しと本文が離れないよう「見出し＋中身」を .sec でひとかたまりにし、
+   余った高さは段と段のあいだ（.sp）だけに均等配分する。
+   .sp-foot は出典欄の直前なので、やや控えめに広がる。 */
+.sec{flex:0 0 auto;}
+.sec>h2:first-child{margin-top:0;}
+.sp{flex:1 1 0;min-height:9px;}
+.sp-foot{flex-grow:.7;min-height:10px;}
 
 /* ===== 見出し（テイスト差） ===== */
 .head{margin-bottom:11px;}
@@ -36,10 +52,12 @@ h1{font-size:50px;margin:0;letter-spacing:.02em;line-height:1.05;}
 .t-light .bag{border:2.5px dashed #000;border-radius:10px;}
 
 /* dark = ヘッダー反転（黒帯＋斜線ハッチ）／見出しは白抜き枠 */
-.t-dark .head{background:#000;color:#fff;padding:9px 12px 11px;
+/* ※ 4枚を横並びで掲示するため、dark/light で見出しの縦寸法を揃える
+     （揃えないと dark 側だけ本文が押し出され、印刷時の自動縮小率＝文字の大きさが枚ごとにズレる） */
+.t-dark .head{background:#000;color:#fff;padding:8px 12px 9px;
   background-image:repeating-linear-gradient(135deg,#000 0 9px,#1e1e1e 9px 18px);}
 .t-dark .day{border:3px solid #fff;border-radius:12px;padding:5px 16px;}
-.t-dark h2{font-size:23px;margin:13px 0 8px;background:#fff;color:#000;border:3px solid #000;padding:4px 13px;display:flex;align-items:center;gap:9px;}
+.t-dark h2{font-size:22px;margin:10px 0 7px;background:#fff;color:#000;border:3px solid #000;padding:4px 13px;display:flex;align-items:center;gap:9px;}
 .t-dark .mk{width:26px;height:26px;border-radius:50%;background:#000;color:#fff;font-size:17px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;}
 .t-dark .item{border:2.5px solid #000;border-radius:0;border-left:9px solid #000;}
 .t-dark .sn{background:#000;color:#fff;border-radius:4px;}
@@ -60,21 +78,20 @@ h1{font-size:50px;margin:0;letter-spacing:.02em;line-height:1.05;}
 .ic{width:46px;height:46px;flex:none;color:#000;}
 .itx{min-width:0;}
 .itx b{font-size:19px;display:block;line-height:1.2;}
-.itx span{font-size:14px;line-height:1.45;display:block;text-align:justify;
+.itx span{font-size:14px;line-height:1.4;display:block;text-align:justify;
   word-break:normal;overflow-wrap:anywhere;line-break:strict;}
 .exnote{font-size:12.5px;line-height:1.5;margin:6px 2px 0;}
-/* space-between時に各ブロックが間延びしすぎないよう、最大の伸びしろを制限 */
-.items,.steps,.donts,.timebar,.bag,.hint{flex:0 0 auto;}
+.head,.timebar{flex:0 0 auto;}
 .steps{list-style:none;margin:0;padding:0;}
 .steps li{display:flex;gap:10px;align-items:flex-start;font-size:17px;line-height:1.4;padding:4px 0;border-bottom:1px dashed #999;}
 .steps li:last-child{border-bottom:none;}
 .sn{flex:none;width:29px;height:29px;border-radius:50%;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;}
 .bag{font-size:15.5px;line-height:1.5;padding:8px 12px;margin-top:8px;}
 .donts{margin:2px 0 0;padding-left:0;list-style:none;}
-.donts li{font-size:16px;line-height:1.45;padding:4px 0 4px 27px;position:relative;}
+.donts li{font-size:16px;line-height:1.4;padding:4px 0 4px 27px;position:relative;}
 .donts li:before{content:"✕";position:absolute;left:0;font-weight:900;}
 .hint{font-size:13px;line-height:1.5;background:#f0f0f0;border:1px solid #888;border-radius:10px;padding:8px 12px;margin-top:9px;}
-.foot{margin-top:auto;font-size:11px;line-height:1.55;border-top:1px solid #888;padding-top:7px;}
+.foot{flex:0 0 auto;font-size:11px;line-height:1.55;border-top:1px solid #888;padding-top:7px;}
 </style></head><body class="t-light">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -106,38 +123,57 @@ h1{font-size:50px;margin:0;letter-spacing:.02em;line-height:1.05;}
   </header>
 
   <div class="timebar"><span class="tlab">出す時間</span><span class="tval">収集日の朝 <b>8時30分</b>まで</span><span class="tnote">決められた集積所へ。前日の夜に出すのはやめましょう（カラス・においの原因になります）</span></div>
+  <div class="sp"></div>
 
-  <h2><span class="mk">〇</span>このごみに入れるもの</h2>
-  <div class="items"><div class="item"><svg class="ic"><use href="#ic-news"/></svg><div class="itx"><b>古紙類</b><span><b>新聞・ダンボール・紙パックは3種類に分けて</b>。ほかに雑誌・雑多な紙（本、ノート、封筒、包装紙、紙袋、芯など）</span></div></div><div class="item"><svg class="ic"><use href="#ic-cloth"/></svg><div class="itx"><b>古着類</b><span>ぬれたり汚れたりしていない古着</span></div></div><div class="item"><svg class="ic"><use href="#ic-can"/></svg><div class="itx"><b>空き缶</b><span>アルミ缶、スチール缶、お菓子の缶、缶詰の缶、使い切ったカセットボンベなど</span></div></div></div>
-  <p class="exnote">※ 品目は<b>代表的な例</b>です。ここに載っていないもの・迷うものは、伊丹市の「ごみと資源物の分別区分早見表（50音順）」または環境クリーンセンターへご確認ください。</p>
+  <section class="sec">
+    <h2><span class="mk">〇</span>このごみに入れるもの</h2>
+    <div class="items"><div class="item"><svg class="ic"><use href="#ic-news"/></svg><div class="itx"><b>古紙類</b><span><b>新聞・ダンボール・紙パックは3種類に分けて</b>。ほかに雑誌・雑多な紙（本、ノート、封筒、包装紙、紙袋、芯など）</span></div></div><div class="item"><svg class="ic"><use href="#ic-cloth"/></svg><div class="itx"><b>古着類</b><span>ぬれたり汚れたりしていない古着</span></div></div><div class="item"><svg class="ic"><use href="#ic-can"/></svg><div class="itx"><b>空き缶</b><span>アルミ缶、スチール缶、お菓子の缶、缶詰の缶、使い切ったカセットボンベなど</span></div></div></div>
+    <p class="exnote">※ 品目は<b>代表的な例</b>です。ここに載っていないもの・迷うものは、伊丹市の「ごみと資源物の分別区分早見表（50音順）」または環境クリーンセンターへご確認ください。</p>
+  </section>
+  <div class="sp"></div>
 
-  <h2>出し方</h2>
-  <ol class="steps"><li><span class="sn">1</span><span>古紙は<b>新聞・ダンボール・紙パックを3種類に分ける</b>（雑誌・雑多な紙はまとめて）</span></li><li><span class="sn">2</span><span><b>ひもで束ねる</b>か、紙袋・無色透明・白色半透明の45リットル以下の袋に入れる</span></li><li><span class="sn">3</span><span>紙パックは<b>水ですすいで開く</b></span></li><li><span class="sn">4</span><span>空き缶は<b>軽くすすぐ</b>。カセットボンベは<b>使い切って、穴を開けずに</b>出す</span></li></ol>
-  <div class="bag"><b>袋・出し方の決まり</b>　ひもで束ねる／紙袋／無色透明・白色半透明の<b>45リットル以下</b>の袋</div>
+  <section class="sec">
+    <h2>出し方</h2>
+    <ol class="steps"><li><span class="sn">1</span><span>古紙は<b>新聞・ダンボール・紙パックを3種類に分ける</b>（雑誌・雑多な紙はまとめて）</span></li><li><span class="sn">2</span><span><b>ひもで束ねる</b>か、紙袋・無色透明・白色半透明の45リットル以下の袋に入れる</span></li><li><span class="sn">3</span><span>紙パックは<b>水ですすいで開く</b></span></li><li><span class="sn">4</span><span>空き缶は<b>軽くすすぐ</b>。カセットボンベは<b>使い切って、穴を開けずに</b>出す</span></li></ol>
+    <div class="bag"><b>袋・出し方の決まり</b>　ひもで束ねる／紙袋／無色透明・白色半透明の<b>45リットル以下</b>の袋</div>
+  </section>
+  <div class="sp"></div>
 
-  <h2><span class="mk ng">✕</span>注意すること</h2>
-  <ul class="donts"><li>食品や油で<b>汚れた紙</b>、手で破れない紙、金属が箔押しされた紙 → <b>燃やすごみ</b></li><li>紙パックの<b>内側が銀色</b>のもの → <b>燃やすごみ</b>／ぬれ・汚れた古着 → <b>燃やすごみ</b></li><li>カセットボンベに<b>穴を開けない</b>（必ず使い切ってから出してください）</li><li><b>袋に異物を混ぜない</b>（ビニールがさなどを一緒に入れない）</li></ul>
-  
+  <section class="sec">
+    <h2><span class="mk ng">✕</span>注意すること</h2>
+    <ul class="donts"><li>食品や油で<b>汚れた紙</b>、手で破れない紙、金属が箔押しされた紙 → <b>燃やすごみ</b></li><li>紙パックの<b>内側が銀色</b>のもの → <b>燃やすごみ</b>／ぬれ・汚れた古着 → <b>燃やすごみ</b></li><li>カセットボンベに<b>穴を開けない</b>（必ず使い切ってから出してください）</li><li><b>袋に異物を混ぜない</b>（ビニールがさなどを一緒に入れない）</li></ul>
+    
+  </section>
+  <div class="sp sp-foot"></div>
 
   <footer class="foot">出典：伊丹市「資源物」／伊丹市 家庭ごみカレンダー（野間＝F1地区）　お問い合わせ：伊丹市環境クリーンセンター ☎072-782-0968　／　エスト北塚口管理組合 2026年8月</footer>
 </div></div>
 <script>
 (function(){
+  var MAXUP=1.06;  // 余白が多い枚でも、隣の枚と文字サイズが揃うよう拡大は6%まで
+  // 紙面いっぱいに「ズーム」して収める。
+  // ⚠縮小率 r をかけるときは高さだけでなく【幅も 1/r に広げる】こと。
+  //   高さしか補正しないと、縮小した枚が紙の左に寄って右側に大きな空白ができる（＝印刷時のバランス崩れ）。
+  //   幅を広げると行の折り返しが変わって高さも変わるため、収束するまで数回くり返す。
   function fit(){
     var f=document.getElementById('fit'); if(!f) return; var s=f.parentNode;
-    // いったん等倍・自動高さで実際の内容量を測る
-    f.style.transform='none'; f.style.height='auto'; f.style.justifyContent='';
-    var avail=s.clientHeight, h=f.scrollHeight;
-    if(h>avail-1){
-      // はみ出す時だけ縮小し、枠いっぱいに戻す（内容が下まで自然に広がる）
-      var r=(avail-1)/h;
-      f.style.transform='scale('+r+')';
-      f.style.height=(avail/r)+'px';
-    } else {
-      // 収まっている時は縮小しない。高さを枠に合わせ、余白を均等配分
-      f.style.height=avail+'px';
-      f.style.justifyContent='space-between';
+    var aw=s.clientWidth, ah=s.clientHeight;
+    if(!aw||!ah) return;
+    f.style.transform='none';
+    var r=1;
+    for(var i=0;i<5;i++){
+      f.style.width=(aw/r)+'px';
+      f.style.height='auto';
+      var h=f.scrollHeight; if(!h) break;
+      var nr=(ah-1)/h;            // この幅で組んだときに高さが紙面に収まる倍率
+      if(nr>MAXUP) nr=MAXUP;
+      if(Math.abs(nr-r)<0.002){ r=nr; break; }
+      r=nr;
     }
+    // 仕上げ：拡大後の実寸が紙面と一致するよう、幅・高さとも 1/r で組んでから r 倍する
+    f.style.width=(aw/r)+'px';
+    f.style.height=(ah/r)+'px';
+    f.style.transform=(r>0.999&&r<1.001)?'none':'scale('+r+')';
   }
   window.addEventListener('load',fit); window.addEventListener('resize',fit);
   window.addEventListener('beforeprint',fit);
