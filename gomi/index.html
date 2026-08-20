@@ -18,12 +18,12 @@ html,body{margin:0;padding:0;background:#e9e9e9;}
   transform-origin:center center;}
 .head{text-align:center;border-bottom:4px solid var(--band);padding-bottom:8px;margin-bottom:12px;}
 .htag{display:inline-block;font-size:15px;font-weight:800;color:var(--paper);background:var(--band);border-radius:20px;padding:3px 16px;}
-h1{font-size:35px;margin:4px 0 4px;letter-spacing:.02em;}
+h1{font-size:31px;margin:3px 0 3px;letter-spacing:.02em;}
 h1 .hl{color:var(--band);}
-.lead{font-size:17px;line-height:1.45;margin:0 6px;}
+.lead{font-size:16px;line-height:1.45;margin:0 6px;}
 .lead b{color:var(--ng);}
 .days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 3px;}
-.dtag{font-size:20px;font-weight:800;border:2.5px solid var(--band);border-radius:11px;padding:3px 12px;background:var(--paper);text-align:center;line-height:1.15;}
+.dtag{font-size:18px;font-weight:800;border:2.5px solid var(--band);border-radius:11px;padding:2px 11px;background:var(--paper);text-align:center;line-height:1.15;}
 .dtag b{display:block;font-size:12px;color:var(--sub);font-weight:800;}
 .dtag.hot{background:var(--accentbg);border-color:var(--accent);color:var(--accent);}
 .dtag.hot b{color:var(--accent);}
@@ -36,13 +36,13 @@ h1 .hl{color:var(--band);}
 .sp{flex:1 1 0;min-height:9px;}
 .sp-foot{flex-grow:.7;min-height:10px;}
 .card{border:2.5px solid var(--cardline);border-radius:14px;padding:8px 14px;}
-.chead{display:flex;align-items:center;gap:12px;margin-bottom:15px;}
+.chead{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
 .cno{flex:none;width:36px;height:36px;border-radius:50%;background:var(--band);color:var(--paper);
   font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;}
 .chead h2{font-size:20.5px;margin:0;line-height:1.22;}
 .cday{margin-left:auto;font-size:14.5px;font-weight:800;color:var(--band);white-space:nowrap;}
-.cbody{display:flex;align-items:center;gap:10px;justify-content:center;margin:7px 0 6px;}
-.col{flex:1;border:2px solid var(--cardline);border-radius:12px;padding:6px 6px;text-align:center;position:relative;}
+.cbody{display:flex;align-items:center;gap:10px;justify-content:center;margin:6px 0 5px;}
+.col{flex:1;border:2px solid var(--cardline);border-radius:12px;padding:5px 6px;text-align:center;position:relative;}
 .col.ng{background:var(--ngbg);border-color:var(--ng);}
 .col.ok{background:var(--okbg);border-color:var(--ok);}
 .col.st{background:var(--accentbg);border-color:var(--accent);}
@@ -56,17 +56,27 @@ h1 .hl{color:var(--band);}
 .col.ng .mark{color:var(--ng);border-color:var(--ng);}
 .col.ok .mark{color:var(--ok);border-color:var(--ok);}
 .col.st .mark{color:var(--accent);border-color:var(--accent);}
-.scene{display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:10px;}
-.ic{width:52px;height:52px;color:var(--ink);}
-.scap{font-size:15.5px;font-weight:800;line-height:1.25;}
+.scene{display:flex;flex-direction:column;align-items:center;gap:1px;padding-top:11px;}
+.ic{width:38px;height:38px;color:var(--ink);}
+.scap{font-size:14.5px;font-weight:800;line-height:1.2;}
 .col.ng .scap{color:var(--ng);} .col.ok .scap{color:var(--band);} .col.st .scap{color:var(--accent);}
 .arrow{flex:none;font-size:30px;color:var(--sub);font-weight:900;}
-.cnote{font-size:15px;line-height:1.45;margin:2px 2px 0;}
+.cnote{font-size:14.5px;line-height:1.4;margin:2px 2px 0;}
 .cnote b{color:var(--band);}
-.pt{font-size:18px;font-weight:800;text-align:center;background:var(--accentbg);border:2px dashed var(--accent);
-  border-radius:12px;padding:8px 12px;}
+.pt{font-size:16.5px;font-weight:800;text-align:center;background:var(--accentbg);border:2px dashed var(--accent);
+  border-radius:12px;padding:6px 12px;}
 .pt b{color:var(--ng);}
-.foot{font-size:12px;color:var(--sub);line-height:1.45;border-top:1px solid var(--cardline);padding-top:7px;}
+/* 野間（野間東向自治会・谷山商店）独自ルールの帯。伊丹市の基準に「上乗せ」される決まりなので、
+   市のルールと混ざらないよう囲って別建てにしている。 */
+.local{border:2px solid var(--band);}
+.lhead{background:var(--band);color:var(--paper);font-size:13.5px;font-weight:800;padding:3px 10px;}
+.litems{display:flex;flex-wrap:wrap;gap:2px 14px;padding:6px 10px 4px;}
+.litems span{font-size:12.5px;line-height:1.4;white-space:nowrap;}
+.litems b{color:var(--band);margin-right:5px;}
+.litems b:after{content:"：";}
+.lnote{font-size:11px;line-height:1.4;color:var(--sub);padding:0 10px 6px;}
+.lnote b{color:var(--ng);}
+.foot{font-size:11px;color:var(--sub);line-height:1.4;border-top:1px solid var(--cardline);padding-top:7px;}
 /* ⚠印刷ダイアログの「余白」を なし/最小 にすると @page の余白が無効化され、
      掲示物が用紙の【左上】に寄って右と下に大きな空白ができる。
      どの余白設定でも天地・左右とも中央に来るよう、ページ全体で中央寄せする。 */
@@ -107,6 +117,12 @@ h1 .hl{color:var(--band);}
 </symbol>
 <symbol id="ic-clearbag" viewBox="0 0 60 60">
   <path d="M20 16l-4-6h28l-4 6M18 16h24l-3 38H21z" fill="var(--paper)" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+</symbol>
+<symbol id="ic-twobags" viewBox="0 0 60 60">
+  <path d="M5 20h20l-3 33H8z" fill="var(--paper)" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M10 20c0-6 10-6 10 0" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <path d="M35 20h20l-3 33H38z" fill="var(--paper)" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M40 20c0-6 10-6 10 0" fill="none" stroke="currentColor" stroke-width="2.5"/>
 </symbol>
 </defs></svg>
 
@@ -155,21 +171,28 @@ h1 .hl{color:var(--band);}
 
   
   <section class="card">
-    <div class="chead"><span class="cno">3</span><h2>缶は軽くすすいで「透明・半透明のふくろへ」</h2><span class="cday">収集：毎週 金曜（資源物）</span></div>
+    <div class="chead"><span class="cno">3</span><h2>缶は「アルミと鉄に分けて」</h2><span class="cday">収集：毎週 金曜（資源物）</span></div>
     <div class="cbody">
-      <div class="col st"><span class="mark">1</span><span class="scene"><svg class="ic"><use href="#ic-can"/></svg><span class="scap">まず 軽くすすぐ</span></span></div>
+      <div class="col ng"><span class="mark">✕</span><span class="scene"><svg class="ic"><use href="#ic-clearbag"/></svg><span class="scap">アルミ・鉄を一緒の袋</span></span></div>
       <div class="arrow">➡</div>
-      <div class="col st"><span class="mark">2</span><span class="scene"><svg class="ic"><use href="#ic-clearbag"/></svg><span class="scap">つぎに 透明・半透明のふくろへ</span></span></div>
+      <div class="col ok"><span class="mark"></span><span class="scene"><svg class="ic"><use href="#ic-twobags"/></svg><span class="scap">アルミと鉄で袋を分ける</span></span></div>
     </div>
-    <p class="cnote">アルミ缶・スチール缶は<b>軽くすすいで</b>、<b>無色透明・白色半透明の45リットル以下</b>のふくろに入れ、資源物の日に出してください。</p>
+    <p class="cnote">アルミ缶とスチール缶（鉄）は<b>それぞれ別のふくろ</b>に入れてください。どちらも<b>軽くすすいで</b>、無色透明・白色半透明の45リットル以下のふくろへ。<b>伊丹市の基準では混ぜてもよいことになっていますが、野間では分けることが必要</b>です（分けないと収集されません）。</p>
   </section>
+  <div class="sp"></div>
+
+  <div class="local">
+    <div class="lhead">野間（野間東向自治会）の資源物ルール　―　金曜の回収は<b>谷山商店</b>です</div>
+    <div class="litems"><span><b>缶</b>アルミと鉄に分ける</span><span><b>新聞・雑誌・その他の紙</b>束ねて、袋に入れる</span><span><b>段ボール</b>つぶす・たたむ</span><span><b>紙パック</b>紙パックマークのあるもの</span><span><b>衣類</b>乾かす・濡らさない</span><span><b>シュレッダー紙</b>透明の袋に入れる</span></div>
+    <div class="lnote">引っ越し・大掃除などで<b>古紙や衣類を多量に出すとき</b>、<b>シュレッダー紙・衣類を2袋以上出すとき</b>は、事前に谷山商店（☎06-6921-4303）へご連絡ください。ご連絡なく多量に出されたものは<b>残置</b>されます。</div>
+  </div>
   <div class="sp"></div>
 
   <div class="pt">まとめ：<b>ふくろに“ちがうもの”を混ぜない。</b><br>迷ったら伊丹市のごみ分別冊子、ホームページで確認できます。</div>
   <div class="sp sp-foot"></div>
 
   <footer class="foot">
-    出典：伊丹市公式サイト「ごみと資源物の分け方と出し方」（缶・びん・ペットボトル／傘＝燃やさないごみ）<br>お問い合わせ：伊丹市環境クリーンセンター ☎072-782-0968
+    出典：伊丹市公式サイト「ごみと資源物の分け方と出し方」／野間東向自治会「資源物の回収・出し方に関するお願い」（2025年5月20日）・谷山商店の掲示<br>お問い合わせ：伊丹市環境クリーンセンター ☎072-782-0968
     ／　エスト北塚口管理組合　2026年8月
   </footer>
 </div></div>
