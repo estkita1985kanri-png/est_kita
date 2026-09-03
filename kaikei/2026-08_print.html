@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年8月 会計月報（掲示用）｜エスト北塚口管理組合</title>
+<style>
+@page{size:A4 portrait;margin:20mm 8mm 12mm 8mm;}  /* 上を厚めに（プリンタ上端の切れ防止＋ゆとり）。左右8mmは#sheet幅194mmに合わせ固定 */
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{margin:0;padding:0;background:#fff;color:#000;font-family:"Meiryo","Hiragino Kaku Gothic ProN",sans-serif;}
+.pbar{width:194mm;max-width:100%;margin:0 auto 6px;text-align:right;}
+.pbar button{font-size:13px;padding:8px 18px;border:1.5px solid #000;background:#fff;border-radius:5px;cursor:pointer;}
+/* #sheet = A4 印刷可能領域（幅210-16=194mm／高さ297-20-12=265mmに収まる範囲）。内容はJSで1ページに自動縮小フィット */
+#sheet{position:relative;width:194mm;height:258mm;max-width:100%;margin:0 auto;overflow:hidden;}
+/* 内容が少なければ justify-content:space-between で縦全面に広げ、多ければJSで自動縮小 */
+#inner{position:absolute;top:0;left:0;width:194mm;transform-origin:top left;display:flex;flex-direction:column;font-size:13.5px;line-height:1.5;}
+.blk{flex:none;}
+h1{font-size:27px;margin:0;border-bottom:3px solid #000;padding-bottom:6px;letter-spacing:.02em;}
+.meta{font-size:12px;color:#222;margin:6px 0 8px;}
+.finbox{border:1.5px solid #000;padding:9px 14px;}
+.fintit{font-weight:bold;font-size:13.5px;margin-bottom:5px;}
+.fintbl{border-collapse:collapse;font-size:13px;}
+.fintbl td{border:none;padding:2px 4px;white-space:nowrap;vertical-align:baseline;}
+.fintbl td.fn{text-align:left;padding-right:16px;}
+.fintbl td.fa{text-align:right;font-variant-numeric:tabular-nums;font-weight:bold;padding-right:18px;}
+.fintbl td.fm{text-align:left;color:#444;font-size:11.5px;}
+h2{font-size:17px;margin:0 0 7px;background:#111;color:#fff;padding:5px 12px;letter-spacing:.04em;}
+.acc{display:flex;gap:12px;}
+.acc .box{flex:1;border:1.5px solid #000;padding:12px 16px;}
+.acc .box .t{font-weight:bold;font-size:15.5px;border-bottom:1px solid #999;margin-bottom:6px;padding-bottom:4px;}
+.acc .box .r{display:flex;justify-content:space-between;font-size:14px;padding:2px 0;}
+.acc .box .net{font-size:19px;font-weight:bold;margin-top:6px;border-top:1.5px solid #333;padding-top:5px;display:flex;justify-content:space-between;}
+table{width:100%;border-collapse:collapse;}
+th,td{border:1px solid #666;padding:9px 12px;font-size:14px;vertical-align:middle;white-space:nowrap;}
+th{background:#e6e6e6;text-align:center;font-size:12.5px;}
+td.c,th.c{text-align:center;}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tr.grp td{background:#d5d5d5;font-weight:bold;font-size:14.5px;}
+.cmp{border:1.5px solid #000;padding:12px 16px;font-size:14px;line-height:1.65;}
+.memo{border:1.5px dashed #555;padding:11px 16px;font-size:13px;line-height:1.6;}
+.foot{font-size:10.5px;color:#333;border-top:1px solid #999;padding-top:7px;line-height:1.55;}
+@media print{.pbar{display:none;}}
+</style></head>
+<body><div class="pbar"><button onclick="window.print()">🖨 印刷する（A4・モノクロ／自動で1枚に収まります）</button></div>
+<div id="sheet"><div id="inner">
+  <div class="blk">
+    <h1>2026年8月 会計月報（掲示用）</h1>
+    <div class="meta">エスト北塚口管理組合　第41期（2026年11月期）・自主管理元年　／　概算の速報値（税込・現金主義＝支払った月で計上・税理士監修）</div>
+    <div class="finbox"><div class="fintit">財政状態（8月末＝税理士確定）</div><table class="fintbl"><tr><td class="fn">管理費会計</td><td class="fa">283,078円</td><td class="fm">期末見込 約212,000円</td></tr><tr><td class="fn">修繕積立金会計</td><td class="fa">14,745,375円</td><td class="fm">期末見込 約15,220,000円</td></tr><tr><td class="fn">未収金（滞納）</td><td class="fa">0円</td><td class="fm">0戸</td></tr></table></div>
+  </div>
+  <div class="blk">
+    <h2>今月の収支</h2>
+    <div class="acc">
+      <div class="box"><div class="t">管理費会計</div>
+        <div class="r"><span>収入</span><b>202,000 円</b></div>
+        <div class="r"><span>支出</span><b>158,141 円</b></div>
+        <div class="net"><span>収支</span><span>+43,859 円</span></div></div>
+      <div class="box"><div class="t">修繕積立金会計</div>
+        <div class="r"><span>収入</span><b>198,066 円</b></div>
+        <div class="r"><span>支出</span><b>0 円</b></div>
+        <div class="net"><span>収支</span><span>+198,066 円</span></div></div>
+    </div>
+  </div>
+  <div class="blk">
+    <h2>8月、何にいくら使ったか</h2>
+    <table>
+      <thead><tr><th class="c">発生日</th><th class="c">内容</th><th class="c">取引先</th><th class="c">会計</th><th class="n">金額</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="4">固定費（年間を通じて定期的に発生する費用）　1戸あたり約 7,860円</td><td class="n">149,275 円</td></tr>
+        <tr><td class='c'>8/4</td><td class='c'>日常清掃</td><td class='c'>ダイキチ</td><td class='c'>管理費</td><td class='n'>40,700 円</td></tr><tr><td class='c'>8/10</td><td class='c'>管理費の収納代行</td><td class='c'>ジャックス</td><td class='c'>管理費</td><td class='n'>6,792 円</td></tr><tr><td class='c'>8/25</td><td class='c'>共用水道（尼信）</td><td class='c'>伊丹市水道</td><td class='c'>管理費</td><td class='n'>1,182 円</td></tr><tr><td class='c'>8/25</td><td class='c'>会計・組合サポート（3か月に1度請求）</td><td class='c'>小林税理士</td><td class='c'>管理費</td><td class='n'>82,500 円</td></tr><tr><td class='c'>8/10</td><td class='c'>共用部の電気代（2か月分・6〜7月分の立替精算）</td><td class='c'>大阪ガス</td><td class='c'>管理費</td><td class='n'>18,101 円</td></tr>
+        <tr class="grp"><td colspan="4">変動費（その月だけの支出）　1戸あたり約 470円</td><td class="n">8,866 円</td></tr>
+        <tr><td class='c'>8/10</td><td class='c'>防犯ステッカー・蛍光灯・総会関連費 ほか</td><td class='c'>立替精算</td><td class='c'>管理費</td><td class='n'>8,866 円</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="blk"><div class="cmp"><b>自主管理でここが変わりました</b>　日本ハウズイング管理下 137,280 円/月 → <b>自主管理 93,901 円/月</b>（同じ管理業務を分離発注し、月 約 43,379 円・年 約 520,548 円を圧縮）</div></div>
+  <div class="blk"><div class="cmp"><b>口座の見直し</b>　これまで組合の口座として使ってきたみずほ銀行を解約し、GMOあおぞらネット銀行をメインバンク、尼崎信用金庫（水道・電気の引落口座）と併用します。運用コストの削減と理事の負担軽減のためです。</div></div>
+  <div class="blk"><div class="memo"><b>ひとくちメモ</b>　管理費と修繕積立金は“別のお財布”です。修繕積立金は普段は使わず、大規模修繕を含む大きな修繕工事（排水管の更新など）にそなえて積み立てている共有財産。毎月きちんと貯まっているかが、健全な管理のいちばんの基本です。</div></div>
+  <div class="blk"><div class="foot">確定値は3か月ごとの理事会議事録にて正式報告。定期点検・清掃費は発生した月に変動費として計上（上の比較のみ公平のため年額÷12で表示）。個人が特定される情報（氏名・部屋番号・戸別請求額・滞納情報）は掲載していません。／最終更新 2026-09-02　エスト北塚口管理組合</div></div>
+</div></div>
+<script>
+(function(){
+  function fit(){
+    var inner=document.getElementById('inner'), sheet=document.getElementById('sheet');
+    if(!inner||!sheet) return;
+    inner.style.transform='none';
+    inner.style.height='auto';
+    inner.style.justifyContent='flex-start';
+    var availH=sheet.clientHeight, availW=sheet.clientWidth;
+    var h=inner.scrollHeight, w=inner.scrollWidth;
+    if(h<=availH && w<=availW){
+      // 内容が少ない → ページ全面に縦均等配置で広げる
+      inner.style.height=availH+'px';
+      inner.style.justifyContent='space-between';
+    } else {
+      // 内容が多い → 1ページに収まるよう自動縮小
+      inner.style.transform='scale('+Math.min(availH/h, availW/w)+')';
+    }
+  }
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
+  window.addEventListener('beforeprint',fit);
+})();
+</script></body></html>
