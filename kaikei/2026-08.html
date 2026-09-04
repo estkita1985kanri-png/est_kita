@@ -22,14 +22,14 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Kaku G
 .flag{display:inline-block;background:#eaf1fb;color:var(--brick);border:1px solid #bcd0ec;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;vertical-align:middle;margin-left:6px;}
 .lead{font-size:13.5px;color:var(--sub);margin:0 0 18px;}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 15px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 15px;display:flex;flex-direction:column;}
 .card.mng{border-top:4px solid var(--brick);}
 .card.rsv{border-top:4px solid var(--green);}
 .card h2{font-size:14px;margin:0 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line);}
 .kv{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;}
 .kv .k{color:var(--sub);}
 .kv .v{font-weight:700;font-variant-numeric:tabular-nums;}
-.kv.net{border-top:1px dashed var(--line);margin-top:5px;padding-top:6px;}
+.kv.net{border-top:1px dashed var(--line);margin-top:auto;padding-top:8px;}
 .sub-inc{margin:1px 0 5px;padding:5px 10px;background:var(--bg);border-radius:7px;}
 .sub-inc div{display:flex;justify-content:space-between;font-size:11.5px;color:var(--sub);padding:1px 0;}
 .sub-inc div span:last-child{font-variant-numeric:tabular-nums;}
