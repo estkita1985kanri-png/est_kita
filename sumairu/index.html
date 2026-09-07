@@ -273,25 +273,31 @@
       </div>
 
       <h3>利息は、後半になるほど増えていきます</h3>
-      <p class="lead">すまい・る債の利息は毎年同じ額ではありません。<b>最初の数年は少なく、後半になるほど大きくなる</b>設計です（10年間の平均で年2.0%）。毎年1口ずつ買い足していくと、受け取る利息の合計も年々増えていきます。</p>
+      <p class="lead">すまい・る債の利息は毎年同じ額ではありません。<b>最初の数年は少なく、後半になるほど大きくなる</b>設計です（10年間の平均で年2.0%）。毎年1口ずつ買い足していくので、あずけている元本も、受け取る利息も、年々増えていきます。</p>
+      <div class="table-wrap"><table style="min-width:440px;">
+        <tr><th>経過年</th><th>あずけている元本</th><th>その年の利率</th><th>1年間に受け取る利息</th></tr>
+        <tr><td class="label">1年目</td><td class="num">50万円</td><td class="num">0.400%</td><td class="num">約1,700円</td></tr>
+        <tr><td class="label">5年目</td><td class="num">250万円</td><td class="num">0.700%</td><td class="num">約14,800円</td></tr>
+        <tr><td class="label">8年目</td><td class="num">400万円</td><td class="num">1.480%</td><td class="num">約50,100円</td></tr>
+        <tr class="hl"><td class="label">10年目以降</td><td class="num">500万円</td><td class="num">2.000%</td><td class="num">約84,700円</td></tr>
+      </table></div>
+      <div class="fig-cap">※利息は税引後の金額で、毎年2月に現金で受け取ります。10年目以降は、毎年1本ずつ満期になって同じだけ買い直すので、この状態がずっと続きます。</div>
+
+      <h3>ふつうの預金に置いた場合との差</h3>
       <div class="fig-wrap">
-        <svg viewBox="0 0 720 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="毎年受け取る利息が年を追うごとに増えることを示す棒グラフ">
-          <rect width="720" height="215" fill="#fff"/>
-          <g font-size="12.5" fill="#444" text-anchor="end">
-            <text x="122" y="46">1年目</text><text x="122" y="91">5年目</text>
-            <text x="122" y="136">8年目</text><text x="122" y="181">10年目以降</text>
-          </g>
-          <rect x="132" y="30" width="10" height="21" rx="3" fill="#9fb6d4"/>
-          <rect x="132" y="75" width="84" height="21" rx="3" fill="#7ba3d0"/>
-          <rect x="132" y="120" width="284" height="21" rx="3" fill="#4a86c8"/>
-          <rect x="132" y="165" width="480" height="21" rx="3" fill="#27ae60"/>
-          <g font-size="12.5" fill="#333" font-weight="bold">
-            <text x="152" y="46">約1,700円</text><text x="226" y="91">約14,800円</text>
-            <text x="426" y="136">約50,100円</text><text x="622" y="181">約84,700円</text>
-          </g>
+        <svg viewBox="0 0 720 172" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="10年間の受取利息をすまい・る債と普通預金で比べた棒グラフ">
+          <rect width="720" height="172" fill="#fff"/>
+          <text x="14" y="24" font-size="12" fill="#8a93a2">毎年50万円ずつ10年間あずけた場合に、受け取れる利息の合計</text>
+          <text x="14" y="62" font-size="13" fill="#1a3a6e" font-weight="bold">すまい・る債</text>
+          <rect x="150" y="44" width="520" height="28" rx="5" fill="#27ae60"/>
+          <text x="166" y="64" font-size="15" fill="#fff" font-weight="bold">約30万円</text>
+          <text x="14" y="116" font-size="13" fill="#8a93a2" font-weight="bold">ふつうの普通預金</text>
+          <rect x="150" y="98" width="40" height="28" rx="5" fill="#c3cad4"/>
+          <text x="200" y="118" font-size="14" fill="#666">約2.3万円</text>
+          <text x="150" y="154" font-size="13" fill="#c0392b" font-weight="bold">差は 約28万円（およそ13倍）</text>
         </svg>
       </div>
-      <div class="fig-cap">※その年に受け取る利息の合計（税引後）。毎年2月に現金で受け取ります。10年目以降は毎年およそ84,700円で安定します。</div>
+      <div class="fig-cap">※普通預金は年0.1%で試算。同じ50万円ずつ、同じ10年間あずけた場合の比較です（いずれも税引後）。</div>
     </div>
 
     <div class="point">
@@ -392,37 +398,73 @@
 
       <h3>② 利息は「後半ほど厚い」段階金利。ラダーだと受取額が年々増える</h3>
       <p class="lead">すまい・る債の利率は10年間フラットではなく、<b>単年利率が年を追うごとに上昇する</b>設計（2026年度発行分：1年目0.400%→10年目4.340%、10年平均で年2.000%）。毎年1口ずつ積み上げると、その年に受け取る利息の合計も下図のように増えていく。</p>
+      <div class="table-wrap"><table style="min-width:540px;">
+        <tr>
+          <th>経過年</th><th>積み上げ元本</th>
+          <th>その年の利率<br><span style="font-weight:normal;font-size:10px;">保有分の実効利回り・税引前</span></th>
+          <th>その年の受取利息<br><span style="font-weight:normal;font-size:10px;">税引後</span></th>
+          <th>受取利息 累計</th>
+        </tr>
+        <tr><td class="label">1年目</td><td class="num">50万円</td><td class="num">0.400%</td><td class="num">1,694円</td><td class="num">1,694円</td></tr>
+        <tr><td class="label">2年目</td><td class="num">100万円</td><td class="num">0.500%</td><td class="num">4,235円</td><td class="num">5,929円</td></tr>
+        <tr><td class="label">3年目</td><td class="num">150万円</td><td class="num">0.600%</td><td class="num">7,622円</td><td class="num">13,551円</td></tr>
+        <tr><td class="label">4年目</td><td class="num">200万円</td><td class="num">0.650%</td><td class="num">11,009円</td><td class="num">24,560円</td></tr>
+        <tr><td class="label">5年目</td><td class="num">250万円</td><td class="num">0.700%</td><td class="num">14,820円</td><td class="num">39,380円</td></tr>
+        <tr><td class="label">6年目</td><td class="num">300万円</td><td class="num">0.960%</td><td class="num">24,389円</td><td class="num">63,769円</td></tr>
+        <tr><td class="label">7年目</td><td class="num">350万円</td><td class="num">1.220%</td><td class="num">36,160円</td><td class="num">99,929円</td></tr>
+        <tr><td class="label">8年目</td><td class="num">400万円</td><td class="num">1.480%</td><td class="num">50,133円</td><td class="num">150,062円</td></tr>
+        <tr><td class="label">9年目</td><td class="num">450万円</td><td class="num">1.740%</td><td class="num">66,308円</td><td class="num">216,370円</td></tr>
+        <tr class="hl"><td class="label">10年目〜</td><td class="num">500万円</td><td class="num">2.000%</td><td class="num">84,685円</td><td class="num">301,055円</td></tr>
+      </table></div>
+      <div class="fig-cap">※<b>「その年の利率」は保有中の全口数を合算した実効利回り（税引前）</b>で、機構公表の「年平均利率」（1年0.400%〜10年2.000%）と一致する。10年目以降は「毎年1本満期・1本購入」で元本500万円・利率2.000%・利息 約84,685円のまま安定する。</div>
+
+      <h3>③ 受取利息の累計は10年で約30万円まで伸びる</h3>
       <div class="fig-wrap">
-        <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ラダー運用時に毎年受け取る利息額の推移を示す棒グラフ">
-          <rect width="720" height="330" fill="#fff"/>
-          <g font-size="11.5" fill="#555" text-anchor="end">
-            <text x="118" y="42">1年目</text><text x="118" y="68">2年目</text><text x="118" y="94">3年目</text>
-            <text x="118" y="120">4年目</text><text x="118" y="146">5年目</text><text x="118" y="172">6年目</text>
-            <text x="118" y="198">7年目</text><text x="118" y="224">8年目</text><text x="118" y="250">9年目</text>
-            <text x="118" y="276">10年目〜</text>
+        <svg viewBox="0 0 720 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="受取利息の累計が10年で約30万円まで加速しながら増えることを示す面グラフ">
+          <rect width="720" height="268" fill="#fff"/>
+          <g stroke="#eef1f6" stroke-width="1">
+            <line x1="70" y1="40" x2="690" y2="40"/><line x1="70" y1="97" x2="690" y2="97"/>
+            <line x1="70" y1="153" x2="690" y2="153"/>
           </g>
-          <g rx="3">
-            <rect x="128" y="30" width="9" height="16" rx="3" fill="#b9cbe2"/>
-            <rect x="128" y="56" width="23" height="16" rx="3" fill="#aec3de"/>
-            <rect x="128" y="82" width="41" height="16" rx="3" fill="#a2bbd9"/>
-            <rect x="128" y="108" width="60" height="16" rx="3" fill="#8fb0d4"/>
-            <rect x="128" y="134" width="80" height="16" rx="3" fill="#7ba3d0"/>
-            <rect x="128" y="160" width="133" height="16" rx="3" fill="#6598cc"/>
-            <rect x="128" y="186" width="196" height="16" rx="3" fill="#4f8cc8"/>
-            <rect x="128" y="212" width="272" height="16" rx="3" fill="#3a80c4"/>
-            <rect x="128" y="238" width="360" height="16" rx="3" fill="#2c5aa0"/>
-            <rect x="128" y="264" width="460" height="16" rx="3" fill="#27ae60"/>
+          <line x1="70" y1="210" x2="690" y2="210" stroke="#cfd6e0" stroke-width="1.5"/>
+          <g font-size="10.5" fill="#98a2b3" text-anchor="end">
+            <text x="62" y="44">30万円</text><text x="62" y="101">20万円</text>
+            <text x="62" y="157">10万円</text><text x="62" y="214">0</text>
           </g>
-          <g font-size="11.5" fill="#333">
-            <text x="145" y="43">1,694円</text><text x="159" y="69">4,235円</text><text x="177" y="95">7,622円</text>
-            <text x="196" y="121">11,009円</text><text x="216" y="147">14,820円</text><text x="269" y="173">24,389円</text>
-            <text x="332" y="199">36,160円</text><text x="408" y="225">50,133円</text><text x="496" y="251">66,308円</text>
-            <text x="596" y="277" font-weight="bold" fill="#1e8449">84,685円</text>
+          <path d="M70,209 L136,206.7 L202,202.4 L268,196.1 L334,187.8 L400,174 L466,153.6 L532,125.3 L598,87.8 L664,40 L664,210 L70,210 Z"
+                fill="#e6f4ec" stroke="none"/>
+          <path d="M70,209 L136,206.7 L202,202.4 L268,196.1 L334,187.8 L400,174 L466,153.6 L532,125.3 L598,87.8 L664,40"
+                fill="none" stroke="#27ae60" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <g fill="#fff" stroke="#27ae60" stroke-width="2">
+            <circle cx="70" cy="209" r="3.5"/><circle cx="136" cy="206.7" r="3.5"/><circle cx="202" cy="202.4" r="3.5"/>
+            <circle cx="268" cy="196.1" r="3.5"/><circle cx="334" cy="187.8" r="3.5"/><circle cx="400" cy="174" r="3.5"/>
+            <circle cx="466" cy="153.6" r="3.5"/><circle cx="532" cy="125.3" r="3.5"/><circle cx="598" cy="87.8" r="3.5"/>
           </g>
-          <text x="128" y="305" font-size="11.5" fill="#666">10年目以降は毎年 約84,685円（税引後）で安定。10年間の受取合計は約30万円。</text>
+          <circle cx="664" cy="40" r="6" fill="#27ae60"/>
+          <text x="664" y="30" font-size="13" fill="#1e8449" font-weight="bold" text-anchor="end">約30万円</text>
+          <g font-size="10.5" fill="#8a93a2" text-anchor="middle">
+            <text x="70" y="228">1年目</text><text x="202" y="228">3</text><text x="334" y="228">5</text>
+            <text x="466" y="228">7</text><text x="598" y="228">9</text><text x="664" y="228">10</text>
+          </g>
+          <text x="70" y="252" font-size="11.5" fill="#666">序盤はゆるやかだが、単年利率が上がる6年目あたりから加速する。</text>
         </svg>
       </div>
-      <div class="fig-cap">※いずれも税引後（源泉分離課税15.315%控除後）。毎年1口＝50万円を継続購入し、保有中の全口数から受け取る利息の年間合計。</div>
+
+      <h3>④ 同じ積み方を普通預金でやった場合との差</h3>
+      <div class="fig-wrap">
+        <svg viewBox="0 0 720 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="10年間の受取利息をすまい・る債と普通預金で比較した棒グラフ">
+          <rect width="720" height="168" fill="#fff"/>
+          <text x="14" y="24" font-size="11.5" fill="#8a93a2">毎年50万円ずつ10年間積み立てた場合の、受取利息の合計（税引後）</text>
+          <text x="14" y="60" font-size="12.5" fill="#1a3a6e" font-weight="bold">すまい・る債</text>
+          <rect x="150" y="44" width="520" height="26" rx="5" fill="#27ae60"/>
+          <text x="164" y="62" font-size="14" fill="#fff" font-weight="bold">約301,000円</text>
+          <text x="14" y="112" font-size="12.5" fill="#8a93a2" font-weight="bold">普通預金（0.1%）</text>
+          <rect x="150" y="96" width="40" height="26" rx="5" fill="#c3cad4"/>
+          <text x="200" y="114" font-size="13" fill="#666">約23,000円</text>
+          <text x="150" y="150" font-size="12.5" fill="#c0392b" font-weight="bold">差額 約28万円（およそ13倍）</text>
+        </svg>
+      </div>
+      <div class="fig-cap">※普通預金は年0.1%・同じ入金ペース（毎年50万円ずつ積み増し）で試算。いずれも税引後（源泉分離課税15.315%控除後）。</div>
       <div class="warn">
         <strong>中途換金すると利回りは大きく下がる：</strong>単年利率が後半に偏っているため、たとえば3年で換金した場合に適用される年平均利率は<b>0.600%</b>にとどまる（10年保有なら2.000%）。<b>10年持ち切って初めて2.0%が実現する</b>設計であり、これも「毎年少額ずつ」にとどめる根拠のひとつ。
       </div>
@@ -518,7 +560,7 @@
   <div class="footer">
     エスト北塚口管理組合　／　すまい・る債 解説資料（第41期）<br>
     数値の出典：長期修繕計画書プロジェクト引継書、住宅金融支援機構 公表の2026年度利率・手続スケジュール。詳細・最新は「修繕積立金運用プロジェクト_引継書.md」を正とします。<br>
-    最終更新：2026年9月7日（ラダー戦略・受取利息の図解を両版に追加／段階金利の構造を反映し「1年で8,500円」→「10年で合計約85,000円」に訂正／ロック額の上限を450万円→500万円に訂正）
+    最終更新：2026年9月7日（ラダー戦略・受取利息の図解を両版に追加＝各年の元本積み上げと利率を明示、累計の伸び・普通預金との比較を新設／段階金利の構造を反映し「1年で8,500円」→「10年で合計約85,000円」に訂正／ロック額の上限を450万円→500万円に訂正）
   </div>
 
 </div>
