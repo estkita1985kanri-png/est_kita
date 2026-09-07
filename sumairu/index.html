@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>すまい・る債とは｜エスト北塚口管理組合</title>
+<style>
+  *{box-sizing:border-box;}
+  body{font-family:"Yu Gothic","Meiryo",sans-serif;color:#1a1a1a;background:#f4f6f9;
+       margin:0;padding:12px;line-height:1.7;-webkit-text-size-adjust:100%;}
+  .container{max-width:980px;margin:0 auto;}
+
+  /* 表紙 */
+  .cover{background:linear-gradient(135deg,#1a3a6e 0%,#2c5aa0 100%);color:#fff;
+         padding:32px 22px;border-radius:14px;text-align:center;margin-bottom:16px;}
+  .cover h1{font-size:24px;margin:0 0 10px;letter-spacing:1px;line-height:1.4;}
+  .cover .sub{font-size:14px;opacity:0.95;margin-bottom:14px;line-height:1.75;}
+  .cover .org{font-size:13px;opacity:0.88;border-top:1px solid rgba(255,255,255,0.4);padding-top:10px;}
+
+  /* タブ切替 */
+  .tab-bar{display:flex;gap:8px;margin-bottom:16px;}
+  .tab-btn{flex:1;padding:14px 10px;font-size:16px;font-weight:bold;
+           border:2px solid #2c5aa0;border-radius:8px;cursor:pointer;
+           background:#fff;color:#2c5aa0;transition:all 0.15s;line-height:1.4;}
+  .tab-btn small{display:block;font-size:11px;font-weight:normal;color:#888;margin-top:2px;}
+  .tab-btn.active{background:#2c5aa0;color:#fff;}
+  .tab-btn.active small{color:rgba(255,255,255,0.85);}
+  .tab-btn:hover{background:#eef2ff;}
+  .tab-btn.active:hover{background:#2c5aa0;}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
+
+  /* スライド（カード） */
+  .slide{background:#fff;border-radius:12px;padding:20px 22px;
+         box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;}
+  .slide-num{display:inline-block;background:#1a3a6e;color:#fff;font-size:11px;
+             padding:2px 10px;border-radius:10px;margin-bottom:6px;letter-spacing:1px;}
+  .slide h2{font-size:20px;color:#1a3a6e;margin:0 0 14px;border-bottom:3px solid #2c5aa0;padding-bottom:6px;}
+  .slide h3{font-size:15px;color:#1a3a6e;margin:16px 0 6px;}
+  .lead{font-size:14px;line-height:1.85;color:#333;margin:6px 0 10px;}
+
+  /* 用語・たとえ話ボックス */
+  .term{background:#f4f8ff;border:1px dashed #2c5aa0;border-radius:6px;
+        padding:10px 14px;font-size:13px;margin:10px 0;line-height:1.75;}
+  .term .word{font-weight:bold;color:#1a3a6e;display:block;margin-bottom:2px;}
+
+  .point{background:#eafaf1;border-left:6px solid #27ae60;padding:11px 14px;
+         border-radius:6px;margin:10px 0;font-size:13.5px;line-height:1.75;}
+  .point strong{color:#1e8449;}
+
+  .warn{background:#fff5e6;border-left:6px solid #f39c12;padding:11px 14px;
+        border-radius:6px;margin:10px 0;font-size:13px;line-height:1.75;}
+  .warn strong{color:#b9770e;}
+
+  .danger{background:#fdecea;border-left:6px solid #c0392b;padding:11px 14px;
+          border-radius:6px;margin:10px 0;font-size:13px;line-height:1.75;}
+
+  /* テーブル */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px -4px;}
+  table{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0;min-width:420px;}
+  th,td{border:1px solid #cfd6e0;padding:7px 9px;}
+  th{background:#1a3a6e;color:#fff;text-align:center;font-weight:bold;}
+  td{vertical-align:middle;}
+  td.label{background:#f1f4f9;font-weight:bold;}
+  td.good{background:#eafaf1;color:#1e8449;font-weight:bold;}
+  td.bad{background:#fdecea;color:#a93226;font-weight:bold;}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  tr.hl td{background:#eafaf1;}
+  tr.hl td.label{color:#1e8449;}
+
+  /* 2列比較（普通預金 vs すまい・る債） */
+  .vs{display:flex;gap:12px;margin:14px 0;}
+  .vs .box{flex:1;border-radius:10px;padding:16px 14px;text-align:center;border:1px solid #cfd6e0;}
+  .vs .box.dull{background:#f1f4f9;}
+  .vs .box.win{background:#eafaf1;border-color:#27ae60;}
+  .vs .box .cap{font-size:12px;color:#666;margin-bottom:6px;}
+  .vs .box .rate{font-size:30px;font-weight:bold;line-height:1;color:#555;}
+  .vs .box.win .rate{color:#27ae60;}
+  .vs .box .note{font-size:11px;color:#888;margin-top:6px;}
+  @media(max-width:520px){.vs{flex-direction:column;}}
+
+  /* 3ルールのステップ */
+  .step{display:flex;gap:12px;align-items:flex-start;background:#fafbfd;
+        padding:11px 14px;border-radius:6px;margin:8px 0;font-size:13.5px;line-height:1.7;}
+  .step-num{flex:0 0 28px;height:28px;background:#2c5aa0;color:#fff;border-radius:50%;
+            display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:14px;}
+  .step b{color:#1a3a6e;}
+
+  /* うちの組合カード */
+  .ourcase{background:linear-gradient(135deg,#1a3a6e 0%,#2c5aa0 100%);color:#fff;
+           border-radius:12px;padding:22px;margin:18px 0;box-shadow:0 4px 14px rgba(0,0,0,0.1);}
+  .ourcase h2{font-size:18px;margin:0 0 4px;color:#fff;border:none;padding:0;}
+  .ourcase .sub{font-size:12.5px;opacity:0.85;margin-bottom:14px;}
+  .ourcase .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  @media(max-width:560px){.ourcase .grid{grid-template-columns:1fr;}}
+  .ourcase .stat{background:rgba(255,255,255,0.13);border-radius:9px;padding:12px 14px;}
+  .ourcase .stat .n{font-size:23px;font-weight:bold;line-height:1.1;}
+  .ourcase .stat .c{font-size:11.5px;opacity:0.85;margin-top:3px;}
+
+  .pillrow{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0;}
+  .pill{font-size:12px;font-weight:bold;padding:5px 12px;border-radius:999px;}
+  .pill.g{background:#eafaf1;color:#1e8449;}
+  .pill.b{background:#fdecea;color:#a93226;}
+
+  ul,ol{margin:6px 0 6px 22px;padding:0;}
+  li{margin:5px 0;font-size:13.5px;line-height:1.75;}
+  .kicker{text-align:center;font-size:12px;font-weight:bold;color:#2c5aa0;letter-spacing:2px;margin:22px 0 6px;}
+
+  .footer{text-align:center;font-size:11px;color:#888;margin-top:16px;padding:10px;line-height:1.7;}
+
+  @media (max-width:600px){
+    body{padding:8px;}
+    .cover{padding:24px 16px;}
+    .cover h1{font-size:19px;}
+    .tab-btn{font-size:14px;padding:12px 8px;}
+    .slide{padding:16px 14px;}
+    .slide h2{font-size:17px;}
+    .slide h3{font-size:14px;}
+    .lead{font-size:13px;}
+    .term,.point,.warn,.danger{font-size:12px;padding:9px 12px;}
+    table{font-size:12px;min-width:380px;}
+    th,td{padding:5px 6px;}
+    .vs .box .rate{font-size:26px;}
+    .ourcase .stat .n{font-size:20px;}
+    li{font-size:12.5px;}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="cover">
+    <h1>マンションすまい・る債 とは？</h1>
+    <div class="sub">修繕積立金を「ただ預金で寝かせる」以外の選択肢。<br>金融の知識がなくても分かる<b>やさしい版</b>と、数字・税務まで踏み込む<b>くわしい版</b>の2部構成です。</div>
+    <div class="org">エスト北塚口管理組合　／　修繕積立金 運用プロジェクト（第41期）</div>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn" onclick="showTab('easy',this)">やさしい版<small>金融の知識ゼロでもOK</small></button>
+    <button class="tab-btn active" onclick="showTab('deep',this)">くわしい版<small>数字・税務・戦略まで</small></button>
+  </div>
+
+  <!-- ================= EASY ================= -->
+  <div id="easy" class="tab-content">
+
+    <div class="slide">
+      <span class="slide-num">A</span>
+      <h2>ひとことで言うと</h2>
+      <div class="term">
+        <span class="word">たとえ話</span>
+        マンションのみんなで少しずつ貯めている「修繕積立金」を、<b>国がつくった安全な貯金箱</b>に預けて、ふつうの銀行よりちょっと多めの“おまけ（利息）”をもらう仕組みです。
+      </div>
+      <p class="lead">正式名称は「マンションすまい・る債」。運営しているのは<b>住宅金融支援機構</b>という、国（政府）が100%お金を出している組織です。だから「預けたお金が消えてしまう」心配は、ほぼありません。</p>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">B</span>
+      <h2>なぜ普通預金じゃダメなの？</h2>
+      <p class="lead">いま銀行の普通預金に置いておいても、利息はほとんど付きません。それに比べて、すまい・る債は<b>物価上昇に対抗できるくらいの利息</b>がつきます。</p>
+      <div class="vs">
+        <div class="box dull">
+          <div class="cap">ふつうの普通預金</div>
+          <div class="rate">0.1%</div>
+          <div class="note">くらい（ほぼゼロ）</div>
+        </div>
+        <div class="box win">
+          <div class="cap">すまい・る債（2026年度）</div>
+          <div class="rate">2.0%</div>
+          <div class="note">税引き前・約20倍</div>
+        </div>
+      </div>
+      <div class="point">
+        <strong>50万円を1年あずけると…</strong><br>
+        すまい・る債なら、税金を引いたあとでも<strong>約8,500円</strong>の利息。普通預金だと数百円くらい。同じお金でも、置く場所でこれだけ差が出ます。
+      </div>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">C</span>
+      <h2>大事なルール 3つ</h2>
+      <div class="step"><div class="step-num">1</div><div><b>1口＝50万円から。</b>50万円ごとに「1口・2口…」と申し込みます。</div></div>
+      <div class="step"><div class="step-num">2</div><div><b>基本は10年あずける。</b>すぐには引き出せません。1年たてば、手数料なしで引き出せますが、理事会・総会での意思確認など手続きが必要です。だから「当分使わないお金」を預けるのが基本です。</div></div>
+      <div class="step"><div class="step-num">3</div><div><b>申込みは早い者勝ち・期限あり。</b>毎年、決まった期間しか申し込めません。2026年度の締切は <b>10月9日（金）</b>。定員に達すると早く閉め切られます。</div></div>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">D</span>
+      <h2>安全なの？デメリットは？</h2>
+      <div class="pillrow">
+        <span class="pill g">◎ 国が運営 → 安全性が高い</span>
+        <span class="pill g">◎ 普通預金よりずっと高利率</span>
+        <span class="pill g">◎ 物価が上がっても目減りしにくい</span>
+      </div>
+      <div class="pillrow">
+        <span class="pill b">△ 10年は原則引き出せない</span>
+        <span class="pill b">△ 申込みに期限がある</span>
+        <span class="pill b">△ ごくまれに元本割れの可能性あり</span>
+      </div>
+      <div class="term">
+        <span class="word">「元本割れ」ってどういうこと？</span>
+「発行元」とは、この債券を発行している<b>住宅金融支援機構</b>（国の機関）のことです。この機構が発行している公式パンフレットにも、正式に「発行元の経営状態が悪化した場合などに、預けたお金が減ってしまう可能性がある」と注意書きがあります。これは<b>途中で引き出すと減る、という意味ではありません。</b>「発行元が経営破綻するくらいの非常事態が起きた場合」という意味で、可能性としては極めて低いものです。実際、この機関は国が全額出資しており、格付け（信用力の評価）も国債と同じくらい高いです。しかも<b>できたばかりの組織ではありません。</b>前身の住宅金融公庫が1950年に設立され、2007年に今の形（住宅金融支援機構）になりました。前身から数えると<b>76年、今の組織としても19年</b>、日本の住宅政策を支えてきた歴史ある機関です。
+      </div>
+      <p class="lead">つまり、<b>「すぐ使う予定のないお金」を、安全に、少しでも増やしておく</b>ための仕組みです。修繕積立金は「10年後・20年後の大規模修繕」のために貯めているお金なので、まさにピッタリ、というわけです。</p>
+    </div>
+
+    <div class="warn">
+      <strong>理事のみなさんに判断してほしいこと：</strong>「やる／やらない」と「いくら分（何口）申し込むか」の2つです。くわしい数字はタブ「くわしい版」に、当組合の具体案は下のカードにまとめています。
+    </div>
+  </div>
+
+  <!-- ================= DEEP ================= -->
+  <div id="deep" class="tab-content active">
+
+    <div class="slide">
+      <span class="slide-num">01</span>
+      <h2>商品スペック</h2>
+      <div class="table-wrap"><table style="min-width:460px;">
+        <tr><td class="label">発行体</td><td>住宅金融支援機構（独立行政法人・政府100%出資）。前身の住宅金融公庫は1950年設立、2007年4月に現組織へ改組＝<b>前身から76年、現組織として19年</b>の実績</td></tr>
+        <tr><td class="label">対象</td><td>マンション管理組合（修繕積立金の運用専用）</td></tr>
+        <tr><td class="label">単位・満期</td><td>1口 50万円／運用期間 10年（利付債・毎年利息受取）</td></tr>
+        <tr class="hl"><td class="label">2026年度 利率</td><td><b>年 2.000%（税引前）</b> ／ 1.6938%（税引後）</td></tr>
+        <tr><td class="label">継続購入</td><td>同一口数を最大10回まで継続購入可（＝ラダー運用）</td></tr>
+        <tr><td class="label">中途換金</td><td>1年経過後、手数料無料で元本＋経過利息を受取可（機構の審査・承認が必要。原則は満期保有）</td></tr>
+        <tr><td class="label">購入上限</td><td>「前年度末 積立金残高 ＋ 当年度 積立予算」の範囲内</td></tr>
+        <tr><td class="label">2026年度 応募期間</td><td>2026/4/13 〜 <b>2026/10/9（金）</b>（先着順）</td></tr>
+      </table></div>
+      <div class="point"><strong>利率のかさ上げ（加点制度）：</strong>管理計画認定を受けると <strong>2.1%</strong>、マンション管理適正評価★4以上で <strong>2.05%</strong> に上乗せ。認定取得はコア戦略とは別途、検討の価値あり。</div>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">02</span>
+      <h2>ラダー戦略（継続購入の要点）</h2>
+      <p class="lead">すまい・る債は<b>「その年度の募集利率が、購入分について10年間固定」</b>されます。2026年度に買った口数は10年間ずっと2.0%。翌年はまた新規に買い増しでき、その年の利率が適用されます。<b>当組合はこの仕組みを使い、毎年1口（50万円）を継続購入するラダー戦略を採用</b>しています。</p>
+      <ul>
+        <li>毎年少しずつ積み増す＝<b>購入時期を分散</b>できるので、金利水準の高低リスクを平準化。</li>
+        <li>満期の到来も年ごとにズレる＝<b>10年後以降、毎年一定額が満期を迎え</b>、大規模修繕の支出タイミングに現金化を合わせやすい。</li>
+        <li>この「はしご状（ラダー）」の設計が、修繕積立金の長期運用と相性が良い最大の理由。</li>
+        <li><b>毎年たった50万円という小さな単位で継続する</b>ことで、1年ごとの資金拘束を最小限にとどめつつ、10年後（2036年）以降は毎年1口ずつ満期を迎える安定した仕組みが作れる。</li>
+        <li><b>ロック額（動かせない元本の総額）は無限に増え続けない。</b>毎年50万円ずつ買い続けても、10年経過後は毎年1本ずつ満期で戻ってくるため、常時ロックされているのは直近9年分＝<b>最大450万円で頭打ち</b>になる（それ以上は増えない）。購入をやめれば、その後9年かけて順次ゼロへ収束する。</li>
+      </ul>
+      <div class="point"><strong>利息の受け取り方：</strong>利息は満期時にまとめてではなく、<b>毎年1回（2月頃）現金で別途支払われる</b>。満期時に戻るのは元本のみ。</div>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">03</span>
+      <h2>税務の扱い（ここが預金と違う）</h2>
+      <div class="table-wrap"><table style="min-width:460px;">
+        <tr><th>項目</th><th>すまい・る債</th><th>法人扱いの預金利息</th></tr>
+        <tr><td class="label">課税方式</td><td>源泉分離課税 15.315%</td><td>源泉徴収 15.315%</td></tr>
+        <tr><td class="label">還付</td><td class="bad">不可（分離課税）</td><td class="good">別表六で還付余地あり</td></tr>
+        <tr><td class="label">実質手取り</td><td>税引後 1.6938% が確定</td><td>還付できれば実効税率↓</td></tr>
+      </table></div>
+      <div class="warn"><strong>留意点：</strong>すまい・る債の利息は源泉分離で<b>還付できません</b>。一方、通常の預金利息は法人税申告（別表六）で一部取り戻せる可能性があります。ただし高利率で相殺され、すまい・る債の手取りが上回る前提。還付の費用対効果は小林税理士事務所へ確認予定。</div>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">04</span>
+      <h2>30年シミュレーション（税引後・年50万円積立）</h2>
+      <div class="term">
+        <span class="word">これが当組合の実際の方針</span>
+        現在の年間修繕積立金は約190万円。その約25%にあたる<b>1口・50万円/年を毎年継続してすまい・る債へ積み立てる</b>のが当組合の方針です（詳細は下の「当組合の具体案」参照）。以下は、この方針を30年間続けた場合の姿を示す試算です。
+      </div>
+      <div class="table-wrap"><table style="min-width:460px;">
+        <tr><th>運用先</th><th>税引後利率</th><th>30年後残高</th><th>利益</th></tr>
+        <tr class="hl"><td class="label">すまい・る債（2.0%）</td><td class="num">1.6938%</td><td class="num">1,934万</td><td class="num">+434万</td></tr>
+        <tr><td class="label">個人向け国債プラス</td><td class="num">1.270%</td><td class="num">1,813万</td><td class="num">+313万</td></tr>
+        <tr><td class="label">GMO定期10年</td><td class="num">0.356%</td><td class="num">1,580万</td><td class="num">+80万</td></tr>
+        <tr><td class="label">普通預金（旧みずほ・参考値）</td><td class="num">0.169%</td><td class="num">1,537万</td><td class="num">+37万</td></tr>
+      </table></div>
+      <p class="lead">普通預金一辺倒との差は <b>30年で約260〜400万円</b>（元本1,500万円に対する上乗せ分）。年50万円という無理のないペースでも、着実な差が生まれる。<br><span style="font-size:12px;color:#888;">※みずほ銀行は2026年8月31日付で解約済み。組合口座は現在GMOあおぞらネット銀行（メイン）＋尼崎信用金庫（ペイオフ分散）の2行体制。上表のみずほ利率は解約前の実績値を低金利の参考ベンチマークとして残している。※年150万円ベースの試算（元の資料）は「260530_修繕積立金運用シミュレーション.html」を参照。利率は同一のため、金額は単純に1/3で換算可能。</span></p>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">05</span>
+      <h2>リスクと対処</h2>
+      <div class="danger">
+        <strong>公式の注意書き（機構パンフレット 2026年4月版より原文）：</strong><br>
+        「【マンションすまい・る債】は、発行体である機構の信用状況の悪化等により、元本や利息の支払が滞る可能性や、元本割れが生じる可能性があります。」<br>
+        <span style="font-size:12px;">※「発行体」＝住宅金融支援機構を指す。</span>
+      </div>
+      <ul>
+        <li><b>信用リスク：小さいが、ゼロではない。</b>元本割れが起こり得るのは<b>機構自体の信用状況が悪化した場合</b>（＝発行体のデフォルトに準じる事態）であり、中途換金や市場変動による目減りではない。機構は政府100%出資（資本金6,950億円）、直近14期連続黒字。発行体格付けは S&amp;P：A+／R&amp;I：AA+（2026年2月時点、国債と同等水準）。<b>組織としての実績も長く</b>、前身の住宅金融公庫（1950年設立）から数えて76年、現在の独立行政法人としても2007年の改組から19年運営されている。</li>
+        <li><b>優先弁済の措置あり。</b>機構法により、すまい・る債の元本は機構の総資産から<b>優先的に弁済</b>される権利が保有者に認められている（一般担保付債券）。ただし<b>政府保証は付されておらず、預金保険制度（ペイオフ）の対象でもない</b>点は預金と異なる。</li>
+        <li><b>流動性リスク：あり。ただし当組合は年50万円ペースで抑制。</b>原則10年拘束。中途換金は1年経過後、手数料無料で元本＋経過利息を受取可能だが、<b>機構の審査・承認が必要</b>（総会議事録等の疎明資料の提出、または電話での意思確認）。第2回以降購入分で発行から2ヶ月以内のもの、満期償還月にあたる債券は換金不可。一部解約は購入時期が古い債券から順に充当。<b>1年あたり50万円という小さな単位で継続購入することで、仮に急な大口出費が発生しても拘束される金額は最小限にとどまる</b>（詳細は下の「当組合の具体案」参照）。</li>
+        <li><b>金利変動リスク：限定的。</b>2026年度分は2.0%固定。今後金利が上がっても乗り換えづらいが、<b>毎年の新規購入分で追随可能</b>（ラダーが吸収）。</li>
+        <li><b>インフレリスク：軽減方向。</b>普通預金より高利回りのぶん、実質目減りを抑制。</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">06</span>
+      <h2>他商品との使い分け</h2>
+      <div class="table-wrap"><table style="min-width:460px;">
+        <tr><th>商品</th><th>役割</th><th>特徴</th></tr>
+        <tr class="hl"><td class="label">すまい・る債</td><td>長期コア</td><td>10年・高利率2.0%。当面使わない資金の中核</td></tr>
+        <tr><td class="label">個人向け国債プラス</td><td>中期サブ</td><td>金利連動・1年後に元本保証で換金可</td></tr>
+        <tr><td class="label">GMO定期／普通</td><td>短期予備</td><td>流動性確保・緊急予備。すぐ動かせる</td></tr>
+      </table></div>
+      <p class="lead">すまい・る債だけに寄せず、<b>「すぐ使う分＝流動性の高い預金」「当面使わない分＝すまい・る債」</b>と役割分担する4層ポートフォリオが本プロジェクトの基本設計です。</p>
+    </div>
+  </div>
+
+  <!-- ============ 共通：うちの組合 ============ -->
+  <div class="kicker">— 両版 共通：当組合の具体案 —</div>
+  <div class="ourcase">
+    <h2>エスト北塚口の場合</h2>
+    <div class="sub">2026年4月末 修繕積立金 累計残高をベースにした想定</div>
+    <div class="grid">
+      <div class="stat"><div class="n">1,410万</div><div class="c">積立金 累計残高（2026/4末）</div></div>
+      <div class="stat"><div class="n">10/9</div><div class="c">2026年度 応募期限（金）</div></div>
+      <div class="stat"><div class="n">毎年1口</div><div class="c">年50万円を継続購入（ラダー戦略）</div></div>
+    </div>
+    <div class="grid" style="margin-top:10px;">
+      <div class="stat"><div class="n">2036年〜</div><div class="c">初回購入分の満期以降、毎年1口ずつ満期到来</div></div>
+      <div class="stat"><div class="n">最大450万</div><div class="c">ロック額（動かせない元本）はここで頭打ち</div></div>
+    </div>
+  </div>
+  <div class="point">
+    <strong>なぜ「毎年1口・50万円」が当組合の身の丈に合っているか：</strong>
+    毎年1口（50万円）を継続購入するラダー戦略のもと、10年後にはロック額が最大450万円（9年分）で頭打ちになる。一方、当組合は大規模修繕の直後であっても残高を0に近づけず、常に最低500万円程度は手元流動資金として維持する運営方針を持っている。<b>この500万円は主に大規模修繕や日常の小修繕に対する平常時のバッファであり、排水管更新のような単発の大型支出（1,000万円級・早ければ来期発生の可能性）には別途備える必要がある</b>が、その備えこそが「毎年50万円だけ」という小さい増額ペースそのものである。両者を合わせると、1口50万円は当組合の資金体力に見合った、無理のない運用ペースと言える。
+    <div style="font-size:11.5px;color:#666;margin-top:8px;">※450万円という上限は「毎年ちょうど50万円ずつ買い続けた場合」の理論値。増額判断をすれば前提は変わる。※500万円という基準は「大規模修繕直後でも残高0にしない」という当組合の運営方針に基づく目安であり、今後、管理費運営費の必要月数や過去の緊急修繕実績など定量的な根拠を明文化する余地がある。</div>
+  </div>
+  <div class="warn">
+    <strong>今後の運用：</strong>「毎年1口・50万円」を標準ペースとする。すまい・る債は10年固定金利・実質非流動という特性上、<b>一括投入ではなく、その時点で確実に10年以上使わないと言える分だけを毎年積み増す</b>のが基本方針で、50万円はその現時点での目安額。2027年度に修繕積立金単価が140円/㎡→170円/㎡へ改定予定（総会決議後）で年間積立額が増える見込みのため、<b>単価改定後がペース見直しの自然なタイミング</b>。長期修繕計画書（2026年12月完成予定）・給排水管内視鏡調査の結果が出て資金の見通しが立てば、あわせて増額（複数口/年）をあらためて検討する。<b>毎年の申込みは理事会で確認・決議</b>する。
+  </div>
+
+  <div class="footer">
+    エスト北塚口管理組合　／　すまい・る債 解説資料（第41期）<br>
+    数値の出典：長期修繕計画書プロジェクト引継書、住宅金融支援機構 公表の2026年度利率・手続スケジュール。詳細・最新は「修繕積立金運用プロジェクト_引継書.md」を正とします。<br>
+    最終更新：2026年9月6日
+  </div>
+
+</div>
+
+<script>
+  function showTab(id, btn){
+    document.querySelectorAll('.tab-content').forEach(function(e){ e.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+</body>
+</html>
