@@ -55,6 +55,12 @@
   .danger{background:#fdecea;border-left:6px solid #c0392b;padding:11px 14px;
           border-radius:6px;margin:10px 0;font-size:13px;line-height:1.75;}
 
+  /* 図版 */
+  .fig-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px -4px 4px;}
+  .fig-wrap svg{display:block;min-width:560px;width:100%;height:auto;
+                font-family:"Yu Gothic","Meiryo",sans-serif;}
+  .fig-cap{font-size:11.5px;color:#666;line-height:1.75;margin:2px 0 10px;}
+
   /* テーブル */
   .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px -4px;}
   table{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0;min-width:420px;}
@@ -170,8 +176,9 @@
         </div>
       </div>
       <div class="point">
-        <strong>50万円を1年あずけると…</strong><br>
-        すまい・る債なら、税金を引いたあとでも<strong>約8,500円</strong>の利息。普通預金だと数百円くらい。同じお金でも、置く場所でこれだけ差が出ます。
+        <strong>50万円を10年あずけると…</strong><br>
+        すまい・る債なら、税金を引いたあとで<strong>合計 約85,000円</strong>の利息（年平均で約8,500円）。普通預金だと10年で数千円ほどです。同じお金でも、置く場所でこれだけ差が出ます。<br>
+        <span style="font-size:12px;">※利息は毎年同じ額ではなく、<b>最初の数年は少なく、後半になるほど増える</b>設計です（1年目 約1,700円 → 10年目 約18,400円／いずれも税引後）。</span>
       </div>
     </div>
 
@@ -201,6 +208,90 @@
 「発行元」とは、この債券を発行している<b>住宅金融支援機構</b>（国の機関）のことです。この機構が発行している公式パンフレットにも、正式に「発行元の経営状態が悪化した場合などに、預けたお金が減ってしまう可能性がある」と注意書きがあります。これは<b>途中で引き出すと減る、という意味ではありません。</b>「発行元が経営破綻するくらいの非常事態が起きた場合」という意味で、可能性としては極めて低いものです。実際、この機関は国が全額出資しており、格付け（信用力の評価）も国債と同じくらい高いです。しかも<b>できたばかりの組織ではありません。</b>前身の住宅金融公庫が1950年に設立され、2007年に今の形（住宅金融支援機構）になりました。前身から数えると<b>76年、今の組織としても19年</b>、日本の住宅政策を支えてきた歴史ある機関です。
       </div>
       <p class="lead">つまり、<b>「すぐ使う予定のないお金」を、安全に、少しでも増やしておく</b>ための仕組みです。修繕積立金は「10年後・20年後の大規模修繕」のために貯めているお金なので、まさにピッタリ、というわけです。</p>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">E</span>
+      <h2>図で見る「毎年1口ずつ」の仕組み</h2>
+      <p class="lead">毎年1口（50万円）ずつ買い足していくと、下の図のように<b>はしご（ラダー）のように満期の時期が1年ずつズレていきます。</b></p>
+      <div class="fig-wrap">
+        <svg viewBox="0 0 760 395" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="毎年1口50万円ずつ購入し、10年後から毎年1本ずつ満期を迎えるラダー戦略の図">
+          <rect width="760" height="395" fill="#fff"/>
+          <g stroke="#e3e8f0" stroke-width="1">
+            <line x1="110" y1="62" x2="110" y2="300"/><line x1="190" y1="62" x2="190" y2="300"/>
+            <line x1="270" y1="62" x2="270" y2="300"/><line x1="350" y1="62" x2="350" y2="300"/>
+            <line x1="430" y1="62" x2="430" y2="300"/><line x1="590" y1="62" x2="590" y2="300"/>
+            <line x1="670" y1="62" x2="670" y2="300"/>
+          </g>
+          <line x1="510" y1="56" x2="510" y2="332" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <g font-size="12.5" fill="#6b7684" text-anchor="middle">
+            <text x="110" y="48">2027年</text><text x="190" y="48">2029</text>
+            <text x="270" y="48">2031</text><text x="350" y="48">2033</text>
+            <text x="430" y="48">2035</text>
+            <text x="510" y="48" fill="#1e8449" font-weight="bold">2037</text>
+            <text x="590" y="48">2039</text><text x="670" y="48">2041</text>
+          </g>
+          <g font-size="12" fill="#1a3a6e" text-anchor="end" font-weight="bold">
+            <text x="100" y="97">1本目</text><text x="100" y="139">2本目</text>
+            <text x="100" y="181">3本目</text><text x="100" y="223">4本目</text>
+            <text x="100" y="265">5本目</text>
+          </g>
+          <g fill="#2c5aa0">
+            <rect x="110" y="79" width="400" height="27" rx="6"/>
+            <rect x="150" y="121" width="400" height="27" rx="6"/>
+            <rect x="190" y="163" width="400" height="27" rx="6"/>
+            <rect x="230" y="205" width="400" height="27" rx="6"/>
+            <rect x="270" y="247" width="400" height="27" rx="6"/>
+          </g>
+          <g font-size="12.5" fill="#fff" font-weight="bold">
+            <text x="122" y="97">50万円をあずける（10年間）</text>
+            <text x="162" y="139">50万円</text><text x="202" y="181">50万円</text>
+            <text x="242" y="223">50万円</text><text x="282" y="265">50万円</text>
+          </g>
+          <g fill="#27ae60">
+            <circle cx="510" cy="92.5" r="13"/><circle cx="550" cy="134.5" r="13"/>
+            <circle cx="590" cy="176.5" r="13"/><circle cx="630" cy="218.5" r="13"/>
+            <circle cx="670" cy="260.5" r="13"/>
+          </g>
+          <g font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">
+            <text x="510" y="97">¥</text><text x="550" y="139">¥</text><text x="590" y="181">¥</text>
+            <text x="630" y="223">¥</text><text x="670" y="265">¥</text>
+          </g>
+          <text x="385" y="295" font-size="15" fill="#98a2b3" text-anchor="middle">… 毎年くり返し …</text>
+          <text x="516" y="324" font-size="12.5" fill="#1e8449" font-weight="bold">2037年から、毎年1本ずつ満期に</text>
+          <g>
+            <rect x="110" y="350" width="16" height="16" rx="4" fill="#2c5aa0"/>
+            <text x="134" y="363" font-size="12.5" fill="#444">あずけている期間（10年）</text>
+            <circle cx="336" cy="358" r="9" fill="#27ae60"/>
+            <text x="352" y="363" font-size="12.5" fill="#444">満期。元本50万円が戻ってくる</text>
+          </g>
+        </svg>
+      </div>
+      <div class="fig-cap">※図は5本目まで。実際はこのまま毎年くり返します。2026年度に申し込んだ分は2027年2月の発行予定です。</div>
+      <div class="point">
+        <strong>10年後からは、毎年1本ずつ50万円が戻ってきます。</strong>戻ってきたお金をまた買い直せば、この形をずっと続けられます。逆に大規模修繕でお金が必要になった年は、買い直さずに手元に置いておけば大丈夫です。
+      </div>
+
+      <h3>利息は、後半になるほど増えていきます</h3>
+      <p class="lead">すまい・る債の利息は毎年同じ額ではありません。<b>最初の数年は少なく、後半になるほど大きくなる</b>設計です（10年間の平均で年2.0%）。毎年1口ずつ買い足していくと、受け取る利息の合計も年々増えていきます。</p>
+      <div class="fig-wrap">
+        <svg viewBox="0 0 720 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="毎年受け取る利息が年を追うごとに増えることを示す棒グラフ">
+          <rect width="720" height="215" fill="#fff"/>
+          <g font-size="12.5" fill="#444" text-anchor="end">
+            <text x="122" y="46">1年目</text><text x="122" y="91">5年目</text>
+            <text x="122" y="136">8年目</text><text x="122" y="181">10年目以降</text>
+          </g>
+          <rect x="132" y="30" width="10" height="21" rx="3" fill="#9fb6d4"/>
+          <rect x="132" y="75" width="84" height="21" rx="3" fill="#7ba3d0"/>
+          <rect x="132" y="120" width="284" height="21" rx="3" fill="#4a86c8"/>
+          <rect x="132" y="165" width="480" height="21" rx="3" fill="#27ae60"/>
+          <g font-size="12.5" fill="#333" font-weight="bold">
+            <text x="152" y="46">約1,700円</text><text x="226" y="91">約14,800円</text>
+            <text x="426" y="136">約50,100円</text><text x="622" y="181">約84,700円</text>
+          </g>
+        </svg>
+      </div>
+      <div class="fig-cap">※その年に受け取る利息の合計（税引後）。毎年2月に現金で受け取ります。10年目以降は毎年およそ84,700円で安定します。</div>
     </div>
 
     <div class="point">
@@ -236,9 +327,105 @@
         <li>満期の到来も年ごとにズレる＝<b>10年後以降、毎年一定額が満期を迎え</b>、大規模修繕の支出タイミングに現金化を合わせやすい。</li>
         <li>この「はしご状（ラダー）」の設計が、修繕積立金の長期運用と相性が良い最大の理由。</li>
         <li><b>毎年たった50万円という小さな単位で継続する</b>ことで、1年ごとの資金拘束を最小限にとどめつつ、10年後（2036年）以降は毎年1口ずつ満期を迎える安定した仕組みが作れる。</li>
-        <li><b>ロック額（動かせない元本の総額）は無限に増え続けない。</b>毎年50万円ずつ買い続けても、10年経過後は毎年1本ずつ満期で戻ってくるため、常時ロックされているのは直近9年分＝<b>最大450万円で頭打ち</b>になる（それ以上は増えない）。購入をやめれば、その後9年かけて順次ゼロへ収束する。</li>
+        <li><b>ロック額（動かせない元本の総額）は無限に増え続けない。</b>毎年50万円ずつ買い続けても、10口に達した以降は毎年1本ずつ満期で戻るため、常時ロックされているのは直近10年分＝<b>500万円で頭打ち</b>になる（それ以上は増えない）。購入をやめれば、その後10年かけて順次ゼロへ収束する。</li>
       </ul>
       <div class="point"><strong>利息の受け取り方：</strong>利息は満期時にまとめてではなく、<b>毎年1回（2月頃）現金で別途支払われる</b>。満期時に戻るのは元本のみ。</div>
+    </div>
+
+    <div class="slide">
+      <span class="slide-num">02-2</span>
+      <h2>図解：満期のズレ方と、利息の入り方</h2>
+
+      <h3>① 毎年1口ずつ買い増した場合の満期スケジュールとロック額</h3>
+      <div class="fig-wrap">
+        <svg viewBox="0 0 760 412" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="毎年1口ずつ10年間購入した場合の満期のズレ方とロック額の推移">
+          <rect width="760" height="412" fill="#fff"/>
+          <g stroke="#e6ebf2" stroke-width="1">
+            <line x1="110" y1="56" x2="110" y2="316"/><line x1="230" y1="56" x2="230" y2="316"/>
+            <line x1="350" y1="56" x2="350" y2="316"/><line x1="470" y1="56" x2="470" y2="316"/>
+            <line x1="590" y1="56" x2="590" y2="316"/><line x1="680" y1="56" x2="680" y2="316"/>
+          </g>
+          <g font-size="12" fill="#6b7684" text-anchor="middle">
+            <text x="110" y="44">2027</text><text x="230" y="44">2031</text><text x="350" y="44">2035</text>
+            <text x="470" y="44">2039</text><text x="590" y="44">2043</text><text x="680" y="44">2046</text>
+          </g>
+          <text x="6" y="44" font-size="11" fill="#98a2b3">（年）</text>
+          <g fill="#2c5aa0">
+            <rect x="110" y="74" width="300" height="17" rx="4"/><rect x="140" y="98" width="300" height="17" rx="4"/>
+            <rect x="170" y="122" width="300" height="17" rx="4"/><rect x="200" y="146" width="300" height="17" rx="4"/>
+            <rect x="230" y="170" width="300" height="17" rx="4"/><rect x="260" y="194" width="300" height="17" rx="4"/>
+            <rect x="290" y="218" width="300" height="17" rx="4"/><rect x="320" y="242" width="300" height="17" rx="4"/>
+            <rect x="350" y="266" width="300" height="17" rx="4"/><rect x="380" y="290" width="300" height="17" rx="4"/>
+          </g>
+          <g font-size="10.5" fill="#fff" font-weight="bold">
+            <text x="118" y="87">50万円 ／ 10年運用</text><text x="148" y="111">50万円</text><text x="178" y="135">50万円</text>
+            <text x="208" y="159">50万円</text><text x="238" y="183">50万円</text><text x="268" y="207">50万円</text>
+            <text x="298" y="231">50万円</text><text x="328" y="255">50万円</text><text x="358" y="279">50万円</text>
+            <text x="388" y="303">50万円</text>
+          </g>
+          <g fill="#27ae60">
+            <circle cx="410" cy="82.5" r="8"/><circle cx="440" cy="106.5" r="8"/><circle cx="470" cy="130.5" r="8"/>
+            <circle cx="500" cy="154.5" r="8"/><circle cx="530" cy="178.5" r="8"/><circle cx="560" cy="202.5" r="8"/>
+            <circle cx="590" cy="226.5" r="8"/><circle cx="620" cy="250.5" r="8"/><circle cx="650" cy="274.5" r="8"/>
+            <circle cx="680" cy="298.5" r="8"/>
+          </g>
+          <g font-size="11" fill="#1a3a6e" text-anchor="end">
+            <text x="102" y="87">1口目</text><text x="102" y="111">2口目</text><text x="102" y="135">3口目</text>
+            <text x="102" y="159">4口目</text><text x="102" y="183">5口目</text><text x="102" y="207">6口目</text>
+            <text x="102" y="231">7口目</text><text x="102" y="255">8口目</text><text x="102" y="279">9口目</text>
+            <text x="102" y="303">10口目</text>
+          </g>
+          <text x="6" y="342" font-size="11.5" fill="#1a3a6e" font-weight="bold">ロック額</text>
+          <text x="6" y="357" font-size="10.5" fill="#8a93a2">（動かせない</text>
+          <text x="6" y="370" font-size="10.5" fill="#8a93a2">　元本の合計）</text>
+          <line x1="110" y1="390" x2="710" y2="390" stroke="#cfd6e0" stroke-width="1"/>
+          <path d="M110,384.5 H140 V379 H170 V373.5 H200 V368 H230 V362.5 H260 V357 H290 V351.5 H320 V346 H350 V340.5 H380 V335 H710 V390 H110 Z"
+                fill="#e8f1fb" stroke="#2c5aa0" stroke-width="1.5" stroke-linejoin="round"/>
+          <text x="116" y="379" font-size="10.5" fill="#2c5aa0">50万</text>
+          <text x="470" y="329" font-size="12" fill="#1a3a6e" font-weight="bold">500万円（10口）で頭打ち。これ以上は増えない</text>
+        </svg>
+      </div>
+      <div class="fig-cap">※2026年度応募分は2027年2月発行（予定）。以降、毎年2月に1口ずつ購入・発行される前提で作図。緑の丸＝満期（元本50万円が戻る）。</div>
+      <div class="point">
+        <strong>ロック額は10年目で頭打ちになる：</strong>10口（500万円）を保有した時点以降は「毎年1本が満期で戻り、同時に1本を新規購入する」状態になるため、動かせない元本は<b>500万円前後で一定</b>となり、それ以上は増えない。購入をやめれば、その後10年かけて毎年50万円ずつ順次ゼロへ収束する。
+      </div>
+
+      <h3>② 利息は「後半ほど厚い」段階金利。ラダーだと受取額が年々増える</h3>
+      <p class="lead">すまい・る債の利率は10年間フラットではなく、<b>単年利率が年を追うごとに上昇する</b>設計（2026年度発行分：1年目0.400%→10年目4.340%、10年平均で年2.000%）。毎年1口ずつ積み上げると、その年に受け取る利息の合計も下図のように増えていく。</p>
+      <div class="fig-wrap">
+        <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ラダー運用時に毎年受け取る利息額の推移を示す棒グラフ">
+          <rect width="720" height="330" fill="#fff"/>
+          <g font-size="11.5" fill="#555" text-anchor="end">
+            <text x="118" y="42">1年目</text><text x="118" y="68">2年目</text><text x="118" y="94">3年目</text>
+            <text x="118" y="120">4年目</text><text x="118" y="146">5年目</text><text x="118" y="172">6年目</text>
+            <text x="118" y="198">7年目</text><text x="118" y="224">8年目</text><text x="118" y="250">9年目</text>
+            <text x="118" y="276">10年目〜</text>
+          </g>
+          <g rx="3">
+            <rect x="128" y="30" width="9" height="16" rx="3" fill="#b9cbe2"/>
+            <rect x="128" y="56" width="23" height="16" rx="3" fill="#aec3de"/>
+            <rect x="128" y="82" width="41" height="16" rx="3" fill="#a2bbd9"/>
+            <rect x="128" y="108" width="60" height="16" rx="3" fill="#8fb0d4"/>
+            <rect x="128" y="134" width="80" height="16" rx="3" fill="#7ba3d0"/>
+            <rect x="128" y="160" width="133" height="16" rx="3" fill="#6598cc"/>
+            <rect x="128" y="186" width="196" height="16" rx="3" fill="#4f8cc8"/>
+            <rect x="128" y="212" width="272" height="16" rx="3" fill="#3a80c4"/>
+            <rect x="128" y="238" width="360" height="16" rx="3" fill="#2c5aa0"/>
+            <rect x="128" y="264" width="460" height="16" rx="3" fill="#27ae60"/>
+          </g>
+          <g font-size="11.5" fill="#333">
+            <text x="145" y="43">1,694円</text><text x="159" y="69">4,235円</text><text x="177" y="95">7,622円</text>
+            <text x="196" y="121">11,009円</text><text x="216" y="147">14,820円</text><text x="269" y="173">24,389円</text>
+            <text x="332" y="199">36,160円</text><text x="408" y="225">50,133円</text><text x="496" y="251">66,308円</text>
+            <text x="596" y="277" font-weight="bold" fill="#1e8449">84,685円</text>
+          </g>
+          <text x="128" y="305" font-size="11.5" fill="#666">10年目以降は毎年 約84,685円（税引後）で安定。10年間の受取合計は約30万円。</text>
+        </svg>
+      </div>
+      <div class="fig-cap">※いずれも税引後（源泉分離課税15.315%控除後）。毎年1口＝50万円を継続購入し、保有中の全口数から受け取る利息の年間合計。</div>
+      <div class="warn">
+        <strong>中途換金すると利回りは大きく下がる：</strong>単年利率が後半に偏っているため、たとえば3年で換金した場合に適用される年平均利率は<b>0.600%</b>にとどまる（10年保有なら2.000%）。<b>10年持ち切って初めて2.0%が実現する</b>設計であり、これも「毎年少額ずつ」にとどめる根拠のひとつ。
+      </div>
     </div>
 
     <div class="slide">
@@ -312,14 +499,14 @@
     </div>
     <div class="grid" style="margin-top:10px;">
       <div class="stat"><div class="n">2036年〜</div><div class="c">初回購入分の満期以降、毎年1口ずつ満期到来（試算）</div></div>
-      <div class="stat"><div class="n">最大450万</div><div class="c">ロック額（動かせない元本）の理論上の頭打ち</div></div>
+      <div class="stat"><div class="n">500万</div><div class="c">ロック額（動かせない元本）の頭打ち・10年目以降</div></div>
       <div class="stat"><div class="n">9/16</div><div class="c">理事会で討議・決議予定</div></div>
     </div>
   </div>
   <div class="point">
     <strong>なぜ「毎年1口・50万円」を提案しているか：</strong>
-    毎年1口（50万円）を継続購入する案（ラダー戦略）では、10年後にはロック額が最大450万円（9年分）で頭打ちになる。一方、当組合は大規模修繕の直後であっても残高を0に近づけず、常に最低500万円程度は手元流動資金として維持する運営方針を持っている。<b>この500万円は主に大規模修繕や日常の小修繕に対する平常時のバッファであり、排水管更新のような単発の大型支出（1,000万円級・早ければ来期発生の可能性）には別途備える必要がある</b>が、その備えこそが「毎年50万円だけ」という小さい増額ペースそのものである。両者を合わせると、1口50万円は当組合の資金体力に見合った、無理のない運用ペースと言える。
-    <div style="font-size:11.5px;color:#666;margin-top:8px;">※450万円という上限は「毎年ちょうど50万円ずつ買い続けた場合」の理論値。増額判断をすれば前提は変わる。※500万円という基準は「大規模修繕直後でも残高0にしない」という当組合の運営方針に基づく目安。</div>
+    毎年1口（50万円）を継続購入する案（ラダー戦略）では、10口に達する10年目以降、ロック額は500万円で頭打ちになりそれ以上は増えない。一方、当組合は大規模修繕の直後であっても残高を0に近づけず、常に最低500万円程度は手元流動資金として維持する運営方針を持っている。<b>この500万円は主に大規模修繕や日常の小修繕に対する平常時のバッファであり、排水管更新のような単発の大型支出（1,000万円級・早ければ来期発生の可能性）には別途備える必要がある</b>が、その備えこそが「毎年50万円だけ」という小さい増額ペースそのものである。両者を合わせると、1口50万円は当組合の資金体力に見合った、無理のない運用ペースと言える。
+    <div style="font-size:11.5px;color:#666;margin-top:8px;">※ロック額500万円は「毎年ちょうど50万円ずつ買い続けた場合」の理論値。増額判断をすれば前提は変わる。※手元に残す500万円という基準は「大規模修繕直後でも残高0にしない」という当組合の運営方針に基づく目安。両者を合計すると、10年後の必要総額はおおむね1,000万円（現在の残高約1,410万円＋毎年の積立で十分カバーできる水準）。</div>
   </div>
   <div class="point">
     <strong>過去実績による裏付け（2026/9/7 確認）：</strong>会計記録が確認できる過去16年間（第24期〜第40期・2009〜2025年）で、修繕積立金会計の期末残高が<b>500万円を下回ったことは一度もない</b>。もっとも低かったのは第24期末（2009年）の6,052,484円。<b>記録上最大の支出であった2023年の大規模修繕（約880万円）を実施した直後（第38期末）でも11,310,942円を維持</b>しており、500万円ラインには一度も近づいていない。以降も一貫して増加基調（第40期末13,302,881円）。※ただし1985年の築年から2009年（第24期）までの初期約24年間は会計記録が確認できておらず、この期間の実績は含まれない。
@@ -331,7 +518,7 @@
   <div class="footer">
     エスト北塚口管理組合　／　すまい・る債 解説資料（第41期）<br>
     数値の出典：長期修繕計画書プロジェクト引継書、住宅金融支援機構 公表の2026年度利率・手続スケジュール。詳細・最新は「修繕積立金運用プロジェクト_引継書.md」を正とします。<br>
-    最終更新：2026年9月7日（過去16年間の会計記録で500万円を下回った実績なしと確認・500万円ルールの裏付けに追記）
+    最終更新：2026年9月7日（ラダー戦略・受取利息の図解を両版に追加／段階金利の構造を反映し「1年で8,500円」→「10年で合計約85,000円」に訂正／ロック額の上限を450万円→500万円に訂正）
   </div>
 
 </div>
