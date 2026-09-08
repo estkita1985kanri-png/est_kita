@@ -17,11 +17,19 @@
 <meta property="og:title" content="【公式】エスト北塚口管理組合｜伊丹市・自主管理マンション">
 <meta property="og:description" content="兵庫県伊丹市野間の自主管理マンション「エスト北塚口」。1985年竣工・19戸。住民主体の透明な管理を実現。">
 <meta property="og:image" content="https://estkita1985kanri-png.github.io/est_kita/assets/exterior.jpg">
+<meta property="og:site_name" content="エスト北塚口管理組合">
 <meta property="og:locale" content="ja_JP">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "エスト北塚口管理組合",
+      "alternateName": ["エスト北塚口", "Est Kitatsukaguchi"],
+      "url": "https://estkita1985kanri-png.github.io/est_kita/",
+      "inLanguage": "ja"
+    },
     {
       "@type": "Organization",
       "name": "エスト北塚口管理組合",
@@ -475,6 +483,147 @@
   .contact-form label{font-size:14.5px;}
   .contact-form input,.contact-form select,.contact-form textarea{font-size:16px;}
   .secure{font-size:16px;}
+
+  /* ===== 活動記録（カレンダー＋モーダル） 2026-09 追加 ===== */
+  :root{
+    --c-taisei:#2f7d5b; --c-kaikei:#b5532e; --c-tenken:#2f5680;
+    --c-shuzen:#7d5c14; --c-kouhou:#5c3a7a; --c-kumiai:#8a5410; --c-mirai:#6b6560;
+    --ease-out-expo:cubic-bezier(.16,1,.3,1);
+  }
+  .alog .act-kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:0 auto 44px;}
+  .alog .act-kpi{background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px 18px; text-align:center; box-shadow:var(--shadow-sm);}
+  .alog .act-kpi .n{font-size:clamp(26px,3vw,34px); font-weight:800; color:var(--roof-deep); line-height:1.15;}
+  .alog .act-kpi .n small{font-size:16px; font-weight:800; margin-left:2px;}
+  .alog .act-kpi .l{font-size:13.5px; color:var(--muted); font-weight:700; margin-top:8px; line-height:1.6;}
+  @media(max-width:860px){.alog .act-kpis{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.alog .act-kpis{grid-template-columns:1fr; gap:12px;}}
+
+  .alog .cal-hint{text-align:center; font-size:14.5px; color:var(--muted); margin-bottom:20px;}
+  .alog .cal{display:none; grid-template-columns:repeat(4,1fr); gap:14px;}
+  .has-js .alog .cal{display:grid;}
+  .alog .cal-cell{
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:20px 14px 18px; text-align:center; cursor:pointer;
+    box-shadow:var(--shadow-sm); font-family:inherit; color:inherit;
+    transition:transform .25s var(--ease-out-expo), box-shadow .25s ease, border-color .25s ease;
+    position:relative;
+  }
+  .alog .cal-cell:hover{transform:translateY(-5px); box-shadow:var(--shadow); border-color:var(--brick-soft);}
+  .alog .cal-cell:active{transform:translateY(-2px) scale(.985);}
+  .alog .cal-cell:focus-visible{outline:3px solid var(--roof); outline-offset:2px;}
+  .alog .cal-cell .mn{font-size:25px; font-weight:800; line-height:1.1;}
+  .alog .cal-cell .cnt{font-size:13.5px; color:var(--muted); font-weight:700; margin-top:7px;}
+  .alog .cal-cell .dots{display:flex; gap:5px; justify-content:center; margin-top:11px; min-height:8px;}
+  .alog .cal-cell .dot{width:8px; height:8px; border-radius:50%;}
+  .alog .cal-cell .star{position:absolute; top:10px; right:12px; font-size:13px; color:var(--roof); line-height:1;}
+  .alog .cal-cell.future{border-style:dashed;}
+  .alog .cal-cell.future .cnt{color:var(--brick);}
+  .alog .cal-cell.empty{background:transparent; border-style:dashed; opacity:.5; cursor:default; box-shadow:none;}
+  .alog .cal-cell.empty:hover{transform:none; box-shadow:none; border-color:var(--line);}
+  .alog .cal-cell.empty .mn{color:var(--muted); font-weight:700;}
+  @media(max-width:860px){.alog .cal{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:520px){.alog .cal{grid-template-columns:repeat(2,1fr); gap:11px;} .alog .cal-cell{padding:16px 10px 14px;} .alog .cal-cell .mn{font-size:21px;}}
+
+  .alog .legend-al{display:flex; flex-wrap:wrap; gap:8px 18px; justify-content:center; margin-top:26px; font-size:13.5px; color:var(--muted);}
+  .alog .legend-al span{display:inline-flex; align-items:center; gap:6px;}
+  .alog .legend-al i{width:9px; height:9px; border-radius:50%; display:inline-block;}
+
+  /* モーダル（半透明ガラス＋ぬるっと起動） */
+  .al-mdl{
+    position:fixed; inset:0; z-index:200;
+    display:flex; align-items:center; justify-content:center; padding:22px;
+    background:rgba(30,24,19,.42);
+    -webkit-backdrop-filter:blur(14px) saturate(130%);
+    backdrop-filter:blur(14px) saturate(130%);
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .34s ease, visibility 0s linear .34s;
+  }
+  .al-mdl.open{opacity:1; visibility:visible; pointer-events:auto; transition:opacity .34s ease, visibility 0s linear 0s;}
+  .al-mdl .mdl-box{
+    width:100%; max-width:760px; max-height:88vh;
+    display:flex; flex-direction:column; overflow:hidden; border-radius:24px;
+    background:rgba(252,250,247,.78);
+    -webkit-backdrop-filter:blur(26px) saturate(160%);
+    backdrop-filter:blur(26px) saturate(160%);
+    border:1px solid rgba(255,255,255,.55);
+    box-shadow:0 30px 80px rgba(30,20,12,.42), inset 0 1px 0 rgba(255,255,255,.6);
+    transform:translateY(26px) scale(.955); opacity:0;
+    transition:transform .52s var(--ease-out-expo), opacity .34s ease;
+    will-change:transform, opacity;
+  }
+  .al-mdl.open .mdl-box{transform:translateY(0) scale(1); opacity:1;}
+  .al-mdl .mdl-head{
+    display:flex; align-items:center; gap:10px; padding:18px 22px; flex:0 0 auto;
+    background:rgba(255,255,255,.52);
+    -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(236,227,216,.8);
+  }
+  .al-mdl .mdl-title{flex:1 1 auto; text-align:center; min-width:0;}
+  .al-mdl .mdl-title .t{font-size:24px; font-weight:800; line-height:1.2; letter-spacing:.02em;}
+  .al-mdl .mdl-title .s{display:block; font-size:13.5px; color:var(--muted); font-weight:700; margin-top:4px;}
+  .al-mdl .mdl-btn{
+    width:42px; height:42px; flex:0 0 auto; border-radius:50%; cursor:pointer;
+    border:1px solid rgba(236,227,216,.9); background:rgba(255,255,255,.7);
+    font-size:21px; line-height:1; color:var(--ink); font-family:inherit;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease, border-color .2s ease, transform .2s var(--ease-out-expo);
+  }
+  .al-mdl .mdl-btn:hover:not(:disabled){background:#fff; border-color:var(--brick-soft); transform:scale(1.07);}
+  .al-mdl .mdl-btn:active:not(:disabled){transform:scale(.94);}
+  .al-mdl .mdl-btn:disabled{opacity:.25; cursor:default;}
+  .al-mdl .mdl-close{font-size:25px;}
+  .al-mdl .mdl-body{overflow-y:auto; padding:22px 24px 28px; -webkit-overflow-scrolling:touch;}
+
+  /* 活動カード（セクション内・モーダル内で共通） */
+  .alog .item, .al-mdl .item{position:relative; background:#fff; border:1px solid var(--line); border-radius:15px;
+    padding:20px 22px; margin-bottom:13px; box-shadow:var(--shadow-sm); text-align:left;}
+  .alog .item:last-child, .al-mdl .item:last-child{margin-bottom:0;}
+  .alog .item.milestone, .al-mdl .item.milestone{border-color:var(--roof); border-width:1.5px; background:linear-gradient(180deg,rgba(47,125,91,.07),#fff);}
+  .alog .item.plan, .al-mdl .item.plan{border-style:dashed; background:transparent; box-shadow:none;}
+  .alog .item .bdg, .al-mdl .item .bdg{display:inline-block; font-size:12.5px; font-weight:800; letter-spacing:.05em;
+    border-radius:7px; padding:4px 11px; margin-bottom:10px; line-height:1.6;}
+  .alog .item .b-taisei, .al-mdl .item .b-taisei{background:rgba(47,125,91,.14); color:var(--roof-deep);}
+  .alog .item .b-kaikei, .al-mdl .item .b-kaikei{background:rgba(181,83,46,.14); color:var(--brick-deep);}
+  .alog .item .b-tenken, .al-mdl .item .b-tenken{background:rgba(70,110,150,.14); color:#2b4f75;}
+  .alog .item .b-shuzen, .al-mdl .item .b-shuzen{background:rgba(150,110,40,.16); color:#6f5111;}
+  .alog .item .b-kouhou, .al-mdl .item .b-kouhou{background:rgba(120,80,150,.14); color:#523370;}
+  .alog .item .b-kumiai, .al-mdl .item .b-kumiai{background:rgba(190,120,40,.15); color:#7c4b0e;}
+  .alog .item .b-mirai, .al-mdl .item .b-mirai{background:rgba(60,60,60,.11); color:#443f3a;}
+  .alog .item .plan-tag, .al-mdl .item .plan-tag{background:rgba(244,236,228,.9); color:#6f665d; border:1px dashed var(--brick-soft);}
+  .alog .item h4, .al-mdl .item h4{font-size:19.5px; font-weight:800; line-height:1.5; margin-bottom:8px; letter-spacing:.01em;}
+  .alog .item p, .al-mdl .item p{font-size:16.5px; color:#524b43; line-height:1.95;}
+  .alog .item .amt, .al-mdl .item .amt{display:inline-block; margin-top:11px; font-size:14.5px; font-weight:800; color:var(--roof-deep);
+    background:rgba(47,125,91,.10); border-radius:8px; padding:5px 13px;}
+  .alog .item .amt + .amt, .al-mdl .item .amt + .amt{margin-left:8px;}
+  .alog .item .amt.cyc, .al-mdl .item .amt.cyc{color:var(--brick-deep); background:rgba(181,83,46,.10);}
+
+  .al-mdl .item{background:rgba(255,255,255,.88); border-color:rgba(236,227,216,.9); box-shadow:0 4px 16px rgba(60,40,25,.06);}
+  .al-mdl .item.milestone{background:linear-gradient(180deg,rgba(47,125,91,.10),rgba(255,255,255,.9));}
+  .al-mdl .item.plan{background:rgba(255,255,255,.42);}
+  .al-mdl .item{animation:alItemIn .55s var(--ease-out-expo) both; animation-delay:calc(var(--i,0) * 45ms);}
+  @keyframes alItemIn{from{opacity:0; transform:translateY(14px) scale(.985);} to{opacity:1; transform:none;}}
+
+  /* JS無効時：全件をそのまま表示 */
+  .alog .mdata{margin-bottom:30px;}
+  .alog .mdata > .mh{font-size:21px; font-weight:800; margin-bottom:12px; padding-bottom:6px; border-bottom:2px solid var(--line);}
+  .has-js .alog .mdata{display:none;}
+
+  @media(max-width:560px){
+    .al-mdl{padding:12px;}
+    .al-mdl .mdl-box{max-height:92vh; border-radius:20px;}
+    .al-mdl .mdl-head{padding:14px 14px;}
+    .al-mdl .mdl-title .t{font-size:21px;}
+    .al-mdl .mdl-btn{width:38px; height:38px; font-size:19px;}
+    .al-mdl .mdl-body{padding:18px 16px 24px;}
+    .alog .item, .al-mdl .item{padding:17px 17px;}
+    .alog .item h4, .al-mdl .item h4{font-size:18px;}
+    .alog .item p, .al-mdl .item p{font-size:16px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .al-mdl,.al-mdl .mdl-box,.alog .cal-cell,.al-mdl .mdl-btn{transition:none !important;}
+    .al-mdl .item{animation:none !important;}
+    .al-mdl .mdl-box{transform:none;}
+  }
 </style>
 </head>
 <body>
@@ -487,6 +636,7 @@
     <nav>
       <a href="#about">組合について</a>
       <a href="#history">沿革</a>
+      <a href="#activity">活動記録</a>
       <a href="#finance">会計</a>
       <a href="#living">暮らし</a>
       <a href="#realtor">不動産業者様へ</a>
@@ -502,6 +652,7 @@
 <nav class="mobile-nav" id="mobileNav" aria-label="モバイルメニュー">
   <a href="#about" class="mnav">組合について</a>
   <a href="#history" class="mnav">沿革</a>
+  <a href="#activity" class="mnav">活動記録</a>
   <a href="#finance" class="mnav">会計</a>
   <a href="#living" class="mnav">暮らし</a>
   <a href="#realtor" class="mnav">不動産業者様へ</a>
@@ -605,6 +756,313 @@
     <p class="note-c reveal" style="margin-top:30px;">※ 今後の主要トピックも随時追記してまいります。</p>
   </div>
 </section>
+
+<!-- ===== 2026年の活動記録（カレンダー＋モーダル） ===== -->
+<section id="activity" class="alog">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="micro">Activity Log 2026</span>
+      <h2>自主管理元年の、活動記録</h2>
+      <p>「何をしている組合なのか」が見えるよう、この一年の取り組みを月ごとに記録しています。</p>
+    </div>
+
+    <div class="act-kpis reveal">
+      <div class="act-kpi"><div class="n">8<small>回</small></div><div class="l">年間の点検・清掃<br>（法定点検を含む）</div></div>
+      <div class="act-kpi"><div class="n">4<small>件</small></div><div class="l">実施した<br>修繕・工事</div></div>
+      <div class="act-kpi"><div class="n">3<small>回</small></div><div class="l">組合員アンケート<br>（意見の聴取）</div></div>
+      <div class="act-kpi"><div class="n">4<small>回</small></div><div class="l">臨時総会の開催<br>（予定含む・多くは書面決議）</div></div>
+    </div>
+
+    <p class="cal-hint">▼ 月をクリックすると、その月の活動が開きます</p>
+    <div class="cal" id="alCal"></div>
+
+    <div class="legend-al">
+      <span><i style="background:var(--c-taisei)"></i>体制づくり</span>
+      <span><i style="background:var(--c-kaikei)"></i>会計・コスト</span>
+      <span><i style="background:var(--c-tenken)"></i>点検・清掃</span>
+      <span><i style="background:var(--c-shuzen)"></i>修繕・工事</span>
+      <span><i style="background:var(--c-kouhou)"></i>情報発信</span>
+      <span><i style="background:var(--c-kumiai)"></i>組合員の声</span>
+      <span><i style="background:var(--c-mirai)"></i>将来への備え</span>
+    </div>
+
+    <!-- 月別データ（JS無効時はそのまま一覧表示される） -->
+    <div id="alSrc">
+
+      <div class="mdata" data-m="1月">
+        <div class="mh">1月</div>
+        <div class="item" data-c="tenken">
+          <span class="bdg b-tenken">点検・清掃</span>
+          <h4>受水槽の清掃を実施</h4>
+          <p>飲料水の安全を守るため、年1回の貯水槽清掃を実施しました。</p>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="2月">
+        <div class="mh">2月</div>
+        <div class="item" data-c="tenken">
+          <span class="bdg b-tenken">点検・清掃</span>
+          <h4>給水設備点検（第1回）</h4>
+          <p>ポンプ・高架水槽などの給水設備を点検。年3回の周期で継続しています。</p>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="3月">
+        <div class="mh">3月</div>
+        <div class="item" data-c="tenken">
+          <span class="bdg b-tenken">点検・清掃</span>
+          <h4>消防用設備点検（第1回・法定点検）</h4>
+          <p>消防法に基づく年2回の点検のうち第1回を実施しました。</p>
+        </div>
+        <div class="item" data-c="tenken">
+          <span class="bdg b-tenken">点検・清掃</span>
+          <h4>雑排水管の高圧洗浄</h4>
+          <p>配管のつまりや悪臭を防ぐため、年1回の排水管清掃を実施しました。</p>
+        </div>
+        <div class="item" data-c="shuzen">
+          <span class="bdg b-shuzen">修繕・工事</span>
+          <h4>窓ガラスの熱割れを張替え</h4>
+          <p>経年による熱割れを確認し、速やかに張替え対応を行いました。</p>
+          <span class="amt">51,000円</span>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="4月">
+        <div class="mh">4月</div>
+        <div class="item milestone" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>臨時総会を開催し、管理体制の見直しを決議</h4>
+          <p>組合員が集まる現地開催で、これからの管理のあり方について話し合い、決議しました。自主管理へ進む出発点となった総会です。</p>
+          <span class="amt">現地開催</span>
+        </div>
+        <div class="item" data-c="shuzen">
+          <span class="bdg b-shuzen">修繕・工事</span>
+          <h4>パイプスペース内の漏水補修・給水部品の取替</h4>
+          <p>共用部の配管スペースで漏水を発見。バルブのパッキン交換と給水部品の取替を実施しました。</p>
+          <span class="amt">38,500円</span>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="5月">
+        <div class="mh">5月</div>
+        <div class="item" data-c="tenken">
+          <span class="bdg b-tenken">点検・清掃</span>
+          <h4>共用部分等の外観点検</h4>
+          <p>外壁・共用廊下などの状態を目視で確認する年1回の点検を実施しました。</p>
+        </div>
+        <div class="item" data-c="shuzen">
+          <span class="bdg b-shuzen">修繕・工事</span>
+          <h4>大型樹木（かしの木）の伐採</h4>
+          <p>越境と台風時の倒木リスクに備え伐採。事前に組合員アンケートを実施し、賛成多数を確認したうえで実施しました。</p>
+          <span class="amt">85,000円</span>
+        </div>
+        <div class="item" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>自主管理へ向けた準備を本格化</h4>
+          <p>清掃・収納代行・各設備業者との直接契約の準備、口座体制の設計などを進めました。</p>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="6月">
+        <div class="mh">6月</div>
+        <div class="item milestone" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>🎉 分離発注による自主管理をスタート（6月1日）</h4>
+          <p>管理会社への一括委託を終了し、清掃・設備点検・植栽などを各専門業者へ直接発注する体制へ移行しました。</p>
+        </div>
+        <div class="item" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>週2回の定期清掃を開始</h4>
+          <p>専門の清掃事業者と直接契約し、共用部の美観を維持しています。</p>
+        </div>
+        <div class="item" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>運用マニュアル・年間業務カレンダー・業者連絡先を整備</h4>
+          <p>「担当者が代わっても回る自主管理」を目指し、業務を書面化・見える化しました。</p>
+        </div>
+        <div class="item" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>共用部の鍵を全数照合し、鍵管理システムを構築</h4>
+          <p>鍵の実物をすべて照合したうえで台帳を整備。貸出・返却をフォームで記録する仕組みを導入しました。</p>
+        </div>
+        <div class="item" data-c="kaikei">
+          <span class="bdg b-kaikei">会計・コスト</span>
+          <h4>組合口座をネット銀行・地元信用金庫へ切替</h4>
+          <p>振込手数料などの金融コストを削減し、あわせて預金を複数の金融機関へ分散しました。</p>
+        </div>
+        <div class="item" data-c="kaikei">
+          <span class="bdg b-kaikei">会計・コスト</span>
+          <h4>入出金の通知を役員全員へ自動共有</h4>
+          <p>口座の入出金の通知が、理事・監事・顧問税理士へ自動で届く仕組みにしました。日々のお金の動きを特定の一人だけが把握する状態をなくしています。</p>
+        </div>
+        <div class="item" data-c="shuzen">
+          <span class="bdg b-shuzen">修繕・工事</span>
+          <h4>屋上高架水槽の配線を補修</h4>
+          <p>警報線の断線を修理し、水位異常を正しく検知できる状態に復旧しました。</p>
+          <span class="amt">33,000円</span>
+        </div>
+        <div class="item milestone" data-c="kouhou">
+          <span class="bdg b-kouhou">情報発信</span>
+          <h4>公式ホームページを開設・正式公開</h4>
+          <p>管理組合の考え方・会計状況・暮らしの情報を、どなたでもご覧いただける形で公開しました。</p>
+        </div>
+        <div class="item" data-c="kouhou">
+          <span class="bdg b-kouhou">情報発信</span>
+          <h4>公式LINEを整備（メニュー・自動応答）</h4>
+          <p>組合員がよく使う項目をメニュー化し、よくある質問に自動で応答する仕組みを導入しました。</p>
+        </div>
+        <div class="item" data-c="kouhou">
+          <span class="bdg b-kouhou">情報発信</span>
+          <h4>管理規約をオンラインで閲覧できるように</h4>
+          <p>組合員がいつでも規約を確認できるよう、保護をかけたうえでオンライン公開しました。</p>
+        </div>
+        <div class="item" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>防犯ステッカーを作成・掲示</h4>
+          <p>伊丹警察署の確認を受けたデザインで作成し、エントランス・ゴミ置き場へ掲示しました。</p>
+        </div>
+        <div class="item" data-c="kumiai">
+          <span class="bdg b-kumiai">組合員の声</span>
+          <h4>管理体制の満足度アンケートを実施</h4>
+          <p>管理会社へ委託していた体制を組合員がどう評価していたか。自主管理へ移る節目に、その時点の評価を記録として残すために実施しました。コスト・サービス品質・透明性の3つの軸で匿名アンケートを行い、結果は全戸へ報告。<strong>以後も毎年実施し、組合員の目線で運営を見直し続けます。</strong></p>
+          <span class="amt">回答率 67%</span>
+          <span class="amt cyc">以後 毎年実施</span>
+        </div>
+        <div class="item" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>不動産取引の調査窓口を組合内に設置</h4>
+          <p>これまで管理会社が担っていた重要事項調査の受付を内製化。オンライン申込で受け付けています。</p>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="7月">
+        <div class="mh">7月</div>
+        <div class="item milestone" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>第41期 第1回 理事会を開催（Zoom・約1時間）</h4>
+          <p>顧問税理士も参加し、会計報告と自主管理移行1か月の振り返りを実施。以降の運営方針を確認しました。理事会はオンラインで開催し、役員が集まりやすい形にしています。</p>
+          <span class="amt">Zoom開催</span>
+          <span class="amt cyc">所要 約1時間</span>
+        </div>
+        <div class="item" data-c="kaikei">
+          <span class="bdg b-kaikei">会計・コスト</span>
+          <h4>会計方針を確定（四半期ごとの報告体制へ）</h4>
+          <p>顧問税理士と連携し、四半期ごとに収支を締めて役員が確認する体制を整えました。</p>
+        </div>
+        <div class="item" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>火災保険に役員対応費用の補償を追加</h4>
+          <p>自主管理では役員の責任が増すため、役員を守る補償を保険に追加しました。</p>
+        </div>
+        <div class="item" data-c="tenken">
+          <span class="bdg b-tenken">点検・清掃</span>
+          <h4>給水設備点検（第2回）</h4>
+          <p>4か月ごとの周期で給水設備を点検しました。</p>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="8月">
+        <div class="mh">8月</div>
+        <div class="item" data-c="taisei">
+          <span class="bdg b-taisei">体制づくり</span>
+          <h4>臨時総会を書面決議で開催</h4>
+          <p>組合員が来場せずに議決権を行使できる書面決議の形で開催しました。予定を合わせにくい方も参加でき、必要な決定を機動的に行えます。</p>
+          <span class="amt">書面決議</span>
+        </div>
+        <div class="item milestone" data-c="kouhou">
+          <span class="bdg b-kouhou">情報発信</span>
+          <h4>月次の「会計月報」の公開を開始</h4>
+          <p>毎月の収支と残高をウェブで公開し、組合員へ配信を開始。掲示板にも掲示しています。</p>
+        </div>
+        <div class="item" data-c="kouhou">
+          <span class="bdg b-kouhou">情報発信</span>
+          <h4>ごみの出し方の案内を掲示</h4>
+          <p>分別を間違えやすいものに絞り、市の公式情報で確認したうえで案内を作成・掲示しました。</p>
+        </div>
+        <div class="item" data-c="kumiai">
+          <span class="bdg b-kumiai">組合員の声</span>
+          <h4>バリアフリーに関するアンケートを実施</h4>
+          <p>階段手すりの設置をはじめ、住まいの使いやすさについて広くご意見をうかがい、結果を組合員へ公開しました。</p>
+        </div>
+        <div class="item" data-c="mirai">
+          <span class="bdg b-mirai">将来への備え</span>
+          <h4>排水管の内視鏡調査を発注</h4>
+          <p>築年数を踏まえ、共用排水管の内部状態をカメラで確認する調査を決定しました。</p>
+          <span class="amt">44,000円</span>
+        </div>
+        <div class="item" data-c="mirai">
+          <span class="bdg b-mirai">将来への備え</span>
+          <h4>長期修繕計画の作り直しに着手</h4>
+          <p>現行計画は策定から8年が経過。物価上昇を反映した計画へ見直すため、専門家への相談を開始しました。</p>
+        </div>
+        <div class="item" data-c="shuzen">
+          <span class="bdg b-shuzen">修繕・工事</span>
+          <h4>階段手すりの設置に向け3社で見積り比較</h4>
+          <p>居住者から寄せられた声を受け、両側手すりの設置を検討。複数社を比較しました。</p>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="9月">
+        <div class="mh">9月</div>
+        <div class="item plan" data-c="tenken">
+          <span class="bdg plan-tag">予定 ・ 点検・清掃</span>
+          <h4>消防用設備点検（第2回・法定点検）</h4>
+          <p>自主管理へ移行してから初めて、専門業者と直接契約して実施します。</p>
+        </div>
+        <div class="item plan" data-c="taisei">
+          <span class="bdg plan-tag">予定 ・ 体制づくり</span>
+          <h4>第41期 第2回 理事会を開催（Zoom）</h4>
+          <p>会計報告と、各案件の進捗確認を行います。</p>
+        </div>
+        <div class="item plan" data-c="mirai">
+          <span class="bdg plan-tag">検討中 ・ 将来への備え</span>
+          <h4>修繕積立金の運用方法を検討</h4>
+          <p>元本が保証される公的な仕組みの活用を検討しています。理事会での決議を経て進めます。</p>
+        </div>
+        <div class="item" data-c="mirai">
+          <span class="bdg b-mirai">将来への備え</span>
+          <h4>長期修繕計画の専門家と面談</h4>
+          <p>計画作成を依頼する専門家との比較検討を進めています。</p>
+        </div>
+        <div class="item plan" data-c="taisei">
+          <span class="bdg plan-tag">予定 ・ 体制づくり</span>
+          <h4>臨時総会（書面決議）を開催</h4>
+          <p>階段手すりの設置費用と、長期修繕計画の作成費について、書面で組合員の決議をいただきます。</p>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="10月" data-future="1">
+        <div class="mh">10月（予定）</div>
+        <div class="item plan" data-c="shuzen">
+          <span class="bdg plan-tag">予定 ・ 修繕・工事</span>
+          <h4>階段手すりの両側設置工事</h4>
+          <p>どなたでも安全に階段を使えるよう、手すりを両側に設置します。</p>
+        </div>
+      </div>
+
+      <div class="mdata" data-m="11月" data-future="1">
+        <div class="mh">11月（予定）</div>
+        <div class="item plan" data-c="tenken">
+          <span class="bdg plan-tag">予定 ・ 点検・清掃</span>
+          <h4>給水設備点検（第3回）</h4>
+          <p>年3回の点検周期の最終回を実施します。</p>
+        </div>
+        <div class="item plan" data-c="mirai">
+          <span class="bdg plan-tag">予定 ・ 将来への備え</span>
+          <h4>臨時総会（書面決議）で修繕積立金・管理費の改定を審議</h4>
+          <p>自主管理で生まれた余力を将来の修繕へ回すため、費用構成の見直しを組合員にお諮りします。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="note-c reveal" style="margin-top:32px;">
+      ※ 記載の金額は管理組合全体の支出額です。個人が特定される情報・各戸の会計額は一切掲載していません。<br>
+      ※ 本記録は随時更新しています。
+    </p>
+  </div>
+</section>
+
 
 <!-- ===== 会計の透明性 ===== -->
 <section class="tinted" id="finance">
@@ -1199,5 +1657,134 @@
      ダッシュボード＝ https://estkita1985.goatcounter.com 。コードを変える場合は下記URLも要変更 -->
 <script data-goatcounter="https://estkita1985.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+<!-- ===== 活動記録 モーダル ===== -->
+<div class="al-mdl" id="alMdl" role="dialog" aria-modal="true" aria-labelledby="alMdlTitle">
+  <div class="mdl-box" role="document">
+    <div class="mdl-head">
+      <button class="mdl-btn" id="alPrev" aria-label="前の月">&lsaquo;</button>
+      <div class="mdl-title">
+        <span class="t" id="alMdlTitle">6月</span>
+        <span class="s" id="alMdlSub">2026年</span>
+      </div>
+      <button class="mdl-btn" id="alNext" aria-label="次の月">&rsaquo;</button>
+      <button class="mdl-btn mdl-close" id="alClose" aria-label="閉じる">&times;</button>
+    </div>
+    <div class="mdl-body" id="alMdlBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var src=document.getElementById('alSrc');
+  if(!src) return;
+  document.body.classList.add('has-js');
+
+  var MONTHS=[1,2,3,4,5,6,7,8,9,10,11,12];
+  var COLORS={taisei:'--c-taisei',kaikei:'--c-kaikei',tenken:'--c-tenken',
+              shuzen:'--c-shuzen',kouhou:'--c-kouhou',kumiai:'--c-kumiai',mirai:'--c-mirai'};
+
+  /* 月別データを収集（件数・ドットは中身から自動生成） */
+  var data={};
+  Array.prototype.forEach.call(src.querySelectorAll('.mdata'), function(b){
+    data[b.getAttribute('data-m')]={
+      el:b,
+      future:b.getAttribute('data-future')==='1',
+      items:b.querySelectorAll('.item'),
+      milestone:b.querySelector('.item.milestone')!==null
+    };
+  });
+
+  var cal=document.getElementById('alCal');
+  var order=[];
+
+  MONTHS.forEach(function(m){
+    var key=m+'月', d=data[key];
+    if(!d){
+      var empty=document.createElement('div');
+      empty.className='cal-cell empty';
+      empty.innerHTML='<div class="mn">'+m+'月</div><div class="cnt">&mdash;</div><div class="dots"></div>';
+      cal.appendChild(empty);
+      return;
+    }
+    order.push(key);
+    var cats=[];
+    Array.prototype.forEach.call(d.items,function(i){
+      var c=i.getAttribute('data-c');
+      if(c && cats.indexOf(c)<0) cats.push(c);
+    });
+    var dots=cats.map(function(c){
+      return '<span class="dot" style="background:var('+(COLORS[c]||'--c-mirai')+')"></span>';
+    }).join('');
+    var cell=document.createElement('button');
+    cell.type='button';
+    cell.className='cal-cell'+(d.future?' future':'');
+    cell.innerHTML=(d.milestone?'<span class="star">&#9733;</span>':'')
+      +'<div class="mn">'+m+'月</div>'
+      +'<div class="cnt">'+d.items.length+'件'+(d.future?'（予定）':'')+'</div>'
+      +'<div class="dots">'+dots+'</div>';
+    cell.setAttribute('aria-label', m+'月の活動 '+d.items.length+'件を開く');
+    cell.addEventListener('click', function(){ openM(key); });
+    cal.appendChild(cell);
+  });
+
+  var mdl=document.getElementById('alMdl'),
+      mbody=document.getElementById('alMdlBody'),
+      mtitle=document.getElementById('alMdlTitle'),
+      msub=document.getElementById('alMdlSub'),
+      bPrev=document.getElementById('alPrev'),
+      bNext=document.getElementById('alNext'),
+      bClose=document.getElementById('alClose');
+  var cur=null, lastFocus=null;
+
+  function openM(key){
+    var d=data[key]; if(!d) return;
+    cur=key;
+    mtitle.textContent=key;
+    msub.textContent='2026年'+(d.future?'（予定）':'')+' ・ '+d.items.length+'件';
+    mbody.innerHTML='';
+    var n=0;
+    Array.prototype.forEach.call(d.el.children,function(c){
+      if(c.className.indexOf('mh')>=0) return;
+      var node=c.cloneNode(true);
+      node.style.setProperty('--i', n++);
+      mbody.appendChild(node);
+    });
+    mbody.scrollTop=0;
+    var i=order.indexOf(key);
+    bPrev.disabled=(i<=0);
+    bNext.disabled=(i>=order.length-1);
+    if(!mdl.classList.contains('open')){
+      lastFocus=document.activeElement;
+      mdl.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    bClose.focus();
+  }
+  function hideM(){
+    mdl.classList.remove('open');
+    document.body.style.overflow='';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+    cur=null;
+  }
+  function stepM(n){
+    if(!cur) return;
+    var i=order.indexOf(cur)+n;
+    if(i>=0 && i<order.length) openM(order[i]);
+  }
+
+  bClose.addEventListener('click',hideM);
+  bPrev.addEventListener('click',function(){stepM(-1);});
+  bNext.addEventListener('click',function(){stepM(1);});
+  mdl.addEventListener('click',function(e){ if(e.target===mdl) hideM(); });
+  document.addEventListener('keydown',function(e){
+    if(!mdl.classList.contains('open')) return;
+    if(e.key==='Escape') hideM();
+    else if(e.key==='ArrowLeft') stepM(-1);
+    else if(e.key==='ArrowRight') stepM(1);
+  });
+})();
+</script>
+
 </body>
 </html>
