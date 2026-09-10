@@ -8,9 +8,10 @@
 html,body{margin:0;padding:0;background:#fff;color:#000;font-family:"Meiryo","Hiragino Kaku Gothic ProN",sans-serif;}
 .pbar{width:194mm;max-width:100%;margin:0 auto 6px;text-align:right;}
 .pbar button{font-size:13px;padding:8px 18px;border:1.5px solid #000;background:#fff;border-radius:5px;cursor:pointer;}
-/* #sheet = A4 印刷可能領域（幅210-16=194mm／高さ297-20-12=265mmに収まる範囲）。内容はJSで1ページに自動縮小フィット */
-#sheet{position:relative;width:194mm;height:258mm;max-width:100%;margin:0 auto;overflow:hidden;}
-/* 内容が少なければ justify-content:space-between で縦全面に広げ、多ければJSで自動縮小 */
+.pbar a.pdf{display:inline-block;font-size:13px;padding:8px 18px;border:1.5px solid #000;background:#111;color:#fff;border-radius:5px;text-decoration:none;margin-right:8px;}
+/* #sheet = A4 印刷可能領域（幅210-16=194mm／高さ297-20-12=265mm）。内容はJSでこの領域いっぱいまで拡大縮小フィット */
+#sheet{position:relative;width:194mm;height:265mm;max-width:100%;margin:0 auto;overflow:hidden;}
+/* 内容の自然サイズに関わらず、JSで#sheetいっぱいまで拡大/縮小し、余った側の余白は上下・左右とも中央に配置 */
 #inner{position:absolute;top:0;left:0;width:194mm;transform-origin:top left;display:flex;flex-direction:column;font-size:13.5px;line-height:1.5;}
 .blk{flex:none;}
 h1{font-size:27px;margin:0;border-bottom:3px solid #000;padding-bottom:6px;letter-spacing:.02em;}
@@ -39,7 +40,7 @@ tr.grp td{background:#d5d5d5;font-weight:bold;font-size:14.5px;}
 .foot{font-size:10.5px;color:#333;border-top:1px solid #999;padding-top:7px;line-height:1.55;}
 @media print{.pbar{display:none;}}
 </style></head>
-<body><div class="pbar"><button onclick="window.print()">🖨 印刷する（A4・モノクロ／自動で1枚に収まります）</button></div>
+<body><div class="pbar"><a class="pdf" href="2026-08_print.pdf" target="_blank">📄 PDFで表示・印刷する（推奨）</a><button onclick="window.print()">🖨 このページを直接印刷する</button></div>
 <div id="sheet"><div id="inner">
   <div class="blk">
     <h1>2026年8月 会計月報（掲示用）</h1>
@@ -86,14 +87,12 @@ tr.grp td{background:#d5d5d5;font-weight:bold;font-size:14.5px;}
     inner.style.justifyContent='flex-start';
     var availH=sheet.clientHeight, availW=sheet.clientWidth;
     var h=inner.scrollHeight, w=inner.scrollWidth;
-    if(h<=availH && w<=availW){
-      // 内容が少ない → ページ全面に縦均等配置で広げる
-      inner.style.height=availH+'px';
-      inner.style.justifyContent='space-between';
-    } else {
-      // 内容が多い → 1ページに収まるよう自動縮小
-      inner.style.transform='scale('+Math.min(availH/h, availW/w)+')';
-    }
+    // 内容の自然な大きさに関わらず、必ずどちらかの辺がページいっぱいになるまで拡大／縮小する
+    // （小さければ拡大してA4を使い切り、大きければ縮小して1枚に収める）
+    var scale=Math.min(availH/h, availW/w);
+    inner.style.transform='scale('+scale+')';
+    inner.style.left=((availW-w*scale)/2)+'px';
+    inner.style.top=((availH-h*scale)/2)+'px';
   }
   window.addEventListener('load',fit);
   window.addEventListener('resize',fit);
