@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="UTF-8">
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>個賠アンケート たたき台（保護）</title>
+<title>個人賠償責任保険 加入状況アンケート（たたき台）</title>
 <style>
-  body{font-family:"Yu Gothic UI","Meiryo",sans-serif;background:#f0f3f8;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center;}
-  .lock{background:#fff;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.15);padding:34px 30px;max-width:360px;width:90%;text-align:center;}
-  .lock h1{font-size:17px;color:#1a3a6e;margin:0 0 6px;}
-  .lock p{font-size:12px;color:#666;margin:0 0 18px;line-height:1.6;}
-  .lock input{width:100%;padding:12px;font-size:15px;border:2px solid #cbd5e1;border-radius:8px;box-sizing:border-box;margin-bottom:12px;}
-  .lock input:focus{outline:none;border-color:#2c5aa0;}
-  .lock button{width:100%;padding:12px;font-size:15px;font-weight:bold;color:#fff;background:#2c5aa0;border:none;border-radius:8px;cursor:pointer;}
-  .lock button:hover{background:#1a3a6e;}
-  .err{color:#dc2626;font-size:12px;margin-top:10px;min-height:16px;}
-  .lock .ico{font-size:40px;margin-bottom:8px;}
-</style></head>
+  * { box-sizing:border-box; }
+  body { font-family:"Meiryo","Hiragino Kaku Gothic ProN",sans-serif; margin:0; padding:28px; background:#f4f6f8; color:#1a2733; line-height:1.8; }
+  .wrap { max-width:720px; margin:0 auto; background:#fff; padding:36px 40px; box-shadow:0 1px 4px rgba(0,0,0,.1); border-radius:8px; }
+  h1 { font-size:20px; text-align:center; margin:0 0 6px; }
+  .sub { text-align:center; font-size:13px; color:#5a6b7a; border-bottom:3px solid #2c3e50; padding-bottom:14px; margin-bottom:22px; }
+  .lead { font-size:14px; margin:0 0 18px; }
+  .q { border:1px solid #e2e8ee; border-radius:8px; padding:14px 16px; margin:12px 0; }
+  .q .t { font-weight:700; font-size:15px; }
+  .q .c { font-size:14.5px; margin-top:8px; }
+  .q .n { font-size:12.5px; color:#7a8a99; }
+  .footer { margin-top:24px; font-size:12px; color:#7a8a99; text-align:center; }
+  @media (max-width:640px) { body{padding:12px;} .wrap{padding:22px 16px;} }
+</style>
+</head>
 <body>
-<div class="lock" id="lock">
-  <div class="ico">🔒</div>
-  <h1>個賠アンケート たたき台</h1>
-  <p>エスト北塚口管理組合（理事限定）<br>第2回理事会 (3-7) ／理事限定<br>パスワードを入力してください。</p>
-  <input type="password" id="pw" placeholder="パスワード" autocomplete="off" autofocus>
-  <button id="btn">表示する</button>
-  <div class="err" id="err"></div>
+<div class="wrap">
+  <h1>個人賠償責任保険 加入状況アンケート（たたき台）</h1>
+  <div class="sub">第41期 第2回理事会（2026年9月16日）第3号 (3-7)</div>
+
+  <p class="lead">対象：2階以上にお住まいの方　／　5問・1〜2分程度</p>
+
+  <div class="q">
+    <div class="t">問1．お住まいの階を教えてください。</div>
+    <div class="c">（　　　）階</div>
+  </div>
+
+  <div class="q">
+    <div class="t">問2．現在、個人賠償責任保険（特約を含む）に加入していますか？</div>
+    <div class="c">□ 加入している　　□ 加入していない　　□ わからない</div>
+  </div>
+
+  <div class="q">
+    <div class="t">問3．どちらの保険に付いていますか？</div>
+    <div class="n">（問2で「加入している」の方・複数選択可）</div>
+    <div class="c">□ 火災保険　□ 自転車保険　□ 自動車保険　□ その他（　　　　）　□ 分からない</div>
+  </div>
+
+  <div class="q">
+    <div class="t">問4．補償額（1回の事故で支払われる上限額）はいくらですか？</div>
+    <div class="n">（問2で「加入している」の方・わからなければ「わからない」で結構です）</div>
+    <div class="c">□ 1億円以上・無制限　　□ 1,000万円以上1億円未満　　□ 1,000万円未満　　□ わからない</div>
+  </div>
+
+  <div class="q">
+    <div class="t">問5．今後、加入をご検討いただけますか？</div>
+    <div class="n">（問2で「加入していない」「わからない」の方）</div>
+    <div class="c">□ すでに検討・手続き中　　□ 今回をきっかけに検討する　　□ 検討しない</div>
+  </div>
+
+  <div class="footer">エスト北塚口管理組合　理事長 林 伯悠（2026年9月13日）</div>
 </div>
-<script>
-  var SALT="4ivG4chocePiGGwmui1ZoQ==", IV="OYP5O1xz0OcVGVVK", CT="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", ITER=200000;
-  function b2u(s){return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0);});}
-  async function unlock(){
-    var pw=document.getElementById('pw').value;
-    var err=document.getElementById('err'); err.textContent='復号中…';
-    try{
-      var bk=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
-      var key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b2u(SALT),iterations:ITER,hash:'SHA-256'},bk,{name:'AES-GCM',length:256},false,['decrypt']);
-      var pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b2u(IV)},key,b2u(CT));
-      var html=new TextDecoder().decode(pt);
-      document.open();document.write(html);document.close();
-    }catch(e){ err.textContent='パスワードが違います。'; }
-  }
-  document.getElementById('btn').addEventListener('click',unlock);
-  document.getElementById('pw').addEventListener('keydown',function(e){if(e.key==='Enter')unlock();});
-</script>
-</body></html>
+</body>
+</html>

@@ -1,44 +1,169 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="UTF-8">
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>参考資料 南側ヒラド 3社見積り比較（保護）</title>
+<title>参考資料　南側ヒラド（ツツジ）3社見積り比較</title>
 <style>
-  body{font-family:"Yu Gothic UI","Meiryo",sans-serif;background:#f0f3f8;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center;}
-  .lock{background:#fff;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.15);padding:34px 30px;max-width:360px;width:90%;text-align:center;}
-  .lock h1{font-size:17px;color:#1a3a6e;margin:0 0 6px;}
-  .lock p{font-size:12px;color:#666;margin:0 0 18px;line-height:1.6;}
-  .lock input{width:100%;padding:12px;font-size:15px;border:2px solid #cbd5e1;border-radius:8px;box-sizing:border-box;margin-bottom:12px;}
-  .lock input:focus{outline:none;border-color:#2c5aa0;}
-  .lock button{width:100%;padding:12px;font-size:15px;font-weight:bold;color:#fff;background:#2c5aa0;border:none;border-radius:8px;cursor:pointer;}
-  .lock button:hover{background:#1a3a6e;}
-  .err{color:#dc2626;font-size:12px;margin-top:10px;min-height:16px;}
-  .lock .ico{font-size:40px;margin-bottom:8px;}
-</style></head>
-<body>
-<div class="lock" id="lock">
-  <div class="ico">🔒</div>
-  <h1>参考資料 南側ヒラド 3社見積り比較</h1>
-  <p>エスト北塚口管理組合（理事限定）<br>第2回理事会 (3-6) ／理事限定<br>パスワードを入力してください。</p>
-  <input type="password" id="pw" placeholder="パスワード" autocomplete="off" autofocus>
-  <button id="btn">表示する</button>
-  <div class="err" id="err"></div>
-</div>
-<script>
-  var SALT="fsN4cUL5OQjawwg1ypmXBA==", IV="/d5Ch/JIgmVTtP6A", CT="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", ITER=200000;
-  function b2u(s){return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0);});}
-  async function unlock(){
-    var pw=document.getElementById('pw').value;
-    var err=document.getElementById('err'); err.textContent='復号中…';
-    try{
-      var bk=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
-      var key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b2u(SALT),iterations:ITER,hash:'SHA-256'},bk,{name:'AES-GCM',length:256},false,['decrypt']);
-      var pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b2u(IV)},key,b2u(CT));
-      var html=new TextDecoder().decode(pt);
-      document.open();document.write(html);document.close();
-    }catch(e){ err.textContent='パスワードが違います。'; }
+  * { box-sizing: border-box; }
+  body { font-family:"Meiryo","Hiragino Kaku Gothic ProN",sans-serif; margin:0; padding:28px; background:#f4f6f8; color:#1a2733; line-height:1.7; }
+  .wrap { max-width:880px; margin:0 auto; background:#fff; padding:40px 44px; box-shadow:0 1px 4px rgba(0,0,0,.1); border-radius:8px; }
+  .doc-head { text-align:center; border-bottom:3px solid #2c3e50; padding-bottom:16px; margin-bottom:24px; }
+  .doc-head .org { font-size:14px; color:#5a6b7a; letter-spacing:1px; }
+  .doc-head h1 { font-size:22px; margin:8px 0 4px; letter-spacing:1px; }
+  .doc-head .period { display:inline-block; background:#eaf2fe; color:#2c7be5; font-size:13px; padding:3px 12px; border-radius:12px; margin-top:6px; }
+  .meta { width:100%; border-collapse:collapse; margin:0 0 28px; font-size:13.5px; }
+  .meta th { width:110px; text-align:left; background:#f3f6f9; color:#34495e; padding:8px 12px; border:1px solid #e2e8ee; white-space:nowrap; }
+  .meta td { padding:8px 12px; border:1px solid #e2e8ee; }
+  h2.sec { font-size:17px; margin:30px 0 12px; padding:8px 14px; background:#2c3e50; color:#fff; border-radius:5px; }
+  ul, ol { margin:6px 0 6px; padding-left:22px; }
+  li { margin:4px 0; }
+  .scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:8px 0; }
+  table.work { width:100%; border-collapse:collapse; font-size:13px; }
+  table.work th, table.work td { border:1px solid #e2e8ee; padding:7px 10px; text-align:left; vertical-align:top; }
+  table.work th { background:#f3f6f9; color:#34495e; white-space:nowrap; }
+  table.work td.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  tr.best td { background:#f2f9f4; }
+  .badge { display:inline-block; font-size:10.5px; font-weight:700; color:#fff; padding:2px 7px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+  .b-min { background:#1e7e34; } .b-out { background:#9aa7b3; } .b-free { background:#2c7be5; }
+  .note { font-size:12.5px; color:#7a8a99; background:#fbfcfd; border-left:3px solid #d6dee6; padding:8px 12px; margin:8px 0; }
+  .goal { background:#fff7e6; border:1px solid #ffe0a3; border-radius:6px; padding:8px 12px; font-size:13.5px; margin:8px 0; }
+  .goal b { color:#b9770e; }
+  .alert { background:#fdeceb; border:1px solid #f3c1bc; border-radius:6px; padding:8px 12px; font-size:13.5px; margin:8px 0; }
+  .alert b { color:#c0392b; }
+  .bar { display:flex; align-items:center; gap:10px; margin:5px 0; font-size:13px; }
+  .bar .nm { width:150px; flex:none; }
+  .bar .tr { flex:1; background:#eef2f6; border-radius:4px; height:20px; }
+  .bar .fl { display:block; height:100%; border-radius:4px; }
+  .bar .vl { width:96px; flex:none; text-align:right; font-variant-numeric:tabular-nums; font-weight:700; }
+  .footer { margin-top:34px; padding-top:14px; border-top:1px solid #e2e8ee; font-size:12px; color:#7a8a99; }
+  @media (max-width:640px) {
+    body { padding:12px; }
+    .wrap { padding:22px 16px; }
+    .bar .nm { width:104px; font-size:12px; }
+    .bar .vl { width:82px; font-size:12px; }
+    table.work { min-width:620px; }
   }
-  document.getElementById('btn').addEventListener('click',unlock);
-  document.getElementById('pw').addEventListener('keydown',function(e){if(e.key==='Enter')unlock();});
-</script>
-</body></html>
+  @media print { * { -webkit-print-color-adjust:exact; print-color-adjust:exact; } body{ background:#fff; padding:0; } .wrap{ box-shadow:none; max-width:100%; padding:10px 4px; } h2.sec{ break-after:avoid; } table, .goal, .alert { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="doc-head">
+    <div class="org">エスト北塚口管理組合（自主管理・第41期）</div>
+    <h1>参考資料　南側ヒラド（ツツジ）3社見積り比較</h1>
+    <div class="period">第41期 第2回理事会（2026年9月16日）第3号 (3-6) の参考資料</div>
+  </div>
+
+  <table class="meta">
+    <tr><th>対象工事</th><td>南側ヒラドの一部伐採（洗濯物に干渉する手前側のみ）＋砂利敷き＋南側・西側の剪定</td></tr>
+    <tr><th>施工目標</th><td><b>2027年5月頃</b>（ヒラドの剪定時期に合わせて一括で施工）</td></tr>
+    <tr><th>相見積り</th><td>実質3社（阪上造園／ゆうさんの植木屋さん／R.Green）。富松造園・西部造園土木㈱は辞退</td></tr>
+    <tr><th>作成</th><td>理事長 林 伯悠（2026年9月12日時点）</td></tr>
+  </table>
+
+  <h2 class="sec">1　A案（一部伐採＋砂利敷き＋剪定）の総額比較</h2>
+
+  <div class="bar"><span class="nm">阪上造園</span><span class="tr"><span class="fl" style="width:79%;background:#2a78d6;"></span></span><span class="vl">120,000円</span></div>
+  <div class="bar"><span class="nm">R.Green</span><span class="tr"><span class="fl" style="width:88%;background:#eda100;"></span></span><span class="vl">132,550円</span></div>
+  <div class="bar"><span class="nm">ゆうさんの植木屋さん</span><span class="tr"><span class="fl" style="width:100%;background:#e87ba4;"></span></span><span class="vl">151,360円</span></div>
+
+  <div class="alert"><b>総額をそのまま並べると判断を誤ります。</b>阪上造園の見積りには<b>防草シートが含まれていません</b>。ゆうさんの植木屋さんは防草シート<b>27,000円</b>を含むため、これを除くと<b>約124,360円</b>となり、阪上造園にかなり近づきます。<b>「防草シート込み／なし」を揃えたうえでご覧ください。</b></div>
+
+  <div class="scroll">
+  <table class="work">
+    <thead>
+      <tr><th style="width:20%;">業者</th><th>A. 剪定（継続費）</th><th>B. 単発工事（伐採＋砂利敷き）</th><th>合計</th><th>備考</th></tr>
+    </thead>
+    <tbody>
+      <tr class="best">
+        <td><b>阪上造園</b><span class="badge b-min">最安</span><br><span style="font-size:12px;color:#7a8a99;">従来の定期委託先</span></td>
+        <td class="num">28,000円</td>
+        <td class="num">92,000円<br><span style="font-size:11.5px;color:#7a8a99;">伐採処分32,000<br>＋砕石60,000</span></td>
+        <td class="num"><b>120,000円</b></td>
+        <td>⚠<b>防草シートは含まれていません</b>。No.M00010・有効期限2026年12月3日。税区分・インボイス登録番号の記載なし</td>
+      </tr>
+      <tr>
+        <td><b>R.Green</b><br><span style="font-size:12px;color:#7a8a99;">尼崎市常松・新規</span></td>
+        <td class="num">15,000円<br><span style="font-size:11.5px;color:#7a8a99;">税別</span></td>
+        <td class="num">105,500円<br><span style="font-size:11.5px;color:#7a8a99;">撤去25,000＋砕石55,500<br>＋処分15,000＋諸経費10,000（税別）</span></td>
+        <td class="num"><b>132,550円</b><br><span style="font-size:11.5px;color:#7a8a99;">税込</span></td>
+        <td><b>不法投棄の植木鉢の撤去は無料</b><span class="badge b-free">サービス</span>。砂利資材の値上がりにより、2027年5月時点では再見積りの可能性あり</td>
+      </tr>
+      <tr>
+        <td><b>ゆうさんの植木屋さん</b><br><span style="font-size:12px;color:#7a8a99;">伊丹市南町・新規</span></td>
+        <td class="num">40,480円<br><span style="font-size:11.5px;color:#7a8a99;">税込・No.007</span></td>
+        <td class="num">110,880円<br><span style="font-size:11.5px;color:#7a8a99;">税込・No.006<br>防草シート27,000込</span></td>
+        <td class="num"><b>151,360円</b><br><span style="font-size:11.5px;color:#7a8a99;">シートを除くと<br>約124,360円</span></td>
+        <td><b>防草シート（ザバーン240G）込み</b>。インボイス登録事業者（T9810851500965）</td>
+      </tr>
+      <tr style="opacity:.55;">
+        <td><s>富松造園</s><span class="badge b-out">辞退</span></td>
+        <td class="num">—</td><td class="num">—</td><td class="num">—</td>
+        <td>3社で相見積りを実施している旨をお伝えしたところ、辞退のご意向（2026-09-07）</td>
+      </tr>
+      <tr style="opacity:.55;">
+        <td><s>西部造園土木㈱</s><span class="badge b-out">辞退</span></td>
+        <td class="num">—</td><td class="num">—</td><td class="num">—</td>
+        <td>新規案件の受注自体を行っていない模様（2026-09-09 お電話にてご連絡）</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note">「A. 剪定」は今後も継続して発生する経常費用、「B. 単発工事」は今回1回限りの費用です。各社とも見積書では一体で記載されているため、比較のため当組合で分解しています。</div>
+
+  <h2 class="sec">2　B案（伐採せず・剪定のみ）の比較</h2>
+  <div class="scroll">
+  <table class="work">
+    <thead><tr><th style="width:26%;">業者</th><th style="width:20%;">1回あたり</th><th>内訳</th></tr></thead>
+    <tbody>
+      <tr class="best"><td><b>R.Green</b><span class="badge b-min">最安</span></td><td class="num"><b>39,600円</b><br><span style="font-size:11.5px;color:#7a8a99;">税込</span></td><td>剪定25,000＋処分6,000＋諸経費5,000＋消費税</td></tr>
+      <tr><td><b>ゆうさんの植木屋さん</b></td><td class="num"><b>49,280円</b><br><span style="font-size:11.5px;color:#7a8a99;">税込</span></td><td>No.20260908-010「ヒラドツツジ剪定 全体」剪定38,000＋処分5,000＋諸経費1,800＋消費税</td></tr>
+      <tr><td><b>阪上造園</b></td><td class="num" style="color:#c0392b;">未確定</td><td>⚠2026-09-07にお電話で口頭のご回答をいただきましたが、記録が残らず金額を失念しました。<b>要再確認</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 class="sec">3　R.Greenからいただいた、専門家としてのご指摘</h2>
+  <p>見積りに添えて、<b>費用の前提そのものに関わるご指摘</b>を3点いただきました。いずれも判断材料として重要です。</p>
+  <div class="scroll">
+  <table class="work">
+    <thead><tr><th style="width:28%;">ご指摘</th><th>内容と、当組合への影響</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>① 低木は「毎年剪定」が望ましい</b><br><span style="font-size:12px;color:#7a8a99;">隔年でよいのは高木</span></td>
+        <td>「高木は隔年でよいが、低木（ヒラドツツジ等）は毎年の剪定を推奨」。参考として市営住宅は高木が隔年・低木が毎年とのことです。<br>⚠<b>当組合はこれまで「隔年剪定」を前提に試算してきました。</b>毎年剪定にすると<b>B案の年間コストは実質倍増</b>します。一方A案は伐採後の残る部分だけになり量が減るため負担が軽く、<b>結果としてA案の優位性がさらに強まります</b></td>
+      </tr>
+      <tr>
+        <td><b>② 砂利資材の値上がりリスク</b></td>
+        <td>2027年5月の施工時点では資材価格が上がっている可能性がある（年度替わりで値上げされやすい）とのこと。再見積りのお申し出をいただいています</td>
+      </tr>
+      <tr>
+        <td><b>③ 避難通路としての懸念</b><br><span style="font-size:12px;color:#7a8a99;">新しい論点</span></td>
+        <td>現状は低木が茂って通路がなく、<b>災害時のベランダ避難通路として機能していない可能性がある</b>とのご指摘。「毎年の低木剪定」または「ベランダ側を撤去して砂利敷き」であれば通路は確保できるとのことです。<b>安全面からもA案を支持する材料</b>になります</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 class="sec">4　当初の懸念事項（解消済み）</h2>
+  <div class="goal"><b>西側エントランス周辺の剪定が含まれるか</b>／<b>不法投棄と思われる植木鉢の撤去の扱い</b>——この2点はいずれの見積書にも明記がなく懸案でしたが、<b>3社すべてに相談済みで、問題ないことを確認しています。</b>（R.Greenは植木鉢の撤去を無料で対応いただけるとのことです）</div>
+
+  <h2 class="sec">5　残っている宿題</h2>
+  <ul>
+    <li><b>阪上造園のB案（剪定のみ）の金額を再確認する</b>。口頭でのご回答だったため記録が残っていません。これが揃えばB案の3社比較が完成します</li>
+    <li><b>「隔年剪定」前提のコスト試算を、「毎年剪定」も踏まえて見直す</b>（R.Greenのご指摘①）</li>
+    <li>A案・B案のいずれで進めるかを決定し、<b>総会へ上程</b>する</li>
+    <li>施工時期が近づいた段階で、砂利資材の<b>再見積り</b>を取得する</li>
+  </ul>
+
+  <div class="footer">
+    エスト北塚口管理組合　参考資料（第41期 第2回理事会 (3-6) 用）　／　作成：理事長 林 伯悠　／　2026年9月12日<br>
+    見積書の原本PDFは共有フォルダ <code>09.契約サービス ＞ 2604_植栽剪定・管理見積書</code> に保管しています。
+  </div>
+
+</div>
+</body>
+</html>
