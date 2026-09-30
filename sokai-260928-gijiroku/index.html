@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第41期 第3回臨時総会 議事録</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "游明朝", "Yu Mincho", "ヒラギノ明朝 ProN", serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    background: #f5f5f0;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px 48px;
+  }
+
+  .warn {
+    background: #fff8e6;
+    border: 1px solid #e0b400;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #7a5c00;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+  .fill { color: #b00; font-weight: 700; }
+  .now { color: #0f4c81; font-weight: 700; }
+
+  /* タイトル */
+  .title-block {
+    text-align: center;
+    margin-bottom: 28px;
+    border-bottom: 3px double #333;
+    padding-bottom: 16px;
+  }
+  .title-block .org { font-size: 14px; margin-bottom: 4px; }
+  .title-block h1 { font-size: 22px; font-weight: bold; letter-spacing: 4px; }
+  .title-block .sub { font-size: 13px; color: #555; margin-top: 6px; }
+
+  /* 現在の回答状況スタットカード */
+  .status-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #eef4fa;
+    border: 1px solid #cddcef;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 12.5px;
+    color: #0f4c81;
+    margin-bottom: 16px;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 26px;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  }
+  .stat-card {
+    background: #f7f9fb;
+    border: 1px solid #d8e0e8;
+    border-radius: 8px;
+    padding: 14px 8px;
+    text-align: center;
+  }
+  .stat-card .slabel { font-size: 11px; color: #5a6b7d; margin-bottom: 4px; }
+  .stat-card .sval { font-size: 24px; font-weight: 800; color: #0f4c81; line-height: 1.1; }
+  .stat-card .sval .unit { font-size: 12px; font-weight: 400; color: #5a6b7d; }
+  .stat-card .ssub { font-size: 10px; color: #5a6b7d; margin-top: 3px; }
+
+  /* 開催情報 */
+  .info-table {
+    width: 100%;
+    margin-bottom: 28px;
+    border-collapse: collapse;
+  }
+  .info-table th {
+    width: 130px;
+    padding: 5px 10px 5px 0;
+    font-weight: bold;
+    vertical-align: top;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+  .info-table td {
+    padding: 5px 0;
+    vertical-align: top;
+    font-size: 13px;
+  }
+
+  /* セクション見出し */
+  h2 {
+    font-size: 15px;
+    font-weight: bold;
+    background: #0f4c81;
+    color: #fff;
+    padding: 7px 14px;
+    margin: 28px 0 12px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: bold;
+    border-left: 4px solid #0f4c81;
+    padding: 4px 10px;
+    margin: 18px 0 8px;
+    background: #f0f4f8;
+  }
+
+  p { margin-bottom: 6px; }
+  ul { padding-left: 20px; margin-bottom: 8px; }
+  ul li { margin-bottom: 4px; }
+  ol { padding-left: 22px; margin-bottom: 8px; }
+  ol li { margin-bottom: 5px; }
+
+  /* 採決ボックス */
+  .kekka {
+    background: #e8f5e9;
+    border: 2px solid #4caf50;
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin: 14px 0;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  /* 議案ボックス */
+  .gian-box {
+    background: #f0f4f8;
+    border: 1px solid #b0bec5;
+    border-radius: 6px;
+    padding: 12px 18px;
+    margin: 12px 0;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  /* 注記 */
+  .note {
+    background: #fff8e1;
+    border-left: 4px solid #ffc107;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* 署名または押印テーブル */
+  .sign-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+  .sign-table th {
+    background: #0f4c81;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #555;
+  }
+  .sign-table td {
+    border: 1px solid #aaa;
+    padding: 8px 12px;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+  .sign-table .role-cell { text-align: center; font-weight: bold; width: 130px; }
+  .sign-table .name-cell { width: 220px; }
+  .sign-table .hanko-cell {
+    width: 90px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .hanko-box {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    line-height: 52px;
+    font-size: 10px;
+    color: #aaa;
+    text-align: center;
+  }
+  .shot-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 70px;
+    border: 1.5px dashed #9aa7b3;
+    border-radius: 4px;
+    color: #8a97a3;
+    font-size: 10.5px;
+    text-align: center;
+    padding: 6px;
+    line-height: 1.5;
+  }
+  .shot-slot img { max-width: 100%; max-height: 160px; display: block; margin: 0 auto; }
+
+  /* フッター */
+  .footer {
+    margin-top: 24px;
+    text-align: right;
+    font-size: 13px;
+    color: #555;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: #fff; color: #000; }
+    .page { padding: 20px 28px; box-shadow: none; max-width: 100%; }
+    .warn { background: #fff; border-color: #000; color: #000; }
+    h2 { background: #0f4c81 !important; color: #fff !important; border-radius: 0; }
+    .sign-table th { background: #0f4c81 !important; color: #fff !important; border-color: #000; }
+    .stat-card { background: #fff !important; border: 1px solid #000 !important; }
+    .stat-card .sval, .status-bar { color: #000 !important; }
+    .status-bar { background: #fff !important; border-color: #000 !important; }
+    h3 { background: #eee !important; border-left-color: #000; }
+    .kekka { background: #fff !important; border: 2px solid #000 !important; color: #000 !important; }
+    .gian-box { background: #fff !important; border: 1.5px solid #000 !important; }
+    .note { background: #fff !important; border-left: 4px solid #000 !important; color: #000 !important; }
+    .info-table, .info-table th, .info-table td { color: #000; }
+    .sign-table td { border-color: #000; }
+    .hanko-box { border-color: #000; color: #000; }
+    .shot-slot { border-color: #000; color: #000; }
+    .title-block { border-bottom-color: #000; }
+    .footer { color: #000; border-top-color: #000; }
+    .kekka, .gian-box, .note, .sign-table, tr, li { break-inside: avoid; page-break-inside: avoid; }
+    h2, h3 { break-after: avoid; page-break-after: avoid; break-inside: avoid; page-break-inside: avoid; }
+  }
+
+  .fuki { border:2px solid #0f4c81; border-radius:6px; padding:16px 20px; margin-top:32px; }
+  .fuki-title { font-size:15px; font-weight:bold; color:#0f4c81; margin-bottom:6px; }
+  .fuki-lead { font-size:13px; margin-bottom:10px; }
+  .law { width:100%; border-collapse:collapse; font-size:12.5px; margin:6px 0 10px; }
+  .law th, .law td { border:1px solid #c9d3de; padding:7px 10px; vertical-align:top; text-align:left; }
+  .law th { background:#eef4fa; width:34%; font-weight:bold; }
+  .concl { background:#eef4fa; border-left:4px solid #0f4c81; padding:8px 12px; font-size:13px; font-weight:bold; margin:6px 0 12px; }
+  @media print { .fuki{border-color:#000; break-before:page;} .fuki-title{color:#000;} .law th{background:#eee !important;} .law th,.law td{border-color:#000;} .concl{background:#fff !important; border-left-color:#000;} }
+  .shots figure{margin:10px 0;border:1px solid #c9d3de;border-radius:4px;padding:6px;}
+  .shots img{max-width:100%;display:block;}
+  .shots figcaption{font-size:11.5px;color:#444;margin-top:4px;}
+  @media print{.shots figure{break-inside:avoid;border-color:#000;}}
+
+  @media (max-width: 600px) {
+    .page { padding: 20px 14px; }
+    .info-table th { width: 92px; font-size: 12.5px; }
+    .info-table td { font-size: 13px; }
+    .stat-grid { gap: 6px; }
+    .stat-card .sval { font-size: 20px; }
+    .sign-table .role-cell { width: 90px; }
+    .sign-table .name-cell { width: auto; }
+    .sign-table .hanko-cell { width: 96px; }
+    h2 { font-size: 14.5px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="title-block">
+    <div class="org">エスト北塚口管理組合</div>
+    <h1>第41期 第3回臨時総会 議事録</h1>
+    <div class="sub">階段手すり両側化工事費用及び長期修繕計画書作成費の、修繕積立金からの拠出承認について</div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="slabel">出席議決権数</div><div class="sval">13<span class="unit"> / 19戸</span></div><div class="ssub">書面・電磁的方法7／委任6</div></div>
+    <div class="stat-card"><div class="slabel">定足数（10戸）</div><div class="sval">充足</div><div class="ssub">規約第44条第1項</div></div>
+    <div class="stat-card"><div class="slabel">採決結果（両議案）</div><div class="sval">可決</div><div class="ssub">賛成13・反対0・棄権0</div></div>
+  </div>
+
+  <table class="info-table">
+    <tr><th>【開催日時】</th><td>2026年9月28日（月）午前9時00分 ～ 午前9時10分</td></tr>
+    <tr><th>【開催場所】</th><td>エスト北塚口 401号室</td></tr>
+    <tr><th>【議決権総数】</th><td>19個（19戸）</td></tr>
+    <tr><th>【出席議決権数】</th><td>
+      書面・電磁的方法による議決権行使　7戸（うち書面1戸）<br>
+      委任状（議長への一任）　6戸<br>
+      合計 <strong>13戸</strong>（議決権総数19戸）<br>
+      ※ 定足数（規約第44条第1項・議決権総数の半数以上＝10戸以上）：<strong>条件を満たしています（充足）</strong></td></tr>
+    <tr><th>【議長】</th><td>規約第42条に基づき、理事長が議長を務めました。</td></tr>
+  </table>
+
+  <div class="note" style="margin-bottom:24px;">
+    本臨時総会は、規約第46条第4項に基づき、書面・電磁的方法（Googleフォーム）および委任状による議決権行使をもって行われました。会場（401号室）への現地出席者はなく、議長が、提出された議決権行使書・委任状を集計・確認したうえで議事を進行しました。書面で提出された1戸分は、集計のため理事会がGoogleフォームへ転記し、原本は理事会にて保管しています。
+  </div>
+
+  <h2>開会・議長・議事録署名人</h2>
+  <h3>■ 開会（午前9時00分）</h3>
+  <p>議長は、本臨時総会が規約第39条第4項（理事会決議を経た理事長による招集）および第40条（会日の2週間前までの通知）に基づき適法に招集されたこと、ならびに出席議決権数が定足数を満たしていることを確認し、開会を宣言しました。</p>
+  <h3>■ 議長</h3>
+  <p>規約第42条に基づき、理事長が議長を務めました。</p>
+  <h3>■ 議事録署名人（2名を選任）</h3>
+  <ul>
+    <li>副理事長</li>
+    <li>監事</li>
+  </ul>
+
+  <h2>第１号議案　階段手すり両側化工事の費用を修繕積立金から拠出することについて</h2>
+  <div class="gian-box">
+    エントランスに近い掲示板裏の階段について、手すりの両側化工事（施工：佐藤工務店、施工日：2026年10月6日、費用300,000円）の費用を、修繕積立金から拠出することを求める。
+  </div>
+  <h3>■ 議案の要旨</h3>
+  <ol>
+    <li><strong>対象工事</strong>：エントランスに近い掲示板裏の階段の手すり両側化工事（理事会決裁＝規約第25条第2項の小修繕の範囲内により発注済み。工事自体は本決議の可否にかかわらず有効）</li>
+    <li><strong>施工業者・金額</strong>：佐藤工務店　300,000円（複数社見積りの結果、最安値）</li>
+    <li><strong>施工日</strong>：2026年10月6日（火）終日</li>
+    <li><strong>拠出の内容</strong>：上記工事費用300,000円を、修繕積立金会計から支出する（支出の性質が「建物への恒久的な改良」であるため）</li>
+    <li><strong>法的根拠</strong>：本工事はバリアフリー化を目的とした共用部分の変更（規約第26条第1項第三号）にあたり、修繕積立金からの拠出には規約第45条第5号により総会の決議を要する。決議要件は規約第44条第3項第二号ただし書により<strong>普通決議（出席組合員の議決権の過半数）</strong>で足りる。</li>
+  </ol>
+  <div class="kekka">【採決結果】　賛成：13票（うち 書面・電磁的方法による議決権行使 7票、議長への委任 6票）　反対：0票　棄権：0票　→　可決<br>
+  <span style="font-weight:normal; font-size:12px;">（規約第44条第2項＝普通決議・出席議決権の過半数の賛成により可決）</span></div>
+
+  <h2>第２号議案　長期修繕計画書作成費の拠出承認について</h2>
+  <div class="gian-box">
+    現行（2018年作成）の長期修繕計画書を、自主管理移行後の実態・2023年大規模修繕の実績・今後の給排水管更新等を踏まえて作成し直すための委託費用について、修繕積立金から上限450,000円を拠出することを求める。
+  </div>
+  <h3>■ 議案の要旨</h3>
+  <ol>
+    <li><strong>拠出の上限</strong>：修繕積立金から<strong>上限450,000円</strong>（想定額300,000円に対し50%の余裕を見込んだ上限）</li>
+    <li><strong>業者選定</strong>：上限の範囲内での業者選定は理事会に一任する（3社以上の相見積りを前提とする）</li>
+    <li><strong>上限超過時の扱い</strong>：見積りが上限を超える場合は、発注前に改めて総会に諮る</li>
+    <li><strong>決議の有効期限</strong>：可決から1年以内の発注に限る</li>
+    <li><strong>法的根拠</strong>：長期修繕計画書の作成費用は規約第26条第1項第四号に定める修繕積立金の充当対象であり、その取崩しには規約第45条第5号により総会の決議を要する。本議案は規約第44条第3項各号のいずれにも該当しないため、<strong>普通決議（出席組合員の議決権の過半数）</strong>により決する。</li>
+  </ol>
+  <div class="kekka">【採決結果】　賛成：13票（うち 書面・電磁的方法による議決権行使 7票、議長への委任 6票）　反対：0票　棄権：0票　→　可決<br>
+  <span style="font-weight:normal; font-size:12px;">（規約第44条第2項＝普通決議・出席議決権の過半数の賛成により可決）</span></div>
+
+  <h2>閉会</h2>
+  <p>議長は、第1号議案・第2号議案がいずれも可決されたことを確認し、午前9時10分、本臨時総会の閉会を宣言しました。</p>
+
+  <h2>議事録署名人</h2>
+  <p style="font-size:13px; margin-bottom:4px;">上記の議事の経過およびその結果に相違ないことを確認し、本議事録を作成のうえ、議長および議事録署名人がこれに署名または記名押印する。</p>
+  <table class="sign-table">
+    <tr><th>区分</th><th>役職</th><th>確認</th></tr>
+    <tr><td class="role-cell">議事録署名人</td><td class="name-cell">副理事長</td><td class="hanko-cell"><b>LINEにて承認済</b></td></tr>
+    <tr><td class="role-cell">議事録署名人</td><td class="name-cell">監事</td><td class="hanko-cell"><b>LINEにて承認済</b></td></tr>
+    <tr><td class="role-cell">議長</td><td class="name-cell">理事長</td><td class="hanko-cell" style="font-size:12px;"><b>議事録原本にて押印</b></td></tr>
+  </table>
+  <div class="note" style="margin-top:16px;">
+    議事録署名人（副理事長・監事）は、非対面総会のため、本議事録の内容をLINEにて承認いただく方法により、押印に代えています（記録は理事会にて保管）。
+  </div>
+  <div class="note" style="margin-top:8px;">
+    本議事録は、修繕積立金からの拠出（規約第45条第5号）を証する書類として、会計帳簿・工事関連書類とあわせて保管します。
+  </div>
+
+  <div class="fuki">
+    <div class="fuki-title">付記　手すりの設置と階段の幅について（理事会による法令確認）</div>
+    <p class="fuki-lead">本総会の議事とは別に、組合員より「手すりの設置後も、階段の幅は法令に適合しているか」とのお問い合わせをいただきました。理事会として関係法令に照らして確認した結果を、以下のとおり記録します。</p>
+
+    <table class="law">
+      <tr><th>① 階段の幅の基準<br><span style="font-weight:normal">建築基準法施行令 第23条第1項／兵庫県建築基準条例 第17条第1項</span></th>
+        <td>階段及びその踊場の幅は、直上階の居室の床面積の合計が200㎡を超える場合、<strong>1.2メートル以上</strong>（施行令）。兵庫県では条例によりこれを上乗せし、共同住宅は100㎡を超える場合から<strong>1.2メートル以上</strong>としている。いずれの場合も、求められる幅は1.2メートル以上である。</td></tr>
+      <tr><th>② 手すりは幅に算入しない<br><span style="font-weight:normal">建築基準法施行令 第23条第3項</span></th>
+        <td>階段に手すり等が設けられた場合、階段の幅は<strong>手すり等の幅が10センチメートルを限度として、ないものとみなして算定</strong>する。両側に設ける場合は、それぞれの手すりについて10センチメートルまでが算入されない。上記①の施行令・条例のいずれの幅も、この規定により算定する（同条例の解説）。</td></tr>
+      <tr><th>③ 手すりの設置義務<br><span style="font-weight:normal">建築基準法施行令 第25条第1項</span></th>
+        <td>階段には、手すりを設けなければならない。手すりは、法令が階段の安全のために設置を求めている設備である。</td></tr>
+      <tr><th>④ 避難上の管理<br><span style="font-weight:normal">消防法 第8条の2の4</span></th>
+        <td>階段等の避難上必要な施設について、避難の支障になる<strong>物件が放置され、又はみだりに存置されない</strong>よう管理しなければならない。対象は置かれた物（私物等）であり、建物に固定され、避難時の安全な昇降を助ける手すりはこれに当たらない。</td></tr>
+      <tr><th>⑤ 決議の要件<br><span style="font-weight:normal">区分所有法 第17条第1項・管理規約 第44条第3項第二号ただし書</span></th>
+        <td>形状又は効用の著しい変更を伴わない共用部分の変更、及びバリアフリー化の工事は、普通決議で足りる。国土交通省「マンション標準管理規約（単棟型）コメント」第47条関係でも、建物の基本的構造の変更等を伴わずに階段に手すりを追加する工事は、普通決議により実施可能とされている。</td></tr>
+    </table>
+
+    <p style="font-size:13px; margin-bottom:6px;"><strong>当マンションの実測（2026年9月・理事長）</strong>：最も狭い踊り場付近で壁から壁まで約120cm。手すりの出幅は既設・新設とも壁から約7cm。</p>
+
+    <div class="concl">結論：手すりの出幅（左右とも約7cm）はいずれも10cm以内のため、法令上の階段の幅は手すりの設置前後で変わらず、階段の幅に関する基準に影響しません。当マンションは昭和60年11月19日に検査済証（第183号）の交付を受けており、今回の工事はその適法性を損なうものではありません。</div>
+  </div>
+
+  <div class="footer">作成日：2026年9月28日</div>
+
+</div>
+</body>
+</html>
