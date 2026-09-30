@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>理事会のしごと</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --sub:#444; --line:#c9c9c9; --bg:#ffffff; --soft:#f3f6f9;
+    --accent:#1f5f8b; --accent-soft:#e6f0f7; --warm:#fff6e0; --warm-line:#e6c36a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"BIZ UDPGothic","Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;
+    font-size:19px;line-height:1.85;-webkit-text-size-adjust:100%}
+  .wrap{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+  header{border-bottom:3px solid var(--accent);padding-bottom:12px;margin-bottom:18px}
+  .from{font-size:15px;color:var(--sub);margin:0}
+  h1{font-size:30px;margin:6px 0 4px;letter-spacing:.05em}
+  .date{font-size:15px;color:var(--sub);margin:0}
+
+  .tabs{display:flex;gap:8px;margin:0 0 20px}
+  .tabs button{flex:1;font:inherit;font-size:18px;font-weight:bold;padding:14px 8px;
+    border:2px solid var(--accent);background:#fff;color:var(--accent);border-radius:10px;cursor:pointer}
+  .tabs button[aria-selected="true"]{background:var(--accent);color:#fff}
+  .panel[hidden]{display:none}
+
+  .lead{background:var(--accent-soft);border-radius:12px;padding:16px 18px;margin:0 0 22px}
+  .lead p{margin:0}
+  .lead strong{font-size:21px}
+
+  h2{font-size:22px;margin:28px 0 10px;padding-left:12px;border-left:6px solid var(--accent)}
+  p{margin:0 0 12px}
+
+  .card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 12px;background:#fff}
+  .card h3{font-size:20px;margin:0 0 4px}
+  .card p{margin:0}
+  .num{display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;
+    background:var(--accent);color:#fff;font-size:17px;margin-right:8px;vertical-align:1px}
+
+  ul.plain{margin:0 0 12px;padding-left:1.3em}
+  ul.plain li{margin:0 0 6px}
+
+  .note{background:var(--warm);border:1px solid var(--warm-line);border-radius:12px;padding:14px 16px;margin:18px 0}
+  .note p{margin:0}
+
+  table{width:100%;border-collapse:collapse;font-size:17px;margin:0 0 12px}
+  th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left}
+  th{background:var(--soft);white-space:nowrap}
+  td.now{background:var(--accent-soft)}
+
+  .flow{list-style:none;margin:0 0 12px;padding:0}
+  .flow li{position:relative;padding:0 0 14px 26px;border-left:3px solid var(--line);margin-left:8px}
+  .flow li:last-child{border-left-color:transparent}
+  .flow li:before{content:"";position:absolute;left:-10px;top:6px;width:16px;height:16px;border-radius:50%;
+    background:#fff;border:3px solid var(--accent)}
+  .flow li.goal:before{background:var(--accent)}
+  .flow b{display:block}
+
+  dl.qa dt{font-weight:bold;margin:14px 0 4px}
+  dl.qa dt:before{content:"Q．";color:var(--accent)}
+  dl.qa dd{margin:0 0 0 1.6em}
+
+  .contact{border:2px solid var(--accent);border-radius:12px;padding:16px 18px;margin:26px 0 0}
+  .contact h2{margin-top:0;border:none;padding:0}
+  .linkcard{display:block;border:2px solid var(--accent);border-radius:12px;padding:12px 16px;margin:12px 0;color:var(--accent);font-weight:bold;text-decoration:none;background:#fff}
+  .linkcard span{display:block;font-weight:normal;font-size:16px;color:var(--sub)}
+  .switch{display:block;text-align:center;margin:22px 0 0;font-size:18px;color:var(--accent);font-weight:bold}
+  footer{margin-top:36px;font-size:14px;color:var(--sub);border-top:1px solid var(--line);padding-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="from">エスト北塚口管理組合　理事長</p>
+  <h1>理事会のしごと</h1>
+  <p class="date">令和8年（2026年）9月30日</p>
+</header>
+
+<div class="tabs" role="tablist">
+  <button role="tab" id="t1" aria-selected="true" aria-controls="p1">かんたん版</button>
+  <button role="tab" id="t2" aria-selected="false" aria-controls="p2">くわしい版</button>
+</div>
+
+<!-- ============ かんたん版 ============ -->
+<section class="panel" id="p1" role="tabpanel" aria-labelledby="t1">
+
+  <div class="lead">
+    <p><strong>次の理事について、考えてみてください。</strong></p>
+    <p>交代はまだ先ですが、いまのうちにお知らせします。理事会がどんなことをしているのか、まずは知っていただければうれしいです。</p>
+  </div>
+
+  <h2>いつから？</h2>
+  <p><strong>令和9年（2027年）3月の定期総会</strong>で交代する予定です。<br>
+  任期は2年です。少し先のお話ですが、ご参考までにお知らせします。</p>
+  <p>募集するのは、<strong>理事（副理事長を含む）と監事</strong>です。<br>
+  なお、いまの理事長は、次の期（令和9年3月から）も引き続き理事長を務めるつもりです。<strong>はじめての方にいきなり理事長をお願いすることはありません</strong>ので、ご安心ください。</p>
+
+  <h2>どんなことをするの？</h2>
+
+  <div class="card">
+    <h3><span class="num">1</span>LINEで確認・お返事</h3>
+    <p>理事どうしのグループLINEで、「この件を進めてよいか」「この支払いをしてよいか」などをおたずねします。お返事は、たいてい<strong>2〜3日のうち</strong>で大丈夫です。<br>
+    どうしてもご意見が必要なもの以外は、お忙しくてお返事できないこともあると考え、<strong>先に進めることもあります。</strong><br>
+    LINEを送る時間は、<strong>平日は17時〜22時、土日祝日は9時〜22時</strong>と決めています（急ぎの場合を除きます）。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">2</span>理事会は年4回</h3>
+    <p>スマホで参加できる会議（Zoom）で行います。<strong>顔を映さなくてもかまいません。</strong>ふだんのことはLINEでスピーディに決めているため、理事会で話し合う内容は少なくできています。<br>
+    <strong>平日の夜20時から</strong>、<strong>30分</strong>で終えることを目標にしています（実際は1時間ほどです）。日にちは1か月ほど前から相談し、2週間前ごろまでに決めます。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">3</span>資料はタップして見るだけ</h3>
+    <p>資料はLINEで送られてくる<strong>リンクをタップすれば見られます</strong>。重たいファイルを保存する必要はありません。</p>
+  </div>
+
+  <h2>役割ごとのちがい</h2>
+  <p>ふだんのしごと（LINEでのやりとり）は、どの役割でもほぼ同じです。</p>
+  <table>
+    <tr><th>理事長</th><td>組合の代表として、ふだんのしごとをまとめて進めます。いまの理事長が続けており、<strong>次の期も引き続き務める予定です。</strong>ただし、<strong>いずれ交代することもあります。</strong>そのときに困らないよう、しごとのやり方の見直しを進めています。</td></tr>
+    <tr><th>副理事長</th><td>理事長を手伝います。理事長が病気などでしごとができなくなったときは、代わりをつとめます。</td></tr>
+    <tr><th>監事</th><td>組合のお金の使い方や運営が正しいかを確かめ、総会で報告します。理事会にも出席します。<br>会計の資料は、顧問の税理士（小林会計事務所）が先に確認しています。監事は<strong>税理士が確認したあとの資料を見る</strong>流れです。また、お金の使い方はすべてLINEで共有しており、毎月の会計報告（会計月報）でも確かめられますので、<strong>このために多くの時間を使う必要はありません。</strong></td></tr>
+  </table>
+  <a class="linkcard" href="rijicho.html">▶ 理事長のしごとを見る<span>毎日の記録から、理事長がどんなしごとをしているかをまとめました</span></a>
+
+  <p>※理事が変わったときは、新しい理事の皆さまで話し合い、理事会やLINEのやり方を決め直してから始めます。</p>
+
+  <h2>必要なもの</h2>
+  <ul class="plain">
+    <li><strong>スマートフォン</strong>（LINEが使えるもの）</li>
+    <li>通信費は、それぞれのご負担でお願いします</li>
+  </ul>
+
+  <div class="note">
+    <p>スマホの操作に自信がなくても大丈夫です。<strong>使い方は理事長がお手伝いします。</strong></p>
+  </div>
+
+  <p>また、議事録や資料づくりには<strong>AI（文章づくりなどを手伝うコンピューターの仕組み）</strong>を使い、理事の手間を少しずつ減らしています。くわしくは「理事長のしごと」のページをご覧ください。</p>
+
+  <div class="contact">
+    <h2>いまは、考えていただくだけで大丈夫です</h2>
+    <p>ご返事やお申し出は、まだ必要ありません。<br>
+    「自分にもできそうかな」と、頭の片すみに置いていただければ幸いです。</p>
+  </div>
+
+  <a href="#" class="switch" data-go="t2">▶ くわしい版を見る</a>
+</section>
+
+<!-- ============ くわしい版 ============ -->
+<section class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+
+  <div class="lead">
+    <p>かんたん版の内容を、もう少しくわしくご説明します。</p>
+  </div>
+
+  <h2>これまでの流れ</h2>
+  <ol class="flow">
+    <li><b>令和7年（2025年）12月ごろ</b>管理会社から、組合が支払う管理の費用を値上げしたいという話がありました。ほかの管理会社の見積りを取ったり、自分たちで管理する場合の準備をしたりするため、理事どうしのLINEでのやりとりが増えました。</li>
+    <li><b>令和8年（2026年）2月8日</b>総会で、管理会社との契約をやめることが決まりました。</li>
+    <li><b>令和8年（2026年）5月</b>管理会社との契約を終えました。</li>
+    <li><b>令和8年（2026年）6月</b>住民による自主管理を始めました。</li>
+    <li><b>いま</b>見積りの取り寄せや切り替えの準備といった仕事は終わりました。LINEでのやりとりも、少しずつ落ち着いてきています。</li>
+    <li class="goal"><b>令和9年（2027年）3月</b>定期総会で理事が交代する予定です。</li>
+  </ol>
+
+  <h2>管理会社に任せていたころとの違い</h2>
+  <table>
+    <tr><th></th><th>いまのやり方</th></tr>
+    <tr><th>理事会</th><td class="now">年4回。スマホで参加（Zoom）。顔を映さなくてもよい。ふだんのことはLINEで決めているため、話し合う内容は少なくできています</td></tr>
+    <tr><th>開く時間</th><td class="now">平日の夜20時から（前回から）。30分で終えることを目標にしています。実際は1時間ほどです</td></tr>
+    <tr><th>日にちの決め方</th><td class="now">1か月ほど前から皆さまのご都合をうかがい、2週間前ごろまでに決めます</td></tr>
+    <tr><th>ふだんの相談</th><td class="now">グループLINEで、そのつどおたずねし、スピーディに決めています。<br>そのぶん、LINEでご意見を伺う機会は多めです</td></tr>
+    <tr><th>連絡する時間</th><td class="now">平日は17時〜22時、土日祝日は9時〜22時。<br>急ぎの場合を除き、この時間以外に理事長からLINEを送ることはほとんどありません</td></tr>
+    <tr><th>支払いの承認</th><td class="now">組合の支払いはインターネットバンキングで行っています。支払う前に、LINEで「支払ってよいか」をおたずねします。ふだんからよくあるおたずねで、こちらも2〜3日のうちのお返事で大丈夫です</td></tr>
+    <tr><th>先に進めること</th><td class="now">どうしてもご意見が必要なもの以外は、お忙しくてお返事できないこともあると考え、先に進めることがあります</td></tr>
+    <tr><th>お返事の期限</th><td class="now">たいてい2〜3日。まれに、その日のうちにお返事をお願いすることがあります</td></tr>
+    <tr><th>資料</th><td class="now">リンクをタップして見る形です。重たいファイルを保存する必要はありません</td></tr>
+    <tr><th>議事録・資料づくり</th><td class="now">理事会の議事録は、会議の録音をもとにAIが作ります。資料やお知らせの下書きもAIが作り、内容は人が確認します</td></tr>
+  </table>
+  <p>伊丹市も進めている「手続きや連絡をスマホで行う」やり方に合わせています。ここまで、理事の皆さまに大きなご負担をおかけせずに運営できています。</p>
+
+  <h2>役割ごとのしごと</h2>
+  <p>ふだんのしごと（LINEでのやりとり）は、どの役割でもほぼ同じです。そのうえで、次のような役目があります。</p>
+  <table>
+    <tr><th>理事長</th><td>組合の代表として、ふだんのしごとをまとめて進めます。いまの理事長が続けており、<strong>次の期も引き続き務める予定です。</strong>ただし、<strong>いずれ交代することもあります。</strong>そのときに困らないよう、しごとのやり方の見直しを進めています。</td></tr>
+    <tr><th>副理事長</th><td>理事長を手伝います。理事長が病気などでしごとができなくなったときや、理事長がいなくなったときは、代わりに理事長のしごとをつとめます。</td></tr>
+    <tr><th>監事</th><td>組合のお金の使い方や運営が正しく行われているかを確かめ、その結果を総会で報告します。理事会にも出席し、必要があれば意見を述べます。<br>会計の資料は、顧問の税理士（小林会計事務所）が先に確認しています。監事は<strong>税理士が確認したあとの資料を見る</strong>流れです。また、お金の使い方はすべてLINEで共有しており、毎月の会計報告（会計月報）でも確かめられますので、<strong>このために多くの時間を使う必要はありません。</strong></td></tr>
+  </table>
+  <a class="linkcard" href="rijicho.html">▶ 理事長のしごとを見る<span>毎日の記録から、理事長がどんなしごとをしているかをまとめました</span></a>
+
+  <h2>今後お願いするかもしれないこと</h2>
+  <ul class="plain">
+    <li>組合の印鑑を、お預かりいただくこと</li>
+    <li>理事長が印鑑を使う必要があるときに、401号室のポストへ入れていただくこと</li>
+  </ul>
+
+  <h2>理事が変わったら</h2>
+  <p>ここに書いたのは、いまの理事会のやり方です。理事が変わったときは、新しい理事の皆さまで意見を出し合い、<strong>理事会やグループLINEでのやりとりのルールを決めてから</strong>動き出す予定です。</p>
+
+  <h2>ご負担いただくこと</h2>
+  <ul class="plain">
+    <li>スマートフォンをご用意いただくこと（LINEが使えるもの）</li>
+    <li>通信費は、それぞれのご負担でお願いします</li>
+    <li>LINEでのおたずねに、できる範囲で早めにお返事いただくこと</li>
+  </ul>
+
+  <h2>よくあるご質問</h2>
+  <dl class="qa">
+    <dt>顔を出さないといけませんか？</dt>
+    <dd>いいえ。Zoomの会議は、声だけ・画面を見るだけでも参加できます。</dd>
+
+    <dt>Zoomを使ったことがありません。</dt>
+    <dd>最初の参加方法から、理事長がお手伝いします。LINEやリンクの開き方など、ほかの操作も同じです。</dd>
+
+    <dt>むずかしい知識が必要ですか？</dt>
+    <dd>必要ありません。</dd>
+
+    <dt>仕事や用事で、すぐに返事ができません。</dt>
+    <dd>ふだんは2〜3日の期限をもうけていますので、ご都合のよいときにお返事ください。</dd>
+  </dl>
+
+  <div class="contact">
+    <h2>いまは、考えていただくだけで大丈夫です</h2>
+    <p>ご返事やお申し出は、まだ必要ありません。<br>
+    「自分にもできそうかな」と、頭の片すみに置いていただければ幸いです。</p>
+  </div>
+
+  <a href="#" class="switch" data-go="t1">◀ かんたん版にもどる</a>
+</section>
+
+<footer>エスト北塚口管理組合　理事長　／　令和8年（2026年）9月30日作成</footer>
+</div>
+
+<script>
+  var tabs=document.querySelectorAll('[role=tab]');
+  function show(id){
+    tabs.forEach(function(t){
+      var on=t.id===id;
+      t.setAttribute('aria-selected',on);
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+    });
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.id)})});
+  document.querySelectorAll('[data-go]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();show(a.dataset.go)});
+  });
+</script>
+</body>
+</html>
