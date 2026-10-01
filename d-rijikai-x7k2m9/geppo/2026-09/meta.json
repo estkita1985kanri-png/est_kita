@@ -2,8 +2,8 @@
  "month": "2026-09",
  "decisions": 9,
  "pending": 0,
- "line_message": "▼9月の理事LINE 月次議事録\n9月に理事グループLINEでやりとりした内容を、議事録にまとめました。\n・決まったこと：9件\n・確認・判断をお願いしたいこと：0件\n\nhttps://estkita1985kanri-png.github.io/est_kita/d-rijikai-x7k2m9/geppo/2026-09/\n（パスワードは理事限定ページと同じです）\n\n今月は確認をお願いする事項はありません。内容に誤りがあればお知らせください。",
- "line_tmpl": "▼9月の理事LINE 月次議事録\n9月に理事グループLINEでやりとりした内容を、議事録にまとめました。\n・決まったこと：{DEC}件\n・確認・判断をお願いしたいこと：{ASK}件\n\nhttps://estkita1985kanri-png.github.io/est_kita/d-rijikai-x7k2m9/geppo/2026-09/\n（パスワードは理事限定ページと同じです）\n\n{TAIL}",
+ "line_message": "▼9月の理事LINE 月次議事録\n9月に理事グループLINEでやりとりした内容を、議事録にまとめました。\n・決定事項：9件\n・確認・判断をお願いしたいこと：0件\n\nhttps://estkita1985kanri-png.github.io/est_kita/d-rijikai-x7k2m9/geppo/2026-09/\n（パスワードは理事限定ページと同じです）\n\n今月は確認をお願いする事項はありません。内容に誤りがあればお知らせください。",
+ "line_tmpl": "▼9月の理事LINE 月次議事録\n9月に理事グループLINEでやりとりした内容を、議事録にまとめました。\n・決定事項：{DEC}件\n・確認・判断をお願いしたいこと：{ASK}件\n\nhttps://estkita1985kanri-png.github.io/est_kita/d-rijikai-x7k2m9/geppo/2026-09/\n（パスワードは理事限定ページと同じです）\n\n{TAIL}",
  "tail_ask": "ページ上部の「お願いしたいこと」だけ、お手すきの際にご確認ください。",
  "tail_none": "今月は確認をお願いする事項はありません。内容に誤りがあればお知らせください。",
  "ids": {
