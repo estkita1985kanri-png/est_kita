@@ -54,6 +54,13 @@ td.nm{text-align:left;white-space:normal;min-width:130px;line-height:1.45;}
 .scrollhint b{display:inline-flex;align-items:center;gap:5px;background:#f0ece5;color:var(--sub);border:1px solid var(--line);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700;}
 .scrollhint .ar{animation:swipe 1.2s ease-in-out infinite;}
 @keyframes swipe{0%,100%{transform:translateX(0);}50%{transform:translateX(4px);}}
+/* 支出一覧：背景と同化しないよう、見出し＝ブランド青／固定費＝青系／変動費＝琥珀系で塗り分け */
+.money-wrap table{border:1.5px solid #cfc6b8;}
+.money-wrap thead th{background:var(--brick);color:#fff;border-bottom:none;}
+.money-wrap tr.grp td{background:#e5edf8;color:#1f3f6e;border-top:2px solid var(--brick);}
+.money-wrap tr.grp.vr td{background:#fdf0d5;color:#7a5200;border-top:2px solid #d9a441;}
+.money-wrap tr.grp .perhh{color:inherit;opacity:.85;}
+.money-wrap tbody tr:not(.grp) td{background:#fff;}
 .fixed{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 15px;}
 .fixed li{display:flex;justify-content:space-between;list-style:none;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px;}
 .fixed ul{margin:0;padding:0;} .fixed li:last-child{border-bottom:none;}
