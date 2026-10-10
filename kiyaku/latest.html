@@ -1107,12 +1107,19 @@ table.reg-table tr:nth-child(even) td { background: #f9f9f9; }
     if (m) bt.id = 'bettable' + m[1];
   });
 
-  // 各条文
+  // 各条文（使用細則は sai-art、トランクルーム使用契約書は kei-art。規約本体の art と重ならないようにする）
+  var secSai = null, secKei = null;
+  document.querySelectorAll('.chapter-title').forEach(function(el) {
+    var t = el.textContent.replace(/\s+/g, '');
+    if (t === '使用細則') secSai = el;
+    else if (t.indexOf('トランクルーム使用契約書') === 0) secKei = el;
+  });
+  function after(sec, el) { return sec && (sec.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING); }
   document.querySelectorAll('.article').forEach(function(art) {
     var head = art.querySelector('.article-head');
     if (!head) return;
     var t = toH(head.textContent);
-    var pfx = art.closest('.appendix') ? 'app-art' : 'art';
+    var pfx = art.closest('.appendix') ? 'app-art' : after(secKei, art) ? 'kei-art' : after(secSai, art) ? 'sai-art' : 'art';
     var m = t.match(/第(\d+)条の(\d)/);
     if (m) { art.id = pfx + m[1] + '-' + m[2]; return; }
     m = t.match(/第(\d+)条/);
