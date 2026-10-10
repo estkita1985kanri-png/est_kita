@@ -165,6 +165,9 @@ table.reg-table tr:nth-child(even) td { background: #f9f9f9; }
 .toc-tbl a { text-decoration: none; color: #000; }
 .toc-tbl a:hover { text-decoration: underline; color: #0066cc; }
 .toc-rng { color: #888; font-size: 8.5pt; text-align: right; }
+/* 他の資料のリンクから開いた条文に薄い色を付ける（該当の文はブラウザが黄色で表示） */
+.hl-target { background: #fffbe6; box-shadow: inset 4px 0 0 #e0b100; }
+@media print { .hl-target { background: none; box-shadow: none; } }
 </style>
 </head>
 <body>
@@ -1125,6 +1128,16 @@ table.reg-table tr:nth-child(even) td { background: #f9f9f9; }
     m = t.match(/第(\d+)条/);
     if (m) art.id = pfx + m[1];
   });
+
+  // リンクで開いた条文・別表に印を付ける（#art7:~:text=… の形でも、条文の目印部分だけを見る）
+  function markTarget() {
+    document.querySelectorAll('.hl-target').forEach(function(e) { e.classList.remove('hl-target'); });
+    var h = decodeURIComponent((location.hash || '').slice(1)).split(':~:')[0];
+    var e = h && document.getElementById(h);
+    if (e && (e.classList.contains('article') || e.classList.contains('bettable'))) e.classList.add('hl-target');
+  }
+  markTarget();
+  window.addEventListener('hashchange', markTarget);
 
   // 改正#1ボックス（静的バッジ"1"の親要素）
   document.querySelectorAll('.amend-num').forEach(function(b) {
