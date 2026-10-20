@@ -38,13 +38,20 @@ tr.grp td{background:#d5d5d5;font-weight:bold;font-size:14.5px;}
 .cmp{border:1.5px solid #000;padding:12px 16px;font-size:14px;line-height:1.65;}
 .memo{border:1.5px dashed #555;padding:11px 16px;font-size:13px;line-height:1.6;}
 .foot{font-size:10.5px;color:#333;border-top:1px solid #999;padding-top:7px;line-height:1.55;}
+/* ---- デザインB（奇数月）：黒ベタの帯をやめ、二重線と太い縦線で強調。偶数月は従来のデザインA ---- */
+body.designB h1{border:3px double #000;padding:7px 14px 8px;text-align:center;}
+body.designB h2{background:none;color:#000;border-left:10px solid #000;border-bottom:4px double #000;padding:2px 10px 4px;}
+body.designB .finbox,body.designB .acc .box,body.designB .cmp{border:3px double #000;}
+body.designB .memo{border:2px dashed #000;}
+body.designB th{background:#fff;border-bottom:2.5px solid #000;}
+body.designB tr.grp td{background:#eee;border-top:2.5px solid #000;}
 @media print{.pbar{display:none;}}
 </style></head>
-<body><div class="pbar"><a class="pdf" href="2026-09_print.pdf" target="_blank">📄 PDFで表示・印刷する（推奨）</a><button onclick="window.print()">🖨 このページを直接印刷する</button></div>
+<body class="designB"><div class="pbar"><a class="pdf" href="2026-09_print.pdf" target="_blank">📄 PDFで表示・印刷する（推奨）</a><button onclick="window.print()">🖨 このページを直接印刷する</button></div>
 <div id="sheet"><div id="inner">
   <div class="blk">
-    <h1>2026年9月 会計月報（掲示用）</h1>
-    <div class="meta">エスト北塚口管理組合　第41期（2026年11月期）・自主管理元年　／　概算の速報値（税込・現金主義＝支払った月で計上・税理士監修）</div>
+    <h1>2026年9月 会計月報（概算値）</h1>
+    <div class="meta">エスト北塚口管理組合　第41期（2026年11月期）・自主管理元年　／　会計の締め月は2月・5月・8月・11月（税理士が確定）。それ以外の月は概算値です（税込・現金主義＝支払った月で計上）</div>
     <div class="finbox"><div class="fintit">財政状態（9月末＝速報）</div><table class="fintbl"><tr><td class="fn">管理費会計</td><td class="fa">378,782円</td><td class="fm">期末見込 約479,000円</td></tr><tr><td class="fn">修繕積立金会計</td><td class="fa">14,904,107円</td><td class="fm">期末見込 約14,924,000円</td></tr><tr><td class="fn">未収金（滞納）</td><td class="fa">0円</td><td class="fm">0戸</td></tr></table></div>
   </div>
   <div class="blk">
