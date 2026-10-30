@@ -167,6 +167,8 @@ table.reg-table tr:nth-child(even) td { background: #f9f9f9; }
 .toc-rng { color: #888; font-size: 8.5pt; text-align: right; }
 /* 他の資料のリンクから開いた条文に薄い色を付ける（該当の文はブラウザが黄色で表示） */
 .hl-target { background: #fffbe6; box-shadow: inset 4px 0 0 #e0b100; }
+/* リンクで指定した文（テキストフラグメント）をはっきり色付け */
+::target-text { background: #ffd84d; color: #000; }
 @media print { .hl-target { background: none; box-shadow: none; } }
 </style>
 </head>
