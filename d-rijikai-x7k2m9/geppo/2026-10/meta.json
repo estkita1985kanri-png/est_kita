@@ -1,8 +1,8 @@
 {
  "month": "2026-10",
  "decisions": 7,
- "pending": 1,
- "line_message": "▼10月の理事LINE 月次議事録\n10月に理事グループLINEでやりとりした内容を、議事録にまとめました。\n・決定事項：7件\n・確認・判断をお願いしたいこと：1件\n\nhttps://estkita1985kanri-png.github.io/est_kita/d-rijikai-x7k2m9/geppo/2026-10/\n（パスワードは理事限定ページと同じです）\n\nページ上部の「お願いしたいこと」だけ、お手すきの際にご確認ください。",
+ "pending": 2,
+ "line_message": "▼10月の理事LINE 月次議事録\n10月に理事グループLINEでやりとりした内容を、議事録にまとめました。\n・決定事項：7件\n・確認・判断をお願いしたいこと：2件\n\nhttps://estkita1985kanri-png.github.io/est_kita/d-rijikai-x7k2m9/geppo/2026-10/\n（パスワードは理事限定ページと同じです）\n\nページ上部の「お願いしたいこと」だけ、お手すきの際にご確認ください。",
  "line_tmpl": "▼10月の理事LINE 月次議事録\n10月に理事グループLINEでやりとりした内容を、議事録にまとめました。\n・決定事項：{DEC}件\n・確認・判断をお願いしたいこと：{ASK}件\n\nhttps://estkita1985kanri-png.github.io/est_kita/d-rijikai-x7k2m9/geppo/2026-10/\n（パスワードは理事限定ページと同じです）\n\n{TAIL}",
  "tail_ask": "ページ上部の「お願いしたいこと」だけ、お手すきの際にご確認ください。",
  "tail_none": "今月は確認をお願いする事項はありません。内容に誤りがあればお知らせください。",
@@ -17,7 +17,8 @@
    "dec-2202ede7"
   ],
   "ask": [
-   "ask-8e78861f"
+   "ask-8e78861f",
+   "ask-42801f38"
   ]
  }
 }
