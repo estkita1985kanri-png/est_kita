@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>2026年10月 会計月報｜エスト北塚口管理組合</title>
+<style>
+:root{--brick:#35619e;--green:#2f7d5b;--ink:#2a2a2a;--sub:#6b7280;--line:#e5e0d8;--bg:#faf7f3;--card:#fff;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Meiryo",sans-serif;line-height:1.65;font-size:16px;}
+.sheet{max-width:680px;margin:0 auto;padding:20px 18px 40px;}
+.head{border-bottom:3px solid var(--brick);padding-bottom:12px;margin-bottom:16px;}
+.mnav{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 14px;padding:10px 12px;background:#fff;border:1px solid var(--line);border-radius:10px;}
+.mnav-sel{font-size:13px;color:var(--sub);display:flex;align-items:center;gap:7px;}
+.mnav select{font-size:15px;font-weight:700;color:var(--ink);padding:6px 10px;border:1px solid var(--brick);border-radius:8px;background:#faf7f3;cursor:pointer;}
+.mnav-print{margin-left:auto;font-size:12.5px;color:var(--brick);text-decoration:none;border:1px solid var(--brick);border-radius:8px;padding:6px 11px;white-space:nowrap;}
+.mnav-print:hover{background:var(--brick);color:#fff;}
+.head .org{font-size:13px;color:var(--sub);letter-spacing:.03em;}
+.head h1{font-size:26px;margin:2px 0 6px;color:var(--brick);}
+.head .ki{font-size:12px;color:var(--sub);}
+.flag{display:inline-block;background:#eaf1fb;color:var(--brick);border:1px solid #bcd0ec;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;vertical-align:middle;margin-left:6px;}
+.head h1 .kind{font-size:15px;font-weight:700;color:var(--sub);margin-left:6px;letter-spacing:0;}
+.head h1 .kind.fix{color:var(--green);}
+.head .closing{font-size:11.5px;color:var(--sub);margin-top:1px;}
+.lead{font-size:13.5px;color:var(--sub);margin:0 0 18px;}
+.lead b{color:var(--ink,#1a1a1a);}
+.principle{font-size:11.5px;color:var(--sub);border-left:3px solid var(--brick);padding:3px 0 3px 9px;margin:0 0 12px;letter-spacing:.02em;}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 15px;display:flex;flex-direction:column;}
+.card.mng{border-top:4px solid var(--brick);}
+.card.rsv{border-top:4px solid var(--green);}
+.card h2{font-size:14px;margin:0 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line);}
+.kv{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;}
+.kv .k{color:var(--sub);}
+.kv .v{font-weight:700;font-variant-numeric:tabular-nums;}
+.kv.net{border-top:1px dashed var(--line);margin-top:auto;padding-top:8px;}
+.sub-inc{margin:1px 0 5px;padding:5px 10px;background:var(--bg);border-radius:7px;}
+.sub-inc div{display:flex;justify-content:space-between;font-size:11.5px;color:var(--sub);padding:1px 0;}
+.sub-inc div span:last-child{font-variant-numeric:tabular-nums;}
+.pos{color:var(--green);} .neg{color:#c0392b;}
+h3.sec{font-size:15px;margin:22px 0 8px;color:var(--ink);display:flex;align-items:center;gap:7px;}
+h3.sec::before{content:"";width:4px;height:16px;background:var(--brick);border-radius:2px;display:inline-block;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px;}
+th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+th{background:#f3efe9;color:var(--sub);font-weight:700;font-size:11.5px;}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700;}
+td.c,th.c{text-align:center;white-space:nowrap;}
+td.biz{color:var(--sub);white-space:nowrap;}
+td.none{text-align:center;color:var(--sub);padding:14px;}
+.tag{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:10px;font-weight:700;}
+.tag.m{background:#e5edf8;color:var(--brick);} .tag.r{background:#e2f1ea;color:var(--green);}
+td.nm{text-align:left;white-space:normal;min-width:130px;line-height:1.45;}
+.money-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+/* 横スクロールが必要な表にだけJSで出す誘導アイコン */
+.scrollhint{display:none;align-items:center;justify-content:flex-end;margin:3px 1px 2px;}
+.scrollhint b{display:inline-flex;align-items:center;gap:5px;background:#f0ece5;color:var(--sub);border:1px solid var(--line);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700;}
+.scrollhint .ar{animation:swipe 1.2s ease-in-out infinite;}
+@keyframes swipe{0%,100%{transform:translateX(0);}50%{transform:translateX(4px);}}
+/* 支出一覧：背景と同化しないよう、見出し＝ブランド青／固定費＝青系／変動費＝琥珀系で塗り分け */
+.money-wrap table{border:1.5px solid #cfc6b8;}
+.money-wrap thead th{background:var(--brick);color:#fff;border-bottom:none;}
+.money-wrap tr.grp td{background:#e5edf8;color:#1f3f6e;border-top:2px solid var(--brick);}
+.money-wrap tr.grp.vr td{background:#fdf0d5;color:#7a5200;border-top:2px solid #d9a441;}
+.money-wrap tr.grp .perhh{color:inherit;opacity:.85;}
+.money-wrap tbody tr:not(.grp) td{background:#fff;}
+.fixed{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 15px;}
+.fixed li{display:flex;justify-content:space-between;list-style:none;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px;}
+.fixed ul{margin:0;padding:0;} .fixed li:last-child{border-bottom:none;}
+.fixed li b{font-variant-numeric:tabular-nums;}
+.approx{display:inline-block;font-size:10px;color:var(--sub);background:#f0ece5;border-radius:9px;padding:0 6px;margin-left:5px;vertical-align:middle;}
+.grp td{background:#f3efe9;font-weight:700;font-size:13.5px;border-top:2px solid var(--line);}
+.grp.vr td{color:var(--brick);}
+.perhh{display:inline-block;font-weight:400;font-size:11px;color:var(--sub);margin-left:9px;}
+.tiny{font-size:11px;color:var(--sub);margin:6px 2px 0;line-height:1.55;}
+.sched-lead{font-size:12px;color:var(--sub);margin:2px 0 6px;}
+.sched-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:9px;}
+.sched{border-collapse:collapse;min-width:660px;width:100%;font-size:11.5px;}
+.sched th,.sched td{border:1px solid var(--line);padding:5px 3px;text-align:center;white-space:nowrap;line-height:1.3;}
+.sched thead th{background:#f3efe9;font-weight:700;}
+.sched th.item,.sched td.item{position:sticky;left:0;z-index:1;text-align:left;background:#fff;min-width:118px;white-space:normal;font-weight:700;}
+.sched td.item .freq{display:block;font-size:10px;color:var(--sub);font-weight:400;}
+.sched td.done{background:#e6f4ec;}
+.sched td.plan{background:#f2eee7;}
+.sched td .dt{font-size:10px;color:var(--sub);}
+.plan-list{list-style:none;padding:0;margin:2px 0;}
+.plan-list li{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:9px 12px;border:1px solid var(--line);border-radius:9px;margin-bottom:6px;background:var(--card);font-size:13px;}
+.plan-list .pstat{flex:none;font-size:10.5px;font-weight:700;color:#8a5a00;background:#fdf0d5;border:1px solid #f0d9a8;border-radius:20px;padding:2px 9px;white-space:nowrap;}
+.plan-list .pnm{flex:1;min-width:120px;}
+.plan-list .pacct{flex:none;}
+.fin-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:2px 0;}
+.fin2{border:none;border-radius:0;background:transparent;width:100%;font-size:13px;}
+.fin2 th,.fin2 td{border-bottom:1px solid var(--line);padding:7px 10px;}
+.fin2 thead th{background:#f3efe9;font-weight:700;font-size:11.5px;text-align:right;color:var(--sub);}
+/* ラベル列（区分・項目）は最小幅を確保して、日本語が1文字ずつ縦折れするのを防ぐ */
+.fin2 td.lbl{text-align:left;min-width:150px;white-space:normal;line-height:1.4;word-break:normal;} .fin2 thead th:first-child{text-align:left;min-width:150px;white-space:normal;line-height:1.4;}
+.fin2 td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700;min-width:92px;}
+.fin2 tr.tot td{border-top:1.5px solid var(--line);font-weight:800;}
+.fin2 tr.misyu td{background:#e6f4ec;}
+.fin2 tr.grp2 td{background:#efe9e1;font-weight:700;font-size:11.5px;}
+.fin2 td.sa{color:var(--brick);}
+.ftag{display:inline-block;font-size:10px;border-radius:9px;padding:0 6px;margin-left:6px;vertical-align:middle;font-weight:700;}
+.ftag.kind-fix{background:#dbeafe;color:#1e40af;}
+.ftag.kind-est{background:#f0ece5;color:var(--sub);}
+.misyu-note{display:block;font-size:11px;color:var(--sub);font-weight:400;margin-top:2px;white-space:normal;text-align:left;line-height:1.5;}
+/* 未収金の金額セルは折り返し可（長い注記でも横スクロールを出さない） */
+.fin2 tr.misyu td.n{white-space:normal;}
+.bigpay{list-style:none;padding:0;margin:2px 0;}
+.bigpay li{display:flex;align-items:baseline;gap:9px;padding:8px 11px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;font-size:13px;background:var(--card);}
+.bigpay .bm{font-weight:700;color:var(--brick);white-space:nowrap;}
+.bigpay .bbiz{color:var(--sub);font-size:11.5px;margin-left:auto;white-space:nowrap;}
+.bigpay b{font-variant-numeric:tabular-nums;white-space:nowrap;}
+.compare{background:#f3f7fc;border:1px solid #cddcef;border-radius:12px;padding:14px 16px;margin-top:10px;}
+.compare h3{margin:0 0 10px;font-size:14px;color:var(--brick);}
+.cmp-row{display:flex;align-items:stretch;gap:10px;}
+.cmp-cell{flex:1;background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px;text-align:center;}
+.cmp-cell .lbl{display:block;font-size:11px;color:var(--sub);}
+.cmp-cell .v{display:block;font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:2px;}
+.cmp-cell.old .v{color:var(--sub);text-decoration:line-through;}
+.cmp-cell.new .v{color:var(--green);}
+.cmp-cell .sub{display:block;font-size:10.5px;color:var(--sub);margin-top:2px;}
+.cmp-breakdown{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 12px;}
+.cmp-breakdown .bd-cap{font-size:11px;color:var(--sub);margin-bottom:3px;}
+.cmp-breakdown .bd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;padding:4px 0;border-top:1px dashed var(--line);}
+.cmp-breakdown .bd:first-of-type{border-top:none;}
+.cmp-breakdown .bd b{font-variant-numeric:tabular-nums;white-space:nowrap;}
+.cmp-breakdown .bdnote{font-size:10px;color:var(--sub);font-weight:400;}
+.cmp-breakdown .bd.tot{border-top:1.5px solid var(--line);margin-top:2px;font-weight:800;}
+.cmp-breakdown .bd.tot b{color:var(--green);}
+.cmp-arrow{display:flex;align-items:center;color:var(--brick);font-size:20px;font-weight:800;}
+.cmp-note{font-size:12.5px;color:var(--ink);margin:10px 0 0;}
+.newinc{background:#fff8ea;border:1.5px solid #e8c77a;border-radius:12px;padding:14px 16px;margin:0 0 20px;}
+.newinc .badge{display:inline-block;background:#b07800;color:#fff;font-size:11px;font-weight:700;padding:2px 10px;border-radius:20px;margin-bottom:6px;}
+.newinc h3{margin:0 0 8px;font-size:15.5px;color:#7a5200;}
+.newinc dl{margin:0;}
+.newinc dt{font-weight:700;font-size:13px;margin-top:9px;color:var(--ink);}
+.newinc dt:first-child{margin-top:0;}
+.newinc dd{margin:2px 0 0;font-size:13px;line-height:1.7;}
+.newinc .amt{display:flex;justify-content:space-between;align-items:baseline;background:#fff;border:1px solid #f0dcaa;border-radius:8px;padding:7px 12px;margin:10px 0 2px;font-size:13px;}
+.newinc .amt b{font-size:17px;font-variant-numeric:tabular-nums;color:#7a5200;}
+.memo{background:#eef6f1;border-left:4px solid var(--green);border-radius:8px;padding:12px 15px;margin-top:20px;}
+.memo .badge{display:inline-block;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;margin-bottom:6px;}
+.memo p{margin:0;font-size:13.5px;}
+.yotei{font-size:13px;color:var(--ink);background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:10px 14px;margin-top:12px;}
+.foot{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--sub);line-height:1.7;}
+.foot b{color:var(--brick);}
+@media(max-width:520px){
+.cards{grid-template-columns:1fr;} .cmp-row{flex-direction:column;} .cmp-arrow{transform:rotate(90deg);justify-content:center;}
+.sheet{padding:16px 8px 32px;}
+/* スマホ：残高・予算対比・支出一覧は画面内に収める（横スクロールは点検スケジュールのみ） */
+.fin2{font-size:11px;}
+.fin2 th,.fin2 td{padding:4px 3px;}
+.fin2 thead th,.fin2 tr.grp2 td{font-size:10.5px;}
+.fin2 thead th:first-child,.fin2 td.lbl{min-width:76px;}
+.fin2 td.n{min-width:0;font-size:11px;}
+.misyu-note{font-size:10.5px;}
+table{font-size:11px;} th,td{padding:5px 4px;} th.c,td.c{padding-left:2px;padding-right:2px;}
+td.nm{min-width:72px;} td.biz{white-space:normal;}
+}
+/* ---- A4印刷（掲示板1枚） ---- */
+@media print{
+  @page{size:A4 portrait;margin:11mm;}
+  body{background:#fff;font-size:11.5px;line-height:1.5;}
+  .sheet{max-width:none;padding:0;}
+  .cards{gap:8px;} .card{padding:9px 11px;}
+  .head h1{font-size:21px;} h3.sec{margin:12px 0 5px;}
+  .no-print{display:none!important;}
+  .compare,.memo,.card,table,.fixed{break-inside:avoid;}
+}
+.pend{display:inline-block;font-size:11px;font-weight:700;color:#8a5a00;background:#fdf0d5;border:1px dashed #c98a1b;border-radius:4px;padding:0 5px;margin-left:4px;white-space:nowrap}
+</style>
+</head>
+<body><div class="sheet">
+  <div class="head">
+    <div class="org">エスト北塚口管理組合</div>
+    <h1>2026年10月 会計月報<span class="kind">（概算値）</span></h1>
+    <div class="ki">第41期（2026年11月期）・自主管理元年</div>
+    <div class="closing">会計の締め月は2月・5月・8月・11月（3か月ごとに税理士が確定）。締め月の号は確定値、それ以外の月は概算値です。</div>
+  </div>
+  <div class="mnav no-print"><label class="mnav-sel">📅 月報を選ぶ<select onchange="if(this.value)location.href=this.value"><option value="2026-10.html" selected>2026年10月</option><option value="2026-09.html">2026年9月</option><option value="2026-08.html">2026年8月</option><option value="2026-07.html">2026年7月</option><option value="2026-06.html">2026年6月</option></select></label><a class="mnav-print" href="2026-10_print.html" target="_blank" rel="noopener">🖨 掲示用A4（モノクロ）</a></div>
+  <div class="principle">「何にいくら使われているか、いつでも見える」— 自主管理の原則</div>
+  <p class="lead"><b>今月のポイント</b>：9月の臨時総会で承認された<b>階段の手すり工事（10/6施工・30万円）</b>の代金と、<b>長期修繕計画の見直しの着手金（15.4万円）</b>を、修繕積立金からお支払いしました。どちらも承認・ご了承いただいた金額どおりです。このため10月の修繕積立金会計は一時的にマイナスですが、残高は約1,461万円あり、計画どおりの支出です。</p>
+
+  <div class="cards">
+      <div class="card mng">
+        <h2>管理費会計</h2>
+        <div class="kv"><span class="k">収入</span><span class="v">174,500 円</span></div>
+        <div class="sub-inc"><div><span>管理費</span><span>161,500 円</span></div><div><span>トランクルーム使用料</span><span>13,000 円</span></div></div>
+        <div class="kv"><span class="k">支出（支払ベース）</span><span class="v">104,626 円</span></div>
+        <div class="kv net"><span class="k">10月の収支</span><span class="v"><span class="pos">+69,874 円</span></span></div>
+      </div>
+      <div class="card rsv">
+        <h2>修繕積立金会計</h2>
+        <div class="kv"><span class="k">収入</span><span class="v">162,072 円</span></div><div class="sub-inc"><div><span>修繕積立金</span><span>158,140 円</span></div><div><span>受取利息</span><span>3,932 円</span></div></div>
+        <div class="kv"><span class="k">支出（支払ベース）</span><span class="v">454,000 円</span></div>
+        <div class="sub-inc"><div><span>階段の手すり工事</span><span>300,000 円</span></div><div><span>長期修繕計画 着手金</span><span>154,000 円</span></div></div>
+        <div class="kv net"><span class="k">10月の収支</span><span class="v"><span class="neg">▲291,928 円</span></span></div>
+      </div>
+  </div>
+
+  <h3 class="sec">会計の残高（財政状態）</h3><div class="fin-wrap"><table class="fin2"><thead><tr><th>区分</th><th class="n">管理費会計</th><th class="n">修繕積立金会計</th></tr></thead><tbody><tr><td class="lbl">10月末 残高<span class="ftag kind-est">速報</span></td><td class="n">448,656 円</td><td class="n">14,612,179 円</td></tr><tr><td class="lbl">期末（11月末）見込<span class="ftag kind-est">見込</span></td><td class="n">476,000 円</td><td class="n">14,774,000 円</td></tr><tr class="misyu"><td class="lbl">未収金（管理費等の滞納）</td><td class="n" colspan="2"><b>0 円</b>（0戸）<span class="misyu-note">管理費等の滞納。10月の口座振替も全戸成功しています。</span></td></tr></tbody></table></div><p class="tiny">※ 10月末残高は、9月末残高（速報）に10月の収支を足した値で、10月末の銀行口座の残高と1円単位で一致することを確認しています。11月の分とあわせて、期末（11月末）に税理士が確定します。期末見込はおおよその値で、長期修繕計画の残りの代金（成果物の納品時）は含めていません。</p>
+<h3 class="sec">予算対比（第41期・年度累計（12月〜10月末））</h3><div class="fin-wrap"><table class="fin2"><thead><tr><th>項目</th><th class="n">予算</th><th class="n">実績</th><th class="n">差（実績−予算）</th></tr></thead><tbody><tr class="grp2"><td colspan="4">管理費会計</td></tr><tr><td class="lbl">収入</td><td class="n">2,011,100 円</td><td class="n">2,129,028 円</td><td class="n sa">+117,928 円</td></tr><tr><td class="lbl">支出</td><td class="n">2,119,564 円</td><td class="n">1,991,663 円</td><td class="n sa">▲127,901 円</td></tr><tr><td class="lbl">収支</td><td class="n">▲108,464 円</td><td class="n">+137,365 円</td><td class="n sa">+245,829 円</td></tr><tr class="grp2"><td colspan="4">修繕積立金会計</td></tr><tr><td class="lbl">収入</td><td class="n">1,742,290 円</td><td class="n">1,763,298 円</td><td class="n sa">+21,008 円</td></tr><tr><td class="lbl">支出</td><td class="n">0 円</td><td class="n">454,000 円</td><td class="n sa">+454,000 円</td></tr><tr><td class="lbl">収支</td><td class="n">+1,742,290 円</td><td class="n">+1,309,298 円</td><td class="n sa">▲432,992 円</td></tr></tbody></table></div><p class="tiny">予算・実績とも同一期間（12月〜10月末）で比較。修繕積立金会計の支出（45.4万円）は当初予算にはありませんが、手すり工事は9/28の臨時総会で、長期修繕計画の見直し（上限45万円）も同じ臨時総会で承認を受けた支出です。管理費会計は、排水管のカメラ検査（4.4万円）で小修繕費が年間予算を約2.8万円超えましたが、管理費会計全体では予算内に収まっています。</p>
+<h3 class="sec">今期の大型支出（10万円超・第41期（2025年12月〜））</h3><ul class="bigpay"><li><span class="bm">12月</span><span class="bnm">損害保険料（マンション総合保険・年払い）</span><span class="bbiz">損保ジャパン</span><b>316,584 円</b></li><li><span class="bm">10月</span><span class="bnm">共用階段の手すり設置工事（臨時総会で承認）</span><span class="bbiz">佐藤工務店</span><b>300,000 円</b></li><li><span class="bm">10月</span><span class="bnm">長期修繕計画の見直し 着手金（臨時総会で承認）</span><span class="bbiz">ヤドリギ建築設計舎</span><b>154,000 円</b></li></ul>
+
+  <h3 class="sec">10月、何にいくら使ったか</h3>
+  <div class="money-wrap">
+  <table>
+    <thead><tr><th class="c">発生日</th><th class="c">内容</th><th class="c">取引先</th><th class="c">会計</th><th class="n">金額</th></tr></thead>
+    <tbody>
+      <tr class="grp fx"><td colspan="4">固定費（年間を通じて定期的に発生する費用）<span class="perhh">1戸あたり約 2,990円</span></td><td class="n">56,826 円</td></tr>
+      <tr><td class='c'>10/2</td><td class='nm'>共用部の電気代（9月分・尼信 口座振替）</td><td class='c biz'>大阪ガス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>9,356 円</td></tr><tr><td class='c'>10/26</td><td class='nm'>共用部の水道代（2か月分・尼信 口座振替）</td><td class='c biz'>伊丹市上下水道局</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>1,144 円</td></tr><tr><td class='c'>10/13</td><td class='nm'>管理費の収納代行</td><td class='c biz'>ジャックス</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>5,626 円</td></tr><tr><td class='c'>10/26</td><td class='nm'>日常清掃（9月分・口座振替）</td><td class='c biz'>ダイキチ</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>40,700 円</td></tr>
+      <tr class="grp vr"><td colspan="4">変動費（その月だけの支出）<span class="perhh">1戸あたり約 26,410円</span></td><td class="n">501,800 円</td></tr>
+      <tr><td class='c'>10/2</td><td class='nm'>排水管のカメラ検査（9/24実施・水漏れの未然防止）</td><td class='c biz'>IMU設備</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>44,000 円</td></tr><tr><td class='c'>10/2</td><td class='nm'>振込手数料（カメラ検査の支払い分）</td><td class='c biz'>GMOあおぞら</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>100 円</td></tr><tr><td class='c'>10/5</td><td class='nm'>裁判所への手数料（トランクルーム使用料の請求手続き）</td><td class='c biz'>伊丹簡易裁判所</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>3,500 円</td></tr><tr><td class='c'>10/20</td><td class='nm'>共用階段の手すり設置工事（両側化・10/6施工）</td><td class='c biz'>佐藤工務店</td><td class='c'><span class='tag r'>修繕積立金</span></td><td class='n'>300,000 円</td></tr><tr><td class='c'>10/20</td><td class='nm'>振込手数料（手すり工事の支払い分）</td><td class='c biz'>GMOあおぞら</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>100 円</td></tr><tr><td class='c'>10/29</td><td class='nm'>長期修繕計画の見直し 着手金（総額44万円の35％）</td><td class='c biz'>ヤドリギ建築設計舎</td><td class='c'><span class='tag r'>修繕積立金</span></td><td class='n'>154,000 円</td></tr><tr><td class='c'>10/29</td><td class='nm'>振込手数料（着手金の支払い分）</td><td class='c biz'>GMOあおぞら</td><td class='c'><span class='tag m'>管理費</span></td><td class='n'>100 円</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tiny">※ 主だった支出を掲載しています（数百〜千円台の少額な立替・消耗品は割愛）。金額は税込・支払ベース（支払った月で計上）。「1戸あたり」は各合計を全19戸で割った概算です。固定費は清掃・収納代行・電気・水道など、年間を通じて継続的にかかる運営費です（現金主義のため、請求や支払いのタイミングで計上される月・金額・顔ぶれが変わることがあります）。変動費はその月だけの支出です。振込手数料は、どの支払いの分も管理費会計で負担しています。</p>
+  
+      <div class="compare">
+        <h3>自主管理でここが変わりました</h3>
+        <div class="cmp-row">
+          <div class="cmp-cell old"><span class="lbl">日本ハウズイング管理下の委託費</span><span class="v">137,280 円/月</span></div>
+          <div class="cmp-arrow">→</div>
+          <div class="cmp-cell new"><span class="lbl">自主管理（分離発注）</span><span class="v">93,901 円/月</span></div>
+        </div>
+        <div class="cmp-breakdown"><div class="bd-cap">自主管理の内訳（税込）</div><div class="bd"><span>会計・組合サポート <span class="bdnote">（小林税理士事務所／3か月ごとに82,500円をまとめて支払い）</span></span><b>27,500 円</b></div><div class="bd"><span>日常清掃 <span class="bdnote">（ダイキチ）</span></span><b>40,700 円</b></div><div class="bd"><span>管理費の収納代行 <span class="bdnote">（ジャックス）</span></span><b>5,626 円</b></div><div class="bd"><span>設備点検 <span class="bdnote">（IMU設備・安全産業 ほか／月割り概算）</span></span><b>20,075 円</b></div><div class="bd tot"><span>自主管理 合計</span><b>93,901 円</b></div></div>
+        <p class="cmp-note">同じ管理業務を業者ごとに直接契約した結果、月あたり <b>約 43,379 円</b>（年 約 520,548 円）を圧縮。浮いた分は将来の修繕にそなえます。</p>
+      </div>
+
+  <div class="memo"><span class="badge">会計ひとくちメモ</span><p>管理費と修繕積立金は“別のお財布”です。修繕積立金は普段は使わず、大規模修繕を含む大きな修繕工事（排水管の更新など）にそなえて積み立てている共有財産。毎月きちんと貯まっているかが、健全な管理のいちばんの基本です。</p></div>
+  <div class="memo" style="background:#eef3fb;border-left-color:#35619e;"><span class="badge" style="background:#35619e;">修繕積立金の運用</span><p>修繕積立金のうち<b>50万円</b>を<b>すまい・る債</b>（国の住宅金融支援機構が発行する、マンション管理組合向けの債券）で運用します。10月に機構から申込みの受付のお知らせが届きました。購入代金の支払いは12月〜2月、債券の発行は2027年2月の予定です。普通預金に置いておくより利息が多く、必要なときは途中で換金もできます。くわしくは<a href="../sumairu/">すまい・る債の解説ページ</a>をご覧ください。</p></div>
+  <div class="yotei"><b>今後の予定</b>　11月に給水設備点検を行います（詳細は下の年間点検スケジュール）。水道メーターの交換（12月予定・修繕積立金から約30万円）について、11/30の臨時総会でお諮りしています。</div>
+  <h3 class="sec">年間の点検スケジュール（2026年）</h3><p class="sched-lead">建物を安全に保つため、定期点検を計画的に実施しています。（🟢 実施済／● 予定）</p><div class="sched-wrap"><table class="sched"><thead><tr><th class="item">点検項目</th><th>12月</th><th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th><th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月</th></tr></thead><tbody><tr><td class="item">共用部分等外壁点検<span class="freq">年1回</span></td><td></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">5/11</span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="item">消防用設備点検<span class="freq">年2回・法定</span></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">3/23</span></td><td></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">9/9</span></td><td></td><td></td></tr><tr><td class="item">給水設備点検<span class="freq">年3回</span></td><td></td><td></td><td class="done">🟢<br><span class="dt">2/26</span></td><td></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">7/15</span></td><td></td><td></td><td></td><td class="plan">●<br><span class="dt">11月</span></td></tr><tr><td class="item">貯水槽清掃<span class="freq">年1回</span></td><td></td><td class="done">🟢<br><span class="dt">1/15</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="item">雑排水管清掃<span class="freq">年1回</span></td><td></td><td></td><td></td><td class="done">🟢<br><span class="dt">3/8</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><h3 class="sec">今後予定している調査・工事</h3><p class="sched-lead">組合員のみなさまの資産を守るため、次の調査・工事を予定しています。時期が決まったものは順次このスケジュールでお知らせします。</p><ul class="plan-list"><li><span class="pstat">10/6 完了</span><span class="pnm">共用階段の手すり設置工事（両側化・安全対策／転倒防止）</span><span class="pacct tag r">修繕積立金</span></li><li><span class="pstat">10月 着手</span><span class="pnm">長期修繕計画書の作成（見直し）。ヤドリギ建築設計舎に委託しました</span><span class="pacct tag r">修繕積立金</span></li><li><span class="pstat">12月 予定</span><span class="pnm">水道メーターの交換（20個）。11/30の臨時総会でお諮りしています</span><span class="pacct tag r">修繕積立金</span></li></ul>
+
+  <div class="foot">
+    ※ 本報告は<b>概算の速報値</b>です（税理士監修・<b>現金主義＝支払った月で計上</b>。理事長が把握する請求書・立替明細ベース）。<b>確定値は3か月ごとの理事会議事録</b>にて正式にご報告します。<br>
+    ※ 定期点検・清掃費は年に数回まとまって発生します。実際に払った月に<b>変動費</b>として計上し、上の「自主管理でここが変わりました」の比較では公平のため<b>年額を12で割った月割り概算</b>で表示しています。<br>
+    ※ 個人が特定される情報（氏名・部屋番号・戸別の請求額・滞納情報）は一切掲載していません。専有部にかかわる対応は概要のみ記載しています。<br>
+    最終更新：2026-11-02　／　エスト北塚口管理組合
+  </div>
+</div>
+<script>
+(function(){
+  var wraps = document.querySelectorAll('.sched-wrap');
+  wraps.forEach(function(w){
+    var hint = document.createElement('div');
+    hint.className = 'scrollhint';
+    hint.innerHTML = '<b>横にスクロールできます <span class="ar">👉</span></b>';
+    w.parentNode.insertBefore(hint, w);
+    function upd(){ hint.style.display = (w.scrollWidth > w.clientWidth + 2) ? 'flex' : 'none'; }
+    function fade(){ hint.style.opacity = (w.scrollLeft > 6) ? '0.35' : '1'; }
+    upd(); fade();
+    window.addEventListener('resize', upd);
+    w.addEventListener('scroll', fade, {passive:true});
+  });
+})();
+</script>
+</body>
+</html>

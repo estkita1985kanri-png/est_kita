@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年10月 会計月報（掲示用）｜エスト北塚口管理組合</title>
+<style>
+@page{size:A4 portrait;margin:20mm 8mm 12mm 8mm;}  /* 上を厚めに（プリンタ上端の切れ防止＋ゆとり）。左右8mmは#sheet幅194mmに合わせ固定 */
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{margin:0;padding:0;background:#fff;color:#000;font-family:"Meiryo","Hiragino Kaku Gothic ProN",sans-serif;}
+.pbar{width:194mm;max-width:100%;margin:0 auto 6px;text-align:right;}
+.pbar button{font-size:13px;padding:8px 18px;border:1.5px solid #000;background:#fff;border-radius:5px;cursor:pointer;}
+.pbar a.pdf{display:inline-block;font-size:13px;padding:8px 18px;border:1.5px solid #000;background:#111;color:#fff;border-radius:5px;text-decoration:none;margin-right:8px;}
+/* #sheet = A4 印刷可能領域（幅210-16=194mm／高さ297-20-12=265mm）。内容はJSでこの領域いっぱいまで拡大縮小フィット */
+#sheet{position:relative;width:194mm;height:265mm;max-width:100%;margin:0 auto;overflow:hidden;}
+/* 内容の自然サイズに関わらず、JSで#sheetいっぱいまで拡大/縮小し、余った側の余白は上下・左右とも中央に配置 */
+#inner{position:absolute;top:0;left:0;width:194mm;transform-origin:top left;display:flex;flex-direction:column;font-size:13.5px;line-height:1.5;}
+.blk{flex:none;}
+h1{font-size:27px;margin:0;border-bottom:3px solid #000;padding-bottom:6px;letter-spacing:.02em;}
+.meta{font-size:12px;color:#222;margin:6px 0 8px;}
+.finbox{border:1.5px solid #000;padding:9px 14px;}
+.fintit{font-weight:bold;font-size:13.5px;margin-bottom:5px;}
+.fintbl{border-collapse:collapse;font-size:13px;width:100%;}
+.fintbl td{border:none;padding:2px 4px;white-space:nowrap;vertical-align:baseline;}
+.fintbl td.fn{text-align:left;padding-right:16px;}
+.fintbl td.fa{text-align:right;font-variant-numeric:tabular-nums;font-weight:bold;padding-right:18px;}
+.fintbl td.fm{text-align:right;color:#444;font-size:11.5px;white-space:nowrap;}
+h2{font-size:17px;margin:0 0 7px;background:#111;color:#fff;padding:5px 12px;letter-spacing:.04em;}
+.acc{display:flex;gap:12px;}
+.acc .box{flex:1;border:1.5px solid #000;padding:12px 16px;}
+.acc .box .t{font-weight:bold;font-size:15.5px;border-bottom:1px solid #999;margin-bottom:6px;padding-bottom:4px;}
+.acc .box .r{display:flex;justify-content:space-between;font-size:14px;padding:2px 0;}
+.acc .box .net{font-size:19px;font-weight:bold;margin-top:6px;border-top:1.5px solid #333;padding-top:5px;display:flex;justify-content:space-between;}
+table{width:100%;border-collapse:collapse;}
+th,td{border:1px solid #666;padding:9px 12px;font-size:14px;vertical-align:middle;white-space:nowrap;}
+th{background:#e6e6e6;text-align:center;font-size:12.5px;}
+td.c,th.c{text-align:center;}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tr.grp td{background:#d5d5d5;font-weight:bold;font-size:14.5px;}
+.cmp{border:1.5px solid #000;padding:12px 16px;font-size:14px;line-height:1.65;}
+.memo{border:1.5px dashed #555;padding:11px 16px;font-size:13px;line-height:1.6;}
+.foot{font-size:10.5px;color:#333;border-top:1px solid #999;padding-top:7px;line-height:1.55;}
+/* ---- デザインB（奇数月）：黒ベタの帯をやめ、二重線と太い縦線で強調。偶数月は従来のデザインA ---- */
+body.designB h1{border:3px double #000;padding:7px 14px 8px;text-align:center;}
+body.designB h2{background:none;color:#000;border-left:10px solid #000;border-bottom:4px double #000;padding:2px 10px 4px;}
+body.designB .finbox,body.designB .acc .box,body.designB .cmp{border:3px double #000;}
+body.designB .memo{border:2px dashed #000;}
+body.designB th{background:#fff;border-bottom:2.5px solid #000;}
+body.designB tr.grp td{background:#eee;border-top:2.5px solid #000;}
+@media print{.pbar{display:none;}}
+.pend{border:1px dashed #000;padding:0 3px;font-size:.85em}
+</style></head>
+<body><div class="pbar"><a class="pdf" href="2026-10_print.pdf" target="_blank">📄 PDFで表示・印刷する（推奨）</a><button onclick="window.print()">🖨 このページを直接印刷する</button></div>
+<div id="sheet"><div id="inner">
+  <div class="blk">
+    <h1>2026年10月 会計月報（概算値）</h1>
+    <div class="meta">エスト北塚口管理組合　第41期（2026年11月期）・自主管理元年　／　会計の締め月は2月・5月・8月・11月（税理士が確定）。それ以外の月は概算値です（税込・現金主義＝支払った月で計上）</div>
+    <div class="finbox"><div class="fintit">財政状態（10月末＝速報）</div><table class="fintbl"><tr><td class="fn">管理費会計</td><td class="fa">448,656円</td><td class="fm">期末見込 約476,000円</td></tr><tr><td class="fn">修繕積立金会計</td><td class="fa">14,612,179円</td><td class="fm">期末見込 約14,774,000円</td></tr><tr><td class="fn">未収金（滞納）</td><td class="fa">0円</td><td class="fm">0戸</td></tr></table></div>
+  </div>
+  <div class="blk">
+    <h2>今月の収支</h2>
+    <div class="acc">
+      <div class="box"><div class="t">管理費会計</div>
+        <div class="r"><span>収入</span><b>174,500 円</b></div>
+        <div class="r"><span>支出</span><b>104,626 円</b></div>
+        <div class="net"><span>収支</span><span>+69,874 円</span></div></div>
+      <div class="box"><div class="t">修繕積立金会計</div>
+        <div class="r"><span>収入</span><b>162,072 円</b></div>
+        <div class="r"><span>支出</span><b>454,000 円</b></div>
+        <div class="net"><span>収支</span><span>▲291,928 円</span></div></div>
+    </div>
+  </div>
+  <div class="blk"><div class="cmp"><b>今月のポイント</b>　9月の臨時総会で承認された階段の手すり工事（10/6施工）の代金30万円と、長期修繕計画の見直しの着手金15.4万円（総額44万円の35％）を、修繕積立金からお支払いしました。どちらも承認どおりの金額です。修繕積立金の残高は約1,461万円で、計画どおりの支出です。</div></div>
+  <div class="blk">
+    <h2>10月、何にいくら使ったか</h2>
+    <table>
+      <thead><tr><th class="c">発生日</th><th class="c">内容</th><th class="c">取引先</th><th class="c">会計</th><th class="n">金額</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="4">固定費（年間を通じて定期的に発生する費用）　1戸あたり約 2,990円</td><td class="n">56,826 円</td></tr>
+        <tr><td class='c'>10/2</td><td class='c'>共用部の電気代（9月分）</td><td class='c'>大阪ガス</td><td class='c'>管理費</td><td class='n'>9,356 円</td></tr><tr><td class='c'>10/26</td><td class='c'>共用部の水道代（2か月分）</td><td class='c'>伊丹市上下水道局</td><td class='c'>管理費</td><td class='n'>1,144 円</td></tr><tr><td class='c'>10/13</td><td class='c'>管理費の収納代行</td><td class='c'>ジャックス</td><td class='c'>管理費</td><td class='n'>5,626 円</td></tr><tr><td class='c'>10/26</td><td class='c'>日常清掃（9月分）</td><td class='c'>ダイキチ</td><td class='c'>管理費</td><td class='n'>40,700 円</td></tr>
+        <tr class="grp"><td colspan="4">変動費（その月だけの支出）　1戸あたり約 26,410円</td><td class="n">501,800 円</td></tr>
+        <tr><td class='c'>10/2</td><td class='c'>排水管のカメラ検査</td><td class='c'>IMU設備</td><td class='c'>管理費</td><td class='n'>44,000 円</td></tr><tr><td class='c'>10/5</td><td class='c'>裁判所への手数料（請求手続き）</td><td class='c'>伊丹簡易裁判所</td><td class='c'>管理費</td><td class='n'>3,500 円</td></tr><tr><td class='c'>10/20</td><td class='c'>階段の手すり設置工事</td><td class='c'>佐藤工務店</td><td class='c'>修繕積立金</td><td class='n'>300,000 円</td></tr><tr><td class='c'>10/29</td><td class='c'>長期修繕計画の見直し 着手金</td><td class='c'>ヤドリギ建築設計舎</td><td class='c'>修繕積立金</td><td class='n'>154,000 円</td></tr><tr><td class='c'>10月</td><td class='c'>振込手数料（3回分）</td><td class='c'>GMOあおぞら</td><td class='c'>管理費</td><td class='n'>300 円</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="blk"><div class="cmp"><b>自主管理でここが変わりました</b>　日本ハウズイング管理下 137,280 円/月 → <b>自主管理 93,901 円/月</b>（同じ管理業務を分離発注し、月 約 43,379 円・年 約 520,548 円を圧縮）</div></div>
+  <div class="blk"><div class="memo"><b>今後の予定</b>　11月に給水設備点検を行います。水道メーターの交換（12月予定・修繕積立金から約30万円）について、11/30の臨時総会でお諮りしています。修繕積立金のうち50万円は「すまい・る債」（国の住宅金融支援機構の債券）で運用する予定で、購入代金の支払いは12月〜2月です。</div></div>
+  <div class="blk"><div class="foot">確定値は3か月ごとの理事会議事録にて正式報告。定期点検・清掃費は発生した月に変動費として計上（上の比較のみ公平のため年額÷12で表示）。個人が特定される情報（氏名・部屋番号・戸別請求額・滞納情報）は掲載していません。／最終更新 2026-11-02　エスト北塚口管理組合</div></div>
+</div></div>
+<script>
+(function(){
+  function fit(){
+    var inner=document.getElementById('inner'), sheet=document.getElementById('sheet');
+    if(!inner||!sheet) return;
+    inner.style.transform='none';
+    inner.style.height='auto';
+    inner.style.justifyContent='flex-start';
+    var availH=sheet.clientHeight, availW=sheet.clientWidth;
+    var h=inner.scrollHeight, w=inner.scrollWidth;
+    // 内容の自然な大きさに関わらず、必ずどちらかの辺がページいっぱいになるまで拡大／縮小する
+    // （小さければ拡大してA4を使い切り、大きければ縮小して1枚に収める）
+    var scale=Math.min(availH/h, availW/w);
+    inner.style.transform='scale('+scale+')';
+    inner.style.left=((availW-w*scale)/2)+'px';
+    inner.style.top=((availH-h*scale)/2)+'px';
+  }
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
+  window.addEventListener('beforeprint',fit);
+})();
+</script></body></html>
